@@ -20,38 +20,43 @@ export default function HomeContent() {
 
   const packages = [
     {
-      name: 'Bronze',
-      price: '$700',
-      duration: '3 hours',
+      name: 'Essential',
+      price: '$550',
+      duration: '2 hours',
       features: [
-        'Unlimited 4x6 or 2x6 professional color prints',
-        'Choice of backdrops',
-        'Tons of props',
-        'Custom designed template to match your event',
-        'Digital upload of all photos',
-        'Instant upload to our Facebook page',
-        'Friendly attendant on site',
+        'Professional attendant on site',
+        'Physical prints on custom template (2x6 or 4x6 size)',
+        'Backdrop selection',
+        'Props collection',
+        'Digital image delivery to guests by SMS or email',
+        'Digital gallery after the event',
       ],
     },
     {
-      name: 'Silver',
-      price: '$800',
+      name: 'Signature',
+      price: '$750',
       duration: '3 hours',
       features: [
-        'Everything in Bronze, plus:',
-        'iPad sharing station',
-        'Hollywood red carpet treatment',
+        'Professional attendant on site',
+        'Physical prints on custom template (2x6 or 4x6 size)',
+        'Backdrop selection',
+        'Props collection',
+        'Digital image delivery to guests by SMS or email',
+        'Digital gallery after the event',
       ],
       highlight: false,
     },
     {
-      name: 'Gold',
+      name: 'Premium',
       price: '$950',
-      duration: '3 hours',
+      duration: '4 hours',
       features: [
-        'Everything in Silver, plus:',
-        'Photo guest book with USB',
-        'USB with all session photos',
+        'Professional attendant on site',
+        'Physical prints on custom template (2x6 or 4x6 size)',
+        'Backdrop selection',
+        'Props collection',
+        'Digital image delivery to guests by SMS or email',
+        'Digital gallery after the event',
       ],
       highlight: true,
     },
@@ -59,18 +64,18 @@ export default function HomeContent() {
 
   const testimonials = [
     {
-      name: 'Adrianna Collaku',
-      text: 'I am so pleased with the exceptional level of service we received from Tomas. From everything in between to his prompt response to the day of the event! I would definitely recommend to everyone I know and would use again for future events! It was a hit for us as it was for our Staff Holiday Party, everyone loved it.. especially the variety of props. Thank you Tomas!',
+      name: 'Sherry',
+      text: 'Dennis was extremely prompt and polite with answering any questions on the phone or via email. The booking process felt easy and the service was exceptional.',
       rating: 5,
     },
     {
-      name: 'Sarah Johnson',
-      text: 'The photo booth was the highlight of our wedding! The quality of the prints was amazing and our guests had so much fun. The custom template matched our theme perfectly.',
+      name: 'Rachael',
+      text: 'Great company to work with. They responded to every message very quickly and answered all of our questions. Our guests had a great experience at our wedding! Highly recommend!',
       rating: 5,
     },
     {
-      name: 'Michael Chen',
-      text: 'Professional service from start to finish. The equipment was top-notch and the attendant was friendly and helpful throughout the entire event.',
+      name: 'Cyrus',
+      text: 'Dennis\'s team was absolutely fantastic! The team was extremely responsive, competitively priced, and very professional. It was a pleasure being part of our event.',
       rating: 5,
     },
   ];
@@ -79,32 +84,32 @@ export default function HomeContent() {
     {
       icon: '📸',
       title: 'Professional Equipment',
-      description: 'State-of-the-art cameras and printers for crystal-clear photos',
+      description: 'Top quality cameras and printers that capture every moment beautifully',
     },
     {
       icon: '🎨',
       title: 'Custom Templates',
-      description: 'Personalized designs that match your event theme perfectly',
+      description: 'We design templates that fit your event style and colors',
     },
     {
       icon: '🎭',
       title: 'Stunning Backdrops',
-      description: 'Wide variety of elegant and fun backdrop options',
+      description: 'Choose from our collection of elegant and fun backdrop options',
     },
     {
       icon: '🎪',
       title: 'Props & Accessories',
-      description: 'Hundreds of props to make your photos unforgettable',
+      description: 'Lots of fun props to help your guests get creative with their photos',
     },
     {
       icon: '⚡',
       title: 'Instant Prints',
-      description: 'High-quality prints ready in seconds',
+      description: 'Your guests get high quality prints right away',
     },
     {
       icon: '📱',
       title: 'Digital Sharing',
-      description: 'All photos available digitally and on social media',
+      description: 'Everyone gets their photos sent directly to their phone or email',
     },
   ];
 
@@ -136,38 +141,29 @@ export default function HomeContent() {
       </section>
 
       {/* About Section */}
-      <section ref={aboutRef} className="w-full py-32 bg-white">
+      <section ref={aboutRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
-            <h2 className="text-5xl md:text-7xl font-light text-black mb-8 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
               Our Mission
             </h2>
             <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light max-w-3xl">
-              To provide the very best in customer service and the most fun and
-              memorable experience for you and your guests. We believe every
-              event deserves to be extraordinary, and we&apos;re here to make that
-              happen with professional equipment, creative designs, and
-              exceptional service.
+              We\'re all about giving you and your guests an amazing experience. Every event should feel special, and that\'s exactly what we deliver with our professional setup, custom designs, and attention to detail.
             </p>
           </div>
         </div>
       </section>
 
       {/* Packages Section */}
-      <section className="w-full py-32 bg-gray-50">
+      <section className="w-full py-20 bg-gray-50">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="mb-20">
-            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-4 leading-tight">
               Package Pricing
             </h2>
-            <div className="mt-6">
-              <p className="text-lg text-gray-600 font-light">
-                Budget-friendly packages starting at $700 for 3 hours of fun
-              </p>
-              <p className="text-sm uppercase tracking-wider text-gray-500 mt-2 font-medium">
-                NO HIDDEN FEES
-              </p>
-            </div>
+            <p className="text-lg text-gray-600 font-light">
+              Packages starting at $550 for 2 hours
+            </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {packages.map((pkg, index) => (
@@ -178,15 +174,12 @@ export default function HomeContent() {
       </section>
 
       {/* Features Section */}
-      <section ref={featuresRef} className="w-full py-32 bg-white">
+      <section ref={featuresRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="mb-20">
-            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-4 leading-tight">
               Why Choose Us
             </h2>
-            <p className="text-lg text-gray-600 font-light max-w-2xl">
-              Everything you need for an unforgettable photo booth experience
-            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {features.map((feature, index) => (
@@ -210,15 +203,12 @@ export default function HomeContent() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="w-full py-32 bg-black text-white">
+      <section className="w-full py-20 bg-black text-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="mb-20">
-            <h2 className="text-5xl md:text-7xl font-light mb-4 leading-tight">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-light mb-4 leading-tight">
               What Our Clients Say
             </h2>
-            <p className="text-lg text-gray-400 font-light">
-              Don&apos;t just take our word for it
-            </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
@@ -229,15 +219,14 @@ export default function HomeContent() {
       </section>
 
       {/* Final CTA Section */}
-      <section ref={ctaRef} className="w-full py-32 bg-white">
+      <section ref={ctaRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
-            <h2 className="text-5xl md:text-7xl font-light text-black mb-8 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
               Ready to Make Your Event Unforgettable?
             </h2>
-            <p className="text-xl text-gray-700 mb-12 leading-relaxed font-light max-w-2xl">
-              Book your photo booth rental today and let us help you create
-              memories that will last a lifetime.
+            <p className="text-lg text-gray-700 mb-8 leading-relaxed font-light max-w-2xl">
+              Get in touch today and let\'s make your event something people will remember.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link

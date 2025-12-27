@@ -20,22 +20,22 @@ export default function EquipmentContent() {
   const equipmentItems = [
     {
       title: 'Professional DSLR Camera',
-      description: 'High-resolution camera system that captures every detail with stunning clarity',
+      description: 'Our cameras capture all the details and give you really clear photos',
       specs: ['24MP sensor', 'Full HD video capability', 'Professional lighting integration'],
     },
     {
       title: 'Dye-Sublimation Printer',
-      description: 'Industry-leading printer that produces vibrant, smudge-proof prints in seconds',
+      description: 'The printer we use makes colorful prints that dry instantly and won\'t smudge',
       specs: ['4x6 and 2x6 print sizes', 'Waterproof prints', 'Instant drying technology'],
     },
     {
       title: 'Touchscreen Interface',
-      description: 'User-friendly touchscreen system that makes the photo booth experience seamless',
+      description: 'Easy to use touchscreen that makes everything simple for your guests',
       specs: ['Large format display', 'Intuitive controls', 'Custom branding options'],
     },
     {
       title: 'Professional Lighting',
-      description: 'Studio-quality lighting setup that ensures perfect photos every time',
+      description: 'Professional lighting that makes sure everyone looks great in their photos',
       specs: ['Adjustable brightness', 'Color temperature control', 'Flattering light distribution'],
     },
   ];
@@ -44,41 +44,41 @@ export default function EquipmentContent() {
     {
       icon: '📷',
       title: 'Camera Quality',
-      description: 'Professional-grade DSLR cameras ensure every photo is crisp, clear, and ready to frame',
+      description: 'Professional cameras that take sharp, clear photos you\'ll want to frame',
     },
     {
       icon: '🖨️',
       title: 'Print Technology',
-      description: 'Dye-sublimation printing delivers vibrant colors and professional-quality prints that last',
+      description: 'Our printing process gives you bright colors and prints that hold up over time',
     },
     {
       icon: '💻',
       title: 'Software Features',
-      description: 'Advanced software with custom templates, instant sharing, and seamless social media integration',
+      description: 'Our software lets us customize templates and share photos instantly with your guests',
     },
     {
       icon: '💡',
       title: 'Lighting System',
-      description: 'Professional lighting rigs that create the perfect ambiance for stunning photos',
+      description: 'Professional lighting that sets the right mood and makes photos look amazing',
     },
   ];
 
   const benefits = [
     {
       title: 'Reliability',
-      description: 'Our equipment is regularly maintained and tested to ensure flawless performance at every event',
+      description: 'We keep our equipment in great shape and test it before every event so nothing goes wrong',
     },
     {
       title: 'Quality',
-      description: 'Professional-grade equipment means your guests get the highest quality photos possible',
+      description: 'Using professional equipment means your guests get really high quality photos',
     },
     {
       title: 'Innovation',
-      description: 'We stay up-to-date with the latest technology to provide the best experience',
+      description: 'We keep up with new technology so we can give you the best experience possible',
     },
     {
       title: 'Support',
-      description: 'Our trained attendants are always on-site to ensure everything runs smoothly',
+      description: 'Our attendants are there the whole time to make sure everything goes smoothly',
     },
   ];
 
@@ -91,27 +91,23 @@ export default function EquipmentContent() {
       >
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-7xl font-light mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
               Professional Equipment
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed font-light">
-              State-of-the-art photo booth technology designed to deliver
-              exceptional results at every event
+              We use top quality equipment that gives you great photos every time
             </p>
           </div>
         </div>
       </section>
 
       {/* Equipment Showcase */}
-      <section ref={showcaseRef} className="w-full py-32 bg-white">
+      <section ref={showcaseRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="mb-20">
-            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-4 leading-tight">
               Our Equipment
             </h2>
-            <p className="text-lg text-gray-600 font-light">
-              Professional-grade technology for professional results
-            </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {equipmentItems.map((item, index) => (
@@ -126,7 +122,7 @@ export default function EquipmentContent() {
                 <ul className="space-y-3">
                   {item.specs.map((spec, i) => (
                     <li key={i} className="flex items-start">
-                      <span className="text-black mr-4 mt-1 font-light">—</span>
+                      <span className="text-black mr-4 mt-1 font-light">-</span>
                       <span className="text-gray-600 leading-relaxed">{spec}</span>
                     </li>
                   ))}
@@ -138,15 +134,12 @@ export default function EquipmentContent() {
       </section>
 
       {/* Technology Highlights */}
-      <section ref={techRef} className="w-full py-32 bg-gray-50">
+      <section ref={techRef} className="w-full py-20 bg-gray-50">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="mb-20">
-            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-4 leading-tight">
               Technology Highlights
             </h2>
-            <p className="text-lg text-gray-600 font-light">
-              Cutting-edge features that set us apart
-            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {techHighlights.map((highlight, index) => (
@@ -168,15 +161,12 @@ export default function EquipmentContent() {
       </section>
 
       {/* Why Our Equipment */}
-      <section ref={benefitsRef} className="w-full py-32 bg-white">
+      <section ref={benefitsRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="mb-20">
-            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-4 leading-tight">
               Why Our Equipment Matters
             </h2>
-            <p className="text-lg text-gray-600 font-light">
-              Professional equipment makes all the difference
-            </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {benefits.map((benefit, index) => (
@@ -195,14 +185,14 @@ export default function EquipmentContent() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-32 bg-black text-white">
+      <section className="w-full py-20 bg-black text-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
-            <h2 className="text-5xl md:text-7xl font-light mb-8 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
               Experience the Difference
             </h2>
-            <p className="text-xl mb-12 text-gray-300 max-w-2xl leading-relaxed font-light">
-              See our professional equipment in action at your next event
+            <p className="text-lg mb-8 text-gray-300 max-w-2xl leading-relaxed font-light">
+              Let us bring our equipment to your next event and see the difference it makes
             </p>
             <Link
               href="/contact"

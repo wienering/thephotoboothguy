@@ -38,7 +38,7 @@ export default function Testimonial({ name, text, rating = 5 }: TestimonialProps
       <p className="text-gray-300 mb-6 leading-relaxed font-light italic text-lg">
         &quot;{text}&quot;
       </p>
-      <p className="text-white font-medium">— {name}</p>
+      <p className="text-white font-medium">- {name}</p>
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import BackdropsContent from './BackdropsContent';
+import SchemaMarkup from '@/components/SchemaMarkup';
+import { serviceSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Photo Booth Backdrops - The Photo Booth Guy | Toronto',
@@ -8,5 +10,15 @@ export const metadata: Metadata = {
 };
 
 export default function Backdrops() {
-  return <BackdropsContent />;
+  const backdropsServiceSchema = serviceSchema(
+    'Photo Booth Backdrop Rental',
+    'Stunning backdrop collection for photo booths. Elegant, fun, themed, and modern backdrops. Custom backdrop design available. Perfect for weddings, parties, and corporate events in Toronto.'
+  );
+
+  return (
+    <>
+      <SchemaMarkup schema={backdropsServiceSchema} />
+      <BackdropsContent />
+    </>
+  );
 }

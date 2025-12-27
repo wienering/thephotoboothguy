@@ -11,9 +11,7 @@ export default function Footer() {
               The Photo Booth Guy
             </h3>
             <p className="mb-8 text-gray-400 leading-relaxed font-light max-w-md">
-              Toronto&apos;s premier photo booth rental service. Creating
-              unforgettable memories at your events with professional equipment
-              and exceptional service.
+              Toronto's best photo booth rental service. We help create great memories at your events with professional equipment and great service.
             </p>
             <div className="flex space-x-6">
               <a

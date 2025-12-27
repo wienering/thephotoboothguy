@@ -40,7 +40,7 @@ export default function Hero() {
         <div className="max-w-5xl">
           <div className="mb-6">
             <span className="text-sm uppercase tracking-[0.2em] text-gray-400 font-medium">
-              Toronto&apos;s Premier Photo Booth Experience
+              Toronto&apos;s Best Photo Booth Experience
             </span>
           </div>
           <h1
@@ -55,8 +55,8 @@ export default function Hero() {
             ref={subtitleRef}
             className="text-lg md:text-xl mb-12 text-gray-300 max-w-2xl leading-relaxed font-light"
           >
-            Professional equipment, stunning backdrops, and custom templates 
-            that transform your event into an extraordinary experience.
+            We bring professional equipment, beautiful backdrops, and custom designs 
+            to make your event something people will talk about.
           </p>
           <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4">
             <Link

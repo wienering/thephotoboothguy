@@ -94,47 +94,39 @@ export default function BackdropsContent() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="w-full py-32 bg-black text-white"
+        className="w-full py-20 bg-black text-white"
       >
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-7xl font-light mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
               Stunning Backdrop Collection
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed font-light">
-              Transform your photo booth experience with our extensive collection
-              of professional backdrops. From elegant to playful, we have the
-              perfect backdrop for every event.
+              We have a huge collection of professional backdrops to choose from. Whether you want something elegant or fun, we've got you covered.
             </p>
           </div>
         </div>
       </section>
 
       {/* Backdrop Gallery */}
-      <section ref={galleryRef} className="w-full py-32 bg-white">
+      <section ref={galleryRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="mb-20">
-            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-4 leading-tight">
               Our Backdrop Collection
             </h2>
-            <p className="text-lg text-gray-600 font-light">
-              Choose from our wide selection of professional backdrops
-            </p>
           </div>
           <Gallery images={backdropImages} columns={3} />
         </div>
       </section>
 
       {/* Backdrop Categories */}
-      <section ref={categoriesRef} className="w-full py-32 bg-gray-50">
+      <section ref={categoriesRef} className="w-full py-20 bg-gray-50">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="mb-20">
-            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-4 leading-tight">
               Backdrop Categories
             </h2>
-            <p className="text-lg text-gray-600 font-light">
-              Find the perfect style for your event
-            </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {categories.map((category, index) => (
@@ -156,19 +148,15 @@ export default function BackdropsContent() {
       </section>
 
       {/* Custom Backdrop Option */}
-      <section ref={customRef} className="w-full py-32 bg-white">
+      <section ref={customRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
-            <div className="border border-gray-200 p-12">
-              <h2 className="text-4xl md:text-5xl font-light text-black mb-6">
+            <div className="border border-gray-200 p-10">
+              <h2 className="text-3xl md:text-4xl font-light text-black mb-6">
                 Need Something Custom?
               </h2>
               <p className="text-lg text-gray-700 mb-10 leading-relaxed font-light">
-                Can&apos;t find the perfect backdrop in our collection? We offer
-                custom backdrop design and printing services to match your exact
-                vision. Whether you need a branded backdrop for a corporate
-                event, a themed backdrop for a special celebration, or something
-                completely unique, our team can bring your ideas to life.
+                Can\'t find what you\'re looking for? We can design and print a custom backdrop that matches exactly what you have in mind. Whether it\'s for a corporate event with your branding, a themed celebration, or something totally unique, we can make it happen.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-10">
                 <div>
@@ -177,20 +165,20 @@ export default function BackdropsContent() {
                   </h3>
                   <ul className="space-y-4 text-gray-700">
                     <li className="flex items-start">
-                      <span className="text-black mr-4 mt-1 font-light">—</span>
-                      <span className="leading-relaxed font-light">Consultation to understand your vision</span>
+                      <span className="text-black mr-4 mt-1 font-light">-</span>
+                      <span className="leading-relaxed font-light">We\'ll talk with you to understand what you want</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-black mr-4 mt-1 font-light">—</span>
-                      <span className="leading-relaxed font-light">Professional design creation</span>
+                      <span className="text-black mr-4 mt-1 font-light">-</span>
+                      <span className="leading-relaxed font-light">We\'ll create a professional design for you</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-black mr-4 mt-1 font-light">—</span>
-                      <span className="leading-relaxed font-light">High-quality printing</span>
+                      <span className="text-black mr-4 mt-1 font-light">-</span>
+                      <span className="leading-relaxed font-light">We print it using high quality materials</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-black mr-4 mt-1 font-light">—</span>
-                      <span className="leading-relaxed font-light">Delivery and setup</span>
+                      <span className="text-black mr-4 mt-1 font-light">-</span>
+                      <span className="leading-relaxed font-light">We deliver and set it up for you</span>
                     </li>
                   </ul>
                 </div>
@@ -230,15 +218,14 @@ export default function BackdropsContent() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-32 bg-black text-white">
+      <section className="w-full py-20 bg-black text-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
-            <h2 className="text-5xl md:text-7xl font-light mb-8 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
               Ready to Choose Your Backdrop?
             </h2>
-            <p className="text-xl mb-12 text-gray-300 max-w-2xl leading-relaxed font-light">
-              Contact us to discuss backdrop options for your event or schedule a
-              consultation
+            <p className="text-lg mb-8 text-gray-300 max-w-2xl leading-relaxed font-light">
+              Get in touch to talk about backdrop options for your event or to set up a consultation
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link

@@ -24,16 +24,6 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      gsap.fromTo(
-        '.nav-item',
-        { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, delay: 0.3 }
-      );
-    }
-  }, []);
-
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -41,23 +31,19 @@ export default function Navigation() {
       }`}
     >
       <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="flex items-center justify-between h-24">
-          {/* Logo */}
-          <Link href="/" className="nav-item">
-            <span className={`text-xl font-light tracking-wider transition-colors ${
-              scrolled ? 'text-black' : 'text-white'
-            }`}>
-              The Photo Booth Guy
-            </span>
+        <div className="flex items-center justify-between h-20">
+          <Link href="/" className={`text-lg font-light tracking-wider transition-colors ${
+            scrolled ? 'text-black' : 'text-white'
+          }`}>
+            The Photo Booth Guy
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-12">
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`nav-item text-sm uppercase tracking-wider font-medium transition-colors duration-200 ${
+                className={`text-xs uppercase tracking-wider font-medium transition-colors ${
                   scrolled ? 'text-gray-700 hover:text-black' : 'text-white/80 hover:text-white'
                 }`}
               >
@@ -66,7 +52,7 @@ export default function Navigation() {
             ))}
             <Link
               href="/contact"
-              className={`nav-item border px-6 py-2 text-sm uppercase tracking-wider font-medium transition-all duration-200 ${
+              className={`border px-5 py-2 text-xs uppercase tracking-wider font-medium transition-all ${
                 scrolled 
                   ? 'border-black text-black hover:bg-black hover:text-white' 
                   : 'border-white text-white hover:bg-white hover:text-black'
@@ -76,9 +62,8 @@ export default function Navigation() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            className={`md:hidden nav-item focus:outline-none transition-colors ${
+            className={`md:hidden focus:outline-none transition-colors ${
               scrolled ? 'text-black' : 'text-white'
             }`}
             onClick={() => setIsOpen(!isOpen)}
@@ -102,9 +87,8 @@ export default function Navigation() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-6 space-y-4 border-t border-gray-200">
+          <div className="md:hidden py-4 space-y-3 border-t border-gray-200">
             {navLinks.map((link) => (
               <Link
                 key={link.href}

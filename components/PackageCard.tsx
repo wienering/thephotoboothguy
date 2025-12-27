@@ -54,7 +54,7 @@ export default function PackageCard({
         <ul className="space-y-4 mb-10">
           {features.map((feature, index) => (
             <li key={index} className="flex items-start">
-              <span className="text-black mr-4 mt-1 font-light">—</span>
+              <span className="text-black mr-4 mt-1 font-light">-</span>
               <span className="text-gray-700 leading-relaxed">{feature}</span>
             </li>
           ))}

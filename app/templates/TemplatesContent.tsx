@@ -55,22 +55,22 @@ export default function TemplatesContent() {
     {
       icon: '🎨',
       title: 'Color Matching',
-      description: 'We match your template colors to your event theme perfectly',
+      description: 'We\'ll match the colors to fit your event theme',
     },
     {
       icon: '✏️',
       title: 'Custom Text',
-      description: 'Add your event name, date, or personalized messages',
+      description: 'We can add your event name, date, or any message you want',
     },
     {
       icon: '🖼️',
       title: 'Logo Integration',
-      description: 'Include your company or event logo seamlessly',
+      description: 'We can add your company or event logo to the template',
     },
     {
       icon: '🎭',
       title: 'Theme Design',
-      description: 'Create templates that match any theme or style',
+      description: 'We can make templates that work with any theme or style you have in mind',
     },
   ];
 
@@ -78,22 +78,22 @@ export default function TemplatesContent() {
     {
       number: '1',
       title: 'Share Your Vision',
-      description: 'Tell us about your event theme, colors, and style preferences',
+      description: 'Just tell us about your event theme, colors, and what style you like',
     },
     {
       number: '2',
       title: 'Design Creation',
-      description: 'Our team creates a custom template that perfectly matches your event',
+      description: 'We\'ll create a custom template that fits your event perfectly',
     },
     {
       number: '3',
       title: 'Review & Approve',
-      description: 'Review the design and request any adjustments before your event',
+      description: 'Take a look at the design and let us know if you want any changes',
     },
     {
       number: '4',
       title: 'Enjoy Your Event',
-      description: 'Your custom template is ready to use at your event',
+      description: 'Your custom template will be all set for your event',
     },
   ];
 
@@ -102,53 +102,44 @@ export default function TemplatesContent() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="w-full py-32 bg-black text-white"
+        className="w-full py-20 bg-black text-white"
       >
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-7xl font-light mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
               Custom Photo Templates
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed font-light">
-              Personalized photo templates that make your event photos truly
-              unique. Every design is crafted to match your event&apos;s theme and
-              style.
+              We create custom photo templates that match your event perfectly. Each design is made just for you.
             </p>
           </div>
         </div>
       </section>
 
       {/* Template Gallery */}
-      <section ref={galleryRef} className="w-full py-32 bg-white">
+      <section ref={galleryRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="mb-20">
-            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-4 leading-tight">
               Template Gallery
             </h2>
-            <p className="text-lg text-gray-600 font-light">
-              Browse our collection of stunning template designs
-            </p>
           </div>
           <Gallery images={templateImages} columns={3} />
-          <div className="mt-12">
-            <p className="text-gray-600 font-light text-lg">
-              Don&apos;t see exactly what you&apos;re looking for? We can create
-              a completely custom design just for you!
+          <div className="mt-8">
+            <p className="text-gray-600 font-light">
+              Don't see what you need? We can design something completely custom for your event.
             </p>
           </div>
         </div>
       </section>
 
       {/* Customization Info */}
-      <section ref={customizationRef} className="w-full py-32 bg-gray-50">
+      <section ref={customizationRef} className="w-full py-20 bg-gray-50">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="mb-20">
-            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
-              Endless Customization Options
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-4 leading-tight">
+              Customization Options
             </h2>
-            <p className="text-lg text-gray-600 font-light">
-              Make your template uniquely yours with our customization features
-            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {customizationOptions.map((option, index) => (
@@ -170,15 +161,12 @@ export default function TemplatesContent() {
       </section>
 
       {/* Design Process */}
-      <section ref={processRef} className="w-full py-32 bg-white">
+      <section ref={processRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="mb-20">
-            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-4 leading-tight">
               Our Design Process
             </h2>
-            <p className="text-lg text-gray-600 font-light">
-              Simple steps to get your perfect custom template
-            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {processSteps.map((step, index) => (
@@ -200,15 +188,14 @@ export default function TemplatesContent() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-32 bg-black text-white">
+      <section className="w-full py-20 bg-black text-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
-            <h2 className="text-5xl md:text-7xl font-light mb-8 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
               Ready for a Custom Template?
             </h2>
-            <p className="text-xl mb-12 text-gray-300 max-w-2xl leading-relaxed font-light">
-              Let&apos;s work together to create the perfect template for your
-              event
+            <p className="text-lg mb-8 text-gray-300 max-w-2xl leading-relaxed font-light">
+              Let\'s work together to create the perfect template for your event
             </p>
             <Link
               href="/contact"
