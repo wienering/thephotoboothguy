@@ -21,41 +21,53 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-black text-white overflow-hidden"
     >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse delay-1000"></div>
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+          backgroundSize: '40px 40px'
+        }}></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-4xl mx-auto">
+      {/* Large text background element */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-[0.02]">
+        <h1 className="text-[20rem] font-black tracking-tighter select-none">PHOTO</h1>
+      </div>
+
+      <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+        <div className="max-w-5xl">
+          <div className="mb-6">
+            <span className="text-sm uppercase tracking-[0.2em] text-gray-400 font-medium">
+              Toronto&apos;s Premier Photo Booth Experience
+            </span>
+          </div>
           <h1
             ref={titleRef}
-            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+            className="text-6xl md:text-8xl lg:text-9xl font-light mb-8 leading-[0.95] tracking-tight"
           >
-            Create Unforgettable
-            <span className="block text-yellow-300">Memories</span>
+            Create
+            <span className="block font-normal mt-2">Unforgettable</span>
+            <span className="block font-light">Memories</span>
           </h1>
           <p
             ref={subtitleRef}
-            className="text-xl md:text-2xl mb-8 text-gray-100 max-w-2xl mx-auto"
+            className="text-lg md:text-xl mb-12 text-gray-300 max-w-2xl leading-relaxed font-light"
           >
-            Toronto&apos;s premier photo booth experience. Professional
-            equipment, stunning backdrops, and custom templates that make your
-            event truly special.
+            Professional equipment, stunning backdrops, and custom templates 
+            that transform your event into an extraordinary experience.
           </p>
-          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/contact"
-              className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 hover:text-blue-900 transition-all duration-300 transform hover:scale-105 shadow-xl"
+              className="inline-flex items-center justify-center bg-white text-black px-10 py-5 text-base font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
             >
               Book Your Event
             </Link>
             <Link
               href="/equipment"
-              className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center justify-center border border-white text-white px-10 py-5 text-base font-medium hover:bg-white hover:text-black transition-all duration-300 uppercase tracking-wider"
             >
               View Equipment
             </Link>
@@ -64,20 +76,22 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-xs uppercase tracking-widest text-gray-500">Scroll</span>
+          <svg
+            className="w-5 h-5 text-gray-500 animate-bounce"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.5"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
       </div>
     </section>
   );
 }
-

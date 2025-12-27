@@ -113,14 +113,14 @@ export default function HomeContent() {
       <Hero />
 
       {/* Trust Indicators */}
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="w-full py-16 bg-white border-b border-gray-100">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center">
-            <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="flex items-center justify-center gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
                 <svg
                   key={i}
-                  className="w-8 h-8 text-yellow-400"
+                  className="w-6 h-6 text-black"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -128,7 +128,7 @@ export default function HomeContent() {
                 </svg>
               ))}
             </div>
-            <p className="text-xl text-gray-700 font-semibold">
+            <p className="text-sm uppercase tracking-[0.2em] text-gray-600 font-medium">
               Rated 5 Stars by Our Clients
             </p>
           </div>
@@ -136,13 +136,13 @@ export default function HomeContent() {
       </section>
 
       {/* About Section */}
-      <section ref={aboutRef} className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      <section ref={aboutRef} className="w-full py-32 bg-white">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-4xl">
+            <h2 className="text-5xl md:text-7xl font-light text-black mb-8 leading-tight">
               Our Mission
             </h2>
-            <p className="text-xl text-gray-700 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light max-w-3xl">
               To provide the very best in customer service and the most fun and
               memorable experience for you and your guests. We believe every
               event deserves to be extraordinary, and we&apos;re here to make that
@@ -154,18 +154,22 @@ export default function HomeContent() {
       </section>
 
       {/* Packages Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      <section className="w-full py-32 bg-gray-50">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="mb-20">
+            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
               Package Pricing
             </h2>
-            <p className="text-xl text-gray-600">
-              Budget-friendly packages starting at $700 for 3 hours of fun
-            </p>
-            <p className="text-lg text-gray-500 mt-2">NO HIDDEN FEES</p>
+            <div className="mt-6">
+              <p className="text-lg text-gray-600 font-light">
+                Budget-friendly packages starting at $700 for 3 hours of fun
+              </p>
+              <p className="text-sm uppercase tracking-wider text-gray-500 mt-2 font-medium">
+                NO HIDDEN FEES
+              </p>
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {packages.map((pkg, index) => (
               <PackageCard key={index} {...pkg} />
             ))}
@@ -174,27 +178,31 @@ export default function HomeContent() {
       </section>
 
       {/* Features Section */}
-      <section ref={featuresRef} className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      <section ref={featuresRef} className="w-full py-32 bg-white">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="mb-20">
+            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
               Why Choose Us
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-600 font-light max-w-2xl">
               Everything you need for an unforgettable photo booth experience
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="text-center p-6 rounded-xl bg-gray-50 hover:bg-blue-50 transition-colors duration-300"
+                className="group"
               >
-                <div className="text-5xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <div className="text-4xl mb-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                  {feature.icon}
+                </div>
+                <h3 className="text-2xl font-light text-black mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-gray-600 leading-relaxed font-light">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
@@ -202,17 +210,17 @@ export default function HomeContent() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      <section className="w-full py-32 bg-black text-white">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="mb-20">
+            <h2 className="text-5xl md:text-7xl font-light mb-4 leading-tight">
               What Our Clients Say
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-400 font-light">
               Don&apos;t just take our word for it
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <Testimonial key={index} {...testimonial} />
             ))}
@@ -221,32 +229,33 @@ export default function HomeContent() {
       </section>
 
       {/* Final CTA Section */}
-      <section ref={ctaRef} className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Make Your Event Unforgettable?
-          </h2>
-          <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
-            Book your photo booth rental today and let us help you create
-            memories that will last a lifetime.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 hover:text-blue-900 transition-all duration-300 transform hover:scale-105 shadow-xl"
-            >
-              Book Now
-            </Link>
-            <Link
-              href="/equipment"
-              className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105"
-            >
-              Learn More
-            </Link>
+      <section ref={ctaRef} className="w-full py-32 bg-white">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-4xl">
+            <h2 className="text-5xl md:text-7xl font-light text-black mb-8 leading-tight">
+              Ready to Make Your Event Unforgettable?
+            </h2>
+            <p className="text-xl text-gray-700 mb-12 leading-relaxed font-light max-w-2xl">
+              Book your photo booth rental today and let us help you create
+              memories that will last a lifetime.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center bg-black text-white px-10 py-5 text-base font-medium hover:bg-gray-900 transition-all duration-300 uppercase tracking-wider"
+              >
+                Book Now
+              </Link>
+              <Link
+                href="/equipment"
+                className="inline-flex items-center justify-center border border-black text-black px-10 py-5 text-base font-medium hover:bg-black hover:text-white transition-all duration-300 uppercase tracking-wider"
+              >
+                Learn More
+              </Link>
+            </div>
           </div>
         </div>
       </section>
     </div>
   );
 }
-

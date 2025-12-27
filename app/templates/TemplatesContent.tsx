@@ -18,7 +18,6 @@ export default function TemplatesContent() {
     if (customizationRef.current) revealOnScroll(customizationRef.current);
   }, []);
 
-  // Placeholder images - replace with actual template images
   const templateImages = [
     {
       src: '/api/placeholder/400/400',
@@ -103,34 +102,36 @@ export default function TemplatesContent() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="py-32 bg-gradient-to-br from-purple-600 to-pink-600 text-white"
+        className="w-full py-32 bg-black text-white"
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Custom Photo Templates
-          </h1>
-          <p className="text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto">
-            Personalized photo templates that make your event photos truly
-            unique. Every design is crafted to match your event&apos;s theme and
-            style.
-          </p>
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl md:text-7xl font-light mb-6 leading-tight">
+              Custom Photo Templates
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed font-light">
+              Personalized photo templates that make your event photos truly
+              unique. Every design is crafted to match your event&apos;s theme and
+              style.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Template Gallery */}
-      <section ref={galleryRef} className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      <section ref={galleryRef} className="w-full py-32 bg-white">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="mb-20">
+            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
               Template Gallery
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-600 font-light">
               Browse our collection of stunning template designs
             </p>
           </div>
           <Gallery images={templateImages} columns={3} />
-          <div className="text-center mt-8">
-            <p className="text-gray-600 mb-4">
+          <div className="mt-12">
+            <p className="text-gray-600 font-light text-lg">
               Don&apos;t see exactly what you&apos;re looking for? We can create
               a completely custom design just for you!
             </p>
@@ -139,27 +140,29 @@ export default function TemplatesContent() {
       </section>
 
       {/* Customization Info */}
-      <section ref={customizationRef} className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      <section ref={customizationRef} className="w-full py-32 bg-gray-50">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="mb-20">
+            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
               Endless Customization Options
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-600 font-light">
               Make your template uniquely yours with our customization features
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {customizationOptions.map((option, index) => (
               <div
                 key={index}
-                className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
+                className="group"
               >
-                <div className="text-5xl mb-4">{option.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <div className="text-4xl mb-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                  {option.icon}
+                </div>
+                <h3 className="text-2xl font-light text-black mb-3">
                   {option.title}
                 </h3>
-                <p className="text-gray-600">{option.description}</p>
+                <p className="text-gray-600 leading-relaxed font-light">{option.description}</p>
               </div>
             ))}
           </div>
@@ -167,29 +170,29 @@ export default function TemplatesContent() {
       </section>
 
       {/* Design Process */}
-      <section ref={processRef} className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      <section ref={processRef} className="w-full py-32 bg-white">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="mb-20">
+            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
               Our Design Process
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-600 font-light">
               Simple steps to get your perfect custom template
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {processSteps.map((step, index) => (
               <div
                 key={index}
-                className="relative bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 border-l-4 border-purple-600"
+                className="relative border-l-2 border-black pl-8 py-4"
               >
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
+                <div className="absolute -left-4 top-4 w-8 h-8 bg-black text-white flex items-center justify-center text-sm font-medium">
                   {step.number}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 mt-4">
+                <h3 className="text-2xl font-light text-black mb-4">
                   {step.title}
                 </h3>
-                <p className="text-gray-700">{step.description}</p>
+                <p className="text-gray-700 leading-relaxed font-light">{step.description}</p>
               </div>
             ))}
           </div>
@@ -197,24 +200,25 @@ export default function TemplatesContent() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready for a Custom Template?
-          </h2>
-          <p className="text-xl mb-8 text-purple-100 max-w-2xl mx-auto">
-            Let&apos;s work together to create the perfect template for your
-            event
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 hover:text-purple-900 transition-all duration-300 transform hover:scale-105 shadow-xl"
-          >
-            Request Custom Template
-          </Link>
+      <section className="w-full py-32 bg-black text-white">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-4xl">
+            <h2 className="text-5xl md:text-7xl font-light mb-8 leading-tight">
+              Ready for a Custom Template?
+            </h2>
+            <p className="text-xl mb-12 text-gray-300 max-w-2xl leading-relaxed font-light">
+              Let&apos;s work together to create the perfect template for your
+              event
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center bg-white text-black px-10 py-5 text-base font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
+            >
+              Request Custom Template
+            </Link>
+          </div>
         </div>
       </section>
     </div>
   );
 }
-

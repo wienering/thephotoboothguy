@@ -87,55 +87,47 @@ export default function EquipmentContent() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="py-32 bg-gradient-to-br from-blue-600 to-purple-600 text-white"
+        className="w-full py-32 bg-black text-white"
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Professional Equipment
-          </h1>
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-            State-of-the-art photo booth technology designed to deliver
-            exceptional results at every event
-          </p>
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl md:text-7xl font-light mb-6 leading-tight">
+              Professional Equipment
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed font-light">
+              State-of-the-art photo booth technology designed to deliver
+              exceptional results at every event
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Equipment Showcase */}
-      <section ref={showcaseRef} className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      <section ref={showcaseRef} className="w-full py-32 bg-white">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="mb-20">
+            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
               Our Equipment
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-600 font-light">
               Professional-grade technology for professional results
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {equipmentItems.map((item, index) => (
               <div
                 key={index}
-                className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300"
+                className="border border-gray-200 p-10 hover:border-black transition-colors duration-300"
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                <h3 className="text-3xl font-light text-black mb-4">
                   {item.title}
                 </h3>
-                <p className="text-gray-700 mb-4">{item.description}</p>
-                <ul className="space-y-2">
+                <p className="text-gray-700 mb-6 leading-relaxed font-light">{item.description}</p>
+                <ul className="space-y-3">
                   {item.specs.map((spec, i) => (
                     <li key={i} className="flex items-start">
-                      <svg
-                        className="w-5 h-5 text-blue-600 mr-2 flex-shrink-0 mt-0.5"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span className="text-gray-600">{spec}</span>
+                      <span className="text-black mr-4 mt-1 font-light">—</span>
+                      <span className="text-gray-600 leading-relaxed">{spec}</span>
                     </li>
                   ))}
                 </ul>
@@ -146,27 +138,29 @@ export default function EquipmentContent() {
       </section>
 
       {/* Technology Highlights */}
-      <section ref={techRef} className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      <section ref={techRef} className="w-full py-32 bg-gray-50">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="mb-20">
+            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
               Technology Highlights
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-600 font-light">
               Cutting-edge features that set us apart
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {techHighlights.map((highlight, index) => (
               <div
                 key={index}
-                className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
+                className="group"
               >
-                <div className="text-5xl mb-4">{highlight.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <div className="text-4xl mb-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                  {highlight.icon}
+                </div>
+                <h3 className="text-2xl font-light text-black mb-3">
                   {highlight.title}
                 </h3>
-                <p className="text-gray-600">{highlight.description}</p>
+                <p className="text-gray-600 leading-relaxed font-light">{highlight.description}</p>
               </div>
             ))}
           </div>
@@ -174,26 +168,26 @@ export default function EquipmentContent() {
       </section>
 
       {/* Why Our Equipment */}
-      <section ref={benefitsRef} className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      <section ref={benefitsRef} className="w-full py-32 bg-white">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="mb-20">
+            <h2 className="text-5xl md:text-7xl font-light text-black mb-4 leading-tight">
               Why Our Equipment Matters
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-600 font-light">
               Professional equipment makes all the difference
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8 border-l-4 border-blue-600"
+                className="border-l-2 border-black pl-8 py-4"
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                <h3 className="text-3xl font-light text-black mb-4">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-700">{benefit.description}</p>
+                <p className="text-gray-700 leading-relaxed font-light">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -201,23 +195,24 @@ export default function EquipmentContent() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Experience the Difference
-          </h2>
-          <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
-            See our professional equipment in action at your next event
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 hover:text-blue-900 transition-all duration-300 transform hover:scale-105 shadow-xl"
-          >
-            Book Your Event
-          </Link>
+      <section className="w-full py-32 bg-black text-white">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-4xl">
+            <h2 className="text-5xl md:text-7xl font-light mb-8 leading-tight">
+              Experience the Difference
+            </h2>
+            <p className="text-xl mb-12 text-gray-300 max-w-2xl leading-relaxed font-light">
+              See our professional equipment in action at your next event
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center bg-white text-black px-10 py-5 text-base font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
+            >
+              Book Your Event
+            </Link>
+          </div>
         </div>
       </section>
     </div>
   );
 }
-

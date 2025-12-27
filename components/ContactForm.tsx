@@ -45,7 +45,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
+          <label htmlFor="name" className="block text-sm uppercase tracking-wider text-gray-700 mb-2 font-medium">
             Name *
           </label>
           <input
@@ -55,12 +55,12 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 border border-gray-300 focus:border-black focus:outline-none transition-colors bg-white"
             placeholder="Your name"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+          <label htmlFor="email" className="block text-sm uppercase tracking-wider text-gray-700 mb-2 font-medium">
             Email *
           </label>
           <input
@@ -70,14 +70,14 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 border border-gray-300 focus:border-black focus:outline-none transition-colors bg-white"
             placeholder="your@email.com"
           />
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
+          <label htmlFor="phone" className="block text-sm uppercase tracking-wider text-gray-700 mb-2 font-medium">
             Phone *
           </label>
           <input
@@ -87,12 +87,12 @@ export default function ContactForm() {
             required
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 border border-gray-300 focus:border-black focus:outline-none transition-colors bg-white"
             placeholder="(647) 555-1234"
           />
         </div>
         <div>
-          <label htmlFor="eventDate" className="block text-gray-700 font-medium mb-2">
+          <label htmlFor="eventDate" className="block text-sm uppercase tracking-wider text-gray-700 mb-2 font-medium">
             Event Date *
           </label>
           <input
@@ -102,43 +102,42 @@ export default function ContactForm() {
             required
             value={formData.eventDate}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 border border-gray-300 focus:border-black focus:outline-none transition-colors bg-white"
           />
         </div>
       </div>
       <div>
-        <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
+        <label htmlFor="message" className="block text-sm uppercase tracking-wider text-gray-700 mb-2 font-medium">
           Message *
         </label>
         <textarea
           id="message"
           name="message"
           required
-          rows={5}
+          rows={6}
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+          className="w-full px-4 py-3 border border-gray-300 focus:border-black focus:outline-none transition-colors resize-none bg-white"
           placeholder="Tell us about your event..."
         />
       </div>
       {submitStatus === 'success' && (
-        <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg">
-          Thank you! We&apos;ll get back to you within 24 hours.
+        <div className="bg-gray-50 border border-gray-200 p-4">
+          <p className="text-gray-700 font-light">Thank you! We&apos;ll get back to you within 24 hours.</p>
         </div>
       )}
       {submitStatus === 'error' && (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg">
-          Something went wrong. Please try again or call us directly.
+        <div className="bg-gray-50 border border-red-200 p-4">
+          <p className="text-red-700 font-light">Something went wrong. Please try again or call us directly.</p>
         </div>
       )}
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-blue-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-black text-white py-4 px-6 font-medium text-sm uppercase tracking-wider hover:bg-gray-900 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </button>
     </form>
   );
 }
-

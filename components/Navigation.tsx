@@ -37,32 +37,40 @@ export default function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-transparent'
+        scrolled ? 'bg-white border-b border-gray-200' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link href="/" className="nav-item">
-            <span className="text-2xl font-bold text-gray-900">
+            <span className={`text-xl font-light tracking-wider transition-colors ${
+              scrolled ? 'text-black' : 'text-white'
+            }`}>
               The Photo Booth Guy
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-12">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="nav-item text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                className={`nav-item text-sm uppercase tracking-wider font-medium transition-colors duration-200 ${
+                  scrolled ? 'text-gray-700 hover:text-black' : 'text-white/80 hover:text-white'
+                }`}
               >
                 {link.name}
               </Link>
             ))}
             <Link
               href="/contact"
-              className="nav-item bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200 font-medium"
+              className={`nav-item border px-6 py-2 text-sm uppercase tracking-wider font-medium transition-all duration-200 ${
+                scrolled 
+                  ? 'border-black text-black hover:bg-black hover:text-white' 
+                  : 'border-white text-white hover:bg-white hover:text-black'
+              }`}
             >
               Book Now
             </Link>
@@ -70,7 +78,9 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden nav-item text-gray-900 focus:outline-none"
+            className={`md:hidden nav-item focus:outline-none transition-colors ${
+              scrolled ? 'text-black' : 'text-white'
+            }`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -79,7 +89,7 @@ export default function Navigation() {
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth="2"
+              strokeWidth="1.5"
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
@@ -94,12 +104,14 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 space-y-4">
+          <div className="md:hidden py-6 space-y-4 border-t border-gray-200">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium py-2"
+                className={`block text-sm uppercase tracking-wider font-medium py-2 transition-colors ${
+                  scrolled ? 'text-gray-700 hover:text-black' : 'text-white hover:text-white/80'
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
@@ -107,7 +119,11 @@ export default function Navigation() {
             ))}
             <Link
               href="/contact"
-              className="block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200 font-medium text-center"
+              className={`block border text-center px-6 py-3 text-sm uppercase tracking-wider font-medium transition-all ${
+                scrolled 
+                  ? 'border-black text-black hover:bg-black hover:text-white' 
+                  : 'border-white text-white hover:bg-white hover:text-black'
+              }`}
               onClick={() => setIsOpen(false)}
             >
               Book Now
@@ -118,4 +134,3 @@ export default function Navigation() {
     </nav>
   );
 }
-
