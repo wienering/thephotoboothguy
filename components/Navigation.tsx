@@ -27,13 +27,13 @@ export default function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white border-b border-gray-200' : 'bg-transparent'
+        scrolled ? 'bg-white border-b border-gray-200' : 'bg-white'
       }`}
     >
       <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className={`text-lg font-light tracking-wider transition-colors ${
-            scrolled ? 'text-black' : 'text-white'
+            scrolled ? 'text-black' : 'text-black'
           }`}>
             The Photo Booth Guy
           </Link>
@@ -44,7 +44,7 @@ export default function Navigation() {
                 key={link.href}
                 href={link.href}
                 className={`px-3 py-2 text-xs uppercase tracking-wider font-medium transition-colors ${
-                  scrolled ? 'text-gray-700 hover:text-black' : 'text-white/80 hover:text-white'
+                  scrolled ? 'text-gray-700 hover:text-black' : 'text-gray-700 hover:text-black'
                 }`}
               >
                 {link.name}
@@ -55,7 +55,7 @@ export default function Navigation() {
               className={`border px-5 py-2 text-xs uppercase tracking-wider font-medium transition-all ml-2 ${
                 scrolled 
                   ? 'border-black text-black hover:bg-black hover:text-white' 
-                  : 'border-white text-white hover:bg-white hover:text-black'
+                  : 'border-black text-black hover:bg-black hover:text-white'
               }`}
             >
               Book Now
@@ -64,7 +64,7 @@ export default function Navigation() {
 
           <button
             className={`md:hidden focus:outline-none transition-colors ${
-              scrolled ? 'text-black' : 'text-white'
+              scrolled ? 'text-black' : 'text-black'
             }`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
@@ -93,9 +93,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`block text-sm uppercase tracking-wider font-medium py-2 transition-colors ${
-                  scrolled ? 'text-gray-700 hover:text-black' : 'text-white hover:text-white/80'
-                }`}
+                className="block text-sm uppercase tracking-wider font-medium py-2 transition-colors text-gray-700 hover:text-black"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
@@ -103,11 +101,7 @@ export default function Navigation() {
             ))}
             <Link
               href="/contact"
-              className={`block border text-center px-6 py-3 text-sm uppercase tracking-wider font-medium transition-all ${
-                scrolled 
-                  ? 'border-black text-black hover:bg-black hover:text-white' 
-                  : 'border-white text-white hover:bg-white hover:text-black'
-              }`}
+              className="block border text-center px-6 py-3 text-sm uppercase tracking-wider font-medium transition-all border-black text-black hover:bg-black hover:text-white"
               onClick={() => setIsOpen(false)}
             >
               Book Now
