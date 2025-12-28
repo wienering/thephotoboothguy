@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { getEasternYear } from '@/lib/timezone';
 
 export default function Footer() {
   return (
@@ -110,7 +111,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-900 pt-8">
           <p className="text-gray-500 text-sm font-light text-center">
-            &copy; {new Date().getFullYear()} The Photobooth Guy. All rights
+            &copy; {getEasternYear()} The Photobooth Guy. All rights
             reserved.
           </p>
         </div>

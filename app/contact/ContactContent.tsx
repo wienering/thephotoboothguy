@@ -3,6 +3,7 @@
 import { useEffect, useRef, useMemo } from 'react';
 import ContactForm from '@/components/ContactForm';
 import { revealOnScroll } from '@/lib/gsap';
+import { getEasternDayOfWeek } from '@/lib/timezone';
 
 export default function ContactContent() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -27,7 +28,7 @@ export default function ContactContent() {
       { name: 'Saturday', hours: '7 a.m.–11:30 p.m.' },
     ];
 
-    const today = new Date().getDay(); // 0 = Sunday, 1 = Monday, etc.
+    const today = getEasternDayOfWeek(); // 0 = Sunday, 1 = Monday, etc. (Eastern Time)
     const currentDayName = days[today].name;
 
     // Reorder so current day is first
