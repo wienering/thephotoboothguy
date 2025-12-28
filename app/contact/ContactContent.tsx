@@ -154,7 +154,7 @@ export default function ContactContent() {
                   })}
                 </div>
                 <p className="mt-6 text-gray-600 font-light">
-                  We do events any day of the week, including evenings and weekends.
+                  We do events every day of the week, including evenings and weekends. Let's book your event today!
                 </p>
               </div>
             </div>
