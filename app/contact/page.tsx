@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import ContactContent from './ContactContent';
 import SchemaMarkup from '@/components/SchemaMarkup';
-import { contactPageSchema, localBusinessSchema } from '@/lib/schema';
+import { contactPageSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Contact Us - The Photobooth Guy | Toronto Photo Booth Rental',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <>
-      <SchemaMarkup schema={[contactPageSchema, localBusinessSchema]} />
+      <SchemaMarkup schema={contactPageSchema} />
       <ContactContent />
     </>
   );

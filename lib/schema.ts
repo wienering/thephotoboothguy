@@ -1,13 +1,12 @@
 // Schema markup utilities for The Photobooth Guy
 
-export const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+const localBusinessData = {
   "name": "The Photobooth Guy",
-  "description": "Professional photo booth rental services in Toronto. Premium equipment, custom templates, stunning backdrops, and exceptional service for your events.",
+  "image": "https://www.thephotoboothguy.ca/logo.jpg",
   "url": "https://www.thephotoboothguy.ca",
   "telephone": "647-378-5332",
   "email": "info@photoboothguys.ca",
+  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "340 Mill Rd.",
@@ -16,36 +15,43 @@ export const localBusinessSchema = {
     "postalCode": "M9C 1Y8",
     "addressCountry": "CA"
   },
-  "areaServed": {
-    "@type": "City",
-    "name": "Toronto"
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.655,
+    "longitude": -79.577
   },
-  "priceRange": "$$",
-  "image": "https://www.thephotoboothguy.ca/logo.jpg"
+  "areaServed": [
+    { "@type": "City", "name": "Toronto" },
+    { "@type": "City", "name": "Mississauga" },
+    { "@type": "City", "name": "Brampton" },
+    { "@type": "City", "name": "Vaughan" }
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "07:00",
+    "closes": "23:30"
+  }
+};
+
+export const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  ...localBusinessData
 };
 
 export const localBusinessWithRatingSchema = (ratingValue: number = 5, reviewCount: number = 50) => ({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "The Photobooth Guy",
-  "description": "Professional photo booth rental services in Toronto. Premium equipment, custom templates, stunning backdrops, and exceptional service for your events.",
-  "url": "https://www.thephotoboothguy.ca",
-  "telephone": "647-378-5332",
-  "email": "info@photoboothguys.ca",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "340 Mill Rd.",
-    "addressLocality": "Etobicoke",
-    "addressRegion": "ON",
-    "postalCode": "M9C 1Y8",
-    "addressCountry": "CA"
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": "Toronto"
-  },
-  "priceRange": "$$",
-  "image": "https://www.thephotoboothguy.ca/logo.jpg",
+  ...localBusinessData,
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": ratingValue.toString(),
@@ -59,18 +65,7 @@ export const localBusinessWithRatingSchema = (ratingValue: number = 5, reviewCou
 export const aggregateRatingSchema = (ratingValue: number = 5, reviewCount: number = 50) => ({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "The Photobooth Guy",
-  "telephone": "647-378-5332",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "340 Mill Rd.",
-    "addressLocality": "Etobicoke",
-    "addressRegion": "ON",
-    "postalCode": "M9C 1Y8",
-    "addressCountry": "CA"
-  },
-  "priceRange": "$$",
-  "image": "https://www.thephotoboothguy.ca/logo.jpg",
+  ...localBusinessData,
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": ratingValue.toString(),
@@ -85,16 +80,7 @@ export const reviewSchema = (author: string, reviewBody: string, ratingValue: nu
   "@type": "Review",
   "itemReviewed": {
     "@type": "LocalBusiness",
-    "name": "The Photobooth Guy",
-    "telephone": "647-378-5332",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Toronto",
-      "addressRegion": "ON",
-      "addressCountry": "CA"
-    },
-    "priceRange": "$$",
-    "image": "https://www.thephotoboothguy.ca/logo.jpg"
+    ...localBusinessData
   },
   "author": {
     "@type": "Person",
@@ -117,22 +103,14 @@ export const serviceSchema = (serviceName: string, description: string, price?: 
   "description": description,
   "provider": {
     "@type": "LocalBusiness",
-    "name": "The Photobooth Guy",
-    "url": "https://www.thephotoboothguy.ca",
-    "telephone": "647-378-5332",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Toronto",
-      "addressRegion": "ON",
-      "addressCountry": "CA"
-    },
-    "priceRange": "$$",
-    "image": "https://www.thephotoboothguy.ca/logo.jpg"
+    ...localBusinessData
   },
-  "areaServed": {
-    "@type": "City",
-    "name": "Toronto"
-  },
+  "areaServed": [
+    { "@type": "City", "name": "Toronto" },
+    { "@type": "City", "name": "Mississauga" },
+    { "@type": "City", "name": "Brampton" },
+    { "@type": "City", "name": "Vaughan" }
+  ],
   "serviceType": "Photo Booth Rental",
   ...(price && {
     "offers": {
@@ -149,18 +127,7 @@ export const contactPageSchema = {
   "@type": "ContactPage",
   "mainEntity": {
     "@type": "LocalBusiness",
-    "name": "The Photobooth Guy",
-    "telephone": "647-378-5332",
-    "email": "info@photoboothguys.ca",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Toronto",
-      "addressRegion": "ON",
-      "addressCountry": "CA"
-    },
-    "url": "https://www.thephotoboothguy.ca",
-    "priceRange": "$$",
-    "image": "https://www.thephotoboothguy.ca/logo.jpg"
+    ...localBusinessData
   }
 };
 
@@ -183,4 +150,3 @@ export const organizationSchema = {
     "https://www.instagram.com/photoboothguys.ca/"
   ]
 };
-
