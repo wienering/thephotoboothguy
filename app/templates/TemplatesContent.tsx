@@ -124,7 +124,25 @@ export default function TemplatesContent() {
               Template Gallery
             </h2>
           </div>
-          <Gallery images={templateImages} columns={3} />
+          
+          {/* Template Embed */}
+          <div className="mb-12 w-full overflow-hidden rounded-lg shadow-lg">
+            <iframe
+              srcdoc="Loading..."
+              onLoad={(e) => {
+                const target = e.target as HTMLIFrameElement;
+                target.removeAttribute('srcdoc');
+              }}
+              src="https://templatesbooth.com/widget-embed/?key=NDQ3NQ%3D%3D"
+              scrolling="yes"
+              width="100%"
+              height="2200px"
+              frameBorder="0"
+              className="w-full"
+              style={{ minHeight: '2200px' }}
+            />
+          </div>
+          
           <div className="mt-8">
             <p className="text-gray-600 font-light">
               Don't see what you need? We can design something completely custom for your event.

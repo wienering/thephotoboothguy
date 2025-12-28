@@ -15,7 +15,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-6">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/photoboothguys.toronto"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -26,7 +26,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/photoboothguys.ca/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -99,8 +99,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="pt-2 text-sm">
-                <p>Toronto, Ontario</p>
-                <p>and surrounding areas</p>
+                <p>GTA</p>
               </li>
             </ul>
           </div>

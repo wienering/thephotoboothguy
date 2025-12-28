@@ -115,8 +115,8 @@ export const organizationSchema = {
     "availableLanguage": "English"
   },
   "sameAs": [
-    "https://www.facebook.com/thephotoboothguy",
-    "https://www.instagram.com/thephotoboothguy"
+    "https://www.facebook.com/photoboothguys.toronto",
+    "https://www.instagram.com/photoboothguys.ca/"
   ]
 };
 

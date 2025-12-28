@@ -81,7 +81,7 @@ export default function ContactContent() {
                       Service Area
                     </h3>
                     <p className="text-xl text-gray-700 font-light">
-                      Toronto, Ontario and surrounding areas
+                      GTA
                     </p>
                   </div>
                 </div>
