@@ -128,7 +128,7 @@ export default function TemplatesContent() {
           {/* Template Embed */}
           <div className="mb-12 w-full overflow-hidden rounded-lg shadow-lg">
             <iframe
-              srcdoc="Loading..."
+              srcDoc="Loading..."
               onLoad={(e) => {
                 const target = e.target as HTMLIFrameElement;
                 target.removeAttribute('srcdoc');
