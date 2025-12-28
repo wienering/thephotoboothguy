@@ -88,3 +88,38 @@ export function formatEasternDate(date: Date): string {
   });
 }
 
+/**
+ * Format current date and time in Eastern Time for emails
+ * Returns a formatted string like "January 15, 2024 at 2:30 PM EST"
+ */
+export function formatEasternDateTime(): string {
+  const now = new Date();
+  return now.toLocaleString('en-US', {
+    timeZone: 'America/Toronto',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+    timeZoneName: 'short'
+  });
+}
+
+/**
+ * Format a date/time string in Eastern Time
+ * Returns a formatted string like "January 15, 2024 at 2:30 PM EST"
+ */
+export function formatEasternDateTimeString(date: Date): string {
+  return date.toLocaleString('en-US', {
+    timeZone: 'America/Toronto',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+    timeZoneName: 'short'
+  });
+}
+
