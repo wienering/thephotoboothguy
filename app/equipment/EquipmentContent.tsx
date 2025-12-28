@@ -87,7 +87,7 @@ export default function EquipmentContent() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="w-full py-32 bg-black text-white"
+        className="w-full pt-32 pb-20 bg-black text-white"
       >
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
@@ -113,12 +113,12 @@ export default function EquipmentContent() {
             {equipmentItems.map((item, index) => (
               <div
                 key={index}
-                className="border border-gray-200 p-10 hover:border-black transition-colors duration-300"
+                className="border border-gray-200 p-12 hover:border-black transition-colors duration-300"
               >
-                <h3 className="text-3xl font-light text-black mb-4">
+                <h3 className="text-3xl font-light text-black mb-6">
                   {item.title}
                 </h3>
-                <p className="text-gray-700 mb-6 leading-relaxed font-light">{item.description}</p>
+                <p className="text-gray-700 mb-8 leading-relaxed font-light">{item.description}</p>
                 <ul className="space-y-3">
                   {item.specs.map((spec, i) => (
                     <li key={i} className="flex items-start">
@@ -172,9 +172,9 @@ export default function EquipmentContent() {
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="border-l-2 border-black pl-8 py-4"
+                className="border-l-2 border-black pl-10 py-6"
               >
-                <h3 className="text-3xl font-light text-black mb-4">
+                <h3 className="text-3xl font-light text-black mb-6">
                   {benefit.title}
                 </h3>
                 <p className="text-gray-700 leading-relaxed font-light">{benefit.description}</p>

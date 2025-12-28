@@ -20,7 +20,7 @@ export default function ContactContent() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="w-full py-20 bg-black text-white"
+        className="w-full pt-32 pb-20 bg-black text-white"
       >
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
@@ -88,7 +88,7 @@ export default function ContactContent() {
               </div>
 
               {/* Response Time */}
-              <div className="border border-gray-200 p-8">
+              <div className="border border-gray-200 p-10">
                 <h3 className="text-xl font-light text-black mb-3">
                   Quick Response
                 </h3>
@@ -98,7 +98,7 @@ export default function ContactContent() {
               </div>
 
               {/* Business Hours */}
-              <div className="border border-gray-200 p-8">
+              <div className="border border-gray-200 p-10">
                 <h3 className="text-xl font-light text-black mb-4">
                   Business Hours
                 </h3>

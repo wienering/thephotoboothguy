@@ -61,13 +61,13 @@ export default function Hero() {
           <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center bg-white text-black px-10 py-5 text-base font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
+              className="inline-flex items-center justify-center bg-white text-black px-12 py-6 text-base font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
             >
               Book Your Event
             </Link>
             <a
               href="#pricing"
-              className="inline-flex items-center justify-center border border-white text-white px-10 py-5 text-base font-medium hover:bg-white hover:text-black transition-all duration-300 uppercase tracking-wider"
+              className="inline-flex items-center justify-center border border-white text-white px-12 py-6 text-base font-medium hover:bg-white hover:text-black transition-all duration-300 uppercase tracking-wider"
             >
               View Pricing
             </a>

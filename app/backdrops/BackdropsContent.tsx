@@ -94,7 +94,7 @@ export default function BackdropsContent() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="w-full py-20 bg-black text-white"
+        className="w-full pt-32 pb-20 bg-black text-white"
       >
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
@@ -132,12 +132,12 @@ export default function BackdropsContent() {
             {categories.map((category, index) => (
               <div
                 key={index}
-                className="border border-gray-200 p-10 hover:border-black transition-colors duration-300"
+                className="border border-gray-200 p-12 hover:border-black transition-colors duration-300"
               >
-                <h3 className="text-4xl font-light text-black mb-4">
+                <h3 className="text-4xl font-light text-black mb-6">
                   {category.name}
                 </h3>
-                <p className="text-gray-700 mb-6 leading-relaxed font-light">{category.description}</p>
+                <p className="text-gray-700 mb-8 leading-relaxed font-light">{category.description}</p>
                 <p className="text-black font-medium text-sm uppercase tracking-wider">
                   {category.count} available
                 </p>
@@ -151,7 +151,7 @@ export default function BackdropsContent() {
       <section ref={customRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
-            <div className="border border-gray-200 p-10">
+            <div className="border border-gray-200 p-12">
               <h2 className="text-3xl md:text-4xl font-light text-black mb-6">
                 Need Something Custom?
               </h2>

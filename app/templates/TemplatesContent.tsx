@@ -102,7 +102,7 @@ export default function TemplatesContent() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="w-full py-20 bg-black text-white"
+        className="w-full pt-32 pb-20 bg-black text-white"
       >
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
@@ -172,12 +172,12 @@ export default function TemplatesContent() {
             {processSteps.map((step, index) => (
               <div
                 key={index}
-                className="relative border-l-2 border-black pl-8 py-4"
+                className="relative border-l-2 border-black pl-10 py-6"
               >
                 <div className="absolute -left-4 top-4 w-8 h-8 bg-black text-white flex items-center justify-center text-sm font-medium">
                   {step.number}
                 </div>
-                <h3 className="text-2xl font-light text-black mb-4">
+                <h3 className="text-2xl font-light text-black mb-6">
                   {step.title}
                 </h3>
                 <p className="text-gray-700 leading-relaxed font-light">{step.description}</p>
