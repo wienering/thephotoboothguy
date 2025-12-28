@@ -34,6 +34,14 @@ export async function POST(request: Request) {
     const timestamp = new Date().toISOString().replace(/T/, ' ').substring(0, 19);
     const uniqueSubject = `New Booking Inquiry from ${name} - ${timestamp}`;
 
+    // Format the event date nicely
+    const formattedDate = new Date(eventDate).toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+
     // Send email
     const data = await resend.emails.send({
       from: 'The Photobooth Guy <contact@thephotoboothguy.ca>',
@@ -41,13 +49,52 @@ export async function POST(request: Request) {
       replyTo: email,
       subject: uniqueSubject,
       html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Event Date:</strong> ${eventDate}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <div style="background-color: #ffffff; border-radius: 8px; padding: 30px;">
+            <h1 style="color: #000000; font-size: 24px; font-weight: 300; margin-top: 0; margin-bottom: 20px;">New Booking Inquiry</h1>
+            
+            <p style="color: #666666; font-size: 16px; margin-bottom: 30px;">Hi there,</p>
+            
+            <p style="color: #333333; font-size: 16px; margin-bottom: 30px;">You've received a new inquiry through your website. Here are the details:</p>
+            
+            <div style="background-color: #f9f9f9; border-left: 3px solid #000000; padding: 20px; margin: 25px 0; border-radius: 4px;">
+              <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                  <td style="padding: 8px 0; color: #666666; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; width: 120px;">Name:</td>
+                  <td style="padding: 8px 0; color: #000000; font-size: 16px;">${name}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; color: #666666; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Email:</td>
+                  <td style="padding: 8px 0; color: #000000; font-size: 16px;"><a href="mailto:${email}" style="color: #000000; text-decoration: underline;">${email}</a></td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; color: #666666; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Phone:</td>
+                  <td style="padding: 8px 0; color: #000000; font-size: 16px;"><a href="tel:${phone}" style="color: #000000; text-decoration: underline;">${phone}</a></td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; color: #666666; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Event Date:</td>
+                  <td style="padding: 8px 0; color: #000000; font-size: 16px; font-weight: 500;">${formattedDate}</td>
+                </tr>
+              </table>
+            </div>
+            
+            <div style="margin: 30px 0;">
+              <p style="color: #666666; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px;">Message:</p>
+              <div style="background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 4px; padding: 20px; color: #333333; font-size: 16px; line-height: 1.8; white-space: pre-wrap;">${message.replace(/\n/g, '<br>')}</div>
+            </div>
+            
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+              <p style="color: #666666; font-size: 14px; margin: 0;">You can reply directly to this email to respond to ${name}.</p>
+            </div>
+          </div>
+        </body>
+        </html>
       `,
     });
 
