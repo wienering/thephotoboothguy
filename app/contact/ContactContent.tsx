@@ -26,7 +26,7 @@ export default function ContactContent() {
           <div className="max-w-4xl pt-16">
             <h1 className="text-4xl md:text-5xl font-light mb-6 leading-tight">Get In Touch</h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed font-light">
-              We\'d love to help make your event special. Get in touch and let\'s talk about what we can do for you.
+              We'd love to help make your event special. Get in touch and let's talk about what we can do for you.
             </p>
           </div>
         </div>
@@ -104,16 +104,32 @@ export default function ContactContent() {
                 </h3>
                 <div className="space-y-4 text-gray-700">
                   <p className="flex justify-between font-light">
-                    <span>Monday - Friday:</span>
-                    <span>9:00 AM - 8:00 PM</span>
-                  </p>
-                  <p className="flex justify-between font-light">
                     <span>Saturday:</span>
-                    <span>10:00 AM - 6:00 PM</span>
+                    <span>7 a.m.–11:30 p.m.</span>
                   </p>
                   <p className="flex justify-between font-light">
                     <span>Sunday:</span>
-                    <span>By Appointment</span>
+                    <span>7 a.m.–11:30 p.m.</span>
+                  </p>
+                  <p className="flex justify-between font-light">
+                    <span>Monday:</span>
+                    <span>7 a.m.–11:30 p.m.</span>
+                  </p>
+                  <p className="flex justify-between font-light">
+                    <span>Tuesday:</span>
+                    <span>7 a.m.–11:30 p.m.</span>
+                  </p>
+                  <p className="flex justify-between font-light">
+                    <span>Wednesday:</span>
+                    <span>7 a.m.–11:30 p.m.</span>
+                  </p>
+                  <p className="flex justify-between font-light">
+                    <span>Thursday:</span>
+                    <span>7 a.m.–11:30 p.m.</span>
+                  </p>
+                  <p className="flex justify-between font-light">
+                    <span>Friday:</span>
+                    <span>7 a.m.–11:30 p.m.</span>
                   </p>
                 </div>
                 <p className="mt-6 text-gray-600 font-light">

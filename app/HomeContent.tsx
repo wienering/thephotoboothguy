@@ -75,7 +75,7 @@ export default function HomeContent() {
     },
     {
       name: 'Cyrus',
-      text: 'Dennis\'s team was absolutely fantastic! The team was extremely responsive, competitively priced, and very professional. It was a pleasure being part of our event.',
+      text: "Dennis's team was absolutely fantastic! The team was extremely responsive, competitively priced, and very professional. It was a pleasure being part of our event.",
       rating: 5,
     },
   ];
@@ -125,7 +125,7 @@ export default function HomeContent() {
               Our Mission
             </h2>
             <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light max-w-3xl">
-              We\'re all about giving you and your guests an amazing experience. Every event should feel special, and that\'s exactly what we deliver with our professional setup, custom designs, and attention to detail.
+              We're all about giving you and your guests an amazing experience. Every event should feel special, and that's exactly what we deliver with our professional setup, custom designs, and attention to detail.
             </p>
           </div>
         </div>
@@ -226,7 +226,7 @@ export default function HomeContent() {
               Ready to Make Your Event Unforgettable?
             </h2>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed font-light max-w-2xl">
-              Get in touch today and let\'s make your event something people will remember.
+              Get in touch today and let's make your event something people will remember.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link

@@ -25,7 +25,7 @@ export default function EquipmentContent() {
     },
     {
       title: 'Dye-Sublimation Printer',
-      description: 'The printer we use makes colorful prints that dry instantly and won\'t smudge',
+      description: "The printer we use makes colorful prints that dry instantly and won't smudge",
       specs: ['4x6 and 2x6 print sizes', 'Waterproof prints', 'Instant drying technology'],
     },
     {
@@ -44,7 +44,7 @@ export default function EquipmentContent() {
     {
       icon: '📷',
       title: 'Camera Quality',
-      description: 'Professional cameras that take sharp, clear photos you\'ll want to frame',
+      description: "Professional cameras that take sharp, clear photos you'll want to frame",
     },
     {
       icon: '🖨️',

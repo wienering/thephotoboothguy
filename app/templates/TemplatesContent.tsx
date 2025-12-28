@@ -55,7 +55,7 @@ export default function TemplatesContent() {
     {
       icon: '🎨',
       title: 'Color Matching',
-      description: 'We\'ll match the colors to fit your event theme',
+      description: "We'll match the colors to fit your event theme",
     },
     {
       icon: '✏️',
@@ -83,7 +83,7 @@ export default function TemplatesContent() {
     {
       number: '2',
       title: 'Design Creation',
-      description: 'We\'ll create a custom template that fits your event perfectly',
+      description: "We'll create a custom template that fits your event perfectly",
     },
     {
       number: '3',
@@ -195,7 +195,7 @@ export default function TemplatesContent() {
               Ready for a Custom Template?
             </h2>
             <p className="text-lg mb-8 text-gray-300 max-w-2xl leading-relaxed font-light">
-              Let\'s work together to create the perfect template for your event
+              Let's work together to create the perfect template for your event
             </p>
             <Link
               href="/contact"

@@ -156,7 +156,7 @@ export default function BackdropsContent() {
                 Need Something Custom?
               </h2>
               <p className="text-lg text-gray-700 mb-10 leading-relaxed font-light">
-                Can\'t find what you\'re looking for? We can design and print a custom backdrop that matches exactly what you have in mind. Whether it\'s for a corporate event with your branding, a themed celebration, or something totally unique, we can make it happen.
+                Can't find what you're looking for? We can design and print a custom backdrop that matches exactly what you have in mind. Whether it's for a corporate event with your branding, a themed celebration, or something totally unique, we can make it happen.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-10">
                 <div>
@@ -166,11 +166,11 @@ export default function BackdropsContent() {
                   <ul className="space-y-4 text-gray-700">
                     <li className="flex items-start">
                       <span className="text-black mr-4 mt-1 font-light">-</span>
-                      <span className="leading-relaxed font-light">We\'ll talk with you to understand what you want</span>
+                      <span className="leading-relaxed font-light">We'll talk with you to understand what you want</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-black mr-4 mt-1 font-light">-</span>
-                      <span className="leading-relaxed font-light">We\'ll create a professional design for you</span>
+                      <span className="leading-relaxed font-light">We'll create a professional design for you</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-black mr-4 mt-1 font-light">-</span>
