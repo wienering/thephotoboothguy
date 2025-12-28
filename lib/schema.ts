@@ -22,6 +22,36 @@ export const localBusinessSchema = {
   "image": "https://www.thephotoboothguy.ca/logo.jpg"
 };
 
+export const localBusinessWithRatingSchema = (ratingValue: number = 5, reviewCount: number = 50) => ({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "The Photobooth Guy",
+  "description": "Professional photo booth rental services in Toronto. Premium equipment, custom templates, stunning backdrops, and exceptional service for your events.",
+  "url": "https://www.thephotoboothguy.ca",
+  "telephone": "647-378-5332",
+  "email": "info@photoboothguys.ca",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Toronto",
+    "addressRegion": "ON",
+    "addressCountry": "CA"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Toronto"
+  },
+  "priceRange": "$$",
+  "image": "https://www.thephotoboothguy.ca/logo.jpg",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": ratingValue.toString(),
+    "reviewCount": reviewCount.toString(),
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+});
+
+// Deprecated: Use localBusinessWithRatingSchema instead to avoid duplicate LocalBusiness entries
 export const aggregateRatingSchema = (ratingValue: number = 5, reviewCount: number = 50) => ({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -49,7 +79,13 @@ export const reviewSchema = (author: string, reviewBody: string, ratingValue: nu
   "@type": "Review",
   "itemReviewed": {
     "@type": "LocalBusiness",
-    "name": "The Photobooth Guy"
+    "name": "The Photobooth Guy",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    }
   },
   "author": {
     "@type": "Person",
@@ -74,7 +110,13 @@ export const serviceSchema = (serviceName: string, description: string, price?: 
     "@type": "LocalBusiness",
     "name": "The Photobooth Guy",
     "url": "https://www.thephotoboothguy.ca",
-    "telephone": "647-378-5332"
+    "telephone": "647-378-5332",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    }
   },
   "areaServed": {
     "@type": "City",

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import HomeContent from './HomeContent';
 import SchemaMarkup from '@/components/SchemaMarkup';
-import { localBusinessSchema, aggregateRatingSchema, reviewSchema } from '@/lib/schema';
+import { localBusinessWithRatingSchema, reviewSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: "The Photobooth Guy - Toronto's Premier Photo Booth Rental",
@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <>
-      <SchemaMarkup schema={[localBusinessSchema, aggregateRatingSchema(5, 50), ...reviews]} />
+      <SchemaMarkup schema={[localBusinessWithRatingSchema(5, 50), ...reviews]} />
       <HomeContent />
     </>
   );
