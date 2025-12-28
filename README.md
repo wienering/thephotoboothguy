@@ -1,6 +1,6 @@
-# The Photo Booth Guy - Modern Website
+# The Photobooth Guy - Modern Website
 
-A modern, responsive website for The Photo Booth Guy, built with Next.js 14, TypeScript, Tailwind CSS, and GSAP animations.
+A modern, responsive website for The Photobooth Guy, built with Next.js 14, TypeScript, Tailwind CSS, and GSAP animations.
 
 ## Features
 
@@ -206,7 +206,7 @@ The site is already optimized with:
 
 ## License
 
-© 2024 The Photo Booth Guy. All rights reserved.
+© 2024 The Photobooth Guy. All rights reserved.
 
 ## Support
 

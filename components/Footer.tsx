@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-light text-white mb-6 tracking-wider">
-              The Photo Booth Guy
+              The Photobooth Guy
             </h3>
             <p className="mb-8 text-gray-400 leading-relaxed font-light max-w-md">
               Toronto's best photo booth rental service. We help create great memories at your events with professional equipment and great service.
@@ -108,7 +108,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-900 pt-8">
           <p className="text-gray-500 text-sm font-light text-center">
-            &copy; {new Date().getFullYear()} The Photo Booth Guy. All rights
+            &copy; {new Date().getFullYear()} The Photobooth Guy. All rights
             reserved.
           </p>
         </div>

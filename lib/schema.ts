@@ -1,9 +1,9 @@
-// Schema markup utilities for The Photo Booth Guy
+// Schema markup utilities for The Photobooth Guy
 
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "The Photo Booth Guy",
+  "name": "The Photobooth Guy",
   "description": "Professional photo booth rental services in Toronto. Premium equipment, custom templates, stunning backdrops, and exceptional service for your events.",
   "url": "https://www.thephotoboothguy.ca",
   "telephone": "647-378-5332",
@@ -25,7 +25,7 @@ export const localBusinessSchema = {
 export const aggregateRatingSchema = (ratingValue: number = 5, reviewCount: number = 50) => ({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "The Photo Booth Guy",
+  "name": "The Photobooth Guy",
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": ratingValue.toString(),
@@ -40,7 +40,7 @@ export const reviewSchema = (author: string, reviewBody: string, ratingValue: nu
   "@type": "Review",
   "itemReviewed": {
     "@type": "LocalBusiness",
-    "name": "The Photo Booth Guy"
+    "name": "The Photobooth Guy"
   },
   "author": {
     "@type": "Person",
@@ -63,7 +63,7 @@ export const serviceSchema = (serviceName: string, description: string, price?: 
   "description": description,
   "provider": {
     "@type": "LocalBusiness",
-    "name": "The Photo Booth Guy",
+    "name": "The Photobooth Guy",
     "url": "https://www.thephotoboothguy.ca",
     "telephone": "647-378-5332"
   },
@@ -87,7 +87,7 @@ export const contactPageSchema = {
   "@type": "ContactPage",
   "mainEntity": {
     "@type": "LocalBusiness",
-    "name": "The Photo Booth Guy",
+    "name": "The Photobooth Guy",
     "telephone": "647-378-5332",
     "email": "info@photoboothguys.ca",
     "address": {
@@ -103,7 +103,7 @@ export const contactPageSchema = {
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "The Photo Booth Guy",
+  "name": "The Photobooth Guy",
   "url": "https://www.thephotoboothguy.ca",
   "logo": "https://www.thephotoboothguy.ca/logo.jpg",
   "contactPoint": {

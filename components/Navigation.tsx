@@ -35,7 +35,7 @@ export default function Navigation() {
           <Link href="/" className={`text-lg font-light tracking-wider transition-colors ${
             scrolled ? 'text-black' : 'text-black'
           }`}>
-            The Photo Booth Guy
+            The Photobooth Guy
           </Link>
 
           <div className="hidden md:flex items-center gap-6">
