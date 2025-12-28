@@ -30,12 +30,16 @@ export async function POST(request: Request) {
 
     console.log('📤 Sending email to: info@photoboothguys.ca');
 
+    // Create unique subject line with timestamp to prevent email threading
+    const timestamp = new Date().toISOString().replace(/T/, ' ').substring(0, 19);
+    const uniqueSubject = `New Booking Inquiry from ${name} - ${timestamp}`;
+
     // Send email
     const data = await resend.emails.send({
       from: 'The Photobooth Guy <contact@thephotoboothguy.ca>',
       to: ['info@photoboothguys.ca'], // Your email address
       replyTo: email,
-      subject: `New Booking Inquiry from ${name}`,
+      subject: uniqueSubject,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
