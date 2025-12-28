@@ -16,14 +16,14 @@ export default function ContactContent() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="w-full pt-60 pb-20 bg-black text-white"
+        className="w-full pt-32 pb-20 bg-black text-white"
       >
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl pt-16">
             <h1 className="text-4xl md:text-5xl font-light mb-6 leading-tight">Get In Touch</h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed font-light">
               We\'d love to help make your event special. Get in touch and let\'s talk about what we can do for you.

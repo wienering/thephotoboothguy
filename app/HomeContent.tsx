@@ -114,7 +114,7 @@ export default function HomeContent() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-20">
       <Hero />
 
       {/* About Section */}
