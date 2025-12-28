@@ -94,7 +94,7 @@ export default function BackdropsContent() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="w-full pt-32 pb-20 bg-black text-white"
+        className="w-full mt-20 pt-24 pb-20 bg-black text-white"
       >
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl pt-16">
