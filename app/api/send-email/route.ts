@@ -1,137 +1,110 @@
-import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { formatEasternDateTime } from '@/lib/timezone';
+import { NextResponse } from 'next/server';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
-    // Check if RESEND_API_KEY is configured
-    if (!process.env.RESEND_API_KEY) {
-      console.error('RESEND_API_KEY is not configured');
-      return NextResponse.json(
-        { error: 'Email service is not configured. Please contact the administrator.' },
-        { status: 500 }
-      );
-    }
-
-    let body;
-    try {
-      body = await request.json();
-    } catch (parseError) {
-      console.error('Failed to parse request body:', parseError);
-      return NextResponse.json(
-        { error: 'Invalid request format' },
-        { status: 400 }
-      );
-    }
-
+    const body = await request.json();
     const { name, email, phone, eventDate, message } = body;
-    const resend = new Resend(process.env.RESEND_API_KEY);
+
+    console.log('📧 Received form submission:', { name, email, phone, eventDate });
 
     // Validate required fields
     if (!name || !email || !phone || !eventDate || !message) {
+      console.error('❌ Missing required fields');
       return NextResponse.json(
         { error: 'All fields are required' },
         { status: 400 }
       );
     }
 
-    // Format the event date in Eastern Time
-    let formattedEventDate = eventDate;
-    try {
-      if (eventDate) {
-        formattedEventDate = new Date(eventDate + 'T00:00:00').toLocaleDateString('en-US', {
-          timeZone: 'America/Toronto',
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        });
-      }
-    } catch (dateError) {
-      console.error('Error formatting event date:', dateError);
-      formattedEventDate = eventDate; // Fallback to original value
+    // Check if API key is set
+    if (!process.env.RESEND_API_KEY) {
+      console.error('❌ RESEND_API_KEY is not set');
+      return NextResponse.json(
+        { error: 'Email service not configured' },
+        { status: 500 }
+      );
     }
 
-    // Get current timestamp in Eastern Time
-    let submissionTime;
-    try {
-      submissionTime = formatEasternDateTime();
-    } catch (timeError) {
-      console.error('Error formatting submission time:', timeError);
-      submissionTime = new Date().toLocaleString('en-US', {
-        timeZone: 'America/Toronto',
-      });
-    }
+    console.log('📤 Sending email to: info@photoboothguys.ca');
 
-    // Email content
-    const emailHtml = `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #333;">New Contact Form Submission</h2>
-        <p><strong>Submitted:</strong> ${submissionTime}</p>
-        
-        <h3 style="color: #555; margin-top: 20px;">Contact Information</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-        <p><strong>Phone:</strong> <a href="tel:${phone}">${phone}</a></p>
-        <p><strong>Event Date:</strong> ${formattedEventDate}</p>
-        
-        <h3 style="color: #555; margin-top: 20px;">Message</h3>
-        <p style="white-space: pre-wrap;">${message}</p>
-      </div>
-    `;
+    // Create unique subject line with timestamp to prevent email threading
+    const timestamp = new Date().toISOString().replace(/T/, ' ').substring(0, 19);
+    const uniqueSubject = `New Booking Inquiry from ${name} - ${timestamp}`;
 
-    const emailText = `
-New Contact Form Submission
-Submitted: ${submissionTime}
-
-Contact Information:
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Event Date: ${formattedEventDate}
-
-Message:
-${message}
-    `;
+    // Format the event date nicely
+    const formattedDate = new Date(eventDate).toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
 
     // Send email
-    let data, error;
-    try {
-      const result = await resend.emails.send({
-        from: 'The Photobooth Guy <onboarding@resend.dev>', // Update this with your verified domain
-        to: ['info@photoboothguys.ca'], // Update with your email
-        subject: `New Contact Form Submission from ${name}`,
-        html: emailHtml,
-        text: emailText,
-      });
-      data = result.data;
-      error = result.error;
-    } catch (sendError) {
-      console.error('Error sending email via Resend:', sendError);
-      return NextResponse.json(
-        { error: `Failed to send email: ${sendError instanceof Error ? sendError.message : 'Unknown error'}` },
-        { status: 500 }
-      );
-    }
+    const data = await resend.emails.send({
+      from: 'The Photobooth Guy <contact@thephotoboothguy.ca>',
+      to: ['info@photoboothguys.ca'], // Your email address
+      replyTo: email,
+      subject: uniqueSubject,
+      html: `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <div style="background-color: #ffffff; border-radius: 8px; padding: 30px;">
+            <h1 style="color: #000000; font-size: 24px; font-weight: 300; margin-top: 0; margin-bottom: 20px;">New Booking Inquiry</h1>
+            
+            <p style="color: #666666; font-size: 16px; margin-bottom: 30px;">Hi there,</p>
+            
+            <p style="color: #333333; font-size: 16px; margin-bottom: 30px;">You've received a new inquiry through your website. Here are the details:</p>
+            
+            <div style="background-color: #f9f9f9; border-left: 3px solid #000000; padding: 20px; margin: 25px 0; border-radius: 4px;">
+              <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                  <td style="padding: 8px 0; color: #666666; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; width: 120px;">Name:</td>
+                  <td style="padding: 8px 0; color: #000000; font-size: 16px;">${name}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; color: #666666; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Email:</td>
+                  <td style="padding: 8px 0; color: #000000; font-size: 16px;"><a href="mailto:${email}" style="color: #000000; text-decoration: underline;">${email}</a></td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; color: #666666; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Phone:</td>
+                  <td style="padding: 8px 0; color: #000000; font-size: 16px;"><a href="tel:${phone}" style="color: #000000; text-decoration: underline;">${phone}</a></td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; color: #666666; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Event Date:</td>
+                  <td style="padding: 8px 0; color: #000000; font-size: 16px; font-weight: 500;">${formattedDate}</td>
+                </tr>
+              </table>
+            </div>
+            
+            <div style="margin: 30px 0;">
+              <p style="color: #666666; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px;">Message:</p>
+              <div style="background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 4px; padding: 20px; color: #333333; font-size: 16px; line-height: 1.8; white-space: pre-wrap;">${message.replace(/\n/g, '<br>')}</div>
+            </div>
+            
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+              <p style="color: #666666; font-size: 14px; margin: 0;">You can reply directly to this email to respond to ${name}.</p>
+            </div>
+          </div>
+        </body>
+        </html>
+      `,
+    });
 
-    if (error) {
-      console.error('Resend API error:', error);
-      return NextResponse.json(
-        { error: `Failed to send email: ${JSON.stringify(error)}` },
-        { status: 500 }
-      );
-    }
-
-    return NextResponse.json(
-      { success: true, messageId: data?.id },
-      { status: 200 }
-    );
+    console.log('✅ Email sent successfully:', data);
+    return NextResponse.json({ success: true, data });
   } catch (error) {
-    console.error('Email route error:', error);
-    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    console.error('❌ Email send error:', error);
     return NextResponse.json(
-      { error: `Internal server error: ${errorMessage}` },
+      { error: 'Failed to send email', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
     );
   }
 }
-
