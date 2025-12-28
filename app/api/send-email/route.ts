@@ -1,5 +1,6 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
+import { formatEasternDateTime } from '@/lib/timezone';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -30,8 +31,8 @@ export async function POST(request: Request) {
 
     console.log('📤 Sending email to: info@photoboothguys.ca');
 
-    // Create unique subject line with timestamp to prevent email threading
-    const timestamp = new Date().toISOString().replace(/T/, ' ').substring(0, 19);
+    // Create unique subject line with timestamp in Eastern Time to prevent email threading
+    const timestamp = formatEasternDateTime();
     const uniqueSubject = `New Booking Inquiry from ${name} - ${timestamp}`;
 
     // Format the event date nicely
