@@ -80,12 +80,15 @@ export const reviewSchema = (author: string, reviewBody: string, ratingValue: nu
   "itemReviewed": {
     "@type": "LocalBusiness",
     "name": "The Photobooth Guy",
+    "telephone": "647-378-5332",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Toronto",
       "addressRegion": "ON",
       "addressCountry": "CA"
-    }
+    },
+    "priceRange": "$$",
+    "image": "https://www.thephotoboothguy.ca/logo.jpg"
   },
   "author": {
     "@type": "Person",
@@ -116,7 +119,9 @@ export const serviceSchema = (serviceName: string, description: string, price?: 
       "addressLocality": "Toronto",
       "addressRegion": "ON",
       "addressCountry": "CA"
-    }
+    },
+    "priceRange": "$$",
+    "image": "https://www.thephotoboothguy.ca/logo.jpg"
   },
   "areaServed": {
     "@type": "City",
@@ -147,7 +152,9 @@ export const contactPageSchema = {
       "addressRegion": "ON",
       "addressCountry": "CA"
     },
-    "url": "https://www.thephotoboothguy.ca"
+    "url": "https://www.thephotoboothguy.ca",
+    "priceRange": "$$",
+    "image": "https://www.thephotoboothguy.ca/logo.jpg"
   }
 };
 
