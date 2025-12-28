@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <SchemaMarkup schema={organizationSchema} />
         <Navigation />
-        <main>{children}</main>
+        <main className="pt-20 pl-4 md:pl-6 lg:pl-8">{children}</main>
         <Footer />
       </body>
     </html>

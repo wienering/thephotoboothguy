@@ -21,7 +21,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center bg-black text-white overflow-hidden"
+      className="relative min-h-[calc(100vh-5rem)] flex items-center justify-center bg-black text-white overflow-hidden"
     >
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -65,12 +65,12 @@ export default function Hero() {
             >
               Book Your Event
             </Link>
-            <Link
-              href="/equipment"
+            <a
+              href="#pricing"
               className="inline-flex items-center justify-center border border-white text-white px-10 py-5 text-base font-medium hover:bg-white hover:text-black transition-all duration-300 uppercase tracking-wider"
             >
-              View Equipment
-            </Link>
+              View Pricing
+            </a>
           </div>
         </div>
       </div>

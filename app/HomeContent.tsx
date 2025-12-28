@@ -117,6 +117,20 @@ export default function HomeContent() {
     <div className="min-h-screen">
       <Hero />
 
+      {/* About Section */}
+      <section ref={aboutRef} className="w-full py-20 bg-white">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-4xl">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
+              Our Mission
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light max-w-3xl">
+              We\'re all about giving you and your guests an amazing experience. Every event should feel special, and that\'s exactly what we deliver with our professional setup, custom designs, and attention to detail.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Trust Indicators */}
       <section className="w-full py-16 bg-white border-b border-gray-100">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
@@ -140,22 +154,8 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section ref={aboutRef} className="w-full py-20 bg-white">
-        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="max-w-4xl">
-            <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
-              Our Mission
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light max-w-3xl">
-              We\'re all about giving you and your guests an amazing experience. Every event should feel special, and that\'s exactly what we deliver with our professional setup, custom designs, and attention to detail.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Packages Section */}
-      <section className="w-full py-20 bg-gray-50">
+      <section id="pricing" className="w-full py-20 bg-gray-50">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="mb-12">
             <h2 className="text-4xl md:text-5xl font-light text-black mb-4 leading-tight">
