@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useMemo } from 'react';
 import ContactForm from '@/components/ContactForm';
 import { revealOnScroll } from '@/lib/gsap';
 
@@ -13,6 +13,30 @@ export default function ContactContent() {
     if (heroRef.current) revealOnScroll(heroRef.current);
     if (formRef.current) revealOnScroll(formRef.current);
     if (infoRef.current) revealOnScroll(infoRef.current);
+  }, []);
+
+  // Business hours with current day at top
+  const businessHours = useMemo(() => {
+    const days = [
+      { name: 'Sunday', hours: '7 a.m.–11:30 p.m.' },
+      { name: 'Monday', hours: '7 a.m.–11:30 p.m.' },
+      { name: 'Tuesday', hours: '7 a.m.–11:30 p.m.' },
+      { name: 'Wednesday', hours: '7 a.m.–11:30 p.m.' },
+      { name: 'Thursday', hours: '7 a.m.–11:30 p.m.' },
+      { name: 'Friday', hours: '7 a.m.–11:30 p.m.' },
+      { name: 'Saturday', hours: '7 a.m.–11:30 p.m.' },
+    ];
+
+    const today = new Date().getDay(); // 0 = Sunday, 1 = Monday, etc.
+    const currentDayName = days[today].name;
+
+    // Reorder so current day is first
+    const reorderedDays = [
+      ...days.slice(today),
+      ...days.slice(0, today)
+    ];
+
+    return { days: reorderedDays, currentDay: currentDayName };
   }, []);
 
   return (
@@ -106,34 +130,28 @@ export default function ContactContent() {
                   Business Hours
                 </h3>
                 <div className="space-y-4 text-gray-700">
-                  <p className="flex justify-between font-light">
-                    <span>Saturday:</span>
-                    <span>7 a.m.–11:30 p.m.</span>
-                  </p>
-                  <p className="flex justify-between font-light">
-                    <span>Sunday:</span>
-                    <span>7 a.m.–11:30 p.m.</span>
-                  </p>
-                  <p className="flex justify-between font-light">
-                    <span>Monday:</span>
-                    <span>7 a.m.–11:30 p.m.</span>
-                  </p>
-                  <p className="flex justify-between font-light">
-                    <span>Tuesday:</span>
-                    <span>7 a.m.–11:30 p.m.</span>
-                  </p>
-                  <p className="flex justify-between font-light">
-                    <span>Wednesday:</span>
-                    <span>7 a.m.–11:30 p.m.</span>
-                  </p>
-                  <p className="flex justify-between font-light">
-                    <span>Thursday:</span>
-                    <span>7 a.m.–11:30 p.m.</span>
-                  </p>
-                  <p className="flex justify-between font-light">
-                    <span>Friday:</span>
-                    <span>7 a.m.–11:30 p.m.</span>
-                  </p>
+                  {businessHours.days.map((day, index) => {
+                    const isCurrentDay = day.name === businessHours.currentDay;
+                    return (
+                      <p
+                        key={day.name}
+                        className={`flex justify-between font-light ${
+                          isCurrentDay
+                            ? 'bg-gray-100 -mx-2 px-2 py-2 rounded font-medium text-black'
+                            : ''
+                        }`}
+                      >
+                        <span>
+                          {day.name}
+                          {isCurrentDay && (
+                            <span className="ml-2 text-xs text-gray-500 font-normal">(Today)</span>
+                          )}
+                          :
+                        </span>
+                        <span>{day.hours}</span>
+                      </p>
+                    );
+                  })}
                 </div>
                 <p className="mt-6 text-gray-600 font-light">
                   We do events any day of the week, including evenings and weekends.
