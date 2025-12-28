@@ -80,8 +80,11 @@ export default function ContactContent() {
                     <h3 className="text-sm uppercase tracking-wider text-gray-500 mb-3 font-medium">
                       Service Area
                     </h3>
-                    <p className="text-xl text-gray-700 font-light">
+                    <p className="text-xl text-gray-700 font-light mb-2">
                       GTA
+                    </p>
+                    <p className="text-base text-gray-600 font-light leading-relaxed">
+                      Toronto, Mississauga, Brampton, Markham, Vaughan, Richmond Hill, Oakville, Burlington, Etobicoke, Scarborough, North York, Ajax, Pickering, Whitby, Oshawa, and surrounding areas
                     </p>
                   </div>
                 </div>

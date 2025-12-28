@@ -99,7 +99,10 @@ export default function Footer() {
                 </a>
               </li>
               <li className="pt-2 text-sm">
-                <p>GTA</p>
+                <p className="mb-1">GTA</p>
+                <p className="text-xs text-gray-500 leading-relaxed">
+                  Toronto, Mississauga, Brampton, Markham, Vaughan, Richmond Hill, Oakville, Burlington, Etobicoke, Scarborough, North York, Ajax, Pickering, Whitby, Oshawa, and surrounding areas
+                </p>
               </li>
             </ul>
           </div>
