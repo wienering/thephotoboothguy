@@ -13,9 +13,19 @@ export async function POST(request: Request) {
       );
     }
 
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    const body = await request.json();
+    let body;
+    try {
+      body = await request.json();
+    } catch (parseError) {
+      console.error('Failed to parse request body:', parseError);
+      return NextResponse.json(
+        { error: 'Invalid request format' },
+        { status: 400 }
+      );
+    }
+
     const { name, email, phone, eventDate, message } = body;
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     // Validate required fields
     if (!name || !email || !phone || !eventDate || !message) {
@@ -26,17 +36,31 @@ export async function POST(request: Request) {
     }
 
     // Format the event date in Eastern Time
-    const formattedEventDate = eventDate
-      ? new Date(eventDate + 'T00:00:00').toLocaleDateString('en-US', {
+    let formattedEventDate = eventDate;
+    try {
+      if (eventDate) {
+        formattedEventDate = new Date(eventDate + 'T00:00:00').toLocaleDateString('en-US', {
           timeZone: 'America/Toronto',
           year: 'numeric',
           month: 'long',
           day: 'numeric',
-        })
-      : eventDate;
+        });
+      }
+    } catch (dateError) {
+      console.error('Error formatting event date:', dateError);
+      formattedEventDate = eventDate; // Fallback to original value
+    }
 
     // Get current timestamp in Eastern Time
-    const submissionTime = formatEasternDateTime();
+    let submissionTime;
+    try {
+      submissionTime = formatEasternDateTime();
+    } catch (timeError) {
+      console.error('Error formatting submission time:', timeError);
+      submissionTime = new Date().toLocaleString('en-US', {
+        timeZone: 'America/Toronto',
+      });
+    }
 
     // Email content
     const emailHtml = `
@@ -70,18 +94,29 @@ ${message}
     `;
 
     // Send email
-    const { data, error } = await resend.emails.send({
-      from: 'The Photobooth Guy <onboarding@resend.dev>', // Update this with your verified domain
-      to: ['info@photoboothguys.ca'], // Update with your email
-      subject: `New Contact Form Submission from ${name}`,
-      html: emailHtml,
-      text: emailText,
-    });
+    let data, error;
+    try {
+      const result = await resend.emails.send({
+        from: 'The Photobooth Guy <onboarding@resend.dev>', // Update this with your verified domain
+        to: ['info@photoboothguys.ca'], // Update with your email
+        subject: `New Contact Form Submission from ${name}`,
+        html: emailHtml,
+        text: emailText,
+      });
+      data = result.data;
+      error = result.error;
+    } catch (sendError) {
+      console.error('Error sending email via Resend:', sendError);
+      return NextResponse.json(
+        { error: `Failed to send email: ${sendError instanceof Error ? sendError.message : 'Unknown error'}` },
+        { status: 500 }
+      );
+    }
 
     if (error) {
-      console.error('Resend error:', error);
+      console.error('Resend API error:', error);
       return NextResponse.json(
-        { error: 'Failed to send email' },
+        { error: `Failed to send email: ${JSON.stringify(error)}` },
         { status: 500 }
       );
     }
