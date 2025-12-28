@@ -10,8 +10,10 @@ export const localBusinessSchema = {
   "email": "info@photoboothguys.ca",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Toronto",
+    "streetAddress": "340 Mill Rd.",
+    "addressLocality": "Etobicoke",
     "addressRegion": "ON",
+    "postalCode": "M9C 1Y8",
     "addressCountry": "CA"
   },
   "areaServed": {
@@ -32,8 +34,10 @@ export const localBusinessWithRatingSchema = (ratingValue: number = 5, reviewCou
   "email": "info@photoboothguys.ca",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Toronto",
+    "streetAddress": "340 Mill Rd.",
+    "addressLocality": "Etobicoke",
     "addressRegion": "ON",
+    "postalCode": "M9C 1Y8",
     "addressCountry": "CA"
   },
   "areaServed": {
@@ -59,8 +63,10 @@ export const aggregateRatingSchema = (ratingValue: number = 5, reviewCount: numb
   "telephone": "647-378-5332",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Toronto",
+    "streetAddress": "340 Mill Rd.",
+    "addressLocality": "Etobicoke",
     "addressRegion": "ON",
+    "postalCode": "M9C 1Y8",
     "addressCountry": "CA"
   },
   "priceRange": "$$",
