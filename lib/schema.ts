@@ -26,6 +26,15 @@ export const aggregateRatingSchema = (ratingValue: number = 5, reviewCount: numb
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "The Photobooth Guy",
+  "telephone": "647-378-5332",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Toronto",
+    "addressRegion": "ON",
+    "addressCountry": "CA"
+  },
+  "priceRange": "$$",
+  "image": "https://www.thephotoboothguy.ca/logo.jpg",
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": ratingValue.toString(),
