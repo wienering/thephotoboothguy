@@ -16,7 +16,7 @@ const pageData: ServiceLocationData = {
   city: 'Toronto',
   heroTitle: 'Audio Guest Book in Toronto',
   heroSubtitle: 'Capture heartfelt voice messages from your guests with a vintage-style telephone guest book. A unique and memorable alternative to traditional guest books for Toronto weddings and events.',
-  description: 'Add a personal touch to your Toronto wedding or event with our audio guest book rental. Using a beautiful vintage-style telephone handset, your guests can leave heartfelt voice messages that you\'ll treasure forever. Unlike traditional written guest books, you\'ll hear the emotion, laughter, and love in their voices. Our professional attendant sets up the audio guest book with a custom greeting, monitors throughout your event, and delivers all recordings on a USB drive plus digital files. Perfect for weddings, anniversaries, and milestone celebrations at Toronto venues.',
+  description: 'Toronto couples are choosing audio guest books to capture the authentic voices and emotions of their wedding day. Instead of traditional written messages, your guests at venues like The Liberty Grand or Harbour Castle can pick up our vintage telephone and leave heartfelt voice recordings you\'ll treasure forever. Perfect for Toronto\'s multicultural weddings where family members may speak different languages, the audio format captures accents, laughter, and the unique personality of each speaker. Our professional attendant ensures smooth operation throughout your event, whether you\'re in downtown Toronto, North York, or Etobicoke. You\'ll receive all recordings on a beautiful USB drive plus digital files, letting you relive those emotional toasts and personal messages whenever you want.',
   venues: venues.toronto,
   features: [
     {

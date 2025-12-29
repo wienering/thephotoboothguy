@@ -16,7 +16,7 @@ const pageData: ServiceLocationData = {
   city: 'Markham',
   heroTitle: 'Glam Booth in Markham',
   heroSubtitle: 'Kardashian-style black and white photo booth with professional lighting, elegant backdrop, and high-quality prints for sophisticated Markham weddings and upscale events.',
-  description: 'Bring Hollywood glamour to your Markham event with our black and white glam booth. Inspired by the Kardashian aesthetic, our glam booth features professional lighting to create stunning, magazine-quality photos with timeless black and white styling. Perfect for weddings, corporate galas, and upscale events at Markham\'s premier venues. Each setup includes a professional attendant, premium backdrop, high-quality instant prints, props, and digital copies delivered instantly to guests.',
+  description: 'Markham\'s modern aesthetic and appreciation for quality make it the perfect city for our black and white glam booth experience. From contemporary celebrations at Paradise Banquet Hall to elegant affairs in Unionville, our Kardashian-style photo booth brings magazine-quality glamour to your special day. The professional lighting system creates that high-contrast, editorial look that Markham\'s style-conscious community loves, while the timeless monochrome aesthetic transcends cultural boundaries. Particularly popular for fusion weddings and corporate events in Cornell and Markham Village, our glam booth captures sophisticated beauty in every shot. Professional attendants ensure optimal lighting for all skin tones and work seamlessly with makeup artists and photographers to complement your overall event aesthetic.',
   venues: venues.markham,
   features: [
     {

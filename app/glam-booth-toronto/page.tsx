@@ -16,7 +16,7 @@ const pageData: ServiceLocationData = {
   city: 'Toronto',
   heroTitle: 'Glam Booth in Toronto',
   heroSubtitle: 'Kardashian-style black and white photo booth with professional lighting, elegant backdrop, and high-quality prints for sophisticated Toronto weddings and upscale events.',
-  description: 'Bring Hollywood glamour to your Toronto event with our black and white glam booth. Inspired by the Kardashian aesthetic, our glam booth features professional lighting to create stunning, magazine-quality photos with timeless black and white styling. Perfect for weddings, corporate galas, and upscale events at Toronto\'s premier venues. Each setup includes a professional attendant, premium backdrop, high-quality instant prints, props, and digital copies delivered instantly to guests.',
+  description: 'Toronto\'s fashion-forward scene calls for a photo experience that matches its cosmopolitan energy. Our black and white glam booth brings Kardashian-style glamour to the city\'s most prestigious venues. From King West weddings to Bay Street corporate events, our studio-quality lighting and monochrome aesthetic create that coveted magazine-worthy look. Perfect for Toronto brides who want their Liberty Grand or Arcadian Court wedding photos to stand out on Instagram, our glam booth delivers professional results that complement the city\'s sophisticated style. Each setup includes premium backdrops, a trained attendant who understands lighting angles, and instant digital delivery so your downtown Toronto guests can share their glamorous photos immediately.',
   venues: venues.toronto,
   features: [
     {

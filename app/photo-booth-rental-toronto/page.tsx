@@ -16,7 +16,7 @@ const pageData: ServiceLocationData = {
   city: 'Toronto',
   heroTitle: 'Photo Booth Rental in Toronto',
   heroSubtitle: 'Professional photo booth services with instant prints, custom templates, stunning backdrops, and props for weddings, corporate events, and parties across Toronto.',
-  description: 'Our professional photo booth rental service brings high-quality entertainment to your Toronto event. With a professional DSLR camera, dye-sublimation printer for instant prints, custom templates designed for your event, backdrop options, props collection, and a trained attendant on site, we ensure your guests have an unforgettable experience. Digital copies are sent instantly to guests via SMS or email, and you receive a complete digital gallery after your event.',
+  description: 'Planning an event in Canada\'s largest city? Our Toronto photo booth rental service delivers premium entertainment that matches the sophistication of your downtown wedding, North York corporate gala, or Scarborough celebration. We bring professional DSLR cameras, instant dye-sublimation printing, and custom-designed templates that reflect Toronto\'s vibrant energy. Our trained attendants ensure seamless operation whether you\'re hosting 50 or 500 guests at iconic venues like The Liberty Grand or intimate spaces across the GTA. Every photo is instantly shared via SMS or email, with a complete digital gallery delivered within 48 hours.',
   venues: venues.toronto,
   features: [
     {

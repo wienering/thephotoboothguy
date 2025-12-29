@@ -16,7 +16,7 @@ const pageData: ServiceLocationData = {
   city: 'Mississauga',
   heroTitle: 'Photo Booth Rental in Mississauga',
   heroSubtitle: 'Professional photo booth services with instant prints, custom templates, stunning backdrops, and props for weddings, corporate events, and parties across Mississauga.',
-  description: 'Our professional photo booth rental service brings high-quality entertainment to your Mississauga event. With a professional DSLR camera, dye-sublimation printer for instant prints, custom templates designed for your event, backdrop options, props collection, and a trained attendant on site, we ensure your guests have an unforgettable experience. Digital copies are sent instantly to guests via SMS or email, and you receive a complete digital gallery after your event.',
+  description: 'Mississauga\'s diverse event scene deserves a photo booth that understands both elegance and fun. From waterfront celebrations in Port Credit to grand affairs at Renaissance by the Creek, we provide photo booth rentals that adapt to your venue\'s unique character. Our equipment includes professional-grade DSLR cameras optimized for various lighting conditions, fast-printing dye-sublimation technology, and an extensive backdrop collection perfect for Mississauga\'s multicultural celebrations. Each rental includes a professional attendant who ensures your guests from Streetsville to Meadowvale have an amazing experience, with all photos delivered digitally within 48 hours.',
   venues: venues.mississauga,
   features: [
     {

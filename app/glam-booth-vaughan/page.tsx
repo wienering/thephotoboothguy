@@ -16,7 +16,7 @@ const pageData: ServiceLocationData = {
   city: 'Vaughan',
   heroTitle: 'Glam Booth in Vaughan',
   heroSubtitle: 'Kardashian-style black and white photo booth with professional lighting, elegant backdrop, and high-quality prints for sophisticated Vaughan weddings and upscale events.',
-  description: 'Bring Hollywood glamour to your Vaughan event with our black and white glam booth. Inspired by the Kardashian aesthetic, our glam booth features professional lighting to create stunning, magazine-quality photos with timeless black and white styling. Perfect for weddings, corporate galas, and upscale events at Vaughan\'s premier venues. Each setup includes a professional attendant, premium backdrop, high-quality instant prints, props, and digital copies delivered instantly to guests.',
+  description: 'Vaughan\'s luxury event venues from Woodbridge to Concord provide the perfect backdrop for our high-end black and white glam booth. At prestigious locations like Paradise Convention Centre and The Manor, where elegance is expected, our Kardashian-inspired photo experience delivers red-carpet glamour. The professional studio lighting we bring creates that coveted high-fashion monochrome look that Vaughan\'s discerning clientele appreciates. Perfect for Italian weddings in Woodbridge where style and sophistication matter, our glam booth setup includes museum-quality instant prints, elegant backdrop options, and attendants trained in creating flattering angles for every guest. The timeless black and white aesthetic complements Vaughan\'s refined event spaces beautifully.',
   venues: venues.vaughan,
   features: [
     {

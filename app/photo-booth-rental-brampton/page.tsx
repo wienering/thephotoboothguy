@@ -16,7 +16,7 @@ const pageData: ServiceLocationData = {
   city: 'Brampton',
   heroTitle: 'Photo Booth Rental in Brampton',
   heroSubtitle: 'Professional photo booth services with instant prints, custom templates, stunning backdrops, and props for weddings, corporate events, and parties across Brampton.',
-  description: 'Our professional photo booth rental service brings high-quality entertainment to your Brampton event. With a professional DSLR camera, dye-sublimation printer for instant prints, custom templates designed for your event, backdrop options, props collection, and a trained attendant on site, we ensure your guests have an unforgettable experience. Digital copies are sent instantly to guests via SMS or email, and you receive a complete digital gallery after your event.',
+  description: 'Brampton\'s vibrant community knows how to celebrate, and our photo booth rental service is built for your city\'s energetic events. Whether you\'re hosting a traditional ceremony at Great Hall or a modern celebration in Bramalea, we deliver professional photo booth experiences that honor your cultural traditions while embracing contemporary technology. Our DSLR cameras capture the vibrant colors of South Asian celebrations, African weddings, and Caribbean parties with stunning clarity. With instant printing, customizable templates in multiple languages, and professional attendants familiar with diverse ceremony styles, we\'ve become Brampton\'s trusted photo booth provider for weddings, corporate events, and community celebrations.',
   venues: venues.brampton,
   features: [
     {

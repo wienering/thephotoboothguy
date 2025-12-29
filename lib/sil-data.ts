@@ -23,6 +23,7 @@ export const venues: VenueData = {
     'The Grand Luxe Event Boutique',
     'Living Arts Centre',
     'Carmen\'s Banquet Centre',
+    'Renaissance by the Creek',
     'Pearson Convention Centre',
     'Mississauga Convention Centre',
     'Glenerin Inn & Spa',

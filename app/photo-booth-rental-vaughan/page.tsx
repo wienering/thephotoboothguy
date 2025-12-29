@@ -16,7 +16,7 @@ const pageData: ServiceLocationData = {
   city: 'Vaughan',
   heroTitle: 'Photo Booth Rental in Vaughan',
   heroSubtitle: 'Professional photo booth services with instant prints, custom templates, stunning backdrops, and props for weddings, corporate events, and parties across Vaughan.',
-  description: 'Our professional photo booth rental service brings high-quality entertainment to your Vaughan event. With a professional DSLR camera, dye-sublimation printer for instant prints, custom templates designed for your event, backdrop options, props collection, and a trained attendant on site, we ensure your guests have an unforgettable experience. Digital copies are sent instantly to guests via SMS or email, and you receive a complete digital gallery after your event.',
+  description: 'Vaughan\'s elegant venues from Woodbridge to Concord demand a photo booth service that matches their sophistication. We specialize in upscale events at locations like Paradise Convention Centre and The Manor, where attention to detail matters. Our premium photo booth setup features professional DSLR cameras with superior low-light performance, museum-quality print output, and refined backdrop options that complement Vaughan\'s luxurious event spaces. Whether you\'re planning an Italian wedding in Woodbridge, a corporate function in the Vaughan Metropolitan Centre, or an intimate gathering in Maple, our experienced attendants ensure flawless execution. Every guest receives instant digital copies, and you\'ll have access to your complete gallery within 48 hours.',
   venues: venues.vaughan,
   features: [
     {

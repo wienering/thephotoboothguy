@@ -16,7 +16,7 @@ const pageData: ServiceLocationData = {
   city: 'Markham',
   heroTitle: 'Photo Booth Rental in Markham',
   heroSubtitle: 'Professional photo booth services with instant prints, custom templates, stunning backdrops, and props for weddings, corporate events, and parties across Markham.',
-  description: 'Our professional photo booth rental service brings high-quality entertainment to your Markham event. With a professional DSLR camera, dye-sublimation printer for instant prints, custom templates designed for your event, backdrop options, props collection, and a trained attendant on site, we ensure your guests have an unforgettable experience. Digital copies are sent instantly to guests via SMS or email, and you receive a complete digital gallery after your event.',
+  description: 'As one of Canada\'s most diverse and tech-savvy cities, Markham deserves a photo booth experience that\'s both culturally aware and technologically advanced. From elegant Chinese banquets at Paradise Banquet Hall to contemporary celebrations in Unionville\'s historic district, we provide photo booth rentals equipped with cutting-edge DSLR technology and instant wireless sharing capabilities. Our service includes bilingual support, culturally appropriate backdrop selections, and templates that can incorporate multiple languages and scripts. Professional attendants understand the flow of various cultural ceremonies, ensuring seamless integration whether you\'re celebrating at Le Parc or a modern venue in Cornell. All images are shared instantly via WeChat, SMS, or email, with comprehensive galleries delivered within 48 hours.',
   venues: venues.markham,
   features: [
     {

@@ -16,7 +16,7 @@ const pageData: ServiceLocationData = {
   city: 'Brampton',
   heroTitle: 'Glam Booth in Brampton',
   heroSubtitle: 'Kardashian-style black and white photo booth with professional lighting, elegant backdrop, and high-quality prints for sophisticated Brampton weddings and upscale events.',
-  description: 'Bring Hollywood glamour to your Brampton event with our black and white glam booth. Inspired by the Kardashian aesthetic, our glam booth features professional lighting to create stunning, magazine-quality photos with timeless black and white styling. Perfect for weddings, corporate galas, and upscale events at Brampton\'s premier venues. Each setup includes a professional attendant, premium backdrop, high-quality instant prints, props, and digital copies delivered instantly to guests.',
+  description: 'Brampton celebrations are known for their grandeur, and our black and white glam booth adds Hollywood sophistication to your spectacular event. Whether you\'re hosting an elegant reception at Great Hall or an intimate affair in Heart Lake, the dramatic lighting and monochrome aesthetic of our glam booth creates stunning keepsake photos. The Kardashian-style setup is particularly popular for Brampton\'s South Asian weddings, where the high-contrast black and white photography beautifully captures elaborate jewelry, intricate henna, and stunning bridal attire. Our professional attendants understand how to work with various cultural dress styles and ensure every guest gets that perfect, magazine-worthy shot with flattering angles and optimal lighting.',
   venues: venues.brampton,
   features: [
     {

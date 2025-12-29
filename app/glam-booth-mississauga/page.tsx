@@ -16,7 +16,7 @@ const pageData: ServiceLocationData = {
   city: 'Mississauga',
   heroTitle: 'Glam Booth in Mississauga',
   heroSubtitle: 'Kardashian-style black and white photo booth with professional lighting, elegant backdrop, and high-quality prints for sophisticated Mississauga weddings and upscale events.',
-  description: 'Bring Hollywood glamour to your Mississauga event with our black and white glam booth. Inspired by the Kardashian aesthetic, our glam booth features professional lighting to create stunning, magazine-quality photos with timeless black and white styling. Perfect for weddings, corporate galas, and upscale events at Mississauga\'s premier venues. Each setup includes a professional attendant, premium backdrop, high-quality instant prints, props, and digital copies delivered instantly to guests.',
+  description: 'Mississauga\'s upscale venues deserve the elegance of our black and white glam booth experience. At Renaissance by the Creek and The Grand Luxe, where sophistication meets celebration, our Kardashian-inspired photo booth elevates your event with Hollywood-style glamour. The professional lighting system we bring to Port Credit waterfront venues and Streetsville estates creates that perfect high-contrast monochrome look that makes every guest look like a star. Ideal for Mississauga couples who want their wedding photos to have that timeless, editorial quality, our glam booth combines artistic lighting with instant printing technology. Professional attendants ensure each shot captures that perfect angle, while guests receive their glamorous prints immediately.',
   venues: venues.mississauga,
   features: [
     {
