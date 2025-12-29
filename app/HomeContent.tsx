@@ -83,33 +83,33 @@ export default function HomeContent() {
   const features = [
     {
       icon: '📸',
-      title: 'Professional Equipment',
-      description: 'Top quality cameras and printers that capture every moment beautifully',
+      title: 'Professional DSLR Camera',
+      description: 'Professional DSLR cameras with high-quality lenses and optimal lighting to capture stunning, high-resolution photos at your GTA event',
+    },
+    {
+      icon: '🖨️',
+      title: 'Instant Prints',
+      description: 'Dye-sublimation printer delivers vibrant, waterproof 4x6 or 2x6 instant prints on custom templates within seconds',
     },
     {
       icon: '🎨',
       title: 'Custom Templates',
-      description: 'We design templates that fit your event style and colors',
+      description: 'Personalized print templates designed to match your event theme, colors, and style at no extra charge',
     },
     {
       icon: '🎭',
-      title: 'Stunning Backdrops',
-      description: 'Choose from our collection of elegant and fun backdrop options',
+      title: 'Backdrop & Props',
+      description: 'Choose from our collection of stunning backdrops and fun props to create memorable photos for your guests',
     },
     {
-      icon: '🎪',
-      title: 'Props & Accessories',
-      description: 'Lots of fun props to help your guests get creative with their photos',
-    },
-    {
-      icon: '⚡',
-      title: 'Instant Prints',
-      description: 'Your guests get high quality prints right away',
+      icon: '👤',
+      title: 'Professional Attendant',
+      description: 'Trained on-site attendant ensures smooth operation, assists guests, and maintains the photo booth throughout your event',
     },
     {
       icon: '📱',
-      title: 'Digital Sharing',
-      description: 'Everyone gets their photos sent directly to their phone or email',
+      title: 'Digital Copies',
+      description: 'All photos sent instantly to guests via SMS or email, plus complete digital gallery delivered after your event',
     },
   ];
 
@@ -122,10 +122,13 @@ export default function HomeContent() {
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
             <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
-              Our Mission
+              Professional Photo Booth Rental Across the GTA
             </h2>
-            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light max-w-3xl">
-              We're all about giving you and your guests an amazing experience. Every event should feel special, and that's exactly what we deliver with our professional setup, custom designs, and attention to detail.
+            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light max-w-3xl mb-6">
+              We provide professional photo booth services throughout Toronto, Mississauga, Brampton, Vaughan, and Markham. Every event receives our premium equipment including professional DSLR cameras, dye-sublimation printers for instant prints, custom templates designed for your event, stunning backdrops, fun props, and a trained professional attendant on site. Digital copies are sent instantly to guests via SMS or email.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed font-light max-w-3xl">
+              Whether you're planning a wedding, corporate gala, birthday party, anniversary celebration, or any special event across the Greater Toronto Area, we deliver exceptional photo booth experiences with professional lighting, high-quality prints, and outstanding service.
             </p>
           </div>
         </div>
@@ -175,6 +178,88 @@ export default function HomeContent() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Areas Section */}
+      <section className="w-full py-20 bg-white">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-4xl mb-12">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
+              Serving the Greater Toronto Area
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed font-light">
+              We provide professional photo booth rental services throughout the GTA, including:
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Link
+              href="/photo-booth-rental-toronto"
+              className="border border-gray-200 p-8 hover:border-black transition-all duration-300 group"
+            >
+              <h3 className="text-2xl font-light text-black mb-3 group-hover:translate-x-2 transition-transform">
+                Toronto →
+              </h3>
+              <p className="text-gray-600 leading-relaxed font-light">
+                Photo booth services in Toronto including Downtown, North York, Scarborough, and Etobicoke
+              </p>
+            </Link>
+            <Link
+              href="/photo-booth-rental-mississauga"
+              className="border border-gray-200 p-8 hover:border-black transition-all duration-300 group"
+            >
+              <h3 className="text-2xl font-light text-black mb-3 group-hover:translate-x-2 transition-transform">
+                Mississauga →
+              </h3>
+              <p className="text-gray-600 leading-relaxed font-light">
+                Professional photo booth rental in Mississauga, Port Credit, and Streetsville
+              </p>
+            </Link>
+            <Link
+              href="/photo-booth-rental-brampton"
+              className="border border-gray-200 p-8 hover:border-black transition-all duration-300 group"
+            >
+              <h3 className="text-2xl font-light text-black mb-3 group-hover:translate-x-2 transition-transform">
+                Brampton →
+              </h3>
+              <p className="text-gray-600 leading-relaxed font-light">
+                Photo booth services in Brampton, Bramalea, and Heart Lake areas
+              </p>
+            </Link>
+            <Link
+              href="/photo-booth-rental-vaughan"
+              className="border border-gray-200 p-8 hover:border-black transition-all duration-300 group"
+            >
+              <h3 className="text-2xl font-light text-black mb-3 group-hover:translate-x-2 transition-transform">
+                Vaughan →
+              </h3>
+              <p className="text-gray-600 leading-relaxed font-light">
+                Photo booth rental in Vaughan, Woodbridge, Concord, and Thornhill
+              </p>
+            </Link>
+            <Link
+              href="/photo-booth-rental-markham"
+              className="border border-gray-200 p-8 hover:border-black transition-all duration-300 group"
+            >
+              <h3 className="text-2xl font-light text-black mb-3 group-hover:translate-x-2 transition-transform">
+                Markham →
+              </h3>
+              <p className="text-gray-600 leading-relaxed font-light">
+                Professional photo booth services in Markham, Unionville, and Milliken
+              </p>
+            </Link>
+            <Link
+              href="/equipment"
+              className="border border-gray-200 p-8 hover:border-black transition-all duration-300 group bg-gray-50"
+            >
+              <h3 className="text-2xl font-light text-black mb-3 group-hover:translate-x-2 transition-transform">
+                Our Services →
+              </h3>
+              <p className="text-gray-600 leading-relaxed font-light">
+                Learn more about our photo booths, glam booth, audio guest book, and 360 video booth
+              </p>
+            </Link>
           </div>
         </div>
       </section>

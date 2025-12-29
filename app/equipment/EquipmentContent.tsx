@@ -20,46 +20,46 @@ export default function EquipmentContent() {
   const equipmentItems = [
     {
       title: 'Professional DSLR Camera',
-      description: 'Our cameras capture all the details and give you really clear photos',
-      specs: ['24MP sensor', 'Full HD video capability', 'Professional lighting integration'],
+      description: 'Our professional DSLR cameras capture stunning high-resolution images with exceptional clarity and detail for your GTA events',
+      specs: ['24MP sensor for high-resolution images', 'Full HD video capability', 'Professional lighting integration for optimal photo quality'],
     },
     {
       title: 'Dye-Sublimation Printer',
-      description: "The printer we use makes colorful prints that dry instantly and won't smudge",
-      specs: ['4x6 and 2x6 print sizes', 'Waterproof prints', 'Instant drying technology'],
+      description: "Professional dye-sublimation printer produces vibrant, waterproof instant prints that won't smudge or fade over time",
+      specs: ['4x6 and 2x6 print sizes on custom templates', 'Waterproof, durable prints', 'Instant drying technology - prints ready in seconds'],
     },
     {
       title: 'Touchscreen Interface',
-      description: 'Easy to use touchscreen that makes everything simple for your guests',
-      specs: ['Large format display', 'Intuitive controls', 'Custom branding options'],
+      description: 'Large, intuitive touchscreen interface makes it easy for guests to operate the photo booth and customize their photos',
+      specs: ['Large format display for easy viewing', 'Intuitive controls with simple navigation', 'Custom branding options for corporate events'],
     },
     {
       title: 'Professional Lighting',
-      description: 'Professional lighting that makes sure everyone looks great in their photos',
-      specs: ['Adjustable brightness', 'Color temperature control', 'Flattering light distribution'],
+      description: 'Professional studio-grade lighting ensures everyone looks amazing in their photos with flattering, consistent illumination',
+      specs: ['Adjustable brightness for different venues', 'Color temperature control for optimal skin tones', 'Flattering light distribution that minimizes shadows'],
     },
   ];
 
   const techHighlights = [
     {
       icon: '📷',
-      title: 'Camera Quality',
-      description: "Professional cameras that take sharp, clear photos you'll want to frame",
+      title: 'DSLR Camera Quality',
+      description: "Professional DSLR cameras capture sharp, high-resolution photos with exceptional detail that you'll want to display and treasure",
     },
     {
       icon: '🖨️',
       title: 'Print Technology',
-      description: 'Our printing process gives you bright colors and prints that hold up over time',
+      description: 'Dye-sublimation printing process delivers vibrant colors and produces durable, waterproof prints that last for years',
     },
     {
       icon: '💻',
       title: 'Software Features',
-      description: 'Our software lets us customize templates and share photos instantly with your guests',
+      description: 'Advanced software allows us to create custom templates, add digital overlays, and instantly share photos with guests via SMS or email',
     },
     {
       icon: '💡',
       title: 'Lighting System',
-      description: 'Professional lighting that sets the right mood and makes photos look amazing',
+      description: 'Professional studio lighting creates the perfect ambiance and ensures flattering photos with optimal brightness and color accuracy',
     },
   ];
 
@@ -92,10 +92,10 @@ export default function EquipmentContent() {
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl pt-16">
             <h1 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
-              Professional Equipment
+              Professional Photo Booth Equipment in Toronto & GTA
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed font-light">
-              We use top quality equipment that gives you great photos every time
+              We use top-quality professional equipment including DSLR cameras, dye-sublimation printers, and professional lighting to deliver exceptional photo booth experiences at events across Toronto, Mississauga, Brampton, Vaughan, and Markham.
             </p>
           </div>
         </div>
@@ -189,10 +189,10 @@ export default function EquipmentContent() {
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
             <h2 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
-              Experience the Difference
+              Professional Equipment for GTA Events
             </h2>
             <p className="text-lg mb-8 text-gray-300 max-w-2xl leading-relaxed font-light">
-              Let us bring our equipment to your next event and see the difference it makes
+              Bring our professional photo booth equipment to your next event in Toronto, Mississauga, Brampton, Vaughan, or Markham and see the difference quality makes
             </p>
             <Link
               href="/contact"

@@ -21,32 +21,32 @@ export default function TemplatesContent() {
   const templateImages = [
     {
       src: '/api/placeholder/400/400',
-      alt: 'Elegant Wedding Template',
+      alt: 'Elegant wedding photo booth template with custom design for Toronto weddings',
       title: 'Elegant Wedding',
     },
     {
       src: '/api/placeholder/400/400',
-      alt: 'Birthday Party Template',
+      alt: 'Birthday party photo booth template with instant prints for GTA celebrations',
       title: 'Birthday Celebration',
     },
     {
       src: '/api/placeholder/400/400',
-      alt: 'Corporate Event Template',
+      alt: 'Corporate event photo booth template with company branding for Toronto businesses',
       title: 'Corporate Event',
     },
     {
       src: '/api/placeholder/400/400',
-      alt: 'Graduation Template',
+      alt: 'Graduation photo booth template with custom text for GTA graduates',
       title: 'Graduation',
     },
     {
       src: '/api/placeholder/400/400',
-      alt: 'Holiday Party Template',
+      alt: 'Holiday party photo booth template with festive design for Toronto events',
       title: 'Holiday Party',
     },
     {
       src: '/api/placeholder/400/400',
-      alt: 'Anniversary Template',
+      alt: 'Anniversary photo booth template with elegant design for milestone celebrations',
       title: 'Anniversary',
     },
   ];

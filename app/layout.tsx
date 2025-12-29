@@ -12,9 +12,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "The Photobooth Guy - Toronto's Premier Photo Booth Rental",
-  description: "Professional photo booth rental services in Toronto. Premium equipment, custom templates, stunning backdrops, and exceptional service for your events.",
-  keywords: "photo booth rental, Toronto, event photography, photo booth hire, party rental",
+  title: "Photo Booth Rental Toronto & GTA | The Photobooth Guy",
+  description: "Professional photo booth rental services in Toronto, Mississauga, Brampton, Vaughan, and Markham. Premium DSLR cameras, instant prints, custom templates, stunning backdrops, and exceptional service for weddings, corporate events, and parties.",
+  keywords: "photo booth rental, Toronto, GTA, Mississauga, Brampton, Vaughan, Markham, wedding photo booth, corporate photo booth, event photography, instant prints, DSLR camera, professional attendant",
 };
 
 export default function RootLayout({

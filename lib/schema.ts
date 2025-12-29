@@ -24,7 +24,8 @@ const localBusinessData = {
     { "@type": "City", "name": "Toronto" },
     { "@type": "City", "name": "Mississauga" },
     { "@type": "City", "name": "Brampton" },
-    { "@type": "City", "name": "Vaughan" }
+    { "@type": "City", "name": "Vaughan" },
+    { "@type": "City", "name": "Markham" }
   ],
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
@@ -150,3 +151,27 @@ export const organizationSchema = {
     "https://www.instagram.com/photoboothguys.ca/"
   ]
 };
+
+export const faqSchema = (faqs: Array<{ question: string; answer: string }>) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+});
+
+export const breadcrumbSchema = (items: Array<{ name: string; url: string }>) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    "item": item.url
+  }))
+});

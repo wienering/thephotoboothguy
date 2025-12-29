@@ -4,9 +4,9 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 import { contactPageSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Contact Us - The Photobooth Guy | Toronto Photo Booth Rental',
-  description: 'Get in touch with The Photobooth Guy for your event. Call 647-378-5332 or email info@photoboothguys.ca. Serving Toronto and surrounding areas.',
-  keywords: 'contact photo booth rental, Toronto photo booth, event booking, photo booth inquiry',
+  title: 'Book Photo Booth Rental Toronto | Contact The Photobooth Guy',
+  description: 'Book your photo booth rental for Toronto, Mississauga, Brampton, Vaughan, or Markham events. Call 647-378-5332 or email info@photoboothguys.ca. Professional DSLR cameras, instant prints, and exceptional service.',
+  keywords: 'contact photo booth rental Toronto, book photo booth GTA, photo booth inquiry, wedding photo booth booking, corporate event photo booth Toronto',
 };
 
 export default function Contact() {

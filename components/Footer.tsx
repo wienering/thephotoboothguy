@@ -12,7 +12,7 @@ export default function Footer() {
               The Photobooth Guy
             </h3>
             <p className="mb-8 text-gray-400 leading-relaxed font-light max-w-md">
-              Toronto's best photo booth rental service. We help create great memories at your events with professional equipment and great service.
+              Professional photo booth rental services across the Greater Toronto Area. Serving weddings, corporate events, and parties with premium equipment and exceptional service.
             </p>
             <div className="flex space-x-6">
               <a
@@ -40,6 +40,52 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Service Areas */}
+          <div>
+            <h4 className="text-white font-light mb-6 text-sm uppercase tracking-wider">Service Areas</h4>
+            <ul className="space-y-4">
+              <li>
+                <Link
+                  href="/photo-booth-rental-toronto"
+                  className="text-gray-400 hover:text-white transition-colors font-light"
+                >
+                  Toronto
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/photo-booth-rental-mississauga"
+                  className="text-gray-400 hover:text-white transition-colors font-light"
+                >
+                  Mississauga
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/photo-booth-rental-brampton"
+                  className="text-gray-400 hover:text-white transition-colors font-light"
+                >
+                  Brampton
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/photo-booth-rental-vaughan"
+                  className="text-gray-400 hover:text-white transition-colors font-light"
+                >
+                  Vaughan
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/photo-booth-rental-markham"
+                  className="text-gray-400 hover:text-white transition-colors font-light"
+                >
+                  Markham
+                </Link>
+              </li>
+            </ul>
+          </div>
           {/* Quick Links */}
           <div>
             <h4 className="text-white font-light mb-6 text-sm uppercase tracking-wider">Quick Links</h4>
@@ -76,9 +122,16 @@ export default function Footer() {
                   Backdrops
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-gray-400 hover:text-white transition-colors font-light"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
-
           {/* Contact Info */}
           <div>
             <h4 className="text-white font-light mb-6 text-sm uppercase tracking-wider">Contact</h4>
@@ -100,9 +153,9 @@ export default function Footer() {
                 </a>
               </li>
               <li className="pt-2 text-sm">
-                <p className="mb-1">GTA</p>
+                <p className="mb-1">Greater Toronto Area</p>
                 <p className="text-xs text-gray-500 leading-relaxed">
-                  Toronto, Mississauga, Brampton, Markham, Vaughan, Richmond Hill, Oakville, Burlington, Etobicoke, Scarborough, North York, Ajax, Pickering, Whitby, Oshawa, and surrounding areas
+                  Serving Toronto, Mississauga, Brampton, Vaughan, Markham, Richmond Hill, Oakville, Burlington, and surrounding areas
                 </p>
               </li>
             </ul>

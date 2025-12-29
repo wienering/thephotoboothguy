@@ -7,14 +7,22 @@ import { gsap } from '@/lib/gsap';
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'Equipment', href: '/equipment' },
-  { name: 'Contact', href: '/contact' },
   { name: 'Templates', href: '/templates' },
   { name: 'Backdrops', href: '/backdrops' },
+  { name: 'Contact', href: '/contact' },
+];
+
+const serviceLinks = [
+  { name: 'Photo Booth Rental', href: '/photo-booth-rental-toronto' },
+  { name: 'Glam Booth', href: '/glam-booth-toronto' },
+  { name: 'Audio Guest Book', href: '/audio-guest-book-toronto' },
+  { name: '360 Video Booth', href: '/360-booth-toronto' },
 ];
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,6 +58,36 @@ export default function Navigation() {
                 {link.name}
               </Link>
             ))}
+            
+            {/* Services Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <button
+                className={`px-3 py-2 text-xs uppercase tracking-wider font-medium transition-colors ${
+                  scrolled ? 'text-gray-700 hover:text-black' : 'text-gray-700 hover:text-black'
+                }`}
+              >
+                Services ▾
+              </button>
+              
+              {servicesOpen && (
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 shadow-lg z-50">
+                  {serviceLinks.map((service) => (
+                    <Link
+                      key={service.href}
+                      href={service.href}
+                      className="block px-6 py-3 text-xs uppercase tracking-wider font-medium text-gray-700 hover:bg-black hover:text-white transition-all"
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            
             <Link
               href="/contact"
               className={`border px-5 py-2 text-xs uppercase tracking-wider font-medium transition-all ml-2 ${
@@ -99,6 +137,22 @@ export default function Navigation() {
                 {link.name}
               </Link>
             ))}
+            
+            {/* Mobile Services Section */}
+            <div className="border-t border-gray-200 pt-3 mt-3">
+              <p className="text-xs uppercase tracking-wider font-medium text-gray-500 mb-2">Services</p>
+              {serviceLinks.map((service) => (
+                <Link
+                  key={service.href}
+                  href={service.href}
+                  className="block text-sm uppercase tracking-wider font-medium py-2 pl-4 transition-colors text-gray-700 hover:text-black"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {service.name}
+                </Link>
+              ))}
+            </div>
+            
             <Link
               href="/contact"
               className="block border text-center px-6 py-3 text-sm uppercase tracking-wider font-medium transition-all border-black text-black hover:bg-black hover:text-white"

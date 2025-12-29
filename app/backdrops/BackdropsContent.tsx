@@ -21,47 +21,47 @@ export default function BackdropsContent() {
   const backdropImages = [
     {
       src: '/api/placeholder/400/400',
-      alt: 'Elegant Gold Backdrop',
+      alt: 'Elegant gold sequin backdrop for Toronto wedding photo booth rental',
       title: 'Elegant Gold',
     },
     {
       src: '/api/placeholder/400/400',
-      alt: 'Floral Garden Backdrop',
+      alt: 'Floral garden backdrop with roses for photo booth events in GTA',
       title: 'Floral Garden',
     },
     {
       src: '/api/placeholder/400/400',
-      alt: 'Modern Geometric Backdrop',
+      alt: 'Modern geometric pattern backdrop for corporate photo booth Toronto',
       title: 'Modern Geometric',
     },
     {
       src: '/api/placeholder/400/400',
-      alt: 'Vintage Retro Backdrop',
+      alt: 'Vintage retro backdrop for birthday party photo booth rental',
       title: 'Vintage Retro',
     },
     {
       src: '/api/placeholder/400/400',
-      alt: 'Tropical Paradise Backdrop',
+      alt: 'Tropical paradise themed backdrop for summer event photo booth',
       title: 'Tropical Paradise',
     },
     {
       src: '/api/placeholder/400/400',
-      alt: 'City Skyline Backdrop',
+      alt: 'Toronto city skyline backdrop for urban event photo booth',
       title: 'City Skyline',
     },
     {
       src: '/api/placeholder/400/400',
-      alt: 'Rustic Wood Backdrop',
+      alt: 'Rustic wood panel backdrop for wedding photo booth GTA',
       title: 'Rustic Wood',
     },
     {
       src: '/api/placeholder/400/400',
-      alt: 'Sparkle Glamour Backdrop',
+      alt: 'Gold sparkle glamour backdrop for glam booth rental Toronto',
       title: 'Sparkle Glamour',
     },
     {
       src: '/api/placeholder/400/400',
-      alt: 'Nature Forest Backdrop',
+      alt: 'Nature forest themed backdrop for outdoor event photo booth',
       title: 'Nature Forest',
     },
   ];

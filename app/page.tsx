@@ -4,9 +4,9 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 import { localBusinessWithRatingSchema, reviewSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: "The Photobooth Guy - Toronto's Premier Photo Booth Rental",
-  description: 'Professional photo booth rental services in Toronto. Premium equipment, custom templates, stunning backdrops, and exceptional service for your events. Packages starting at $550.',
-  keywords: 'photo booth rental Toronto, event photography, photo booth hire, party rental, wedding photo booth',
+  title: 'Photo Booth Rental Toronto | GTA Photo Booth Services | The Photobooth Guy',
+  description: 'Professional photo booth rental in Toronto, Mississauga, Brampton, Vaughan, and Markham. DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant. Serving weddings, corporate events, and parties across the GTA. Packages starting at $550.',
+  keywords: 'photo booth rental Toronto, GTA photo booth services, photo booth rental Mississauga, photo booth rental Brampton, photo booth rental Vaughan, photo booth rental Markham, wedding photo booth GTA, corporate photo booth Toronto, instant prints, DSLR camera, professional attendant, custom templates, backdrop, props, digital copies',
 };
 
 export default function Home() {
