@@ -16,7 +16,7 @@ const pageData: ServiceLocationData = {
   city: 'Brampton',
   heroTitle: 'Audio Guest Book in Brampton',
   heroSubtitle: 'Capture heartfelt voice messages from your guests with a vintage-style telephone guest book. A unique and memorable alternative to traditional guest books for Brampton weddings and events.',
-  description: 'In Brampton\'s tight-knit community where family and tradition matter deeply, audio guest books capture something written messages never could - the actual voices of grandparents sharing blessings, cousins telling childhood stories, and friends offering wishes in Punjabi, Hindi, or any language close to your heart. Our vintage telephone setup at venues like Great Hall and Terrace Banquet Hall provides an elegant, easy way for guests of all ages to participate. Elderly relatives who might struggle with writing can comfortably speak their messages, while younger guests enjoy the unique retro experience. Our bilingual attendants understand Brampton\'s cultural celebrations and ensure everyone feels comfortable leaving their message. All recordings are delivered on USB and digitally, letting you share these precious audio memories with family across the globe.',
+  description: 'In Brampton\'s tight-knit community where family and tradition matter deeply, audio guest books capture something written messages never could - the actual voices of grandparents sharing blessings, cousins telling childhood stories, and friends offering wishes in Punjabi, Hindi, or any language close to your heart. Our vintage telephone setup at venues like Great Hall and Terrace Banquet Hall provides an elegant, easy way for guests of all ages to participate. Elderly relatives who might struggle with writing can comfortably speak their messages, while younger guests enjoy the unique retro experience. The system is intuitive and self-operating, ensuring everyone feels comfortable leaving their message. All recordings are delivered as high-quality digital files within 48 hours, letting you share these precious audio memories with family across the globe.',
   venues: venues.brampton,
   features: [
     {
@@ -35,19 +35,19 @@ const pageData: ServiceLocationData = {
       description: 'No limit on the number or length of voice messages. Every guest can share their thoughts, wishes, and memories.',
     },
     {
-      icon: '👤',
-      title: 'Professional Attendant',
-      description: 'Trained attendant on site to set up, monitor the audio guest book, and ensure everything runs smoothly throughout your event.',
+      icon: '🎯',
+      title: 'Easy Self-Service',
+      description: 'Simple, intuitive operation that requires no monitoring. Guests of all ages can easily leave their messages throughout your event.',
     },
     {
-      icon: '💿',
-      title: 'USB Drive Included',
-      description: 'All voice messages delivered on a beautiful USB drive, perfect for safekeeping and easy playback whenever you want to relive the memories.',
+      icon: '🎵',
+      title: 'High-Quality Audio',
+      description: 'Professional recording equipment captures crystal-clear audio with excellent clarity, preserving every word and emotion.',
     },
     {
       icon: '📱',
-      title: 'Digital Files',
-      description: 'Receive digital audio files of all messages, making it easy to share with family, create compilations, or store in the cloud.',
+      title: 'Digital Delivery',
+      description: 'Receive all audio files as high-quality digital downloads within 48 hours, easy to share with family or store in the cloud.',
     },
   ],
   packages: audioGuestBookPackages,

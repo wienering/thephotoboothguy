@@ -151,11 +151,11 @@ export const audioGuestBookPackages = [
     duration: '3 hours',
     features: [
       'Vintage-style telephone handset',
-      'Professional attendant on site',
       'Custom recorded greeting',
       'Unlimited voice messages',
+      'Easy setup and operation',
       'Digital audio files delivered after event',
-      'USB drive with all recordings included',
+      'High-quality audio recording',
     ],
     highlight: true,
   },
@@ -165,11 +165,11 @@ export const audioGuestBookPackages = [
     duration: '5 hours',
     features: [
       'Vintage-style telephone handset',
-      'Professional attendant on site',
       'Custom recorded greeting',
       'Unlimited voice messages',
+      'Easy setup and operation',
       'Digital audio files delivered after event',
-      'USB drive with all recordings included',
+      'High-quality audio recording',
     ],
   },
   {
@@ -178,11 +178,11 @@ export const audioGuestBookPackages = [
     duration: 'Full event',
     features: [
       'Vintage-style telephone handset',
-      'Professional attendant on site',
       'Custom recorded greeting',
       'Unlimited voice messages',
+      'Easy setup and operation',
       'Digital audio files delivered after event',
-      'USB drive with all recordings included',
+      'High-quality audio recording',
     ],
   },
 ];

@@ -16,7 +16,7 @@ const pageData: ServiceLocationData = {
   city: 'Vaughan',
   heroTitle: 'Audio Guest Book in Vaughan',
   heroSubtitle: 'Capture heartfelt voice messages from your guests with a vintage-style telephone guest book. A unique and memorable alternative to traditional guest books for Vaughan weddings and events.',
-  description: 'Vaughan\'s elegant events deserve a guest book alternative that matches their sophistication. Our audio guest book brings a charming vintage aesthetic to upscale venues like Paradise Convention Centre and The Manor while capturing something priceless - the actual voices of your loved ones. For Vaughan\'s Italian community in Woodbridge, hearing nonna\'s blessing in her native dialect becomes a family treasure. At corporate events in Concord, employee testimonials captured on audio create memorable keepsakes. The vintage telephone adds a decorative element that complements Vaughan\'s refined venues, while the technology behind it ensures crystal-clear recording quality. Our experienced attendants manage the setup discreetly, and you receive professionally edited audio files on both USB and digital formats within 48 hours.',
+  description: 'Vaughan\'s elegant events deserve a guest book alternative that matches their sophistication. Our audio guest book brings a charming vintage aesthetic to upscale venues like Paradise Convention Centre and The Manor while capturing something priceless - the actual voices of your loved ones. For Vaughan\'s Italian community in Woodbridge, hearing nonna\'s blessing in her native dialect becomes a family treasure. At corporate events in Concord, employee testimonials captured on audio create memorable keepsakes. The vintage telephone adds a decorative element that complements Vaughan\'s refined venues, while the technology behind it ensures crystal-clear recording quality. The system is simple and self-operating, and you receive professionally edited audio files as digital downloads within 48 hours.',
   venues: venues.vaughan,
   features: [
     {
@@ -35,19 +35,19 @@ const pageData: ServiceLocationData = {
       description: 'No limit on the number or length of voice messages. Every guest can share their thoughts, wishes, and memories.',
     },
     {
-      icon: '👤',
-      title: 'Professional Attendant',
-      description: 'Trained attendant on site to set up, monitor the audio guest book, and ensure everything runs smoothly throughout your event.',
+      icon: '🎯',
+      title: 'Easy Self-Service',
+      description: 'Simple, intuitive operation that requires no monitoring. Guests of all ages can easily leave their messages throughout your event.',
     },
     {
-      icon: '💿',
-      title: 'USB Drive Included',
-      description: 'All voice messages delivered on a beautiful USB drive, perfect for safekeeping and easy playback whenever you want to relive the memories.',
+      icon: '🎵',
+      title: 'High-Quality Audio',
+      description: 'Professional recording equipment captures crystal-clear audio with excellent clarity, preserving every word and emotion.',
     },
     {
       icon: '📱',
-      title: 'Digital Files',
-      description: 'Receive digital audio files of all messages, making it easy to share with family, create compilations, or store in the cloud.',
+      title: 'Digital Delivery',
+      description: 'Receive all audio files as high-quality digital downloads within 48 hours, easy to share with family or store in the cloud.',
     },
   ],
   packages: audioGuestBookPackages,

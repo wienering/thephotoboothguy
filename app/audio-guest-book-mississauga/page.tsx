@@ -16,7 +16,7 @@ const pageData: ServiceLocationData = {
   city: 'Mississauga',
   heroTitle: 'Audio Guest Book in Mississauga',
   heroSubtitle: 'Capture heartfelt voice messages from your guests with a vintage-style telephone guest book. A unique and memorable alternative to traditional guest books for Mississauga weddings and events.',
-  description: 'Mississauga\'s diverse community makes audio guest books especially meaningful - capturing heartfelt messages in multiple languages and preserving family stories for generations. From intimate gatherings at Renaissance by the Creek to grand celebrations at The Grand Luxe, our vintage telephone guest book adds a nostalgic yet innovative touch to your special day. Guests in Port Credit and Streetsville love the personal connection of hearing loved ones\' actual voices, complete with their unique accents, laughter, and emotional inflections that writing simply can\'t capture. Our service includes custom greeting recording in your language of choice, professional monitoring, and delivery of all messages on both USB drive and cloud storage. Perfect for multicultural Mississauga weddings where preserving family heritage matters.',
+  description: 'Mississauga\'s diverse community makes audio guest books especially meaningful - capturing heartfelt messages in multiple languages and preserving family stories for generations. From intimate gatherings at Renaissance by the Creek to grand celebrations at The Grand Luxe, our vintage telephone guest book adds a nostalgic yet innovative touch to your special day. Guests in Port Credit and Streetsville love the personal connection of hearing loved ones\' actual voices, complete with their unique accents, laughter, and emotional inflections that writing simply can\'t capture. Our service includes custom greeting recording in your language of choice, easy self-service operation, and delivery of all messages as high-quality digital files within 48 hours. Perfect for multicultural Mississauga weddings where preserving family heritage matters.',
   venues: venues.mississauga,
   features: [
     {
@@ -35,19 +35,19 @@ const pageData: ServiceLocationData = {
       description: 'No limit on the number or length of voice messages. Every guest can share their thoughts, wishes, and memories.',
     },
     {
-      icon: '👤',
-      title: 'Professional Attendant',
-      description: 'Trained attendant on site to set up, monitor the audio guest book, and ensure everything runs smoothly throughout your event.',
+      icon: '🎯',
+      title: 'Easy Self-Service',
+      description: 'Simple, intuitive operation that requires no monitoring. Guests of all ages can easily leave their messages throughout your event.',
     },
     {
-      icon: '💿',
-      title: 'USB Drive Included',
-      description: 'All voice messages delivered on a beautiful USB drive, perfect for safekeeping and easy playback whenever you want to relive the memories.',
+      icon: '🎵',
+      title: 'High-Quality Audio',
+      description: 'Professional recording equipment captures crystal-clear audio with excellent clarity, preserving every word and emotion.',
     },
     {
       icon: '📱',
-      title: 'Digital Files',
-      description: 'Receive digital audio files of all messages, making it easy to share with family, create compilations, or store in the cloud.',
+      title: 'Digital Delivery',
+      description: 'Receive all audio files as high-quality digital downloads within 48 hours, easy to share with family or store in the cloud.',
     },
   ],
   packages: audioGuestBookPackages,

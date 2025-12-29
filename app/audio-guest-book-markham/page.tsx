@@ -16,7 +16,7 @@ const pageData: ServiceLocationData = {
   city: 'Markham',
   heroTitle: 'Audio Guest Book in Markham',
   heroSubtitle: 'Capture heartfelt voice messages from your guests with a vintage-style telephone guest book. A unique and memorable alternative to traditional guest books for Markham weddings and events.',
-  description: 'Markham\'s tech-savvy, forward-thinking community appreciates innovations that honor tradition - exactly what our audio guest book delivers. At Paradise Banquet Hall and Le Parc, the vintage telephone aesthetic creates Instagram-worthy moments while capturing something deeply personal: the voices of family sharing stories in Mandarin, Cantonese, or English. For Markham\'s many fusion weddings in Unionville and Cornell, audio guest books bridge generational and cultural gaps - grandparents comfortable speaking their native language and young cousins sharing inside jokes all contribute equally. Our service includes custom bilingual greetings, professional recording quality that captures every nuance, and delivery via both USB drive and secure cloud storage. Perfect for Markham families who value preserving heritage while embracing modern technology.',
+  description: 'Markham\'s tech-savvy, forward-thinking community appreciates innovations that honor tradition - exactly what our audio guest book delivers. At Paradise Banquet Hall and Le Parc, the vintage telephone aesthetic creates Instagram-worthy moments while capturing something deeply personal: the voices of family sharing stories in Mandarin, Cantonese, or English. For Markham\'s many fusion weddings in Unionville and Cornell, audio guest books bridge generational and cultural gaps - grandparents comfortable speaking their native language and young cousins sharing inside jokes all contribute equally. Our service includes custom bilingual greetings, professional recording quality that captures every nuance, and delivery via secure digital download within 48 hours. Perfect for Markham families who value preserving heritage while embracing modern technology.',
   venues: venues.markham,
   features: [
     {
@@ -35,19 +35,19 @@ const pageData: ServiceLocationData = {
       description: 'No limit on the number or length of voice messages. Every guest can share their thoughts, wishes, and memories.',
     },
     {
-      icon: '👤',
-      title: 'Professional Attendant',
-      description: 'Trained attendant on site to set up, monitor the audio guest book, and ensure everything runs smoothly throughout your event.',
+      icon: '🎯',
+      title: 'Easy Self-Service',
+      description: 'Simple, intuitive operation that requires no monitoring. Guests of all ages can easily leave their messages throughout your event.',
     },
     {
-      icon: '💿',
-      title: 'USB Drive Included',
-      description: 'All voice messages delivered on a beautiful USB drive, perfect for safekeeping and easy playback whenever you want to relive the memories.',
+      icon: '🎵',
+      title: 'High-Quality Audio',
+      description: 'Professional recording equipment captures crystal-clear audio with excellent clarity, preserving every word and emotion.',
     },
     {
       icon: '📱',
-      title: 'Digital Files',
-      description: 'Receive digital audio files of all messages, making it easy to share with family, create compilations, or store in the cloud.',
+      title: 'Digital Delivery',
+      description: 'Receive all audio files as high-quality digital downloads within 48 hours, easy to share with family or store in the cloud.',
     },
   ],
   packages: audioGuestBookPackages,

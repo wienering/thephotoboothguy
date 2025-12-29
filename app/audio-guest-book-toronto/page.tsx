@@ -16,7 +16,7 @@ const pageData: ServiceLocationData = {
   city: 'Toronto',
   heroTitle: 'Audio Guest Book in Toronto',
   heroSubtitle: 'Capture heartfelt voice messages from your guests with a vintage-style telephone guest book. A unique and memorable alternative to traditional guest books for Toronto weddings and events.',
-  description: 'Toronto couples are choosing audio guest books to capture the authentic voices and emotions of their wedding day. Instead of traditional written messages, your guests at venues like The Liberty Grand or Harbour Castle can pick up our vintage telephone and leave heartfelt voice recordings you\'ll treasure forever. Perfect for Toronto\'s multicultural weddings where family members may speak different languages, the audio format captures accents, laughter, and the unique personality of each speaker. Our professional attendant ensures smooth operation throughout your event, whether you\'re in downtown Toronto, North York, or Etobicoke. You\'ll receive all recordings on a beautiful USB drive plus digital files, letting you relive those emotional toasts and personal messages whenever you want.',
+  description: 'Toronto couples are choosing audio guest books to capture the authentic voices and emotions of their wedding day. Instead of traditional written messages, your guests at venues like The Liberty Grand or Harbour Castle can pick up our vintage telephone and leave heartfelt voice recordings you\'ll treasure forever. Perfect for Toronto\'s multicultural weddings where family members may speak different languages, the audio format captures accents, laughter, and the unique personality of each speaker. The setup is intuitive and self-operating, making it easy for guests throughout your event, whether you\'re in downtown Toronto, North York, or Etobicoke. You\'ll receive all recordings as digital files within 48 hours, letting you relive those emotional toasts and personal messages whenever you want.',
   venues: venues.toronto,
   features: [
     {
@@ -35,19 +35,19 @@ const pageData: ServiceLocationData = {
       description: 'No limit on the number or length of voice messages. Every guest can share their thoughts, wishes, and memories.',
     },
     {
-      icon: '👤',
-      title: 'Professional Attendant',
-      description: 'Trained attendant on site to set up, monitor the audio guest book, and ensure everything runs smoothly throughout your event.',
+      icon: '🎯',
+      title: 'Easy Self-Service',
+      description: 'Simple, intuitive operation that requires no monitoring. Guests of all ages can easily leave their messages throughout your event.',
     },
     {
-      icon: '💿',
-      title: 'USB Drive Included',
-      description: 'All voice messages delivered on a beautiful USB drive, perfect for safekeeping and easy playback whenever you want to relive the memories.',
+      icon: '🎵',
+      title: 'High-Quality Audio',
+      description: 'Professional recording equipment captures crystal-clear audio with excellent clarity, preserving every word and emotion.',
     },
     {
       icon: '📱',
-      title: 'Digital Files',
-      description: 'Receive digital audio files of all messages, making it easy to share with family, create compilations, or store in the cloud.',
+      title: 'Digital Delivery',
+      description: 'Receive all audio files as high-quality digital downloads within 48 hours, easy to share with family or store in the cloud.',
     },
   ],
   packages: audioGuestBookPackages,
