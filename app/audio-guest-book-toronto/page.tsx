@@ -56,24 +56,32 @@ const pageData: ServiceLocationData = {
   packages: audioGuestBookPackages,
   faqs: [
     {
-      question: 'How does the audio guest book work?',
-      answer: 'Guests pick up the vintage telephone handset, hear your custom greeting with instructions, then leave their voice message after the beep. It\'s simple and intuitive - just like leaving a voicemail. Our professional attendant is on site to assist anyone who needs help.',
+      question: 'How much does an audio guest book cost in Toronto?',
+      answer: 'Audio guest book rental in Toronto starts at $450 for our Standard package (3 hours), $550 for Extended (5 hours), and $650 for Full Event coverage. All packages include the vintage telephone handset, custom recorded greeting, unlimited voice messages, easy setup, and digital audio files delivered after your Toronto event. It\'s a unique alternative to traditional guest books that captures the actual voices of your loved ones.',
     },
     {
-      question: 'Can we listen to the messages during the event?',
-      answer: 'The audio guest book is designed to record messages throughout your Toronto event. You\'ll receive all the recordings after your event on a USB drive and as digital files, so you can listen and relive those special moments for years to come.',
+      question: 'How does the audio guest book work at a Toronto wedding?',
+      answer: 'It\'s incredibly simple! Guests pick up the vintage telephone handset, listen to your custom greeting with instructions, then leave their voice message after the beep. Just like leaving a voicemail. Our professional attendant is on site to assist anyone who needs help, but most guests figure it out right away. The system is intuitive and self-operating, so it doesn\'t require constant monitoring.',
     },
     {
-      question: 'What happens to the recordings after our event?',
-      answer: 'We carefully transfer all voice messages to a high-quality USB drive and also provide you with digital audio files. You\'ll have permanent copies of every heartfelt message from your Toronto wedding or event. The recordings are never shared or kept by us after delivery.',
+      question: 'Can I listen to the audio guest book messages during my Toronto event?',
+      answer: 'The audio guest book is designed to record messages throughout your Toronto event. You\'ll receive all the recordings after your event on a USB drive and as digital files, so you can listen and relive those special moments for years to come. This way you can focus on enjoying your celebration while guests leave messages throughout the day.',
     },
     {
-      question: 'How many people typically leave messages?',
-      answer: 'Most guests love the audio guest book! Typically 60-80% of attendees leave messages at Toronto weddings and events. The vintage telephone is eye-catching and the concept is unique, which encourages participation. Many guests leave longer, more personal messages than they would write.',
+      question: 'What happens to the audio guest book recordings after my Toronto wedding?',
+      answer: 'We carefully transfer all voice messages to a high-quality USB drive and also provide you with digital audio files. You\'ll have permanent copies of every heartfelt message from your Toronto wedding or event. The recordings are never shared or kept by us after delivery - they\'re yours to keep forever and share with family and friends.',
     },
     {
-      question: 'Can we use this alongside a traditional photo booth?',
-      answer: 'Absolutely! Many of our Toronto clients combine an audio guest book with our photo booth rental or glam booth services. It gives guests multiple ways to participate and creates different types of memories - visual and audio keepsakes from your special day.',
+      question: 'How many people typically use the audio guest book at Toronto events?',
+      answer: 'Most guests love the audio guest book! Typically 60-80% of attendees leave messages at Toronto weddings and events. The vintage telephone is eye-catching and the concept is unique, which encourages participation. Many guests actually leave longer, more personal messages than they would write in a traditional guest book.',
+    },
+    {
+      question: 'Can I use an audio guest book with a photo booth at my Toronto event?',
+      answer: 'Absolutely! Many of our Toronto clients combine an audio guest book with our photo booth rental or glam booth services. It gives guests multiple ways to participate and creates different types of memories - visual photos and audio keepsakes from your special day. Both can run simultaneously without any issues.',
+    },
+    {
+      question: 'Do you provide setup for audio guest books in Toronto?',
+      answer: 'Yes! Our team sets up the audio guest book, tests everything, and ensures it\'s ready for your Toronto event. We\'ll work with your venue to find the perfect spot where guests can easily access it. The setup is quick and doesn\'t require much space, so it works well at most Toronto venues.',
     },
   ],
   relatedServices: [

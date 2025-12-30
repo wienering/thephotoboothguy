@@ -56,24 +56,32 @@ const pageData: ServiceLocationData = {
   packages: glamBoothPackages,
   faqs: [
     {
-      question: 'What makes the glam booth different from a regular photo booth?',
-      answer: 'Our glam booth features professional studio lighting specifically designed for black and white photography, creating the sophisticated Kardashian-style aesthetic. The lighting setup, backdrop selection, and overall design are curated to produce elegant, magazine-quality photos that stand out from traditional color photo booths.',
+      question: 'How much does a glam booth cost in Richmond Hill?',
+      answer: 'Glam booth rental in Richmond Hill starts at $650 for our Essential package (2 hours), $850 for Signature (3 hours), and $1,050 for Premium (4 hours). All packages include the black and white glam booth setup with professional lighting, premium backdrop, high-quality instant prints, props, and digital delivery. The glam booth creates that Kardashian-style aesthetic that\'s perfect for upscale Richmond Hill events.',
     },
     {
-      question: 'Are the photos only in black and white?',
-      answer: 'Yes, the glam booth specializes in black and white photography to achieve that timeless, glamorous aesthetic. The professional lighting and monochrome styling create stunning, high-contrast photos that look like they belong in a fashion magazine.',
+      question: 'What makes a glam booth different from a regular photo booth in Richmond Hill?',
+      answer: 'The glam booth features professional studio lighting specifically designed for black and white photography, creating that sophisticated Kardashian-style aesthetic you see in celebrity events. The lighting setup, backdrop selection, and overall design are all curated to produce elegant, magazine-quality photos that stand out from traditional color photo booths. It\'s perfect for Richmond Hill events where you want that high-fashion, editorial look.',
     },
     {
-      question: 'Is the glam booth suitable for outdoor Richmond Hill events?',
-      answer: 'The glam booth works best indoors where we can control the lighting environment for optimal results. We regularly set up at Richmond Hill venues like Richmond Hill Centre for the Performing Arts, Richmond Hill Country Club, and other premium indoor locations where we can achieve the perfect lighting conditions.',
+      question: 'Are glam booth photos only in black and white in Richmond Hill?',
+      answer: 'Yes, the glam booth specializes exclusively in black and white photography to achieve that timeless, glamorous aesthetic. The professional lighting and monochrome styling create stunning, high-contrast photos that look like they belong in a fashion magazine. This is what gives the glam booth its distinctive, sophisticated look that Richmond Hill brides and event planners love.',
     },
     {
-      question: 'Can we still customize the print templates?',
-      answer: 'Absolutely! We design custom black and white print templates that complement the glam aesthetic while incorporating your event details, names, dates, and design elements in an elegant style.',
+      question: 'Can I use a glam booth for an outdoor event in Richmond Hill?',
+      answer: 'The glam booth works best indoors where we can control the lighting environment for optimal results. We regularly set up at Richmond Hill venues like Richmond Hill Centre for the Performing Arts, Richmond Hill Country Club, and other premium indoor locations where we can achieve the perfect lighting conditions. If you have a covered outdoor space with proper lighting, we can discuss options for your Richmond Hill event.',
     },
     {
-      question: 'What type of events is the glam booth perfect for?',
-      answer: 'The glam booth is ideal for weddings, corporate galas, milestone celebrations, anniversary parties, and any upscale Richmond Hill event where you want to create a sophisticated, glamorous atmosphere. It\'s particularly popular at high-end venues throughout Richmond Hill.',
+      question: 'Can I customize the glam booth print templates for my Richmond Hill wedding?',
+      answer: 'Absolutely! We design custom black and white print templates that complement the glam aesthetic while incorporating your wedding details, names, dates, and design elements in an elegant style. The templates will match your Richmond Hill wedding theme while maintaining that sophisticated monochrome look.',
+    },
+    {
+      question: 'What type of events are best for a glam booth in Richmond Hill?',
+      answer: 'The glam booth is ideal for weddings, corporate galas, milestone celebrations, anniversary parties, and any upscale Richmond Hill event where you want to create a sophisticated, glamorous atmosphere. It\'s particularly popular at high-end venues throughout Richmond Hill where guests appreciate that magazine-quality aesthetic.',
+    },
+    {
+      question: 'How long does it take to get glam booth prints in Richmond Hill?',
+      answer: 'Just like our regular photo booths, glam booth prints are ready in about 10-15 seconds. Guests receive their black and white printed photos almost immediately, and digital copies are sent to their phones or email instantly. The glam booth experience is just as fast and convenient as our regular photo booths.',
     },
   ],
   relatedServices: [
