@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Audio Guest Book Vaughan | Wedding Voicemail Guest Book Rental | The Photobooth Guy',
   description: 'Audio guest book rental in Vaughan with vintage telephone handset. Capture heartfelt voice messages at your wedding or event. Professional service for Vaughan weddings at Paradise Convention Centre and venues across the city.',
   keywords: 'audio guest book Vaughan, wedding voicemail guest book, audio guestbook rental Vaughan, voice message guest book, telephone guest book Vaughan',
+  alternates: {
+    canonical: 'https://thephotoboothguy.ca/audio-guest-book-vaughan',
+  },
 };
 
 const pageData: ServiceLocationData = {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Photo Booth Rental Markham | Professional Photo Booth Services | The Photobooth Guy',
   description: 'Professional photo booth rental in Markham with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant. Serving Flato Markham Theatre, Paradise Banquet Hall, and venues across Markham.',
   keywords: 'photo booth rental Markham, Markham photo booth, photo booth hire Markham, wedding photo booth Markham, corporate photo booth Markham, instant prints, professional attendant',
+  alternates: {
+    canonical: 'https://thephotoboothguy.ca/photo-booth-rental-markham',
+  },
 };
 
 const pageData: ServiceLocationData = {

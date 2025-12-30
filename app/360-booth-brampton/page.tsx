@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: '360 Video Booth Brampton | 360 Photo Booth Rental | The Photobooth Guy',
   description: '360 video booth rental in Brampton with professional camera arm, instant video delivery, and premium platform. Perfect for weddings, corporate events, and parties at Brampton venues including Great Hall and Terrace Banquet Hall.',
   keywords: '360 booth Brampton, 360 video booth Brampton, 360 photo booth rental Brampton, spinning photo booth, 360 camera booth, corporate 360 booth Brampton',
+  alternates: {
+    canonical: 'https://thephotoboothguy.ca/360-booth-brampton',
+  },
 };
 
 const pageData: ServiceLocationData = {

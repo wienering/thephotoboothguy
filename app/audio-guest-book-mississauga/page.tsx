@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Audio Guest Book Mississauga | Wedding Voicemail Guest Book Rental | The Photobooth Guy',
   description: 'Audio guest book rental in Mississauga with vintage telephone handset. Capture heartfelt voice messages at your wedding or event. Professional service for Mississauga weddings at The Grand Luxe and venues across the city.',
   keywords: 'audio guest book Mississauga, wedding voicemail guest book, audio guestbook rental Mississauga, voice message guest book, telephone guest book Mississauga',
+  alternates: {
+    canonical: 'https://thephotoboothguy.ca/audio-guest-book-mississauga',
+  },
 };
 
 const pageData: ServiceLocationData = {

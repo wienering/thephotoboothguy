@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Glam Booth Markham | Black and White Kardashian Style Photo Booth | The Photobooth Guy',
   description: 'Kardashian-style black and white glam booth rental in Markham. Professional lighting, high-quality prints, and stunning aesthetic for weddings and upscale events. Available at Paradise Banquet Hall and premium Markham venues.',
   keywords: 'glam booth Markham, black and white photo booth Markham, Kardashian style photo booth, glamour booth Markham, wedding glam booth',
+  alternates: {
+    canonical: 'https://thephotoboothguy.ca/glam-booth-markham',
+  },
 };
 
 const pageData: ServiceLocationData = {

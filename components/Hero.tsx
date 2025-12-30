@@ -33,7 +33,7 @@ export default function Hero() {
 
       {/* Large text background element */}
       <div className="absolute inset-0 flex items-center justify-center opacity-[0.02]">
-        <h1 className="text-[20rem] font-black tracking-tighter select-none">PHOTO</h1>
+        <div className="text-[20rem] font-black tracking-tighter select-none">PHOTO</div>
       </div>
 
       <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">

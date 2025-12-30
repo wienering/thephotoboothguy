@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: '360 Video Booth Markham | 360 Photo Booth Rental | The Photobooth Guy',
   description: '360 video booth rental in Markham with professional camera arm, instant video delivery, and premium platform. Perfect for weddings, corporate events, and parties at Markham venues including Paradise Banquet Hall and Le Parc Banquet Hall.',
   keywords: '360 booth Markham, 360 video booth Markham, 360 photo booth rental Markham, spinning photo booth, 360 camera booth, corporate 360 booth Markham',
+  alternates: {
+    canonical: 'https://thephotoboothguy.ca/360-booth-markham',
+  },
 };
 
 const pageData: ServiceLocationData = {

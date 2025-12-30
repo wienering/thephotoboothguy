@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Glam Booth Brampton | Black and White Kardashian Style Photo Booth | The Photobooth Guy',
   description: 'Kardashian-style black and white glam booth rental in Brampton. Professional lighting, high-quality prints, and stunning aesthetic for weddings and upscale events. Available at Great Hall and premium Brampton venues.',
   keywords: 'glam booth Brampton, black and white photo booth Brampton, Kardashian style photo booth, glamour booth Brampton, wedding glam booth',
+  alternates: {
+    canonical: 'https://thephotoboothguy.ca/glam-booth-brampton',
+  },
 };
 
 const pageData: ServiceLocationData = {

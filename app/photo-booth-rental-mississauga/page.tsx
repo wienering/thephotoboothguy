@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Photo Booth Rental Mississauga | Professional Photo Booth Services | The Photobooth Guy',
   description: 'Professional photo booth rental in Mississauga with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant. Serving The Grand Luxe, Living Arts Centre, and venues across Mississauga.',
   keywords: 'photo booth rental Mississauga, Mississauga photo booth, photo booth hire Mississauga, wedding photo booth Mississauga, corporate photo booth Mississauga, instant prints, professional attendant',
+  alternates: {
+    canonical: 'https://thephotoboothguy.ca/photo-booth-rental-mississauga',
+  },
 };
 
 const pageData: ServiceLocationData = {

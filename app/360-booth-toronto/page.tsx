@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: '360 Video Booth Toronto | 360 Photo Booth Rental | The Photobooth Guy',
   description: '360 video booth rental in Toronto with professional camera arm, instant video delivery, and premium platform. Perfect for weddings, corporate events, and parties at Toronto venues including Liberty Grand and Metro Toronto Convention Centre.',
   keywords: '360 booth Toronto, 360 video booth Toronto, 360 photo booth rental Toronto, spinning photo booth, 360 camera booth, corporate 360 booth Toronto',
+  alternates: {
+    canonical: 'https://thephotoboothguy.ca/360-booth-toronto',
+  },
 };
 
 const pageData: ServiceLocationData = {

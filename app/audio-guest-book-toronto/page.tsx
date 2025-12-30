@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Audio Guest Book Toronto | Wedding Voicemail Guest Book Rental | The Photobooth Guy',
   description: 'Audio guest book rental in Toronto with vintage telephone handset. Capture heartfelt voice messages at your wedding or event. Professional service for Toronto weddings at Liberty Grand, Harbour Castle, and venues across the city.',
   keywords: 'audio guest book Toronto, wedding voicemail guest book, audio guestbook rental Toronto, voice message guest book, telephone guest book Toronto, wedding guest book alternative',
+  alternates: {
+    canonical: 'https://thephotoboothguy.ca/audio-guest-book-toronto',
+  },
 };
 
 const pageData: ServiceLocationData = {

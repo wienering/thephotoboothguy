@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Audio Guest Book Markham | Wedding Voicemail Guest Book Rental | The Photobooth Guy',
   description: 'Audio guest book rental in Markham with vintage telephone handset. Capture heartfelt voice messages at your wedding or event. Professional service for Markham weddings at Paradise Banquet Hall and venues across the city.',
   keywords: 'audio guest book Markham, wedding voicemail guest book, audio guestbook rental Markham, voice message guest book, telephone guest book Markham',
+  alternates: {
+    canonical: 'https://thephotoboothguy.ca/audio-guest-book-markham',
+  },
 };
 
 const pageData: ServiceLocationData = {

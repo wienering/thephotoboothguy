@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Photo Booth Rental Toronto | Professional Photo Booth Services | The Photobooth Guy',
   description: 'Professional photo booth rental in Toronto with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant. Serving Liberty Grand, Arcadian Court, and venues across Toronto.',
   keywords: 'photo booth rental Toronto, Toronto photo booth, photo booth hire Toronto, wedding photo booth Toronto, corporate photo booth Toronto, instant prints, DSLR camera, professional attendant',
+  alternates: {
+    canonical: 'https://thephotoboothguy.ca/photo-booth-rental-toronto',
+  },
 };
 
 const pageData: ServiceLocationData = {
