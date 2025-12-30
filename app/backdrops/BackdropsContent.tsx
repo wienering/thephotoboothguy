@@ -20,49 +20,94 @@ export default function BackdropsContent() {
 
   const backdropImages = [
     {
-      src: '/api/placeholder/400/400',
-      alt: 'Elegant gold sequin backdrop for Toronto wedding photo booth rental',
-      title: 'Elegant Gold',
+      src: '/Backdrops/1759969973685-Midnight20Luxe203.webp',
+      alt: 'Midnight Luxe backdrop with gold geometric lines for elegant Toronto photo booth rental',
+      title: 'Midnight Luxe',
     },
     {
-      src: '/api/placeholder/400/400',
-      alt: 'Floral garden backdrop with roses for photo booth events in GTA',
-      title: 'Floral Garden',
+      src: '/Backdrops/1759971392814-Neon20Tunnel20Backdrop.webp',
+      alt: 'Infinity Light Tunnel backdrop with illuminated corridor lines for modern photo booth events',
+      title: 'Infinity Light Tunnel',
     },
     {
-      src: '/api/placeholder/400/400',
-      alt: 'Modern geometric pattern backdrop for corporate photo booth Toronto',
-      title: 'Modern Geometric',
+      src: '/Backdrops/1759971826284-Silver20Sequin.webp',
+      alt: 'Silver Luxe Sequin backdrop with sleek silver mosaic pattern for corporate photo booth Toronto',
+      title: 'Silver Luxe Sequin',
     },
     {
-      src: '/api/placeholder/400/400',
-      alt: 'Vintage retro backdrop for birthday party photo booth rental',
-      title: 'Vintage Retro',
+      src: '/Backdrops/1759972991300-WHITE20GOLD.webp',
+      alt: 'White Geo Art Deco backdrop with fine gold geometric lines for luxury wedding photo booth',
+      title: 'White Geo Art Deco',
     },
     {
-      src: '/api/placeholder/400/400',
-      alt: 'Tropical paradise themed backdrop for summer event photo booth',
-      title: 'Tropical Paradise',
+      src: '/Backdrops/1759973042930-Cracked20Marble20Geometric20Design.webp',
+      alt: 'Cracked Marble Geometric Design backdrop for modern corporate photo booth rental',
+      title: 'Cracked Marble Geometric',
     },
     {
-      src: '/api/placeholder/400/400',
-      alt: 'Toronto city skyline backdrop for urban event photo booth',
-      title: 'City Skyline',
+      src: '/Backdrops/1759967747847-IMG_5318.webp',
+      alt: 'Gold Luxe Sequin backdrop with rich printed gold mosaic design for luxury photo booth events',
+      title: 'Gold Luxe Sequin',
     },
     {
-      src: '/api/placeholder/400/400',
-      alt: 'Rustic wood panel backdrop for wedding photo booth GTA',
-      title: 'Rustic Wood',
+      src: '/Backdrops/1759972728136-IMG_6348.webp',
+      alt: 'Rose Gold Sequin backdrop with shimmering rose gold sequin for wedding photo booth rental',
+      title: 'Rose Gold Sequin',
     },
     {
-      src: '/api/placeholder/400/400',
-      alt: 'Gold sparkle glamour backdrop for glam booth rental Toronto',
-      title: 'Sparkle Glamour',
+      src: '/Backdrops/1759972766639-IMG_6349.webp',
+      alt: 'Red Sequin backdrop with vibrant red shimmering sequin for holiday photo booth events',
+      title: 'Red Sequin',
     },
     {
-      src: '/api/placeholder/400/400',
-      alt: 'Nature forest themed backdrop for outdoor event photo booth',
-      title: 'Nature Forest',
+      src: '/Backdrops/1759972802301-IMG_6350.webp',
+      alt: 'Champagne Sequin backdrop with shimmering champagne sequin for formal photo booth rental',
+      title: 'Champagne Sequin',
+    },
+    {
+      src: '/Backdrops/1759972824673-IMG_6351.webp',
+      alt: 'Purple Sequin backdrop with deep purple sequin for themed photo booth events',
+      title: 'Purple Sequin',
+    },
+    {
+      src: '/Backdrops/1759972854715-IMG_6352.webp',
+      alt: 'Black Sequin backdrop with deep black shine for gala photo booth rental',
+      title: 'Black Sequin',
+    },
+    {
+      src: '/Backdrops/1759972876577-IMG_6354.webp',
+      alt: 'Black Pillowcase backdrop with deep matte black finish for editorial photo booth',
+      title: 'Black Pillowcase',
+    },
+    {
+      src: '/Backdrops/1760021647373-8de821fd-3536-4dbf-a9fb-6dbf83e82b4c.webp',
+      alt: 'White Pillowcase backdrop with clean soft matte white for modern photo booth rental',
+      title: 'White Pillowcase',
+    },
+    {
+      src: '/Backdrops/1760021686462-abd2d27e-018d-4df7-a349-3a72226201dc.webp',
+      alt: 'Rustic Wood Light backdrop with warm wood planks and string lights for rustic photo booth',
+      title: 'Rustic Wood Light',
+    },
+    {
+      src: '/Backdrops/1760021811082-bad77596-b451-4581-aa52-404e55e0be44.webp',
+      alt: 'Black Geo Art Deco backdrop with bold gold linework for upscale photo booth events',
+      title: 'Black Geo Art Deco',
+    },
+    {
+      src: '/Backdrops/1760565027729-IMG_6529.webp',
+      alt: 'Champagne Glow backdrop with dreamy printed bokeh effect for elegant photo booth rental',
+      title: 'Champagne Glow',
+    },
+    {
+      src: '/Backdrops/1763415660893-0CE3C950-46FA-40C1-B962-FC5EB698DA19.webp',
+      alt: 'Blush Floral Cascade backdrop with soft ivory and blush blooms for romantic photo booth',
+      title: 'Blush Floral Cascade',
+    },
+    {
+      src: '/Backdrops/1763415726355-69283668-A44B-4224-8478-BAF33DA1A1C9.webp',
+      alt: 'Midnight Glow backdrop with dramatic black-and-gold bokeh print for nighttime photo booth',
+      title: 'Midnight Glow',
     },
   ];
 
@@ -70,22 +115,22 @@ export default function BackdropsContent() {
     {
       name: 'Elegant',
       description: 'Sophisticated backdrops perfect for weddings and formal events',
-      count: '12+ options',
+      count: '18+ options',
     },
     {
       name: 'Fun & Playful',
       description: 'Colorful and vibrant backdrops that add energy to any celebration',
-      count: '15+ options',
+      count: '18+ options',
     },
     {
       name: 'Themed',
       description: 'Specialty backdrops for holidays, seasons, and unique themes',
-      count: '20+ options',
+      count: '18+ options',
     },
     {
       name: 'Modern',
       description: 'Contemporary designs with clean lines and bold patterns',
-      count: '10+ options',
+      count: '18+ options',
     },
   ];
 
