@@ -57,7 +57,7 @@ const pageData: ServiceLocationData = {
   faqs: [
     {
       question: 'How much does a 360 video booth cost in Ajax?',
-      answer: '360 video booth rental in Ajax starts at $750 for our Essential package (2 hours), $950 for Signature (3 hours), and $1,150 for Premium (4 hours). All packages include the professional 360 video booth with camera arm, premium platform, professional lighting, instant video delivery, props, and a professional attendant. It\'s the most unique and shareable entertainment option for Ajax events.',
+      answer: '360 video booth rental in Ajax starts at $550 for our Essential package (2 hours), $750 for Signature (3 hours), and $950 for Premium (4 hours). All packages include the professional 360 video booth with camera arm, premium platform, professional lighting, instant video delivery, props, and a professional attendant. It\'s the most unique and shareable entertainment option for Ajax events.',
     },
     {
       question: 'How does the 360 video booth work at a Ajax event?',
@@ -107,7 +107,7 @@ export default function Booth360Ajax() {
         schema={serviceSchema(
           '360 Video Booth Ajax',
           '360 video booth rental in Ajax with professional camera arm, instant video delivery, premium platform, lighting, and attendant for weddings and corporate events.',
-          '$750'
+          '$550'
         )}
       />
       <ServiceLocationPage data={pageData} />

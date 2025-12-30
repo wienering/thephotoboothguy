@@ -270,7 +270,7 @@ export const audioGuestBookPackages = [
 export const booth360Packages = [
   {
     name: 'Essential',
-    price: '$750',
+    price: '$550',
     duration: '2 hours',
     features: [
       'Professional 360 video booth with camera arm',
@@ -284,7 +284,7 @@ export const booth360Packages = [
   },
   {
     name: 'Signature',
-    price: '$950',
+    price: '$750',
     duration: '3 hours',
     features: [
       'Professional 360 video booth with camera arm',
@@ -299,7 +299,7 @@ export const booth360Packages = [
   },
   {
     name: 'Premium',
-    price: '$1,150',
+    price: '$950',
     duration: '4 hours',
     features: [
       'Professional 360 video booth with camera arm',
