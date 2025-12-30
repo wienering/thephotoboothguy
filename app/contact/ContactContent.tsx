@@ -95,10 +95,10 @@ export default function ContactContent() {
                       Email
                     </h3>
                     <a
-                      href="mailto:info@photoboothguys.ca"
+                      href="mailto:contact@thephotoboothguy.ca"
                       className="text-2xl text-black hover:text-gray-600 transition-colors font-light"
                     >
-                      info@photoboothguys.ca
+                      contact@thephotoboothguy.ca
                     </a>
                   </div>
                   <div>

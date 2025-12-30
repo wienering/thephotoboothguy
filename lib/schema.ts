@@ -5,7 +5,7 @@ const localBusinessData = {
   "image": "https://www.thephotoboothguy.ca/logo.jpg",
   "url": "https://www.thephotoboothguy.ca",
   "telephone": "647-378-5332",
-  "email": "info@photoboothguys.ca",
+  "email": "contact@thephotoboothguy.ca",
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
@@ -142,7 +142,7 @@ export const organizationSchema = {
     "@type": "ContactPoint",
     "telephone": "647-378-5332",
     "contactType": "Customer Service",
-    "email": "info@photoboothguys.ca",
+    "email": "contact@thephotoboothguy.ca",
     "areaServed": "CA",
     "availableLanguage": "English"
   },

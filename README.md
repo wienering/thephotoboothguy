@@ -211,5 +211,5 @@ The site is already optimized with:
 ## Support
 
 For questions or issues, contact:
-- Email: info@photoboothguys.ca
+- Email: contact@thephotoboothguy.ca
 - Phone: 647-378-5332

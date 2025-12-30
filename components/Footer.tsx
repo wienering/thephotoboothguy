@@ -146,10 +146,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:info@photoboothguys.ca"
+                  href="mailto:contact@thephotoboothguy.ca"
                   className="hover:text-white transition-colors"
                 >
-                  info@photoboothguys.ca
+                  contact@thephotoboothguy.ca
                 </a>
               </li>
               <li className="pt-2 text-sm">

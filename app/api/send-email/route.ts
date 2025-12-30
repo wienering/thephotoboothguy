@@ -29,7 +29,7 @@ export async function POST(request: Request) {
       );
     }
 
-    console.log('📤 Sending email to: info@photoboothguys.ca');
+    console.log('📤 Sending email to: contact@thephotoboothguy.ca');
 
     // Create unique subject line with timestamp in Eastern Time to prevent email threading
     const timestamp = formatEasternDateTime();
@@ -46,7 +46,7 @@ export async function POST(request: Request) {
     // Send email
     const data = await resend.emails.send({
       from: 'The Photobooth Guy <contact@thephotoboothguy.ca>',
-      to: ['info@photoboothguys.ca'], // Your email address
+      to: ['contact@thephotoboothguy.ca'], // Your email address
       replyTo: email,
       subject: uniqueSubject,
       html: `
