@@ -95,7 +95,7 @@ export default function EquipmentContent() {
               Professional Photo Booth Equipment in Toronto & GTA
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed font-light">
-              We use top-quality professional equipment including DSLR cameras, dye-sublimation printers, and professional lighting to deliver exceptional photo booth experiences at events across Toronto, Mississauga, Brampton, Vaughan, and Markham.
+              We use top-quality professional equipment including DSLR cameras, dye-sublimation printers, and professional lighting to deliver exceptional photo booth experiences at events across <Link href="/photo-booth-rental-toronto" className="text-white underline hover:no-underline">Toronto</Link>, <Link href="/photo-booth-rental-mississauga" className="text-white underline hover:no-underline">Mississauga</Link>, <Link href="/photo-booth-rental-brampton" className="text-white underline hover:no-underline">Brampton</Link>, <Link href="/photo-booth-rental-vaughan" className="text-white underline hover:no-underline">Vaughan</Link>, and <Link href="/photo-booth-rental-markham" className="text-white underline hover:no-underline">Markham</Link>.
             </p>
           </div>
         </div>
@@ -192,7 +192,7 @@ export default function EquipmentContent() {
               Professional Equipment for GTA Events
             </h2>
             <p className="text-lg mb-8 text-gray-300 max-w-2xl leading-relaxed font-light">
-              Bring our professional photo booth equipment to your next event in Toronto, Mississauga, Brampton, Vaughan, or Markham and see the difference quality makes
+              Bring our professional photo booth equipment to your next event in <Link href="/photo-booth-rental-toronto" className="text-white underline hover:no-underline">Toronto</Link>, <Link href="/photo-booth-rental-mississauga" className="text-white underline hover:no-underline">Mississauga</Link>, <Link href="/photo-booth-rental-brampton" className="text-white underline hover:no-underline">Brampton</Link>, <Link href="/photo-booth-rental-vaughan" className="text-white underline hover:no-underline">Vaughan</Link>, or <Link href="/photo-booth-rental-markham" className="text-white underline hover:no-underline">Markham</Link> and see the difference quality makes
             </p>
             <Link
               href="/contact"

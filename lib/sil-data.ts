@@ -6,6 +6,16 @@ export interface VenueData {
   brampton: string[];
   vaughan: string[];
   markham: string[];
+  richmondHill: string[];
+  oakville: string[];
+  burlington: string[];
+  etobicoke: string[];
+  scarborough: string[];
+  northYork: string[];
+  ajax: string[];
+  pickering: string[];
+  whitby: string[];
+  oshawa: string[];
 }
 
 export const venues: VenueData = {
@@ -50,6 +60,76 @@ export const venues: VenueData = {
     'Cedar Valley Event Centre',
     'Paradise Banquet Hall Markham',
     'Le Parc Banquet Hall',
+  ],
+  richmondHill: [
+    'Richmond Hill Centre for the Performing Arts',
+    'Richmond Hill Country Club',
+    'Elgin West Community Centre',
+    'Richmond Green Sports Centre',
+    'Richmond Hill Golf Club',
+  ],
+  oakville: [
+    'Oakville Conference Centre',
+    'Oakville Centre for the Performing Arts',
+    'Glen Abbey Golf Club',
+    'Oakville Club',
+    'Queen Elizabeth Park Community Centre',
+  ],
+  burlington: [
+    'Burlington Convention Centre',
+    'Royal Botanical Gardens',
+    'Burlington Performing Arts Centre',
+    'LaSalle Park Pavilion',
+    'Burlington Golf & Country Club',
+  ],
+  etobicoke: [
+    'The Old Mill Toronto',
+    'Humber Valley Golf Club',
+    'Etobicoke Olympium',
+    'Assembly Hall',
+    'The Old Mill Inn',
+  ],
+  scarborough: [
+    'Scarborough Convention Centre',
+    'Toronto Congress Centre',
+    'The Guild Inn Estate',
+    'Scarborough Golf & Country Club',
+    'Centennial Park',
+  ],
+  northYork: [
+    'Toronto Congress Centre',
+    'The International Centre',
+    'York Mills Gallery',
+    'Oriental Banquet Hall',
+    'Empress Walk',
+  ],
+  ajax: [
+    'Ajax Community Centre',
+    'Ajax Convention Centre',
+    'Rotary Park Pavilion',
+    'Ajax Downs',
+    'Audley Recreation Centre',
+  ],
+  pickering: [
+    'Pickering Recreation Complex',
+    'Pickering Convention Centre',
+    'Frenchman\'s Bay Yacht Club',
+    'Pickering Casino Resort',
+    'Chestnut Hill Developments Recreation Complex',
+  ],
+  whitby: [
+    'Whitby Convention Centre',
+    'Iroquois Park Sports Centre',
+    'Whitby Golf & Country Club',
+    'Heber Down Conservation Area',
+    'Port Whitby Marina',
+  ],
+  oshawa: [
+    'Oshawa Convention Centre',
+    'Regent Theatre',
+    'Oshawa Golf & Curling Club',
+    'Tribute Communities Centre',
+    'Parkwood Estate',
   ],
 };
 

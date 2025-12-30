@@ -125,7 +125,7 @@ export default function HomeContent() {
               Professional Photo Booth Rental Across the GTA
             </h2>
             <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light max-w-3xl mb-6">
-              We provide professional photo booth services throughout Toronto, Mississauga, Brampton, Vaughan, and Markham. Every event receives our premium equipment including professional DSLR cameras, dye-sublimation printers for instant prints, custom templates designed for your event, stunning backdrops, fun props, and a trained professional attendant on site. Digital copies are sent instantly to guests via SMS or email.
+              We provide professional photo booth services throughout <Link href="/photo-booth-rental-toronto" className="text-black underline hover:no-underline">Toronto</Link>, <Link href="/photo-booth-rental-mississauga" className="text-black underline hover:no-underline">Mississauga</Link>, <Link href="/photo-booth-rental-brampton" className="text-black underline hover:no-underline">Brampton</Link>, <Link href="/photo-booth-rental-vaughan" className="text-black underline hover:no-underline">Vaughan</Link>, and <Link href="/photo-booth-rental-markham" className="text-black underline hover:no-underline">Markham</Link>. Every event receives our premium equipment including professional DSLR cameras, dye-sublimation printers for instant prints, custom templates designed for your event, stunning backdrops, fun props, and a trained professional attendant on site. Digital copies are sent instantly to guests via SMS or email.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed font-light max-w-3xl">
               Whether you're planning a wedding, corporate gala, birthday party, anniversary celebration, or any special event across the Greater Toronto Area, we deliver exceptional photo booth experiences with professional lighting, high-quality prints, and outstanding service.
@@ -202,7 +202,7 @@ export default function HomeContent() {
                 Toronto →
               </h3>
               <p className="text-gray-600 leading-relaxed font-light">
-                Photo booth services in Toronto including Downtown, North York, Scarborough, and Etobicoke
+                Photo booth services in <Link href="/photo-booth-rental-toronto" className="text-black underline hover:no-underline">Toronto</Link> including <Link href="/photo-booth-rental-toronto" className="text-black underline hover:no-underline">Downtown</Link>, <Link href="/photo-booth-rental-north-york" className="text-black underline hover:no-underline">North York</Link>, <Link href="/photo-booth-rental-scarborough" className="text-black underline hover:no-underline">Scarborough</Link>, and <Link href="/photo-booth-rental-etobicoke" className="text-black underline hover:no-underline">Etobicoke</Link>
               </p>
             </Link>
             <Link
@@ -213,7 +213,7 @@ export default function HomeContent() {
                 Mississauga →
               </h3>
               <p className="text-gray-600 leading-relaxed font-light">
-                Professional photo booth rental in Mississauga, Port Credit, and Streetsville
+                Professional photo booth rental in <Link href="/photo-booth-rental-mississauga" className="text-black underline hover:no-underline">Mississauga</Link>, Port Credit, and Streetsville
               </p>
             </Link>
             <Link
@@ -224,7 +224,7 @@ export default function HomeContent() {
                 Brampton →
               </h3>
               <p className="text-gray-600 leading-relaxed font-light">
-                Photo booth services in Brampton, Bramalea, and Heart Lake areas
+                Photo booth services in <Link href="/photo-booth-rental-brampton" className="text-black underline hover:no-underline">Brampton</Link>, Bramalea, and Heart Lake areas
               </p>
             </Link>
             <Link
@@ -235,7 +235,7 @@ export default function HomeContent() {
                 Vaughan →
               </h3>
               <p className="text-gray-600 leading-relaxed font-light">
-                Photo booth rental in Vaughan, Woodbridge, Concord, and Thornhill
+                Photo booth rental in <Link href="/photo-booth-rental-vaughan" className="text-black underline hover:no-underline">Vaughan</Link>, Woodbridge, Concord, and Thornhill
               </p>
             </Link>
             <Link
@@ -246,7 +246,7 @@ export default function HomeContent() {
                 Markham →
               </h3>
               <p className="text-gray-600 leading-relaxed font-light">
-                Professional photo booth services in Markham, Unionville, and Milliken
+                Professional photo booth services in <Link href="/photo-booth-rental-markham" className="text-black underline hover:no-underline">Markham</Link>, Unionville, and Milliken
               </p>
             </Link>
             <Link

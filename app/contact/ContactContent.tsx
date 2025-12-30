@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useMemo } from 'react';
+import Link from 'next/link';
 import ContactForm from '@/components/ContactForm';
 import { revealOnScroll } from '@/lib/gsap';
 import { getEasternDayOfWeek } from '@/lib/timezone';
@@ -109,7 +110,7 @@ export default function ContactContent() {
                       GTA
                     </p>
                     <p className="text-base text-gray-600 font-light leading-relaxed">
-                      Toronto, Mississauga, Brampton, Markham, Vaughan, Richmond Hill, Oakville, Burlington, Etobicoke, Scarborough, North York, Ajax, Pickering, Whitby, Oshawa, and surrounding areas
+                      <Link href="/photo-booth-rental-toronto" className="text-black underline hover:no-underline">Toronto</Link>, <Link href="/photo-booth-rental-mississauga" className="text-black underline hover:no-underline">Mississauga</Link>, <Link href="/photo-booth-rental-brampton" className="text-black underline hover:no-underline">Brampton</Link>, <Link href="/photo-booth-rental-markham" className="text-black underline hover:no-underline">Markham</Link>, <Link href="/photo-booth-rental-vaughan" className="text-black underline hover:no-underline">Vaughan</Link>, <Link href="/photo-booth-rental-richmond-hill" className="text-black underline hover:no-underline">Richmond Hill</Link>, <Link href="/photo-booth-rental-oakville" className="text-black underline hover:no-underline">Oakville</Link>, <Link href="/photo-booth-rental-burlington" className="text-black underline hover:no-underline">Burlington</Link>, <Link href="/photo-booth-rental-etobicoke" className="text-black underline hover:no-underline">Etobicoke</Link>, <Link href="/photo-booth-rental-scarborough" className="text-black underline hover:no-underline">Scarborough</Link>, <Link href="/photo-booth-rental-north-york" className="text-black underline hover:no-underline">North York</Link>, <Link href="/photo-booth-rental-ajax" className="text-black underline hover:no-underline">Ajax</Link>, <Link href="/photo-booth-rental-pickering" className="text-black underline hover:no-underline">Pickering</Link>, <Link href="/photo-booth-rental-whitby" className="text-black underline hover:no-underline">Whitby</Link>, <Link href="/photo-booth-rental-oshawa" className="text-black underline hover:no-underline">Oshawa</Link>, and surrounding areas
                     </p>
                   </div>
                 </div>

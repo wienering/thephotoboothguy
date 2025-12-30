@@ -102,7 +102,7 @@ export default function BackdropsContent() {
               Stunning Backdrop Collection
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed font-light">
-              We have a huge collection of professional backdrops to choose from. Whether you want something elegant or fun, we've got you covered.
+              We have a huge collection of professional backdrops to choose from. Whether you want something elegant or fun, we've got you covered. Serving events across the <Link href="/photo-booth-rental-toronto" className="text-white underline hover:no-underline">GTA</Link> including <Link href="/photo-booth-rental-toronto" className="text-white underline hover:no-underline">Toronto</Link>, <Link href="/photo-booth-rental-mississauga" className="text-white underline hover:no-underline">Mississauga</Link>, <Link href="/photo-booth-rental-brampton" className="text-white underline hover:no-underline">Brampton</Link>, <Link href="/photo-booth-rental-vaughan" className="text-white underline hover:no-underline">Vaughan</Link>, and <Link href="/photo-booth-rental-markham" className="text-white underline hover:no-underline">Markham</Link>.
             </p>
           </div>
         </div>
