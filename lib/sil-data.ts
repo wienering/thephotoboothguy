@@ -88,6 +88,7 @@ export const venues: VenueData = {
     'Etobicoke Olympium',
     'Assembly Hall',
     'The Old Mill Inn',
+    'Markland Wood Golf Club',
   ],
   scarborough: [
     'Scarborough Convention Centre',
