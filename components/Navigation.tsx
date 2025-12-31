@@ -45,9 +45,9 @@ export default function Navigation() {
             <Image
               src="/logo.webp"
               alt="The Photobooth Guy"
-              width={200}
-              height={60}
-              className="h-12 w-auto object-contain"
+              width={300}
+              height={90}
+              className="h-16 md:h-20 w-auto object-contain"
               priority
             />
           </Link>
