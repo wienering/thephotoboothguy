@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getEasternYear } from '@/lib/timezone';
 
 export default function Footer() {
@@ -8,9 +9,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-16">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-light text-white mb-6 tracking-wider">
-              The Photobooth Guy
-            </h3>
+            <div className="mb-6">
+              <Image
+                src="/logo.webp"
+                alt="The Photobooth Guy"
+                width={200}
+                height={60}
+                className="h-12 w-auto object-contain"
+              />
+            </div>
             <p className="mb-8 text-gray-400 leading-relaxed font-light max-w-md">
               Professional photo booth rental services across the Greater Toronto Area. Serving weddings, corporate events, and parties with premium equipment and exceptional service.
             </p>

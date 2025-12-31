@@ -2,7 +2,7 @@
 
 const localBusinessData = {
   "name": "The Photobooth Guy",
-  "image": "https://www.thephotoboothguy.ca/logo.jpg",
+  "image": "https://www.thephotoboothguy.ca/logo.webp",
   "url": "https://www.thephotoboothguy.ca",
   "telephone": "647-378-5332",
   "email": "contact@thephotoboothguy.ca",
@@ -137,7 +137,7 @@ export const organizationSchema = {
   "@type": "Organization",
   "name": "The Photobooth Guy",
   "url": "https://www.thephotoboothguy.ca",
-  "logo": "https://www.thephotoboothguy.ca/logo.jpg",
+  "logo": "https://www.thephotoboothguy.ca/logo.webp",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "647-378-5332",

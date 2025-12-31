@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { gsap } from '@/lib/gsap';
 
@@ -40,10 +41,15 @@ export default function Navigation() {
     >
       <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className={`text-lg font-light tracking-wider transition-colors ${
-            scrolled ? 'text-black' : 'text-black'
-          }`}>
-            The Photobooth Guy
+          <Link href="/" className="flex items-center h-full">
+            <Image
+              src="/logo.webp"
+              alt="The Photobooth Guy"
+              width={200}
+              height={60}
+              className="h-12 w-auto object-contain"
+              priority
+            />
           </Link>
 
           <div className="hidden md:flex items-center gap-6">
