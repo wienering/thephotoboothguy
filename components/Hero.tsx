@@ -48,8 +48,12 @@ export default function Hero() {
             className="text-6xl md:text-8xl lg:text-9xl font-light mb-8 leading-[0.95] tracking-tight"
           >
             Create 
-            <span className="block font-normal mt-2">Unforgettable </span>
-            <span className="block font-light">Memories</span>
+            <span className="block font-normal mt-2">
+              Unforgettable 
+            </span>
+            <span className="block font-light">
+              Memories
+            </span>
           </h1>
           <p
             ref={subtitleRef}
