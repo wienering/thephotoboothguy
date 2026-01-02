@@ -134,3 +134,6 @@ export const heroTextReveal = (element: string | Element) => {
 
 export { gsap };
 
+
+
+

@@ -139,7 +139,9 @@ export default function BackdropsContent() {
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl pt-16">
             <h1 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
-              Stunning Backdrop Collection
+              Stunning 
+              Backdrop 
+              Collection
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed font-light">
               We have a huge collection of professional backdrops to choose from. Whether you want something elegant or fun, we've got you covered.

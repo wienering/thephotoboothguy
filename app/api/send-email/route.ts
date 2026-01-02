@@ -58,7 +58,9 @@ export async function POST(request: Request) {
         </head>
         <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
           <div style="background-color: #ffffff; border-radius: 8px; padding: 30px;">
-            <h1 style="color: #000000; font-size: 24px; font-weight: 300; margin-top: 0; margin-bottom: 20px;">New Booking Inquiry</h1>
+            <h1 style="color: #000000; font-size: 24px; font-weight: 300; margin-top: 0; margin-bottom: 20px;">New 
+            Booking 
+            Inquiry</h1>
             
             <p style="color: #666666; font-size: 16px; margin-bottom: 30px;">Hi there,</p>
             

@@ -107,7 +107,9 @@ export default function TemplatesContent() {
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl pt-16">
             <h1 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
-              Custom Photo Templates
+              Custom 
+              Photo 
+              Templates
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed font-light">
               We create custom photo templates that match your event perfectly. Each design is made just for you. Available for events throughout the <Link href="/photo-booth-rental-toronto" className="text-white underline hover:no-underline">GTA</Link> including <Link href="/photo-booth-rental-toronto" className="text-white underline hover:no-underline">Toronto</Link>, <Link href="/photo-booth-rental-mississauga" className="text-white underline hover:no-underline">Mississauga</Link>, <Link href="/photo-booth-rental-brampton" className="text-white underline hover:no-underline">Brampton</Link>, <Link href="/photo-booth-rental-vaughan" className="text-white underline hover:no-underline">Vaughan</Link>, and <Link href="/photo-booth-rental-markham" className="text-white underline hover:no-underline">Markham</Link>.

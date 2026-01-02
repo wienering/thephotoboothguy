@@ -92,7 +92,14 @@ export default function EquipmentContent() {
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl pt-16">
             <h1 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
-              Professional Photo Booth Equipment in Toronto & GTA
+              Professional 
+              Photo 
+              Booth 
+              Equipment 
+              in 
+              Toronto 
+              & 
+              GTA
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed font-light">
               We use top-quality professional equipment including DSLR cameras, dye-sublimation printers, and professional lighting to deliver exceptional photo booth experiences at events across <Link href="/photo-booth-rental-toronto" className="text-white underline hover:no-underline">Toronto</Link>, <Link href="/photo-booth-rental-mississauga" className="text-white underline hover:no-underline">Mississauga</Link>, <Link href="/photo-booth-rental-brampton" className="text-white underline hover:no-underline">Brampton</Link>, <Link href="/photo-booth-rental-vaughan" className="text-white underline hover:no-underline">Vaughan</Link>, and <Link href="/photo-booth-rental-markham" className="text-white underline hover:no-underline">Markham</Link>.

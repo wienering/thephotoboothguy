@@ -103,7 +103,11 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
               ref={titleRef}
               className="text-5xl md:text-7xl lg:text-8xl font-light mb-8 leading-[0.95] tracking-tight"
             >
-              {data.heroTitle}
+              {data.heroTitle.split(' ').map((word, index, array) => (
+                <span key={index}>
+                  {index < array.length - 1 ? word + ' ' : word}
+                </span>
+              ))}
             </h1>
             <p
               ref={subtitleRef}
