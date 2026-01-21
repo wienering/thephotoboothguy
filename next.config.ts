@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         destination: '/templates',
         permanent: true, // 301 redirect
       },
+      {
+        source: '/our-backdrops',
+        destination: '/backdrops',
+        permanent: true, // 301 redirect
+      },
     ];
   },
 };
