@@ -128,7 +128,7 @@ export default function HomeContent() {
               We provide professional photo booth services throughout <Link href="/photo-booth-rental-toronto" className="text-black underline hover:no-underline">Toronto</Link>, <Link href="/photo-booth-rental-mississauga" className="text-black underline hover:no-underline">Mississauga</Link>, <Link href="/photo-booth-rental-brampton" className="text-black underline hover:no-underline">Brampton</Link>, <Link href="/photo-booth-rental-vaughan" className="text-black underline hover:no-underline">Vaughan</Link>, and <Link href="/photo-booth-rental-markham" className="text-black underline hover:no-underline">Markham</Link>. Every event receives our premium equipment including professional DSLR cameras, dye-sublimation printers for instant prints, custom templates designed for your event, stunning backdrops, fun props, and a trained professional attendant on site. Digital copies are sent instantly to guests via SMS or email.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed font-light max-w-3xl">
-              Whether you're planning a wedding, corporate gala, birthday party, anniversary celebration, or any special event across the Greater Toronto Area, we deliver exceptional photo booth experiences with professional lighting, high-quality prints, and outstanding service.
+              Whether you&apos;re planning a wedding, corporate gala, birthday party, anniversary celebration, or any special event across the Greater Toronto Area, we deliver exceptional photo booth experiences with professional lighting, high-quality prints, and outstanding service.
             </p>
           </div>
         </div>
@@ -308,14 +308,20 @@ export default function HomeContent() {
               Ready to Make Your Event Unforgettable?
             </h2>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed font-light max-w-2xl">
-              Get in touch today and let's make your event something people will remember.
+              Get in touch today and let&apos;s make your event something people will remember.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/contact"
+                href="/book"
                 className="inline-flex items-center justify-center bg-black text-white px-10 py-5 text-base font-medium hover:bg-gray-900 transition-all duration-300 uppercase tracking-wider"
               >
                 Book Now
+              </Link>
+              <Link
+                href="/quote"
+                className="inline-flex items-center justify-center border border-black text-black px-10 py-5 text-base font-medium hover:bg-black hover:text-white transition-all duration-300 uppercase tracking-wider"
+              >
+                Get a Quote
               </Link>
               <Link
                 href="/equipment"

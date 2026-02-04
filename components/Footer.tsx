@@ -107,6 +107,22 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/quote"
+                  className="text-gray-400 hover:text-white transition-colors font-light"
+                >
+                  Get a Quote
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/book"
+                  className="text-gray-400 hover:text-white transition-colors font-light"
+                >
+                  Book
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/equipment"
                   className="text-gray-400 hover:text-white transition-colors font-light"
                 >

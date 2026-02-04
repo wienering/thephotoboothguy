@@ -3,10 +3,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { gsap } from '@/lib/gsap';
 
 const navLinks = [
   { name: 'Home', href: '/' },
+  { name: 'Get a Quote', href: '/quote' },
   { name: 'Equipment', href: '/equipment' },
   { name: 'Templates', href: '/templates' },
   { name: 'Backdrops', href: '/backdrops' },
@@ -97,7 +97,7 @@ export default function Navigation() {
             </div>
             
             <Link
-              href="/contact"
+              href="/book"
               className={`border px-5 py-2 text-xs uppercase tracking-wider font-medium transition-all ml-2 ${
                 scrolled 
                   ? 'border-black text-black hover:bg-black hover:text-white' 
@@ -162,7 +162,7 @@ export default function Navigation() {
             </div>
             
             <Link
-              href="/contact"
+              href="/book"
               className="block border text-center px-6 py-3 text-sm uppercase tracking-wider font-medium transition-all border-black text-black hover:bg-black hover:text-white"
               onClick={() => setIsOpen(false)}
             >

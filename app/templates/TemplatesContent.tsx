@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
-import Gallery from '@/components/Gallery';
 import { revealOnScroll } from '@/lib/gsap';
 
 export default function TemplatesContent() {
@@ -17,39 +16,6 @@ export default function TemplatesContent() {
     if (processRef.current) revealOnScroll(processRef.current);
     if (customizationRef.current) revealOnScroll(customizationRef.current);
   }, []);
-
-  const templateImages = [
-    {
-      src: '/api/placeholder/400/400',
-      alt: 'Elegant wedding photo booth template with custom design for Toronto weddings',
-      title: 'Elegant Wedding',
-    },
-    {
-      src: '/api/placeholder/400/400',
-      alt: 'Birthday party photo booth template with instant prints for GTA celebrations',
-      title: 'Birthday Celebration',
-    },
-    {
-      src: '/api/placeholder/400/400',
-      alt: 'Corporate event photo booth template with company branding for Toronto businesses',
-      title: 'Corporate Event',
-    },
-    {
-      src: '/api/placeholder/400/400',
-      alt: 'Graduation photo booth template with custom text for GTA graduates',
-      title: 'Graduation',
-    },
-    {
-      src: '/api/placeholder/400/400',
-      alt: 'Holiday party photo booth template with festive design for Toronto events',
-      title: 'Holiday Party',
-    },
-    {
-      src: '/api/placeholder/400/400',
-      alt: 'Anniversary photo booth template with elegant design for milestone celebrations',
-      title: 'Anniversary',
-    },
-  ];
 
   const customizationOptions = [
     {
@@ -147,7 +113,7 @@ export default function TemplatesContent() {
           
           <div className="mt-8">
             <p className="text-gray-600 font-light">
-              Don't see what you need? We can design something completely custom for your event.
+              Don&apos;t see what you need? We can design something completely custom for your event.
             </p>
           </div>
         </div>
@@ -215,7 +181,7 @@ export default function TemplatesContent() {
               Ready for a Custom Template?
             </h2>
             <p className="text-lg mb-8 text-gray-300 max-w-2xl leading-relaxed font-light">
-              Let's work together to create the perfect template for your event
+              Let&apos;s work together to create the perfect template for your event
             </p>
             <Link
               href="/contact"

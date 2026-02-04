@@ -117,7 +117,7 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
             </p>
             <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/contact"
+                href="/book"
                 className="inline-flex items-center justify-center bg-white text-black px-12 py-6 text-base font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
               >
                 Book Your Event
@@ -155,7 +155,7 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
               Serving {data.city} Venues
             </h2>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed font-light">
-              We've provided our professional photo booth services at many premier venues throughout {data.city}, including:
+              We&apos;ve provided our professional photo booth services at many premier venues throughout {data.city}, including:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {data.venues.map((venue, index) => (
@@ -187,7 +187,7 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="mb-12">
             <h2 className="text-4xl md:text-5xl font-light text-black mb-4 leading-tight">
-              What's Included
+              What&apos;s Included
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -314,7 +314,7 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/contact"
+                href="/quote"
                 className="inline-flex items-center justify-center bg-white text-black px-10 py-5 text-base font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
               >
                 Get a Quote

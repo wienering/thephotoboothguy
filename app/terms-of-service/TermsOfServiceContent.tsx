@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Link from 'next/link';
 import { revealOnScroll } from '@/lib/gsap';
 
 export default function TermsOfServiceContent() {
@@ -260,4 +259,5 @@ export default function TermsOfServiceContent() {
     </div>
   );
 }
+
 

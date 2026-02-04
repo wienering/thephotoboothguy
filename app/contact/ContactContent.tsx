@@ -56,7 +56,7 @@ export default function ContactContent() {
               Touch
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed font-light">
-              We'd love to help make your event special. Get in touch and let's talk about what we can do for you.
+              We&apos;d love to help make your event special. Get in touch and let&apos;s talk about what we can do for you.
             </p>
           </div>
         </div>
@@ -71,8 +71,12 @@ export default function ContactContent() {
               <h2 className="text-3xl md:text-4xl font-light text-black mb-4">
                 Send Us a Message
               </h2>
-              <p className="text-gray-600 mb-10 leading-relaxed font-light">
+              <p className="text-gray-600 mb-6 leading-relaxed font-light">
                 Fill out the form below and we&apos;ll get back to you quickly.
+              </p>
+              <p className="text-gray-600 mb-10 font-light">
+                Want a quick price? <Link href="/quote" className="text-black underline hover:no-underline">Get a quote</Link>.
+                Ready to reserve? <Link href="/book" className="text-black underline hover:no-underline">Book now</Link>.
               </p>
               <ContactForm />
             </div>
@@ -136,7 +140,7 @@ export default function ContactContent() {
                   Business Hours
                 </h3>
                 <div className="space-y-4 text-gray-700">
-                  {businessHours.days.map((day, index) => {
+                  {businessHours.days.map((day) => {
                     const isCurrentDay = day.name === businessHours.currentDay;
                     return (
                       <p
@@ -160,7 +164,7 @@ export default function ContactContent() {
                   })}
                 </div>
                 <p className="mt-6 text-gray-600 font-light">
-                  We do events every day of the week, including evenings and weekends. Let's book your event today!
+                  We do events every day of the week, including evenings and weekends. Let&apos;s book your event today!
                 </p>
               </div>
             </div>
