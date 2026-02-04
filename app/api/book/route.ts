@@ -12,6 +12,8 @@ export async function POST(request: Request) {
       email,
       phone,
       eventDate,
+      eventVenue,
+      boothStartTime,
       referralSource,
       notes,
       package: pkg,
@@ -22,6 +24,18 @@ export async function POST(request: Request) {
     if (!name || !email || !phone || !eventDate || !referralSource) {
       return NextResponse.json(
         { error: 'Name, email, phone, event date, and how you found us are required.' },
+        { status: 400 }
+      );
+    }
+    if (!eventVenue || !boothStartTime) {
+      return NextResponse.json(
+        { error: 'Event venue and photo booth start time are required.' },
+        { status: 400 }
+      );
+    }
+    if (!pkg || typeof pkg.hours !== 'number' || typeof pkg.price !== 'number') {
+      return NextResponse.json(
+        { error: 'Please select a package.' },
         { status: 400 }
       );
     }
@@ -75,6 +89,8 @@ export async function POST(request: Request) {
               <tr><td style="padding: 8px 0; color: #666; font-size: 14px; font-weight: 600; text-transform: uppercase;">Email:</td><td style="padding: 8px 0;"><a href="mailto:${email}" style="color: #000; text-decoration: underline;">${email}</a></td></tr>
               <tr><td style="padding: 8px 0; color: #666; font-size: 14px; font-weight: 600; text-transform: uppercase;">Phone:</td><td style="padding: 8px 0;"><a href="tel:${phone.replace(/\D/g, '')}" style="color: #000; text-decoration: underline;">${phone}</a></td></tr>
               <tr><td style="padding: 8px 0; color: #666; font-size: 14px; font-weight: 600; text-transform: uppercase;">Event Date:</td><td style="padding: 8px 0;">${formattedDate || eventDate}</td></tr>
+              <tr><td style="padding: 8px 0; color: #666; font-size: 14px; font-weight: 600; text-transform: uppercase;">Event Venue:</td><td style="padding: 8px 0;">${eventVenue}</td></tr>
+              <tr><td style="padding: 8px 0; color: #666; font-size: 14px; font-weight: 600; text-transform: uppercase;">Booth Open Time:</td><td style="padding: 8px 0;">${boothStartTime}</td></tr>
               <tr><td style="padding: 8px 0; color: #666; font-size: 14px; font-weight: 600; text-transform: uppercase;">How they found us:</td><td style="padding: 8px 0;">${referralSource}</td></tr>
               ${packageSection}
             </table>

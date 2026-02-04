@@ -3,19 +3,14 @@
 import { useState } from 'react';
 import { encodeQuote } from '@/lib/quote-utils';
 import type { QuoteContactInfo, QuotePackage, QuoteAddons } from '@/lib/quote-utils';
-
-const PACKAGES = [
-  { hours: 2, price: 550 },
-  { hours: 3, price: 750 },
-  { hours: 4, price: 950 },
-  { hours: 5, price: 1150 },
-  { hours: 6, price: 1350 },
-] as const;
-
-const UNLIMITED_PRINTS_SHORT = 60;
-const UNLIMITED_PRINTS_LONG = 50;
-const GLAM_BOOTH = 75;
-const WAITING_TIME_PER_HOUR = 50;
+import {
+  PACKAGES,
+  UNLIMITED_PRINTS_SHORT,
+  UNLIMITED_PRINTS_LONG,
+  GLAM_BOOTH,
+  WAITING_TIME_PER_HOUR,
+  calculateTotal,
+} from '@/lib/pricing';
 
 function formatEventDate(dateStr: string): string {
   if (!dateStr) return '';
@@ -42,17 +37,9 @@ export default function QuoteContent() {
   const [emailSent, setEmailSent] = useState(false);
   const [emailError, setEmailError] = useState('');
 
-  const total = (() => {
-    if (!selectedPackage) return 0;
-    let t = selectedPackage.price;
-    if (addons.unlimitedPrints) {
-      const rate = selectedPackage.hours <= 3 ? UNLIMITED_PRINTS_SHORT : UNLIMITED_PRINTS_LONG;
-      t += rate * selectedPackage.hours;
-    }
-    if (addons.glamBooth) t += GLAM_BOOTH;
-    if (addons.waitingTime && addons.waitingHours > 0) t += WAITING_TIME_PER_HOUR * addons.waitingHours;
-    return t;
-  })();
+  const total = selectedPackage
+    ? calculateTotal(selectedPackage.hours, selectedPackage.price, addons)
+    : 0;
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
