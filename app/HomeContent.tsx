@@ -9,19 +9,71 @@ import Gallery from '@/components/Gallery';
 import { revealOnScroll } from '@/lib/gsap';
 
 const eventGalleryImages = [
-  { src: '/photos/20251209_125620936.jpg', alt: 'Photo booth at a Toronto event', title: 'Event Photo Booth' },
-  { src: '/photos/20251209_125627091.jpg', alt: 'Guests at the photo booth', title: 'Guest Experience' },
-  { src: '/photos/20251211_191242154.jpg', alt: 'Photo booth setup at a GTA event', title: 'Booth Setup' },
-  { src: '/photos/20251218_200721527.jpg', alt: 'Wedding photo booth moment', title: 'Wedding Memories' },
-  { src: '/photos/20260123_203236491.jpg', alt: 'Professional photo booth in action', title: 'In Action' },
-  { src: '/photos/20241210_171353533.jpg', alt: 'Event photo booth rental', title: 'Event Rental' },
-  { src: '/photos/Sample 1.jpg', alt: 'Photo booth sample print', title: 'Sample Print' },
-  { src: '/photos/Sample 2.jpg', alt: 'Custom template sample', title: 'Custom Template' },
-  { src: '/photos/Sample 3.JPG', alt: 'Photo booth sample', title: 'Sample' },
-  { src: '/photos/Sample 4.jpg', alt: 'Event photo sample', title: 'Event Sample' },
-  { src: '/photos/Sample 5.jpeg', alt: 'Photo booth sample', title: 'Sample' },
-  { src: '/photos/220233130.jpg', alt: 'Photo booth at event', title: 'Event' },
-  { src: '/photos/20231215173222-1 copy.jpg', alt: 'Photo booth event', title: 'Event' },
+  {
+    src: '/photos/20251209_125620936.jpg',
+    alt: 'Professional photo booth rental at a Toronto area event with guests and custom backdrop',
+    title: 'Photo booth rental Toronto – event setup with backdrop and guests',
+  },
+  {
+    src: '/photos/20251209_125627091.jpg',
+    alt: 'Guests enjoying instant prints and props at a GTA photo booth rental',
+    title: 'GTA photo booth – guests with instant prints and props',
+  },
+  {
+    src: '/photos/20251211_191242154.jpg',
+    alt: 'Photo booth setup and equipment at a Greater Toronto Area wedding or event',
+    title: 'Photo booth setup – professional equipment at your venue',
+  },
+  {
+    src: '/photos/20251218_200721527.jpg',
+    alt: 'Wedding photo booth moment – couple and guests at a Toronto area wedding',
+    title: 'Wedding photo booth rental – memorable moments for couples and guests',
+  },
+  {
+    src: '/photos/20260123_203236491.jpg',
+    alt: 'Photo booth in action at a corporate or private event in the GTA',
+    title: 'Photo booth in action – professional rental at your event',
+  },
+  {
+    src: '/photos/20241210_171353533.jpg',
+    alt: 'Event photo booth rental with prints and backdrop in the Greater Toronto Area',
+    title: 'Event photo booth rental – instant prints and backdrop',
+  },
+  {
+    src: '/photos/Sample 1.jpg',
+    alt: 'Sample of custom 4x6 or 2x6 photo booth print template for Toronto events',
+    title: 'Custom print template sample – 4x6 or 2x6 instant prints',
+  },
+  {
+    src: '/photos/Sample 2.jpg',
+    alt: 'Custom photo booth print template design for weddings and events',
+    title: 'Custom template design – personalized for your event theme',
+  },
+  {
+    src: '/photos/Sample 3.JPG',
+    alt: 'Photo booth print sample with custom design for GTA weddings and parties',
+    title: 'Print sample – custom design for your event',
+  },
+  {
+    src: '/photos/Sample 4.jpg',
+    alt: 'Instant photo booth print sample from a Toronto area event',
+    title: 'Instant print sample – dye-sublimation quality',
+  },
+  {
+    src: '/photos/Sample 5.jpeg',
+    alt: 'Photo booth print sample on custom template for Toronto photo booth rental',
+    title: 'Custom template print – professional photo booth quality',
+  },
+  {
+    src: '/photos/220233130.jpg',
+    alt: 'Photo booth rental at a Toronto or GTA venue with guests and backdrop',
+    title: 'Photo booth at your venue – Toronto and GTA events',
+  },
+  {
+    src: '/photos/20231215173222-1 copy.jpg',
+    alt: 'Photo booth experience at a Greater Toronto Area event with prints and props',
+    title: 'Photo booth experience – GTA events and weddings',
+  },
 ];
 
 export default function HomeContent() {
