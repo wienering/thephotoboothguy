@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { decodeQuote, isQuoteExpired } from '@/lib/quote-utils';
-import { getImagesForPage } from '@/lib/content-images';
+import { getImagesForBookPage } from '@/lib/content-images';
 import BookingForm from '@/components/BookingForm';
 import Link from 'next/link';
 
@@ -33,14 +33,14 @@ export default async function BookPage({ searchParams }: PageProps) {
     }
   }
 
-  const { heroImage } = getImagesForPage('book');
+  const { heroImage } = getImagesForBookPage();
 
   return (
     <div className="min-h-screen pt-20">
       <section className="relative w-full pt-32 pb-20 bg-black text-white overflow-hidden">
         {heroImage && (
           <>
-            <Image src={heroImage.src} alt="" fill className="object-cover" sizes="100vw" priority />
+            <Image src={heroImage.src} alt="" fill className="object-contain" sizes="100vw" priority />
             <div className="absolute inset-0 bg-black/55" aria-hidden />
           </>
         )}

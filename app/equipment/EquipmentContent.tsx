@@ -95,7 +95,7 @@ export default function EquipmentContent() {
       >
         {heroImage && (
           <>
-            <Image src={heroImage.src} alt="" fill className="object-cover" sizes="100vw" priority />
+            <Image src={heroImage.src} alt="" fill className="object-contain" sizes="100vw" priority />
             <div className="absolute inset-0 bg-black/60" aria-hidden />
           </>
         )}

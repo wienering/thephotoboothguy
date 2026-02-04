@@ -94,3 +94,12 @@ export function getImagesForContactPage(): {
     contentImage: PRINT_SAMPLES[2] ?? null,  // print sample
   };
 }
+
+/** Book page: hero uses Sample 1. */
+export function getImagesForBookPage(): {
+  heroImage: ContentImage | null;
+} {
+  return {
+    heroImage: PRINT_SAMPLES[0] ?? null,  // Sample 1
+  };
+}
