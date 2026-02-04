@@ -2,9 +2,11 @@
 
 import { useEffect, useRef, useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import ContactForm from '@/components/ContactForm';
 import { revealOnScroll } from '@/lib/gsap';
 import { getEasternDayOfWeek } from '@/lib/timezone';
+import { getImagesForPage } from '@/lib/content-images';
 
 export default function ContactContent() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -16,6 +18,8 @@ export default function ContactContent() {
     if (formRef.current) revealOnScroll(formRef.current);
     if (infoRef.current) revealOnScroll(infoRef.current);
   }, []);
+
+  const { heroImage, contentImage } = useMemo(() => getImagesForPage('contact'), []);
 
   // Business hours with current day at top
   const businessHours = useMemo(() => {
@@ -46,9 +50,15 @@ export default function ContactContent() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="w-full pt-32 pb-20 bg-black text-white"
+        className="relative w-full pt-32 pb-20 bg-black text-white overflow-hidden"
       >
-        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+        {heroImage && (
+          <>
+            <Image src={heroImage.src} alt="" fill className="object-cover" sizes="100vw" priority />
+            <div className="absolute inset-0 bg-black/55" aria-hidden />
+          </>
+        )}
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
           <div className="max-w-4xl pt-16">
             <h1 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
               Get 
@@ -65,6 +75,17 @@ export default function ContactContent() {
       {/* Contact Form and Info */}
       <section className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          {contentImage && (
+            <div className="relative aspect-[21/9] max-w-4xl mx-auto mb-16 rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src={contentImage.src}
+                alt={contentImage.alt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 896px"
+              />
+            </div>
+          )}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div ref={formRef}>

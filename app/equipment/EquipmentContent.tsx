@@ -1,14 +1,18 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { revealOnScroll } from '@/lib/gsap';
+import { getImagesForPage } from '@/lib/content-images';
 
 export default function EquipmentContent() {
   const heroRef = useRef<HTMLDivElement>(null);
   const showcaseRef = useRef<HTMLDivElement>(null);
   const techRef = useRef<HTMLDivElement>(null);
   const benefitsRef = useRef<HTMLDivElement>(null);
+
+  const { heroImage, contentImage } = useMemo(() => getImagesForPage('equipment'), []);
 
   useEffect(() => {
     if (heroRef.current) revealOnScroll(heroRef.current);
@@ -87,9 +91,15 @@ export default function EquipmentContent() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="w-full pt-32 pb-20 bg-black text-white"
+        className="relative w-full pt-32 pb-20 bg-black text-white overflow-hidden"
       >
-        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+        {heroImage && (
+          <>
+            <Image src={heroImage.src} alt="" fill className="object-cover" sizes="100vw" priority />
+            <div className="absolute inset-0 bg-black/60" aria-hidden />
+          </>
+        )}
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
           <div className="max-w-4xl pt-16">
             <h1 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
               Professional 
@@ -116,6 +126,17 @@ export default function EquipmentContent() {
               Our Equipment
             </h2>
           </div>
+          {contentImage && (
+            <div className="relative aspect-[21/9] max-w-4xl mx-auto mb-16 rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src={contentImage.src}
+                alt={contentImage.alt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 896px"
+              />
+            </div>
+          )}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {equipmentItems.map((item, index) => (
               <div

@@ -1,10 +1,12 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import PackageCard from '@/components/PackageCard';
 import Testimonial from '@/components/Testimonial';
 import { revealOnScroll, heroTextReveal, fadeIn } from '@/lib/gsap';
+import { getImagesForServicePage } from '@/lib/content-images';
 
 export interface ServiceLocationData {
   serviceName: string;
@@ -46,6 +48,11 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
   const venuesRef = useRef<HTMLDivElement>(null);
   const faqRef = useRef<HTMLDivElement>(null);
 
+  const { heroImage, contentImages } = useMemo(
+    () => getImagesForServicePage(data.serviceSlug, data.city),
+    [data.serviceSlug, data.city]
+  );
+
   useEffect(() => {
     if (titleRef.current) heroTextReveal(titleRef.current);
     if (subtitleRef.current) fadeIn(subtitleRef.current, 0.3);
@@ -81,6 +88,19 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
         ref={heroRef}
         className="relative min-h-[60vh] flex items-center justify-center bg-black text-white overflow-hidden"
       >
+        {heroImage && (
+          <>
+            <Image
+              src={heroImage.src}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/55" aria-hidden />
+          </>
+        )}
         {/* Subtle background pattern */}
         <div className="absolute inset-0 opacity-5">
           <div
@@ -136,13 +156,26 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
       {/* About Section */}
       <section ref={aboutRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="max-w-4xl">
-            <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
-              {data.serviceName} in {data.city}
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light max-w-3xl">
-              {data.description}
-            </p>
+          <div className={`grid gap-12 ${contentImages[0] ? 'lg:grid-cols-[1fr,minmax(320px,420px)]' : ''} items-start`}>
+            <div>
+              <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
+                {data.serviceName} in {data.city}
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light max-w-3xl">
+                {data.description}
+              </p>
+            </div>
+            {contentImages[0] && (
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src={contentImages[0].src}
+                  alt={contentImages[0].alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 420px"
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -150,33 +183,46 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
       {/* Popular Venues Section */}
       <section ref={venuesRef} className="w-full py-20 bg-gray-50">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="max-w-4xl">
-            <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
-              Serving {data.city} Venues
-            </h2>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed font-light">
-              We&apos;ve provided our professional photo booth services at many premier venues throughout {data.city}, including:
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {data.venues.map((venue, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-3 text-gray-700 font-light"
-                >
-                  <svg
-                    className="w-5 h-5 text-black flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
+          <div className={`grid gap-12 ${contentImages[1] ? 'lg:grid-cols-[minmax(280px,380px),1fr]' : ''} items-center`}>
+            {contentImages[1] && (
+              <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg order-2 lg:order-1">
+                <Image
+                  src={contentImages[1].src}
+                  alt={contentImages[1].alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 380px"
+                />
+              </div>
+            )}
+            <div className="order-1 lg:order-2">
+              <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
+                Serving {data.city} Venues
+              </h2>
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed font-light">
+                We&apos;ve provided our professional photo booth services at many premier venues throughout {data.city}, including:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {data.venues.map((venue, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-3 text-gray-700 font-light"
                   >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  {venue}
-                </div>
-              ))}
+                    <svg
+                      className="w-5 h-5 text-black flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    {venue}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

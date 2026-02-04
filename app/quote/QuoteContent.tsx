@@ -1,7 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+import Image from 'next/image';
 import { encodeQuote } from '@/lib/quote-utils';
+import { getImagesForPage } from '@/lib/content-images';
 import type { QuoteContactInfo, QuotePackage, QuoteAddons } from '@/lib/quote-utils';
 import {
   PACKAGES,
@@ -40,6 +42,8 @@ export default function QuoteContent() {
   const total = selectedPackage
     ? calculateTotal(selectedPackage.hours, selectedPackage.price, addons)
     : 0;
+
+  const { heroImage } = useMemo(() => getImagesForPage('quote'), []);
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -107,8 +111,14 @@ export default function QuoteContent() {
 
   return (
     <div className="min-h-screen pt-20">
-      <section className="w-full pt-32 pb-20 bg-black text-white">
-        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+      <section className="relative w-full pt-32 pb-20 bg-black text-white overflow-hidden">
+        {heroImage && (
+          <>
+            <Image src={heroImage.src} alt="" fill className="object-cover" sizes="100vw" priority />
+            <div className="absolute inset-0 bg-black/55" aria-hidden />
+          </>
+        )}
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
           <div className="max-w-4xl pt-16">
             <h1 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
               Get Your
