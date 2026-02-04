@@ -94,7 +94,7 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
               src={heroImage.src}
               alt=""
               fill
-              className="object-contain"
+              className="object-cover object-center"
               sizes="100vw"
               priority
             />
@@ -153,11 +153,11 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About Section - image beside text on md and up */}
       <section ref={aboutRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className={`grid gap-12 ${contentImages[0] ? 'lg:grid-cols-[1fr,minmax(220px,280px)]' : ''} items-start`}>
-            <div>
+          <div className={`grid gap-8 md:gap-12 ${contentImages[0] ? 'grid-cols-1 md:grid-cols-[1fr,minmax(220px,280px)]' : ''} items-start`}>
+            <div className="min-w-0">
               <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
                 {data.serviceName} in {data.city}
               </h2>
@@ -166,13 +166,13 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
               </p>
             </div>
             {contentImages[0] && (
-              <div className="relative aspect-[4/3] w-full max-w-[280px] rounded-xl overflow-hidden shadow-lg">
+              <div className="relative aspect-[4/3] w-full max-w-[280px] mx-auto md:mx-0 rounded-xl overflow-hidden shadow-lg">
                 <Image
                   src={contentImages[0].src}
                   alt={contentImages[0].alt}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 280px"
+                  sizes="(max-width: 768px) 100vw, 280px"
                 />
               </div>
             )}
@@ -180,22 +180,22 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
         </div>
       </section>
 
-      {/* Popular Venues Section */}
+      {/* Popular Venues Section - image beside text on md and up */}
       <section ref={venuesRef} className="w-full py-20 bg-gray-50">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className={`grid gap-12 ${contentImages[1] ? 'lg:grid-cols-[minmax(200px,260px),1fr]' : ''} items-center`}>
+          <div className={`grid gap-8 md:gap-12 ${contentImages[1] ? 'grid-cols-1 md:grid-cols-[minmax(200px,260px),1fr]' : ''} items-center`}>
             {contentImages[1] && (
-              <div className="relative aspect-[3/4] w-full max-w-[260px] rounded-xl overflow-hidden shadow-lg order-2 lg:order-1">
+              <div className="relative aspect-[3/4] w-full max-w-[260px] mx-auto md:mx-0 rounded-xl overflow-hidden shadow-lg order-2 md:order-1">
                 <Image
                   src={contentImages[1].src}
                   alt={contentImages[1].alt}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 260px"
+                  sizes="(max-width: 768px) 100vw, 260px"
                 />
               </div>
             )}
-            <div className="order-1 lg:order-2">
+            <div className="min-w-0 order-1 md:order-2">
               <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
                 Serving {data.city} Venues
               </h2>

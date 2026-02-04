@@ -114,7 +114,7 @@ export default function QuoteContent() {
       <section className="relative w-full pt-32 pb-20 bg-black text-white overflow-hidden">
         {heroImage && (
           <>
-            <Image src={heroImage.src} alt="" fill className="object-contain" sizes="100vw" priority />
+            <Image src={heroImage.src} alt="" fill className="object-cover object-center" sizes="100vw" priority />
             <div className="absolute inset-0 bg-black/55" aria-hidden />
           </>
         )}
