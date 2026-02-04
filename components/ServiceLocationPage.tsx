@@ -156,7 +156,7 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
       {/* About Section */}
       <section ref={aboutRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className={`grid gap-12 ${contentImages[0] ? 'lg:grid-cols-[1fr,minmax(320px,420px)]' : ''} items-start`}>
+          <div className={`grid gap-12 ${contentImages[0] ? 'lg:grid-cols-[1fr,minmax(220px,280px)]' : ''} items-start`}>
             <div>
               <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
                 {data.serviceName} in {data.city}
@@ -166,13 +166,13 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
               </p>
             </div>
             {contentImages[0] && (
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+              <div className="relative aspect-[4/3] w-full max-w-[280px] rounded-xl overflow-hidden shadow-lg">
                 <Image
                   src={contentImages[0].src}
                   alt={contentImages[0].alt}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 420px"
+                  sizes="(max-width: 1024px) 100vw, 280px"
                 />
               </div>
             )}
@@ -183,15 +183,15 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
       {/* Popular Venues Section */}
       <section ref={venuesRef} className="w-full py-20 bg-gray-50">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className={`grid gap-12 ${contentImages[1] ? 'lg:grid-cols-[minmax(280px,380px),1fr]' : ''} items-center`}>
+          <div className={`grid gap-12 ${contentImages[1] ? 'lg:grid-cols-[minmax(200px,260px),1fr]' : ''} items-center`}>
             {contentImages[1] && (
-              <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg order-2 lg:order-1">
+              <div className="relative aspect-[3/4] w-full max-w-[260px] rounded-xl overflow-hidden shadow-lg order-2 lg:order-1">
                 <Image
                   src={contentImages[1].src}
                   alt={contentImages[1].alt}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 380px"
+                  sizes="(max-width: 1024px) 100vw, 260px"
                 />
               </div>
             )}

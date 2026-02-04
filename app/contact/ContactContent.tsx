@@ -6,7 +6,7 @@ import Image from 'next/image';
 import ContactForm from '@/components/ContactForm';
 import { revealOnScroll } from '@/lib/gsap';
 import { getEasternDayOfWeek } from '@/lib/timezone';
-import { getImagesForPage } from '@/lib/content-images';
+import { getImagesForContactPage } from '@/lib/content-images';
 
 export default function ContactContent() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -19,7 +19,7 @@ export default function ContactContent() {
     if (infoRef.current) revealOnScroll(infoRef.current);
   }, []);
 
-  const { heroImage, contentImage } = useMemo(() => getImagesForPage('contact'), []);
+  const { heroImage, contentImage } = useMemo(() => getImagesForContactPage(), []);
 
   // Business hours with current day at top
   const businessHours = useMemo(() => {
@@ -75,17 +75,6 @@ export default function ContactContent() {
       {/* Contact Form and Info */}
       <section className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          {contentImage && (
-            <div className="relative aspect-[21/9] max-w-4xl mx-auto mb-16 rounded-xl overflow-hidden shadow-lg">
-              <Image
-                src={contentImage.src}
-                alt={contentImage.alt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 896px"
-              />
-            </div>
-          )}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div ref={formRef}>
@@ -100,6 +89,17 @@ export default function ContactContent() {
                 Ready to reserve? <Link href="/book" className="text-black underline hover:no-underline">Book now</Link>.
               </p>
               <ContactForm />
+              {contentImage && (
+                <div className="relative aspect-[16/10] max-w-md mt-12 rounded-xl overflow-hidden shadow-lg">
+                  <Image
+                    src={contentImage.src}
+                    alt={contentImage.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 448px"
+                  />
+                </div>
+              )}
             </div>
 
             {/* Contact Information */}

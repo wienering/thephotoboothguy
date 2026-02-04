@@ -138,13 +138,13 @@ export default function TemplatesContent() {
             </h2>
           </div>
           {contentImage && (
-            <div className="relative aspect-[2/1] max-w-2xl mb-14 rounded-xl overflow-hidden shadow-lg">
+            <div className="relative aspect-[2/1] max-w-md mb-10 rounded-xl overflow-hidden shadow-lg">
               <Image
                 src={contentImage.src}
                 alt={contentImage.alt}
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 672px"
+                sizes="(max-width: 768px) 100vw, 448px"
               />
             </div>
           )}

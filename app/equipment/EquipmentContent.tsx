@@ -127,13 +127,13 @@ export default function EquipmentContent() {
             </h2>
           </div>
           {contentImage && (
-            <div className="relative aspect-[21/9] max-w-4xl mx-auto mb-16 rounded-xl overflow-hidden shadow-lg">
+            <div className="relative aspect-[2/1] max-w-2xl mx-auto mb-12 rounded-xl overflow-hidden shadow-lg">
               <Image
                 src={contentImage.src}
                 alt={contentImage.alt}
                 fill
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 896px"
+                sizes="(max-width: 1024px) 100vw, 672px"
               />
             </div>
           )}

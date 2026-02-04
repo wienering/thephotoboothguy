@@ -83,3 +83,14 @@ export function getImagesForTemplatesPage(): {
     contentImage: PRINT_SAMPLES[1] ?? null,
   };
 }
+
+/** Contact page: hand-picked images that work well for hero and one content image below the form. */
+export function getImagesForContactPage(): {
+  heroImage: ContentImage | null;
+  contentImage: ContentImage | null;
+} {
+  return {
+    heroImage: EVENT_PHOTOS[3] ?? null,  // wedding moment
+    contentImage: PRINT_SAMPLES[2] ?? null,  // print sample
+  };
+}
