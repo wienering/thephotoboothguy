@@ -5,7 +5,24 @@ import Link from 'next/link';
 import Hero from '@/components/Hero';
 import PackageCard from '@/components/PackageCard';
 import Testimonial from '@/components/Testimonial';
+import Gallery from '@/components/Gallery';
 import { revealOnScroll } from '@/lib/gsap';
+
+const eventGalleryImages = [
+  { src: '/photos/20251209_125620936.jpg', alt: 'Photo booth at a Toronto event', title: 'Event Photo Booth' },
+  { src: '/photos/20251209_125627091.jpg', alt: 'Guests at the photo booth', title: 'Guest Experience' },
+  { src: '/photos/20251211_191242154.jpg', alt: 'Photo booth setup at a GTA event', title: 'Booth Setup' },
+  { src: '/photos/20251218_200721527.jpg', alt: 'Wedding photo booth moment', title: 'Wedding Memories' },
+  { src: '/photos/20260123_203236491.jpg', alt: 'Professional photo booth in action', title: 'In Action' },
+  { src: '/photos/20241210_171353533.jpg', alt: 'Event photo booth rental', title: 'Event Rental' },
+  { src: '/photos/Sample 1.jpg', alt: 'Photo booth sample print', title: 'Sample Print' },
+  { src: '/photos/Sample 2.jpg', alt: 'Custom template sample', title: 'Custom Template' },
+  { src: '/photos/Sample 3.JPG', alt: 'Photo booth sample', title: 'Sample' },
+  { src: '/photos/Sample 4.jpg', alt: 'Event photo sample', title: 'Event Sample' },
+  { src: '/photos/Sample 5.jpeg', alt: 'Photo booth sample', title: 'Sample' },
+  { src: '/photos/220233130.jpg', alt: 'Photo booth at event', title: 'Event' },
+  { src: '/photos/20231215173222-1 copy.jpg', alt: 'Photo booth event', title: 'Event' },
+];
 
 export default function HomeContent() {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -115,7 +132,22 @@ export default function HomeContent() {
 
   return (
     <div className="min-h-screen pt-20">
-      <Hero />
+      <Hero backgroundImage="/photos/20251218_200721527.jpg" />
+
+      {/* Gallery Section - Our Work */}
+      <section className="w-full py-20 bg-gray-50">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-4 leading-tight">
+              Our Work
+            </h2>
+            <p className="text-lg text-gray-600 font-light">
+              Real moments from events we&apos;ve had the pleasure of serving across the GTA
+            </p>
+          </div>
+          <Gallery images={eventGalleryImages} columns={4} />
+        </div>
+      </section>
 
       {/* About Section */}
       <section ref={aboutRef} className="w-full py-20 bg-white">

@@ -2,9 +2,15 @@
 
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { heroTextReveal, fadeIn } from '@/lib/gsap';
 
-export default function Hero() {
+interface HeroProps {
+  /** Optional background image path (e.g. from /photos/). Shown with dark overlay for readability. */
+  backgroundImage?: string;
+}
+
+export default function Hero({ backgroundImage }: HeroProps = {}) {
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -23,6 +29,19 @@ export default function Hero() {
       ref={heroRef}
       className="relative min-h-[calc(100vh-5rem)] flex items-center justify-center bg-black text-white overflow-hidden"
     >
+      {backgroundImage && (
+        <>
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/60" aria-hidden />
+        </>
+      )}
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
