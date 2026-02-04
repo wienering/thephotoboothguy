@@ -1,12 +1,33 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
-import { formatEasternDateTime } from '@/lib/timezone';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Helper to format date in Eastern Time
+function formatEasternDateTime(): string {
+  return new Date().toLocaleString('en-US', {
+    timeZone: 'America/Toronto',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+}
+
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    // Parse the request body
+    let body;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json(
+        { error: 'Invalid JSON in request body' },
+        { status: 400 }
+      );
+    }
+
     const { name, email, phone, eventDate, message } = body;
 
     console.log('📧 Received form submission:', { name, email, phone, eventDate });
@@ -16,6 +37,15 @@ export async function POST(request: Request) {
       console.error('❌ Missing required fields');
       return NextResponse.json(
         { error: 'All fields are required' },
+        { status: 400 }
+      );
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: 'Invalid email format' },
         { status: 400 }
       );
     }
@@ -31,7 +61,7 @@ export async function POST(request: Request) {
 
     console.log('📤 Sending email to: contact@thephotoboothguy.ca');
 
-    // Create unique subject line with timestamp in Eastern Time to prevent email threading
+    // Create unique subject line with timestamp in Eastern Time
     const timestamp = formatEasternDateTime();
     const uniqueSubject = `New Booking Inquiry from ${name} - ${timestamp}`;
 
@@ -40,13 +70,13 @@ export async function POST(request: Request) {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
-      day: 'numeric'
+      day: 'numeric',
     });
 
     // Send email
     const data = await resend.emails.send({
       from: 'The Photobooth Guy <contact@thephotoboothguy.ca>',
-      to: ['contact@thephotoboothguy.ca'], // Your email address
+      to: ['contact@thephotoboothguy.ca'],
       replyTo: email,
       subject: uniqueSubject,
       html: `
@@ -58,9 +88,7 @@ export async function POST(request: Request) {
         </head>
         <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
           <div style="background-color: #ffffff; border-radius: 8px; padding: 30px;">
-            <h1 style="color: #000000; font-size: 24px; font-weight: 300; margin-top: 0; margin-bottom: 20px;">New 
-            Booking 
-            Inquiry</h1>
+            <h1 style="color: #000000; font-size: 24px; font-weight: 300; margin-top: 0; margin-bottom: 20px;">New Booking Inquiry</h1>
             
             <p style="color: #666666; font-size: 16px; margin-bottom: 30px;">Hi there,</p>
             
@@ -96,6 +124,10 @@ export async function POST(request: Request) {
               <p style="color: #666666; font-size: 14px; margin: 0;">You can reply directly to this email to respond to ${name}.</p>
             </div>
           </div>
+          
+          <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+            <p style="color: #999999; font-size: 12px; margin: 0;">This email was sent from The Photobooth Guy website contact form.</p>
+          </div>
         </body>
         </html>
       `,
@@ -106,8 +138,23 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('❌ Email send error:', error);
     return NextResponse.json(
-      { error: 'Failed to send email', details: error instanceof Error ? error.message : 'Unknown error' },
+      { 
+        error: 'Failed to send email', 
+        details: error instanceof Error ? error.message : 'Unknown error' 
+      },
       { status: 500 }
     );
   }
+}
+
+// Handle OPTIONS for CORS preflight
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    },
+  });
 }
