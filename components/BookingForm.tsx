@@ -75,6 +75,26 @@ export default function BookingForm({ initialData }: BookingFormProps) {
     });
   };
 
+  // Parse boothStartTime into hour and minute
+  const parseTime = (timeStr: string): { hour: string; minute: string } => {
+    if (!timeStr) return { hour: '', minute: '' };
+    const [hour, minute] = timeStr.split(':');
+    return { hour: hour || '', minute: minute || '' };
+  };
+
+  const { hour: timeHour, minute: timeMinute } = parseTime(formData.boothStartTime);
+
+  const handleTimeChange = (field: 'hour' | 'minute', value: string) => {
+    const current = parseTime(formData.boothStartTime);
+    const newHour = field === 'hour' ? value : current.hour;
+    const newMinute = field === 'minute' ? value : current.minute;
+    const newTime = newHour && newMinute ? `${newHour.padStart(2, '0')}:${newMinute.padStart(2, '0')}` : '';
+    setFormData({
+      ...formData,
+      boothStartTime: newTime,
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!pkg) return;
@@ -208,18 +228,48 @@ export default function BookingForm({ initialData }: BookingFormProps) {
         />
       </div>
       <div>
-        <label htmlFor="boothStartTime" className={labelClass}>
+        <label className={labelClass}>
           What time should the photo booth open? *
         </label>
-        <input
-          type="time"
-          id="boothStartTime"
-          name="boothStartTime"
-          required
-          value={formData.boothStartTime}
-          onChange={handleChange}
-          className={inputClass}
-        />
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label htmlFor="boothStartHour" className="block text-xs uppercase tracking-wider text-gray-600 mb-2 font-medium">
+              Hour
+            </label>
+            <select
+              id="boothStartHour"
+              required
+              value={timeHour}
+              onChange={(e) => handleTimeChange('hour', e.target.value)}
+              className={inputClass}
+            >
+              <option value="">Select...</option>
+              {Array.from({ length: 24 }, (_, i) => (
+                <option key={i} value={i.toString().padStart(2, '0')}>
+                  {i === 0 ? '12 AM' : i < 12 ? `${i} AM` : i === 12 ? '12 PM' : `${i - 12} PM`}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="boothStartMinute" className="block text-xs uppercase tracking-wider text-gray-600 mb-2 font-medium">
+              Minute
+            </label>
+            <select
+              id="boothStartMinute"
+              required
+              value={timeMinute}
+              onChange={(e) => handleTimeChange('minute', e.target.value)}
+              className={inputClass}
+            >
+              <option value="">Select...</option>
+              <option value="00">:00</option>
+              <option value="15">:15</option>
+              <option value="30">:30</option>
+              <option value="45">:45</option>
+            </select>
+          </div>
+        </div>
       </div>
 
       {/* Package selection (when not from quote) */}
