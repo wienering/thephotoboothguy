@@ -76,7 +76,7 @@ export default function TemplatesContent() {
       >
         {heroImage && (
           <>
-            <Image src={heroImage.src} alt="" fill className="object-cover object-center" sizes="100vw" priority />
+            <Image src={heroImage.src} alt="" fill className="object-cover object-top" sizes="100vw" priority />
             <div className="absolute inset-0 bg-black/55" aria-hidden />
           </>
         )}

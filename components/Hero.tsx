@@ -35,7 +35,7 @@ export default function Hero({ backgroundImage }: HeroProps = {}) {
             src={backgroundImage}
             alt=""
             fill
-            className="object-cover object-center"
+            className="object-cover object-top"
             sizes="100vw"
             priority
           />
