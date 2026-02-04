@@ -2,6 +2,8 @@
  * Shared pool of event/print photos for use across the site.
  * Used for hero images and inline content images (not full galleries).
  * Different pages get different subsets so the site has character without repetition.
+ *
+ * Headers: only landscape photos are used for hero/header images (no portrait or strip photos).
  */
 
 export interface ContentImage {
@@ -9,7 +11,7 @@ export interface ContentImage {
   alt: string;
 }
 
-/** Event/booth photos (good for hero and in-content on service/equipment/contact pages). */
+/** Event/booth photos (landscape; used for heroes and in-content). */
 const EVENT_PHOTOS: ContentImage[] = [
   { src: '/photos/20251209_125620936.jpg', alt: 'Professional photo booth rental at a Toronto area event with guests and custom backdrop' },
   { src: '/photos/20251209_125627091.jpg', alt: 'Guests enjoying instant prints and props at a GTA photo booth rental' },
@@ -20,6 +22,9 @@ const EVENT_PHOTOS: ContentImage[] = [
   { src: '/photos/220233130.jpg', alt: 'Photo booth rental at a Toronto or GTA venue with guests and backdrop' },
   { src: '/photos/20231215173222-1 copy.jpg', alt: 'Photo booth experience at a Greater Toronto Area event with prints and props' },
 ];
+
+/** Landscape photos only – use for all hero/header images. Print samples (portrait strips) are excluded. */
+const LANDSCAPE_HERO_PHOTOS = EVENT_PHOTOS;
 
 /** Print/template samples (good for templates page and inline “sample” sections). */
 const PRINT_SAMPLES: ContentImage[] = [
@@ -49,7 +54,7 @@ export function getImagesForServicePage(serviceSlug: string, city: string): {
 } {
   const key = `${serviceSlug}-${city}`;
   const h = hashKey(key);
-  const heroImage = EVENT_PHOTOS[h % EVENT_PHOTOS.length] ?? null;
+  const heroImage = LANDSCAPE_HERO_PHOTOS[h % LANDSCAPE_HERO_PHOTOS.length] ?? null;
   const i1 = (h + 2) % ALL_PHOTOS.length;
   const i2 = (h + 7) % ALL_PHOTOS.length;
   const contentImages = [
@@ -68,7 +73,7 @@ export function getImagesForPage(pageKey: string): {
   contentImage: ContentImage | null;
 } {
   const h = hashKey(pageKey);
-  const heroImage = EVENT_PHOTOS[h % EVENT_PHOTOS.length] ?? null;
+  const heroImage = LANDSCAPE_HERO_PHOTOS[h % LANDSCAPE_HERO_PHOTOS.length] ?? null;
   const contentImage = ALL_PHOTOS[(h + 3) % ALL_PHOTOS.length] ?? null;
   return { heroImage, contentImage };
 }
@@ -79,7 +84,7 @@ export function getImagesForTemplatesPage(): {
   contentImage: ContentImage | null;
 } {
   return {
-    heroImage: EVENT_PHOTOS[2] ?? null,
+    heroImage: LANDSCAPE_HERO_PHOTOS[2] ?? null,
     contentImage: PRINT_SAMPLES[1] ?? null,
   };
 }
@@ -90,16 +95,16 @@ export function getImagesForContactPage(): {
   contentImage: ContentImage | null;
 } {
   return {
-    heroImage: EVENT_PHOTOS[3] ?? null,  // wedding moment
+    heroImage: LANDSCAPE_HERO_PHOTOS[3] ?? null,  // wedding moment
     contentImage: PRINT_SAMPLES[2] ?? null,  // print sample
   };
 }
 
-/** Book page: hero uses Sample 1. */
+/** Book page: hero uses a landscape event photo (no portrait/strip in headers). */
 export function getImagesForBookPage(): {
   heroImage: ContentImage | null;
 } {
   return {
-    heroImage: PRINT_SAMPLES[0] ?? null,  // Sample 1
+    heroImage: LANDSCAPE_HERO_PHOTOS[4] ?? null,  // photo booth in action
   };
 }
