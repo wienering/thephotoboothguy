@@ -244,11 +244,14 @@ export default function BookingForm({ initialData }: BookingFormProps) {
               className={inputClass}
             >
               <option value="">Select...</option>
-              {Array.from({ length: 24 }, (_, i) => (
-                <option key={i} value={i.toString().padStart(2, '0')}>
-                  {i === 0 ? '12 AM' : i < 12 ? `${i} AM` : i === 12 ? '12 PM' : `${i - 12} PM`}
-                </option>
-              ))}
+              {Array.from({ length: 16 }, (_, i) => {
+                const hour = i + 8; // Start at 8 AM (hour 8)
+                return (
+                  <option key={hour} value={hour.toString().padStart(2, '0')}>
+                    {hour === 12 ? '12 PM' : hour < 12 ? `${hour} AM` : `${hour - 12} PM`}
+                  </option>
+                );
+              })}
             </select>
           </div>
           <div>
