@@ -91,7 +91,7 @@ export default function Navigation() {
               )}
             </div>
 
-            {/* Gallery Dropdown */}
+            {/* Browse Dropdown */}
             <div 
               className="relative"
               onMouseEnter={() => setGalleryOpen(true)}
@@ -102,7 +102,7 @@ export default function Navigation() {
                   scrolled ? 'text-gray-700 hover:text-black' : 'text-gray-700 hover:text-black'
                 }`}
               >
-                Gallery ▾
+                Browse ▾
               </button>
               
               {galleryOpen && (
@@ -131,16 +131,28 @@ export default function Navigation() {
               Contact
             </Link>
             
-            <Link
-              href="/book"
-              className={`border px-5 py-2 text-xs uppercase tracking-wider font-medium transition-all ml-2 ${
-                scrolled 
-                  ? 'border-black text-black hover:bg-black hover:text-white' 
-                  : 'border-black text-black hover:bg-black hover:text-white'
-              }`}
-            >
-              Book Now
-            </Link>
+            <div className="flex items-center gap-2 ml-2">
+              <Link
+                href="/quote"
+                className={`border px-4 py-2 text-xs uppercase tracking-wider font-medium transition-all ${
+                  scrolled 
+                    ? 'border-gray-300 text-gray-700 hover:border-black hover:text-black' 
+                    : 'border-gray-300 text-gray-700 hover:border-black hover:text-black'
+                }`}
+              >
+                Get Quote
+              </Link>
+              <Link
+                href="/book"
+                className={`border px-5 py-2 text-xs uppercase tracking-wider font-medium transition-all ${
+                  scrolled 
+                    ? 'border-black text-black hover:bg-black hover:text-white' 
+                    : 'border-black text-black hover:bg-black hover:text-white'
+                }`}
+              >
+                Book Now
+              </Link>
+            </div>
           </div>
 
           <button
@@ -193,9 +205,9 @@ export default function Navigation() {
               ))}
             </div>
 
-            {/* Mobile Gallery Section */}
+            {/* Mobile Browse Section */}
             <div className="border-t border-gray-200 pt-3">
-              <p className="text-xs uppercase tracking-wider font-medium text-gray-500 mb-2">Gallery</p>
+              <p className="text-xs uppercase tracking-wider font-medium text-gray-500 mb-2">Browse</p>
               {galleryLinks.map((item) => (
                 <Link
                   key={item.href}
@@ -209,14 +221,6 @@ export default function Navigation() {
             </div>
 
             <Link
-              href="/quote"
-              className="block text-sm uppercase tracking-wider font-medium py-2 transition-colors text-gray-700 hover:text-black"
-              onClick={() => setIsOpen(false)}
-            >
-              Get a Quote
-            </Link>
-            
-            <Link
               href="/contact"
               className="block text-sm uppercase tracking-wider font-medium py-2 transition-colors text-gray-700 hover:text-black"
               onClick={() => setIsOpen(false)}
@@ -224,13 +228,22 @@ export default function Navigation() {
               Contact
             </Link>
             
-            <Link
-              href="/book"
-              className="block border text-center px-6 py-3 text-sm uppercase tracking-wider font-medium transition-all border-black text-black hover:bg-black hover:text-white mt-4"
-              onClick={() => setIsOpen(false)}
-            >
-              Book Now
-            </Link>
+            <div className="flex flex-col gap-3 mt-4">
+              <Link
+                href="/quote"
+                className="block border text-center px-6 py-3 text-sm uppercase tracking-wider font-medium transition-all border-gray-300 text-gray-700 hover:border-black hover:text-black"
+                onClick={() => setIsOpen(false)}
+              >
+                Get a Quote
+              </Link>
+              <Link
+                href="/book"
+                className="block border text-center px-6 py-3 text-sm uppercase tracking-wider font-medium transition-all border-black text-black hover:bg-black hover:text-white"
+                onClick={() => setIsOpen(false)}
+              >
+                Book Now
+              </Link>
+            </div>
           </div>
         )}
       </div>
