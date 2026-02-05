@@ -488,11 +488,12 @@ export default function BookingForm({ initialData }: BookingFormProps) {
       </div>
 
       <div>
-        <label htmlFor="notes" className={labelClass}>Notes (optional)</label>
+        <label htmlFor="notes" className={labelClass}>Notes *</label>
         <textarea
           id="notes"
           name="notes"
           rows={4}
+          required
           value={formData.notes}
           onChange={handleChange}
           className={`${inputClass} resize-none`}
