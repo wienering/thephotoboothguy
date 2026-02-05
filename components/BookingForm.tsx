@@ -4,10 +4,14 @@ import { useState, useEffect } from 'react';
 import type { QuotePayload, QuotePackage, QuoteAddons } from '@/lib/quote-utils';
 import {
   PACKAGES,
+  PACKAGES_360,
+  AUDIO_GUEST_BOOK_PACKAGE,
+  SERVICE_TYPES,
   UNLIMITED_PRINTS_SHORT,
   UNLIMITED_PRINTS_LONG,
   GLAM_BOOTH,
   calculateTotal,
+  type ServiceType,
 } from '@/lib/pricing';
 
 const REFERRAL_OPTIONS = [
@@ -40,6 +44,7 @@ export default function BookingForm({ initialData }: BookingFormProps) {
     referralSource: '',
     notes: '',
   });
+  const [serviceType, setServiceType] = useState<ServiceType>('photo-booth');
   const [selectedPackage, setSelectedPackage] = useState<QuotePackage | null>(initialData?.package ?? null);
   const [addons, setAddons] = useState<QuoteAddons>(initialData?.addons ?? defaultAddons);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -48,8 +53,35 @@ export default function BookingForm({ initialData }: BookingFormProps) {
   const fromQuote = !!initialData?.package;
   const pkg = selectedPackage ?? initialData?.package;
   const total = pkg
-    ? calculateTotal(pkg.hours, pkg.price, addons)
+    ? calculateTotal(pkg.hours, pkg.price, addons, serviceType)
     : (initialData?.total ?? 0);
+
+  // Get packages for current service type
+  const getPackagesForService = () => {
+    switch (serviceType) {
+      case '360-booth':
+        return PACKAGES_360;
+      case 'audio-guest-book':
+        return null; // Single package, handled separately
+      default:
+        return PACKAGES;
+    }
+  };
+
+  // Auto-select audio guest book package when that service is chosen
+  useEffect(() => {
+    if (serviceType === 'audio-guest-book') {
+      setSelectedPackage({
+        hours: AUDIO_GUEST_BOOK_PACKAGE.hours,
+        price: AUDIO_GUEST_BOOK_PACKAGE.price,
+      });
+      // Reset add-ons since they don't apply
+      setAddons(defaultAddons);
+    } else if (!fromQuote) {
+      // Reset package when switching services (unless from quote)
+      setSelectedPackage(null);
+    }
+  }, [serviceType, fromQuote]);
 
   useEffect(() => {
     if (initialData?.contactInfo) {
@@ -111,8 +143,9 @@ export default function BookingForm({ initialData }: BookingFormProps) {
         boothStartTime: formData.boothStartTime || undefined,
         referralSource: formData.referralSource,
         notes: formData.notes || undefined,
+        serviceType,
         package: pkg,
-        addons,
+        addons: serviceType === 'photo-booth' ? addons : defaultAddons,
         total,
       };
 
@@ -135,6 +168,7 @@ export default function BookingForm({ initialData }: BookingFormProps) {
           notes: '',
         });
         if (!fromQuote) {
+          setServiceType('photo-booth');
           setSelectedPackage(null);
           setAddons(defaultAddons);
         }
@@ -152,6 +186,9 @@ export default function BookingForm({ initialData }: BookingFormProps) {
   const labelClass = 'block text-sm uppercase tracking-wider text-gray-700 mb-2 font-medium';
   const inputClass =
     'w-full px-4 py-3 border border-gray-300 focus:border-black focus:outline-none transition-colors bg-white';
+
+  const packages = getPackagesForService();
+  const showAddons = serviceType === 'photo-booth';
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -229,7 +266,7 @@ export default function BookingForm({ initialData }: BookingFormProps) {
       </div>
       <div>
         <label className={labelClass}>
-          What time should the photo booth open? *
+          What time should the {serviceType === 'audio-guest-book' ? 'audio guest book' : serviceType === '360-booth' ? '360 booth' : 'photo booth'} open? *
         </label>
         <div className="grid grid-cols-2 gap-4">
           <div>
@@ -275,77 +312,131 @@ export default function BookingForm({ initialData }: BookingFormProps) {
         </div>
       </div>
 
-      {/* Package selection (when not from quote) */}
+      {/* Service and Package selection (when not from quote) */}
       {!fromQuote && (
         <>
+          {/* Service Type Selection */}
           <div>
-            <p className={`${labelClass} mb-3`}>Package *</p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {PACKAGES.map((p) => (
+            <p className={`${labelClass} mb-3`}>Service *</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {SERVICE_TYPES.map((service) => (
                 <button
-                  key={p.hours}
+                  key={service.id}
                   type="button"
-                  onClick={() => setSelectedPackage(p)}
-                  className={`border p-4 text-left transition-colors ${selectedPackage?.hours === p.hours ? 'border-black bg-gray-50' : 'border-gray-200 hover:border-gray-400'}`}
+                  onClick={() => setServiceType(service.id)}
+                  className={`border p-4 text-center transition-colors ${
+                    serviceType === service.id 
+                      ? 'border-black bg-gray-50 font-medium' 
+                      : 'border-gray-200 hover:border-gray-400'
+                  }`}
                 >
-                  <span className="font-medium">{p.hours} hours</span>
-                  <span className="block text-lg font-light">${p.price.toLocaleString()}</span>
+                  {service.name}
                 </button>
               ))}
             </div>
           </div>
+
+          {/* Package Selection - varies by service */}
           <div>
-            <p className={`${labelClass} mb-3`}>Add-ons</p>
-            <div className="space-y-4">
-              <label className="flex items-center gap-3 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={addons.unlimitedPrints}
-                  onChange={(e) => setAddons((a) => ({ ...a, unlimitedPrints: e.target.checked }))}
-                  className="w-4 h-4"
-                />
-                <span>Unlimited Prints</span>
-                {pkg && (
-                  <span className="text-gray-600">
-                    ${(pkg.hours <= 3 ? UNLIMITED_PRINTS_SHORT : UNLIMITED_PRINTS_LONG) * pkg.hours}
-                  </span>
-                )}
-              </label>
-              <label className="flex items-center gap-3 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={addons.glamBooth}
-                  onChange={(e) => setAddons((a) => ({ ...a, glamBooth: e.target.checked }))}
-                  className="w-4 h-4"
-                />
-                <span>Glam Booth — ${GLAM_BOOTH}</span>
-              </label>
-              <label className="flex items-start gap-3 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={addons.waitingTime}
-                  onChange={(e) =>
-                    setAddons((a) => ({ ...a, waitingTime: e.target.checked, waitingHours: e.target.checked ? 1 : 0 }))
-                  }
-                  className="w-4 h-4 mt-1"
-                />
-                <div>
-                  <span>Waiting Time — $50/hr</span>
-                  {addons.waitingTime && (
-                    <select
-                      value={addons.waitingHours}
-                      onChange={(e) => setAddons((a) => ({ ...a, waitingHours: Number(e.target.value) }))}
-                      className="ml-3 px-2 py-1 border border-gray-300 bg-white"
-                    >
-                      {[1, 2, 3, 4].map((h) => (
-                        <option key={h} value={h}>{h} hour{h > 1 ? 's' : ''}</option>
-                      ))}
-                    </select>
-                  )}
+            <p className={`${labelClass} mb-3`}>
+              {serviceType === 'audio-guest-book' ? 'Package' : 'Duration *'}
+            </p>
+            
+            {serviceType === 'audio-guest-book' ? (
+              // Audio Guest Book - single fixed package
+              <div className="border border-black bg-gray-50 p-4">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <span className="font-medium">Full Event</span>
+                    <span className="block text-lg font-light">${AUDIO_GUEST_BOOK_PACKAGE.price}</span>
+                  </div>
+                  <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
                 </div>
-              </label>
-            </div>
+                <p className="text-sm text-gray-600 mt-2">
+                  * Full Event means the audio guest book will be available until midnight.
+                </p>
+              </div>
+            ) : (
+              // Photo Booth or 360 Booth - multiple packages
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {packages?.map((p) => (
+                  <button
+                    key={p.hours}
+                    type="button"
+                    onClick={() => setSelectedPackage(p)}
+                    className={`border p-4 text-left transition-colors ${
+                      selectedPackage?.hours === p.hours 
+                        ? 'border-black bg-gray-50' 
+                        : 'border-gray-200 hover:border-gray-400'
+                    }`}
+                  >
+                    <span className="font-medium">{p.hours} hours</span>
+                    <span className="block text-lg font-light">${p.price.toLocaleString()}</span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
+
+          {/* Add-ons - only for Photo Booth */}
+          {showAddons && (
+            <div>
+              <p className={`${labelClass} mb-3`}>Add-ons</p>
+              <div className="space-y-4">
+                <label className="flex items-center gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={addons.unlimitedPrints}
+                    onChange={(e) => setAddons((a) => ({ ...a, unlimitedPrints: e.target.checked }))}
+                    className="w-4 h-4"
+                  />
+                  <span>Unlimited Prints</span>
+                  {pkg && (
+                    <span className="text-gray-600">
+                      ${(pkg.hours <= 3 ? UNLIMITED_PRINTS_SHORT : UNLIMITED_PRINTS_LONG) * pkg.hours}
+                    </span>
+                  )}
+                </label>
+                <label className="flex items-center gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={addons.glamBooth}
+                    onChange={(e) => setAddons((a) => ({ ...a, glamBooth: e.target.checked }))}
+                    className="w-4 h-4"
+                  />
+                  <span>Glam Booth — ${GLAM_BOOTH}</span>
+                </label>
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={addons.waitingTime}
+                    onChange={(e) =>
+                      setAddons((a) => ({ ...a, waitingTime: e.target.checked, waitingHours: e.target.checked ? 1 : 0 }))
+                    }
+                    className="w-4 h-4 mt-1"
+                  />
+                  <div>
+                    <span>Waiting Time — $50/hr</span>
+                    {addons.waitingTime && (
+                      <select
+                        value={addons.waitingHours}
+                        onChange={(e) => setAddons((a) => ({ ...a, waitingHours: Number(e.target.value) }))}
+                        className="ml-3 px-2 py-1 border border-gray-300 bg-white"
+                      >
+                        {[1, 2, 3, 4].map((h) => (
+                          <option key={h} value={h}>{h} hour{h > 1 ? 's' : ''}</option>
+                        ))}
+                      </select>
+                    )}
+                  </div>
+                </label>
+              </div>
+            </div>
+          )}
+
+          {/* Total */}
           {pkg && (
             <div className="bg-gray-50 border border-gray-200 p-4">
               <p className="text-sm uppercase tracking-wider text-gray-600 mb-1">Total</p>

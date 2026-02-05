@@ -16,6 +16,7 @@ export async function POST(request: Request) {
       boothStartTime,
       referralSource,
       notes,
+      serviceType = 'photo-booth',
       package: pkg,
       addons,
       total,
@@ -33,6 +34,7 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+    // Audio guest book has hours=0 for "Full Event", so we allow that
     if (!pkg || typeof pkg.hours !== 'number' || typeof pkg.price !== 'number') {
       return NextResponse.json(
         { error: 'Please select a package.' },
@@ -71,16 +73,38 @@ export async function POST(request: Request) {
 
     const formattedTime = formatTime(boothStartTime);
     
+    // Service name for emails
+    const getServiceName = (type: string) => {
+      switch (type) {
+        case '360-booth': return '360 Booth';
+        case 'audio-guest-book': return 'Audio Guest Book';
+        default: return 'Photo Booth';
+      }
+    };
+    const serviceName = getServiceName(serviceType);
+    
     // Package description
-    const packageDesc = `${pkg.hours} Hour${pkg.hours > 1 ? 's' : ''} Photo Booth Rental`;
+    const packageDesc = serviceType === 'audio-guest-book'
+      ? 'Audio Guest Book - Full Event'
+      : `${pkg.hours} Hour${pkg.hours > 1 ? 's' : ''} ${serviceName} Rental`;
 
     let packageSection = '';
     if (pkg && typeof pkg.hours === 'number' && typeof pkg.price === 'number') {
+      // Service type row
       packageSection = `
-        <tr><td style="padding: 8px 0; color: #666666; font-size: 14px; font-weight: 600; text-transform: uppercase;">Package:</td>
-        <td style="padding: 8px 0; color: #000000;">${pkg.hours} hours — $${Number(pkg.price).toLocaleString()}</td></tr>
+        <tr><td style="padding: 8px 0; color: #666666; font-size: 14px; font-weight: 600; text-transform: uppercase;">Service:</td>
+        <td style="padding: 8px 0; color: #000000;">${serviceName}</td></tr>
       `;
-      if (addons) {
+      // Package row - handle "Full Event" for audio guest book
+      const packageDisplay = serviceType === 'audio-guest-book'
+        ? `Full Event — $${Number(pkg.price).toLocaleString()}`
+        : `${pkg.hours} hours — $${Number(pkg.price).toLocaleString()}`;
+      packageSection += `
+        <tr><td style="padding: 8px 0; color: #666666; font-size: 14px; font-weight: 600; text-transform: uppercase;">Package:</td>
+        <td style="padding: 8px 0; color: #000000;">${packageDisplay}</td></tr>
+      `;
+      // Add-ons only apply to photo booth
+      if (addons && serviceType === 'photo-booth') {
         if (addons.unlimitedPrints) packageSection += `<tr><td></td><td>Unlimited Prints</td></tr>`;
         if (addons.glamBooth) packageSection += `<tr><td></td><td>Glam Booth</td></tr>`;
         if (addons.waitingTime && addons.waitingHours) packageSection += `<tr><td></td><td>Waiting Time ${addons.waitingHours}h</td></tr>`;
@@ -128,10 +152,13 @@ export async function POST(request: Request) {
 
     // Send confirmation email to client
     const addonsList: string[] = [];
-    if (addons?.unlimitedPrints) addonsList.push('Unlimited Prints');
-    if (addons?.glamBooth) addonsList.push('Glam Booth');
-    if (addons?.waitingTime && addons?.waitingHours > 0) {
-      addonsList.push(`Waiting Time (${addons.waitingHours} hour${addons.waitingHours > 1 ? 's' : ''})`);
+    // Add-ons only apply to photo booth
+    if (serviceType === 'photo-booth' && addons) {
+      if (addons.unlimitedPrints) addonsList.push('Unlimited Prints');
+      if (addons.glamBooth) addonsList.push('Glam Booth');
+      if (addons.waitingTime && addons.waitingHours > 0) {
+        addonsList.push(`Waiting Time (${addons.waitingHours} hour${addons.waitingHours > 1 ? 's' : ''})`);
+      }
     }
     const hasAddons = addonsList.length > 0;
 
@@ -146,10 +173,18 @@ export async function POST(request: Request) {
             Here is your confirmation that you have booked a <strong>${packageDesc}</strong>${hasAddons ? ` with ${addonsList.join(' and ')}` : ''}.
           </p>
           <p style="color: #333; font-size: 16px; margin-bottom: 20px;">
-            Just to recap, your photo booth reservation is for <strong>${formattedDate || eventDate}</strong>, starting time <strong>${formattedTime}</strong> at <strong>${eventVenue}</strong>. Our attendant will arrive approximately 1 hour early to set up and ensure everything is ready for your guests.
+            Just to recap, your ${serviceName.toLowerCase()} reservation is for <strong>${formattedDate || eventDate}</strong>, starting time <strong>${formattedTime}</strong> at <strong>${eventVenue}</strong>. ${serviceType === 'audio-guest-book' ? 'The audio guest book will be available until midnight.' : 'Our attendant will arrive approximately 1 hour early to set up and ensure everything is ready for your guests.'}
           </p>
           <div style="background-color: #f9f9f9; border-left: 3px solid #000; padding: 20px; margin: 25px 0; border-radius: 4px;">
             <h2 style="color: #000; font-size: 18px; font-weight: 600; margin-top: 0; margin-bottom: 15px;">Next Steps:</h2>
+            ${serviceType === 'audio-guest-book' ? `
+            <p style="color: #333; font-size: 16px; margin-bottom: 15px;">
+              <strong>Setup:</strong> The audio guest book will be set up at your venue and available for your guests throughout the event until midnight.
+            </p>
+            <p style="color: #333; font-size: 16px; margin-bottom: 0;">
+              <strong>Venue Requirements:</strong> Please have a small table or stand available within 10 feet of a power outlet for the audio guest book.
+            </p>
+            ` : `
             <p style="color: #333; font-size: 16px; margin-bottom: 15px;">
               <strong>Custom Print Template:</strong> You can get a head start by visiting our <a href="https://thephotoboothguy.ca/templates" style="color: #000; text-decoration: underline;">Photo Booth Template Chooser</a>. Browse through our available templates, choose one by clicking on it, then fill out the form with your customizations, and our system will email us your choice. We&apos;ll create a sample print design and send it to you for review.
             </p>
@@ -159,6 +194,7 @@ export async function POST(request: Request) {
             <p style="color: #333; font-size: 16px; margin-bottom: 0;">
               💡 <strong>Tip:</strong> Want your guests to enjoy unlimited prints, or our Audio Guest Book? You can still add it to your booking — just reply to this email and let us know.
             </p>
+            `}
           </div>
           <p style="color: #333; font-size: 16px; margin-top: 25px;">
             If you have chosen to send the $100 retainer by e-transfer please send it to <a href="mailto:contact@thephotoboothguy.ca" style="color: #000; text-decoration: underline;">contact@thephotoboothguy.ca</a>. Once the retainer is received, your booking is fully confirmed.
