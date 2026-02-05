@@ -8,17 +8,18 @@ export interface ContentImage {
   alt: string;
 }
 
-/** New hero images (landscape) – each page uses a different one. Home = hero1, Holiday Party = hero4. */
+/** New hero images (landscape) – each page uses a different one. Home = hero1, Holiday Party = hero4, Audio Guestbook = hero3, Glam Booth = hero10. */
 const NEW_HERO_IMAGES: ContentImage[] = [
   { src: '/photos/hero1webp.webp', alt: 'Photo booth hero' },
   { src: '/photos/hero2webp.webp', alt: 'Photo booth hero' },
-  { src: '/photos/hero3webp.webp', alt: 'Photo booth hero' },
+  { src: '/photos/hero3webp.webp', alt: 'Audio guestbook hero' },
   { src: '/photos/hero4webp.webp', alt: 'Holiday party photo booth hero' },
   { src: '/photos/hero5webp.webp', alt: 'Photo booth hero' },
   { src: '/photos/hero6webp.webp', alt: 'Photo booth hero' },
   { src: '/photos/hero7webp.webp', alt: 'Photo booth hero' },
   { src: '/photos/hero8webp.webp', alt: 'Photo booth hero' },
   { src: '/photos/hero9webp.webp', alt: 'Photo booth hero' },
+  { src: '/photos/hero10webp.webp', alt: 'Glam booth hero' },
 ];
 
 /** Event/booth photos (used for in-content images only, not heroes). */
@@ -53,7 +54,7 @@ function hashKey(s: string): number {
 
 /**
  * Returns a hero image and up to 2 content images for a service-location page.
- * Hero from NEW_HERO_IMAGES (indices 1,2,4,5,6,7,8 so each service+city differs; 0=home, 3=holiday).
+ * Hero from NEW_HERO_IMAGES. Special cases: audio-guest-book = hero3, glam-booth = hero10.
  */
 export function getImagesForServicePage(serviceSlug: string, city: string): {
   heroImage: ContentImage | null;
@@ -61,8 +62,19 @@ export function getImagesForServicePage(serviceSlug: string, city: string): {
 } {
   const key = `${serviceSlug}-${city}`;
   const h = hashKey(key);
-  const heroIndices = [1, 2, 4, 5, 6, 7, 8];
-  const heroImage = NEW_HERO_IMAGES[heroIndices[h % heroIndices.length]] ?? null;
+
+  // Specific hero images for certain service types
+  let heroImage: ContentImage | null;
+  if (serviceSlug === 'audio-guest-book') {
+    heroImage = NEW_HERO_IMAGES[2] ?? null; // hero3webp
+  } else if (serviceSlug === 'glam-booth') {
+    heroImage = NEW_HERO_IMAGES[9] ?? null; // hero10webp
+  } else {
+    // Other services use varied heroes (excluding 0=home, 2=audio, 3=holiday, 9=glam)
+    const heroIndices = [1, 4, 5, 6, 7, 8];
+    heroImage = NEW_HERO_IMAGES[heroIndices[h % heroIndices.length]] ?? null;
+  }
+
   const i1 = (h + 2) % ALL_PHOTOS.length;
   const i2 = (h + 7) % ALL_PHOTOS.length;
   const contentImages = [
