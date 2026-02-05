@@ -4,54 +4,23 @@ import { useEffect, useRef, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { revealOnScroll } from '@/lib/gsap';
-import { getHeroForHolidayPartyPage } from '@/lib/content-images';
+import { getHeroForHolidayPartyPage, getHolidayPartyPhotos, HOLIDAY_VIDEO } from '@/lib/content-images';
 
-const holidayFaqs = [
-  {
-    question: 'What comes with a holiday photo booth package?',
-    answer: 'Every rental includes professional setup and breakdown, an on-site attendant, festive props, custom holiday print templates, a digital gallery after your event, and unlimited prints (for our Classic or AI Booth) or videos (for our 360 Booth).',
-  },
-  {
-    question: 'Which photo booth style works best for seasonal celebrations?',
-    answer: 'Our Classic Print Booth paired with festive backdrops and unlimited prints is the go-to choice for holiday events. It offers a timeless experience that guests of all ages enjoy.',
-  },
-  {
-    question: 'Do you handle corporate events as well as private parties?',
-    answer: 'Yes, we do both! From office holiday parties and corporate galas to intimate family Christmas gatherings, our photo booths are designed to impress guests and create lasting keepsakes.',
-  },
-  {
-    question: 'Can you provide seasonal decorations and props?',
-    answer: 'Absolutely! We come prepared with a selection of festive props, holiday-inspired print layouts, and themed backdrops to match your celebration. For an elevated look, consider adding one of our luxury flower walls.',
-  },
-  {
-    question: 'How do guests receive their photos?',
-    answer: 'Every guest gets an instant physical print to take home. They can also share their photos digitally via text or AirDrop right from the booth—perfect for posting holiday memories on social media.',
-  },
-  {
-    question: 'When should I book for the holiday season?',
-    answer: 'December is our busiest month, and weekends tend to fill up well in advance. We recommend reaching out as early as possible to secure your preferred date.',
-  },
-  {
-    question: 'What areas do you serve?',
-    answer: 'We\'re based in the Greater Toronto Area and service Toronto, York Region (including Vaughan, Richmond Hill, Markham, Newmarket, and Stouffville), Halton Region (Oakville, Burlington, Milton), Peel Region (Mississauga, Brampton, Caledon), and Durham Region (Pickering, Ajax, Whitby, Oshawa). For events outside these areas, reach out with your details and we\'ll see what we can do.',
-  },
-  {
-    question: 'What if I need a photo booth at the last minute?',
-    answer: 'We\'ve got you covered—as long as the date is still available! Send us an email at contact@thephotoboothguy.ca with "URGENT" in the subject line and our team will prioritize your request.',
-  },
-];
 
 export default function HolidayPartyContent() {
   const heroRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
+  const galleryRef = useRef<HTMLDivElement>(null);
   const faqRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
   const heroImage = useMemo(() => getHeroForHolidayPartyPage(), []);
+  const holidayPhotos = useMemo(() => getHolidayPartyPhotos(), []);
 
   useEffect(() => {
     if (heroRef.current) revealOnScroll(heroRef.current);
     if (aboutRef.current) revealOnScroll(aboutRef.current);
+    if (galleryRef.current) revealOnScroll(galleryRef.current);
     if (faqRef.current) revealOnScroll(faqRef.current);
     if (ctaRef.current) revealOnScroll(ctaRef.current);
   }, []);
@@ -114,6 +83,40 @@ export default function HolidayPartyContent() {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section ref={galleryRef} className="w-full py-20 bg-gray-50">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <h2 className="text-4xl md:text-5xl font-light text-black mb-12 leading-tight">
+            Holiday Party Moments
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {/* Video */}
+            <div className="relative aspect-[3/4] overflow-hidden col-span-2 row-span-2">
+              <video
+                src={HOLIDAY_VIDEO}
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            </div>
+            {/* Photos */}
+            {holidayPhotos.map((photo, index) => (
+              <div key={index} className="relative aspect-[3/4] overflow-hidden">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section ref={faqRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
@@ -122,12 +125,61 @@ export default function HolidayPartyContent() {
               Frequently Asked Questions
             </h2>
             <div className="space-y-8">
-              {holidayFaqs.map((faq, index) => (
-                <div key={index} className="border-b border-gray-200 pb-8 last:border-0">
-                  <h3 className="text-2xl font-light text-black mb-4">{faq.question}</h3>
-                  <p className="text-gray-700 leading-relaxed font-light">{faq.answer}</p>
-                </div>
-              ))}
+              <div className="border-b border-gray-200 pb-8">
+                <h3 className="text-2xl font-light text-black mb-4">What&apos;s included in your holiday event packages?</h3>
+                <p className="text-gray-700 leading-relaxed font-light">
+                  All of our rentals come with professional setup and removal, a dedicated on-site attendant, festive props, customized holiday print templates, a complete online gallery following your event, and unlimited prints with our <Link href="/photo-booth-rental-toronto" className="text-black underline hover:no-underline">photo booth</Link> or unlimited videos with our <Link href="/360-booth-toronto" className="text-black underline hover:no-underline">360 booth</Link>.
+                </p>
+              </div>
+
+              <div className="border-b border-gray-200 pb-8">
+                <h3 className="text-2xl font-light text-black mb-4">Which booth option is most popular for holiday events?</h3>
+                <p className="text-gray-700 leading-relaxed font-light">
+                  For seasonal celebrations, our <Link href="/photo-booth-rental-toronto" className="text-black underline hover:no-underline">Classic Print Booth</Link> with festive backdrops and unlimited prints remains the crowd favourite. It delivers a classic photo experience that appeals to guests across all age groups.
+                </p>
+              </div>
+
+              <div className="border-b border-gray-200 pb-8">
+                <h3 className="text-2xl font-light text-black mb-4">Are holiday props and themed backdrops available?</h3>
+                <p className="text-gray-700 leading-relaxed font-light">
+                  Yes! We arrive with an assortment of seasonal props, Christmas-inspired print designs, and holiday backdrops that complement the festive atmosphere. You can also enhance your setup with one of our premium flower walls for an extra touch of elegance.
+                </p>
+              </div>
+
+              <div className="border-b border-gray-200 pb-8">
+                <h3 className="text-2xl font-light text-black mb-4">How can guests share their photos right away?</h3>
+                <p className="text-gray-700 leading-relaxed font-light">
+                  In addition to receiving instant printed keepsakes, guests can send their photos and videos directly to their phones via text or AirDrop—making it simple to share holiday moments on social media.
+                </p>
+              </div>
+
+              <div className="border-b border-gray-200 pb-8">
+                <h3 className="text-2xl font-light text-black mb-4">Do you work with both corporate clients and private celebrations?</h3>
+                <p className="text-gray-700 leading-relaxed font-light">
+                  Absolutely! Whether it&apos;s a company holiday gala, an office Christmas party, or a family gathering at home, our photo booths bring entertainment and memorable takeaways to any type of event.
+                </p>
+              </div>
+
+              <div className="border-b border-gray-200 pb-8">
+                <h3 className="text-2xl font-light text-black mb-4">How early should I reserve a date in December?</h3>
+                <p className="text-gray-700 leading-relaxed font-light">
+                  The holiday season is our most in-demand period, and December weekends often get booked months ahead. We suggest <Link href="/book" className="text-black underline hover:no-underline">securing your date</Link> as soon as your plans are confirmed.
+                </p>
+              </div>
+
+              <div className="border-b border-gray-200 pb-8">
+                <h3 className="text-2xl font-light text-black mb-4">Which locations do you service?</h3>
+                <p className="text-gray-700 leading-relaxed font-light">
+                  We operate throughout the Greater Toronto Area, including <Link href="/photo-booth-rental-toronto" className="text-black underline hover:no-underline">Toronto</Link>, York Region (<Link href="/photo-booth-rental-vaughan" className="text-black underline hover:no-underline">Vaughan</Link>, <Link href="/photo-booth-rental-richmond-hill" className="text-black underline hover:no-underline">Richmond Hill</Link>, <Link href="/photo-booth-rental-markham" className="text-black underline hover:no-underline">Markham</Link>, Newmarket, Stouffville), Halton Region (<Link href="/photo-booth-rental-oakville" className="text-black underline hover:no-underline">Oakville</Link>, <Link href="/photo-booth-rental-burlington" className="text-black underline hover:no-underline">Burlington</Link>, Milton), Peel Region (<Link href="/photo-booth-rental-mississauga" className="text-black underline hover:no-underline">Mississauga</Link>, <Link href="/photo-booth-rental-brampton" className="text-black underline hover:no-underline">Brampton</Link>, Caledon), and Durham Region (<Link href="/photo-booth-rental-pickering" className="text-black underline hover:no-underline">Pickering</Link>, <Link href="/photo-booth-rental-ajax" className="text-black underline hover:no-underline">Ajax</Link>, <Link href="/photo-booth-rental-whitby" className="text-black underline hover:no-underline">Whitby</Link>, <Link href="/photo-booth-rental-oshawa" className="text-black underline hover:no-underline">Oshawa</Link>). For events beyond these regions, <Link href="/contact" className="text-black underline hover:no-underline">get in touch</Link> with your event details and we&apos;ll do our best to accommodate.
+                </p>
+              </div>
+
+              <div className="pb-8">
+                <h3 className="text-2xl font-light text-black mb-4">Can you accommodate a last-minute request?</h3>
+                <p className="text-gray-700 leading-relaxed font-light">
+                  If the date hasn&apos;t already been claimed, we&apos;ll do everything we can to make it happen! Email us at contact@thephotoboothguy.ca with &quot;URGENT&quot; in the subject line and our team will respond as quickly as possible.
+                </p>
+              </div>
             </div>
           </div>
         </div>

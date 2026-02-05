@@ -51,6 +51,22 @@ const PHOTOS_360: ContentImage[] = [
   { src: '/photos/IMG_8375.jpeg', alt: 'Fun 360 video booth moment at a Toronto area celebration' },
 ];
 
+/** Holiday party photos for holiday party page. */
+const HOLIDAY_PHOTOS: ContentImage[] = [
+  { src: '/photos/holiday/20241210_171353533.jpg', alt: 'Holiday party photo booth rental with festive backdrop in Toronto' },
+  { src: '/photos/holiday/20251130_133809784.jpg', alt: 'Corporate holiday party photo booth experience in the GTA' },
+  { src: '/photos/holiday/20251204_220531049.jpg', alt: 'Guests enjoying Christmas party photo booth with props' },
+  { src: '/photos/holiday/20251205_231148030.jpg', alt: 'Holiday event photo booth prints and festive decorations' },
+  { src: '/photos/holiday/20251209_125620936.jpg', alt: 'Christmas photo booth moment at a Toronto holiday party' },
+  { src: '/photos/holiday/20251209_125627091.jpg', alt: 'Holiday celebration with photo booth and custom prints' },
+  { src: '/photos/holiday/20251211_191236880.jpg', alt: 'Festive photo booth setup at a corporate Christmas event' },
+  { src: '/photos/holiday/20251212_212432887.jpg', alt: 'Holiday party guests with photo booth props in the GTA' },
+  { src: '/photos/holiday/20260123_204526147.jpg', alt: 'Photo booth fun at a seasonal celebration in Toronto' },
+];
+
+/** Holiday party video. */
+export const HOLIDAY_VIDEO = '/photos/holiday/20251219_210938437webm.webm';
+
 const ALL_PHOTOS = [...EVENT_PHOTOS, ...PRINT_SAMPLES];
 
 /** Simple numeric hash from a string for deterministic but varied picks. */
@@ -160,4 +176,9 @@ export function getHeroForHome(): ContentImage | null {
 /** Holiday Party / Corporate Holiday Party page uses hero4. */
 export function getHeroForHolidayPartyPage(): ContentImage | null {
   return NEW_HERO_IMAGES[3] ?? null;
+}
+
+/** Get holiday party content photos (not hero). */
+export function getHolidayPartyPhotos(): ContentImage[] {
+  return HOLIDAY_PHOTOS;
 }
