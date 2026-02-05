@@ -362,21 +362,44 @@ export default function BookingForm({ initialData }: BookingFormProps) {
             ) : (
               // Photo Booth or 360 Booth - multiple packages
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                {packages?.map((p) => (
-                  <button
-                    key={p.hours}
-                    type="button"
-                    onClick={() => setSelectedPackage(p)}
-                    className={`border p-4 text-left transition-colors ${
-                      selectedPackage?.hours === p.hours 
-                        ? 'border-black bg-gray-50' 
-                        : 'border-gray-200 hover:border-gray-400'
-                    }`}
-                  >
-                    <span className="font-medium">{p.hours} hours</span>
-                    <span className="block text-lg font-light">${p.price.toLocaleString()}</span>
-                  </button>
-                ))}
+                {packages?.map((p) => {
+                  const isPopular = p.hours === 3;
+                  const isValue = p.hours === 4;
+                  const isSelected = selectedPackage?.hours === p.hours;
+                  return (
+                    <button
+                      key={p.hours}
+                      type="button"
+                      onClick={() => setSelectedPackage(p)}
+                      className={`relative border p-4 text-left transition-colors ${
+                        isSelected 
+                          ? isPopular 
+                            ? 'border-black border-2 bg-gray-50'
+                            : isValue
+                              ? 'border-gray-600 border-2 bg-gray-50'
+                              : 'border-black bg-gray-50'
+                          : isPopular
+                            ? 'border-black border-2 hover:bg-gray-50'
+                            : isValue
+                              ? 'border-gray-600 border-2 hover:bg-gray-50'
+                              : 'border-gray-200 hover:border-gray-400'
+                      }`}
+                    >
+                      {isPopular && (
+                        <span className="absolute -top-2.5 left-3 bg-black text-white px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider">
+                          Most Popular
+                        </span>
+                      )}
+                      {isValue && (
+                        <span className="absolute -top-2.5 left-3 bg-gray-600 text-white px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider">
+                          Best Value
+                        </span>
+                      )}
+                      <span className="font-medium">{p.hours} hours</span>
+                      <span className="block text-lg font-light">${p.price.toLocaleString()}</span>
+                    </button>
+                  );
+                })}
               </div>
             )}
           </div>

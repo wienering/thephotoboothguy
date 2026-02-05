@@ -10,6 +10,7 @@ interface PackageCardProps {
   duration: string;
   features: string[];
   highlight?: boolean;
+  badge?: 'popular' | 'value';
   ctaText?: string;
 }
 
@@ -19,6 +20,7 @@ export default function PackageCard({
   duration,
   features,
   highlight = false,
+  badge,
   ctaText = 'Book Now',
 }: PackageCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -29,18 +31,29 @@ export default function PackageCard({
     }
   }, []);
 
+  // Determine if card should be highlighted based on badge or highlight prop
+  const isHighlighted = badge === 'popular' || highlight;
+  const isValue = badge === 'value';
+
   return (
     <div
       ref={cardRef}
       className={`relative bg-white border transition-all duration-300 hover:shadow-2xl ${
-        highlight 
+        isHighlighted 
           ? 'border-black border-2' 
-          : 'border-gray-200'
+          : isValue
+            ? 'border-gray-600 border-2'
+            : 'border-gray-200'
       }`}
     >
-      {highlight && (
+      {badge === 'popular' && (
         <div className="absolute -top-3 left-6 bg-black text-white px-4 py-1 text-xs font-medium uppercase tracking-wider">
           Most Popular
+        </div>
+      )}
+      {badge === 'value' && (
+        <div className="absolute -top-3 left-6 bg-gray-600 text-white px-4 py-1 text-xs font-medium uppercase tracking-wider">
+          Best Value
         </div>
       )}
       <div className="p-10">
@@ -62,9 +75,11 @@ export default function PackageCard({
         <Link
           href="/book"
           className={`block w-full text-center py-4 px-6 font-medium text-sm uppercase tracking-wider transition-all duration-300 ${
-            highlight
+            isHighlighted
               ? 'bg-black text-white hover:bg-gray-900'
-              : 'bg-gray-100 text-black hover:bg-gray-200'
+              : isValue
+                ? 'bg-gray-600 text-white hover:bg-gray-700'
+                : 'bg-gray-100 text-black hover:bg-gray-200'
           }`}
         >
           {ctaText}

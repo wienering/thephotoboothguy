@@ -160,7 +160,7 @@ export const standardPackages = [
       'Digital image delivery to guests by SMS or email',
       'Digital gallery after the event',
     ],
-    highlight: false,
+    badge: 'popular' as const,
   },
   {
     name: 'Premium',
@@ -174,7 +174,7 @@ export const standardPackages = [
       'Digital image delivery to guests by SMS or email',
       'Digital gallery after the event',
     ],
-    highlight: true,
+    badge: 'value' as const,
   },
 ];
 
@@ -206,7 +206,7 @@ export const glamBoothPackages = [
       'Digital copies sent to guests',
       'Digital gallery after the event',
     ],
-    highlight: false,
+    badge: 'popular' as const,
   },
   {
     name: 'Premium',
@@ -221,7 +221,7 @@ export const glamBoothPackages = [
       'Digital copies sent to guests',
       'Digital gallery after the event',
     ],
-    highlight: true,
+    badge: 'value' as const,
   },
 ];
 
@@ -270,7 +270,7 @@ export const booth360Packages = [
       'Digital gallery after the event',
       'Props and accessories included',
     ],
-    highlight: false,
+    badge: 'popular' as const,
   },
   {
     name: 'Premium',
@@ -285,7 +285,7 @@ export const booth360Packages = [
       'Digital gallery after the event',
       'Props and accessories included',
     ],
-    highlight: true,
+    badge: 'value' as const,
   },
 ];
 
