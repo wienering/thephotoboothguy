@@ -89,12 +89,12 @@ export default function HolidayPartyContent() {
           <h2 className="text-4xl md:text-5xl font-light text-black mb-12 leading-tight">
             Holiday Party Moments
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 auto-rows-auto">
             {/* Video */}
-            <div className="relative aspect-[3/4] overflow-hidden col-span-2 row-span-2">
+            <div className="col-span-2 row-span-2 bg-black rounded-sm overflow-hidden">
               <video
                 src={HOLIDAY_VIDEO}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 autoPlay
                 loop
                 muted
@@ -103,13 +103,14 @@ export default function HolidayPartyContent() {
             </div>
             {/* Photos */}
             {holidayPhotos.map((photo, index) => (
-              <div key={index} className="relative aspect-[3/4] overflow-hidden">
+              <div key={index} className="bg-gray-100 rounded-sm overflow-hidden">
                 <Image
                   src={photo.src}
                   alt={photo.alt}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  width={400}
+                  height={600}
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
                 />
               </div>
             ))}
