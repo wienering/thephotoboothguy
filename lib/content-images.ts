@@ -53,13 +53,16 @@ const PHOTOS_360: ContentImage[] = [
 
 /** Holiday party photos for holiday party page. */
 const HOLIDAY_PHOTOS: ContentImage[] = [
+  // Event photos
   { src: '/photos/holiday/20241210_171353533.jpg', alt: 'Holiday party photo booth rental with festive backdrop in Toronto' },
-  { src: '/photos/holiday/20251130_133809784.jpg', alt: 'Corporate holiday party photo booth experience in the GTA' },
-  { src: '/photos/holiday/20251204_220531049.jpg', alt: 'Guests enjoying Christmas party photo booth with props' },
   { src: '/photos/holiday/20251205_231148030.jpg', alt: 'Holiday event photo booth prints and festive decorations' },
+  { src: '/photos/holiday/20251211_191236880.jpg', alt: 'Festive photo booth setup at a corporate Christmas event' },
+  // Print templates group 1
+  { src: '/photos/holiday/20251130_133809784.jpg', alt: 'Corporate holiday party photo booth experience in the GTA' },
   { src: '/photos/holiday/20251209_125620936.jpg', alt: 'Christmas photo booth moment at a Toronto holiday party' },
   { src: '/photos/holiday/20251209_125627091.jpg', alt: 'Holiday celebration with photo booth and custom prints' },
-  { src: '/photos/holiday/20251211_191236880.jpg', alt: 'Festive photo booth setup at a corporate Christmas event' },
+  // Print templates group 2
+  { src: '/photos/holiday/20251204_220531049.jpg', alt: 'Guests enjoying Christmas party photo booth with props' },
   { src: '/photos/holiday/20251212_212432887.jpg', alt: 'Holiday party guests with photo booth props in the GTA' },
   { src: '/photos/holiday/20260123_204526147.jpg', alt: 'Photo booth fun at a seasonal celebration in Toronto' },
 ];
