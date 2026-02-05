@@ -7,6 +7,7 @@ import PackageCard from '@/components/PackageCard';
 import Testimonial from '@/components/Testimonial';
 import Gallery from '@/components/Gallery';
 import { revealOnScroll } from '@/lib/gsap';
+import { getHeroForHome } from '@/lib/content-images';
 
 const eventGalleryImages = [
   {
@@ -184,7 +185,7 @@ export default function HomeContent() {
 
   return (
     <div className="min-h-screen pt-20">
-      <Hero backgroundImage="/photos/20251218_200721527.jpg" />
+      <Hero backgroundImage={getHeroForHome()?.src} />
 
       {/* Gallery Section - Our Work */}
       <section className="w-full py-20 bg-gray-50">

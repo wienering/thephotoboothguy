@@ -20,16 +20,11 @@ interface PageProps {
 export default async function BookPage({ searchParams }: PageProps) {
   const { quote: quoteParam } = await searchParams;
   let initialData: Awaited<ReturnType<typeof decodeQuote>> = null;
-  let expired = false;
 
   if (quoteParam) {
     const decoded = decodeQuote(quoteParam);
-    if (decoded) {
-      if (isQuoteExpired(decoded)) {
-        expired = true;
-      } else {
-        initialData = decoded;
-      }
+    if (decoded && !isQuoteExpired(decoded)) {
+      initialData = decoded;
     }
   }
 
@@ -40,7 +35,7 @@ export default async function BookPage({ searchParams }: PageProps) {
       <section className="relative w-full pt-32 pb-20 bg-black text-white overflow-hidden">
         {heroImage && (
           <>
-            <Image src={heroImage.src} alt="" fill className="object-cover object-top" sizes="100vw" priority />
+            <Image src={heroImage.src} alt="" fill className="object-cover object-center" sizes="100vw" priority />
             <div className="absolute inset-0 bg-black/55" aria-hidden />
           </>
         )}
@@ -61,18 +56,6 @@ export default async function BookPage({ searchParams }: PageProps) {
       <section className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-2xl">
-            <p className="text-gray-600 mb-6 leading-relaxed font-light text-sm">
-              All quotes are valid for 30 days. Quotes based on inaccurate or changed event details may not apply.
-            </p>
-
-            {expired && (
-              <div className="bg-gray-50 border border-gray-200 p-4 mb-8">
-                <p className="text-gray-800 font-light">
-                  This quote is no longer valid. All quotes expire after 30 days. You can request a new booking below and we&apos;ll confirm pricing.
-                </p>
-              </div>
-            )}
-
             <BookingForm initialData={initialData} />
 
             <p className="mt-8 text-gray-500 text-sm font-light">

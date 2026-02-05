@@ -1,9 +1,6 @@
 /**
  * Shared pool of event/print photos for use across the site.
- * Used for hero images and inline content images (not full galleries).
- * Different pages get different subsets so the site has character without repetition.
- *
- * Headers: only landscape photos are used for hero/header images (no portrait or strip photos).
+ * Hero images use the New hero images set; each page gets a different hero.
  */
 
 export interface ContentImage {
@@ -11,7 +8,20 @@ export interface ContentImage {
   alt: string;
 }
 
-/** Event/booth photos (landscape; used for heroes and in-content). */
+/** New hero images (landscape) – each page uses a different one. Home = hero1, Holiday Party = hero4. */
+const NEW_HERO_IMAGES: ContentImage[] = [
+  { src: '/photos/hero1webp.webp', alt: 'Photo booth hero' },
+  { src: '/photos/hero2webp.webp', alt: 'Photo booth hero' },
+  { src: '/photos/hero3webp.webp', alt: 'Photo booth hero' },
+  { src: '/photos/hero4webp.webp', alt: 'Holiday party photo booth hero' },
+  { src: '/photos/hero5webp.webp', alt: 'Photo booth hero' },
+  { src: '/photos/hero6webp.webp', alt: 'Photo booth hero' },
+  { src: '/photos/hero7webp.webp', alt: 'Photo booth hero' },
+  { src: '/photos/hero8webp.webp', alt: 'Photo booth hero' },
+  { src: '/photos/hero9webp.webp', alt: 'Photo booth hero' },
+];
+
+/** Event/booth photos (used for in-content images only, not heroes). */
 const EVENT_PHOTOS: ContentImage[] = [
   { src: '/photos/20251209_125620936.jpg', alt: 'Professional photo booth rental at a Toronto area event with guests and custom backdrop' },
   { src: '/photos/20251209_125627091.jpg', alt: 'Guests enjoying instant prints and props at a GTA photo booth rental' },
@@ -22,9 +32,6 @@ const EVENT_PHOTOS: ContentImage[] = [
   { src: '/photos/220233130.jpg', alt: 'Photo booth rental at a Toronto or GTA venue with guests and backdrop' },
   { src: '/photos/20231215173222-1 copy.jpg', alt: 'Photo booth experience at a Greater Toronto Area event with prints and props' },
 ];
-
-/** Landscape photos only – use for all hero/header images. Print samples (portrait strips) are excluded. */
-const LANDSCAPE_HERO_PHOTOS = EVENT_PHOTOS;
 
 /** Print/template samples (good for templates page and inline “sample” sections). */
 const PRINT_SAMPLES: ContentImage[] = [
@@ -46,7 +53,7 @@ function hashKey(s: string): number {
 
 /**
  * Returns a hero image and up to 2 content images for a service-location page.
- * Same (serviceSlug, city) always gets the same set; different pages get different photos.
+ * Hero from NEW_HERO_IMAGES (indices 1,2,4,5,6,7,8 so each service+city differs; 0=home, 3=holiday).
  */
 export function getImagesForServicePage(serviceSlug: string, city: string): {
   heroImage: ContentImage | null;
@@ -54,7 +61,8 @@ export function getImagesForServicePage(serviceSlug: string, city: string): {
 } {
   const key = `${serviceSlug}-${city}`;
   const h = hashKey(key);
-  const heroImage = LANDSCAPE_HERO_PHOTOS[h % LANDSCAPE_HERO_PHOTOS.length] ?? null;
+  const heroIndices = [1, 2, 4, 5, 6, 7, 8];
+  const heroImage = NEW_HERO_IMAGES[heroIndices[h % heroIndices.length]] ?? null;
   const i1 = (h + 2) % ALL_PHOTOS.length;
   const i2 = (h + 7) % ALL_PHOTOS.length;
   const contentImages = [
@@ -65,46 +73,65 @@ export function getImagesForServicePage(serviceSlug: string, city: string): {
 }
 
 /**
- * Returns a hero image and one content image for standalone pages (equipment, templates, contact, etc.).
- * pageKey should be unique per page, e.g. 'equipment', 'templates', 'contact', 'quote', 'book'.
+ * Returns a hero image and one content image for standalone pages.
+ * Each page gets a different hero from NEW_HERO_IMAGES.
  */
 export function getImagesForPage(pageKey: string): {
   heroImage: ContentImage | null;
   contentImage: ContentImage | null;
 } {
+  const map: Record<string, number> = {
+    equipment: 4,
+    templates: 5,
+    contact: 6,
+    backdrops: 7,
+    quote: 8,
+    book: 1,
+  };
+  const heroIndex = map[pageKey] ?? 2;
+  const heroImage = NEW_HERO_IMAGES[heroIndex] ?? null;
   const h = hashKey(pageKey);
-  const heroImage = LANDSCAPE_HERO_PHOTOS[h % LANDSCAPE_HERO_PHOTOS.length] ?? null;
   const contentImage = ALL_PHOTOS[(h + 3) % ALL_PHOTOS.length] ?? null;
   return { heroImage, contentImage };
 }
 
-/** For templates page: hero can be event, content should be a print sample. */
+/** For templates page. */
 export function getImagesForTemplatesPage(): {
   heroImage: ContentImage | null;
   contentImage: ContentImage | null;
 } {
   return {
-    heroImage: LANDSCAPE_HERO_PHOTOS[2] ?? null,
+    heroImage: NEW_HERO_IMAGES[5] ?? null,
     contentImage: PRINT_SAMPLES[1] ?? null,
   };
 }
 
-/** Contact page: hand-picked images that work well for hero and one content image below the form. */
+/** Contact page. */
 export function getImagesForContactPage(): {
   heroImage: ContentImage | null;
   contentImage: ContentImage | null;
 } {
   return {
-    heroImage: LANDSCAPE_HERO_PHOTOS[3] ?? null,  // wedding moment
-    contentImage: PRINT_SAMPLES[2] ?? null,  // print sample
+    heroImage: NEW_HERO_IMAGES[6] ?? null,
+    contentImage: PRINT_SAMPLES[2] ?? null,
   };
 }
 
-/** Book page: hero uses a landscape event photo (no portrait/strip in headers). */
+/** Book page. */
 export function getImagesForBookPage(): {
   heroImage: ContentImage | null;
 } {
   return {
-    heroImage: LANDSCAPE_HERO_PHOTOS[4] ?? null,  // photo booth in action
+    heroImage: NEW_HERO_IMAGES[1] ?? null,
   };
+}
+
+/** Home page uses hero1 (index 0). */
+export function getHeroForHome(): ContentImage | null {
+  return NEW_HERO_IMAGES[0] ?? null;
+}
+
+/** Holiday Party / Corporate Holiday Party page uses hero4. */
+export function getHeroForHolidayPartyPage(): ContentImage | null {
+  return NEW_HERO_IMAGES[3] ?? null;
 }

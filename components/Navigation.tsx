@@ -9,6 +9,7 @@ const serviceLinks = [
   { name: 'Glam Booth', href: '/glam-booth-toronto' },
   { name: 'Audio Guest Book', href: '/audio-guest-book-toronto' },
   { name: '360 Video Booth', href: '/360-booth-toronto' },
+  { name: 'Holiday Party', href: '/holiday-party' },
 ];
 
 const galleryLinks = [

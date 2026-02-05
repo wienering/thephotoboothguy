@@ -94,7 +94,7 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
               src={heroImage.src}
               alt=""
               fill
-              className="object-cover object-top"
+              className="object-cover object-center"
               sizes="100vw"
               priority
             />

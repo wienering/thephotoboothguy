@@ -147,6 +147,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/holiday-party"
+                  className="text-gray-400 hover:text-white transition-colors font-light"
+                >
+                  Holiday Party
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className="text-gray-400 hover:text-white transition-colors font-light"
                 >
