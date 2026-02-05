@@ -51,6 +51,7 @@ export async function POST(request: Request) {
             </table>
           </div>
           <p style="color: #666; font-size: 14px; margin-top: 25px;">This lead has not yet completed their quote. Follow up if they don't finish.</p>
+          <p style="color: #999; font-size: 11px; margin-top: 20px;">Lead submitted: ${timestamp} (Eastern Time)</p>
         </div>
       </body>
       </html>

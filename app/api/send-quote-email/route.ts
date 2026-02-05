@@ -80,6 +80,9 @@ export async function POST(request: Request) {
       ? `Full Event — $${Number(pkg.price).toLocaleString()}`
       : `${pkg.hours} hours — $${Number(pkg.price).toLocaleString()}`;
 
+    // Timestamp for email uniqueness (prevents Gmail grouping)
+    const timestamp = formatEasternDateTime();
+
     const html = `
       <!DOCTYPE html>
       <html>
@@ -100,6 +103,7 @@ export async function POST(request: Request) {
           <p style="margin: 20px 0;"><a href="${bookUrl}" style="display: inline-block; background: #000; color: #fff; padding: 14px 28px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Book now</a></p>
           <p style="color: #666; font-size: 14px;">All quotes are valid for 30 days. Quotes based on inaccurate or changed event details may not apply.</p>
           <p style="color: #666; font-size: 14px; margin-top: 30px;">The Photobooth Guy · 647-378-5332 · contact@thephotoboothguy.ca</p>
+          <p style="color: #999; font-size: 11px; margin-top: 20px;">Quote submitted: ${timestamp} (Eastern Time)</p>
         </div>
       </body>
       </html>
@@ -145,6 +149,7 @@ export async function POST(request: Request) {
               </table>
             </div>
             <p style="color: #666; font-size: 14px; margin-top: 25px;">Reply to this email to contact the client directly.</p>
+            <p style="color: #999; font-size: 11px; margin-top: 20px;">Quote submitted: ${timestamp} (Eastern Time)</p>
           </div>
         </body>
         </html>
