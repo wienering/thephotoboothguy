@@ -452,10 +452,18 @@ export default function BookingForm({ initialData }: BookingFormProps) {
         <div className="bg-gray-50 border border-gray-200 p-4">
           <p className="text-sm uppercase tracking-wider text-gray-600 mb-2 font-medium">Package (from quote)</p>
           <p className="text-gray-800 font-light">
-            {pkg.hours} hour photo booth — ${pkg.price.toLocaleString()}
-            {addons.unlimitedPrints && ' · Unlimited Prints'}
-            {addons.glamBooth && ' · Glam Booth'}
-            {addons.waitingTime && addons.waitingHours > 0 && ` · Waiting Time (${addons.waitingHours}h)`}
+            {serviceType === 'audio-guest-book' ? (
+              <>Audio Guest Book — Full Event — ${pkg.price.toLocaleString()}</>
+            ) : serviceType === '360-booth' ? (
+              <>{pkg.hours} hour 360 Booth — ${pkg.price.toLocaleString()}</>
+            ) : (
+              <>
+                {pkg.hours} hour Photo Booth — ${pkg.price.toLocaleString()}
+                {addons.unlimitedPrints && ' · Unlimited Prints'}
+                {addons.glamBooth && ' · Glam Booth'}
+                {addons.waitingTime && addons.waitingHours > 0 && ` · Waiting Time (${addons.waitingHours}h)`}
+              </>
+            )}
             {' · '}Total ${total.toLocaleString()}
           </p>
         </div>
