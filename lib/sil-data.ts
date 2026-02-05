@@ -101,7 +101,7 @@ export const venues: VenueData = {
     'Toronto Congress Centre',
     'The International Centre',
     'York Mills Gallery',
-    'Oriental Banquet Hall',
+    'Montecassino Hotel & Event Venue',
     'Empress Walk',
   ],
   ajax: [
