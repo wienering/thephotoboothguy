@@ -281,16 +281,16 @@ export default function BackdropsContent() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/contact"
+                href="/book"
                 className="inline-flex items-center justify-center bg-white text-black px-10 py-5 text-base font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
               >
-                Book Consultation
+                Book Your Event
               </Link>
               <Link
-                href="/contact"
+                href="/quote"
                 className="inline-flex items-center justify-center border border-white text-white px-10 py-5 text-base font-medium hover:bg-white hover:text-black transition-all duration-300 uppercase tracking-wider"
               >
-                View All Backdrops
+                Get a Quote
               </Link>
             </div>
           </div>

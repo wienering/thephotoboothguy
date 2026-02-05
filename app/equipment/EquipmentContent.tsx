@@ -222,12 +222,20 @@ export default function EquipmentContent() {
             <p className="text-lg mb-8 text-gray-300 max-w-2xl leading-relaxed font-light">
               Bring our professional photo booth equipment to your next event in <Link href="/photo-booth-rental-toronto" className="text-white underline hover:no-underline">Toronto</Link>, <Link href="/photo-booth-rental-mississauga" className="text-white underline hover:no-underline">Mississauga</Link>, <Link href="/photo-booth-rental-brampton" className="text-white underline hover:no-underline">Brampton</Link>, <Link href="/photo-booth-rental-vaughan" className="text-white underline hover:no-underline">Vaughan</Link>, or <Link href="/photo-booth-rental-markham" className="text-white underline hover:no-underline">Markham</Link> and see the difference quality makes
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center bg-white text-black px-10 py-5 text-base font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
-            >
-              Book Your Event
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/book"
+                className="inline-flex items-center justify-center bg-white text-black px-10 py-5 text-base font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
+              >
+                Book Your Event
+              </Link>
+              <Link
+                href="/quote"
+                className="inline-flex items-center justify-center border border-white text-white px-10 py-5 text-base font-medium hover:bg-white hover:text-black transition-all duration-300 uppercase tracking-wider"
+              >
+                Get a Quote
+              </Link>
+            </div>
           </div>
         </div>
       </section>

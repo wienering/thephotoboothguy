@@ -204,12 +204,20 @@ export default function TemplatesContent() {
             <p className="text-lg mb-8 text-gray-300 max-w-2xl leading-relaxed font-light">
               Let&apos;s work together to create the perfect template for your event
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center bg-white text-black px-10 py-5 text-base font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
-            >
-              Request Custom Template
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/book"
+                className="inline-flex items-center justify-center bg-white text-black px-10 py-5 text-base font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
+              >
+                Book Your Event
+              </Link>
+              <Link
+                href="/quote"
+                className="inline-flex items-center justify-center border border-white text-white px-10 py-5 text-base font-medium hover:bg-white hover:text-black transition-all duration-300 uppercase tracking-wider"
+              >
+                Get a Quote
+              </Link>
+            </div>
           </div>
         </div>
       </section>

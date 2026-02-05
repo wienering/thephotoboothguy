@@ -60,7 +60,7 @@ export default function PackageCard({
           ))}
         </ul>
         <Link
-          href="/contact"
+          href="/book"
           className={`block w-full text-center py-4 px-6 font-medium text-sm uppercase tracking-wider transition-all duration-300 ${
             highlight
               ? 'bg-black text-white hover:bg-gray-900'

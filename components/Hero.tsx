@@ -83,7 +83,7 @@ export default function Hero({ backgroundImage }: HeroProps = {}) {
           </p>
           <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4">
             <Link
-              href="/contact"
+              href="/book"
               className="inline-flex items-center justify-center bg-white text-black px-12 py-6 text-base font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
             >
               Book Your Event
