@@ -22,8 +22,22 @@ interface SlotState {
 export default function RotatingGallery({ images }: RotatingGalleryProps) {
   const [slots, setSlots] = useState<SlotState[]>([]);
   const timersRef = useRef<NodeJS.Timeout[]>([]);
-  // Track currently visible image srcs synchronously to avoid race conditions
-  const visibleImagesRef = useRef<Set<string>>(new Set());
+
+  // Get all currently visible images from slots state
+  const getVisibleSrcs = (slotsState: SlotState[]): Set<string> => {
+    const visible = new Set<string>();
+    slotsState.forEach(s => {
+      visible.add(s.showingA ? s.imageA.src : s.imageB.src);
+    });
+    return visible;
+  };
+
+  // Get a random image not in the excluded set
+  const getUniqueImage = (excludeSrcs: Set<string>): ImageData | null => {
+    const available = images.filter(img => !excludeSrcs.has(img.src));
+    if (available.length === 0) return null;
+    return available[Math.floor(Math.random() * available.length)];
+  };
 
   // Initialize slots with unique images
   useEffect(() => {
@@ -33,42 +47,23 @@ export default function RotatingGallery({ images }: RotatingGalleryProps) {
     const shuffled = [...images].sort(() => Math.random() - 0.5);
     
     const initialSlots: SlotState[] = [];
-    const initialVisible = new Set<string>();
-    const usedForHidden = new Set<string>();
+    const usedSrcs = new Set<string>();
     
-    // First pass: assign unique visible images (A layer, showing)
     for (let i = 0; i < 9; i++) {
-      const imgA = shuffled[i % shuffled.length];
-      initialVisible.add(imgA.src);
+      // Find a unique image for visible layer
+      const imgA = shuffled.find(img => !usedSrcs.has(img.src)) || shuffled[i % shuffled.length];
+      usedSrcs.add(imgA.src);
+      
+      // For hidden layer, just use any different image (it's hidden anyway)
+      const imgB = shuffled.find(img => img.src !== imgA.src) || imgA;
+      
       initialSlots.push({
         imageA: imgA,
-        imageB: imgA, // temporary, will be replaced
+        imageB: imgB,
         showingA: true,
       });
     }
     
-    // Second pass: assign unique hidden images (B layer) avoiding visible ones
-    for (let i = 0; i < 9; i++) {
-      // Find an image not in visible set and not already used for hidden
-      let imgB = shuffled.find(img => 
-        !initialVisible.has(img.src) && !usedForHidden.has(img.src)
-      );
-      
-      // If not enough unique images, just use any non-visible one
-      if (!imgB) {
-        imgB = shuffled.find(img => !initialVisible.has(img.src));
-      }
-      
-      // Last resort: use any image different from this slot's A
-      if (!imgB) {
-        imgB = shuffled.find(img => img.src !== initialSlots[i].imageA.src) || shuffled[0];
-      }
-      
-      usedForHidden.add(imgB.src);
-      initialSlots[i].imageB = imgB;
-    }
-    
-    visibleImagesRef.current = initialVisible;
     setSlots(initialSlots);
   }, [images]);
 
@@ -90,44 +85,51 @@ export default function RotatingGallery({ images }: RotatingGalleryProps) {
           const newSlots = [...prev];
           const slot = newSlots[slotIndex];
           
-          // Toggle which image is showing
+          // Get what's currently visible in OTHER slots
+          const otherVisibleSrcs = new Set<string>();
+          prev.forEach((s, idx) => {
+            if (idx !== slotIndex) {
+              otherVisibleSrcs.add(s.showingA ? s.imageA.src : s.imageB.src);
+            }
+          });
+          
+          // The image that would become visible if we swap
           const newShowingA = !slot.showingA;
+          const wouldBecomeVisible = newShowingA ? slot.imageA : slot.imageB;
           
-          // The image that's about to become visible
-          const newVisibleSrc = newShowingA ? slot.imageA.src : slot.imageB.src;
-          // The image that's about to be hidden
-          const oldVisibleSrc = slot.showingA ? slot.imageA.src : slot.imageB.src;
-          
-          // Update visible tracking synchronously
-          visibleImagesRef.current.delete(oldVisibleSrc);
-          visibleImagesRef.current.add(newVisibleSrc);
-          
-          // Find a new image for the layer that's becoming hidden
-          // It must not be currently visible anywhere
-          const available = images.filter(img => 
-            !visibleImagesRef.current.has(img.src) && 
-            img.src !== newVisibleSrc // also exclude the one we just made visible
-          );
-          
-          let nextImage: ImageData;
-          if (available.length > 0) {
-            nextImage = available[Math.floor(Math.random() * available.length)];
+          // Check if swapping would create a duplicate
+          if (otherVisibleSrcs.has(wouldBecomeVisible.src)) {
+            // The hidden image is already visible elsewhere!
+            // Find a new unique image and put it in the hidden layer, then swap to it
+            const newImage = getUniqueImage(otherVisibleSrcs);
+            
+            if (newImage) {
+              // Replace the hidden layer with new unique image, then swap
+              newSlots[slotIndex] = {
+                imageA: newShowingA ? slot.imageA : newImage,
+                imageB: newShowingA ? newImage : slot.imageB,
+                showingA: newShowingA,
+              };
+            } else {
+              // No unique image available, skip this swap
+              return prev;
+            }
           } else {
-            // Fallback: pick any image different from current slot's images
-            const fallback = images.filter(
-              img => img.src !== slot.imageA.src && img.src !== slot.imageB.src
-            );
-            nextImage = fallback.length > 0 
-              ? fallback[Math.floor(Math.random() * fallback.length)]
-              : images[Math.floor(Math.random() * images.length)];
+            // Safe to swap - the hidden image isn't visible elsewhere
+            // Also prepare a new image for the next swap
+            const currentVisible = slot.showingA ? slot.imageA.src : slot.imageB.src;
+            otherVisibleSrcs.add(wouldBecomeVisible.src); // Add what will be visible
+            
+            const nextImage = getUniqueImage(otherVisibleSrcs) || 
+              images.find(img => img.src !== wouldBecomeVisible.src && img.src !== currentVisible) ||
+              images[0];
+            
+            newSlots[slotIndex] = {
+              imageA: newShowingA ? slot.imageA : nextImage,
+              imageB: newShowingA ? nextImage : slot.imageB,
+              showingA: newShowingA,
+            };
           }
-          
-          // Update the slot: swap visibility and prepare next image in hidden layer
-          newSlots[slotIndex] = {
-            imageA: newShowingA ? slot.imageA : nextImage,
-            imageB: newShowingA ? nextImage : slot.imageB,
-            showingA: newShowingA,
-          };
           
           return newSlots;
         });
