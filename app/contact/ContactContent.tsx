@@ -50,7 +50,7 @@ export default function ContactContent() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="relative w-full pt-32 pb-20 bg-black text-white overflow-hidden"
+        className="relative min-h-[60vh] flex items-center justify-center bg-black text-white overflow-hidden"
       >
         {heroImage && (
           <>
@@ -58,8 +58,8 @@ export default function ContactContent() {
             <div className="absolute inset-0 bg-black/55" aria-hidden />
           </>
         )}
-        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
-          <div className="max-w-4xl pt-16">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10 py-20">
+          <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
               Get 
               In 
