@@ -1,4 +1,5 @@
 // Quote payload matches the quote tool: contactInfo, package, addons, total, createdAt
+import type { ServiceType } from './pricing';
 
 export interface QuoteContactInfo {
   name: string;
@@ -21,6 +22,7 @@ export interface QuoteAddons {
 
 export interface QuotePayload {
   contactInfo: QuoteContactInfo;
+  serviceType?: ServiceType; // Optional for backwards compatibility
   package: QuotePackage;
   addons: QuoteAddons;
   total: number;

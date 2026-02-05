@@ -94,6 +94,7 @@ export default function BookingForm({ initialData }: BookingFormProps) {
         eventDate: c.eventDate || prev.eventDate,
       }));
     }
+    if (initialData?.serviceType) setServiceType(initialData.serviceType);
     if (initialData?.package) setSelectedPackage(initialData.package);
     if (initialData?.addons) setAddons(initialData.addons);
   }, [initialData]);

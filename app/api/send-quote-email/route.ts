@@ -9,7 +9,7 @@ const BASE_URL = 'https://thephotoboothguy.ca';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { contactInfo, package: pkg, addons, total } = body;
+    const { contactInfo, serviceType = 'photo-booth', package: pkg, addons, total } = body;
 
     if (!contactInfo?.email || !pkg || typeof total !== 'number') {
       return NextResponse.json(
@@ -25,6 +25,16 @@ export async function POST(request: Request) {
       );
     }
 
+    // Get service name for display
+    const getServiceName = (type: string) => {
+      switch (type) {
+        case '360-booth': return '360 Booth';
+        case 'audio-guest-book': return 'Audio Guest Book';
+        default: return 'Photo Booth';
+      }
+    };
+    const serviceName = getServiceName(serviceType);
+
     const payload = {
       contactInfo: {
         name: contactInfo.name || '',
@@ -32,8 +42,14 @@ export async function POST(request: Request) {
         phone: contactInfo.phone || '',
         eventDate: contactInfo.eventDate || '',
       },
+      serviceType,
       package: { hours: pkg.hours, price: pkg.price },
-      addons: addons || {
+      addons: serviceType === 'photo-booth' ? (addons || {
+        unlimitedPrints: false,
+        glamBooth: false,
+        waitingTime: false,
+        waitingHours: 0,
+      }) : {
         unlimitedPrints: false,
         glamBooth: false,
         waitingTime: false,
@@ -45,15 +61,23 @@ export async function POST(request: Request) {
     const encoded = encodeQuote(payload);
     const bookUrl = `${BASE_URL}/book?quote=${encodeURIComponent(encoded)}`;
 
+    // Add-ons only apply to photo booth
     const addonsList: string[] = [];
-    if (addons?.unlimitedPrints) {
-      const rate = pkg.hours <= 3 ? 60 : 50;
-      addonsList.push(`Unlimited Prints — $${rate * pkg.hours}`);
+    if (serviceType === 'photo-booth' && addons) {
+      if (addons.unlimitedPrints) {
+        const rate = pkg.hours <= 3 ? 60 : 50;
+        addonsList.push(`Unlimited Prints — $${rate * pkg.hours}`);
+      }
+      if (addons.glamBooth) addonsList.push('Glam Booth — $75');
+      if (addons.waitingTime && addons.waitingHours > 0) {
+        addonsList.push(`Waiting Time (${addons.waitingHours}h) — $${50 * addons.waitingHours}`);
+      }
     }
-    if (addons?.glamBooth) addonsList.push('Glam Booth — $75');
-    if (addons?.waitingTime && addons?.waitingHours > 0) {
-      addonsList.push(`Waiting Time (${addons.waitingHours}h) — $${50 * addons.waitingHours}`);
-    }
+
+    // Package display - handle "Full Event" for audio guest book
+    const packageDisplay = serviceType === 'audio-guest-book'
+      ? `Full Event — $${Number(pkg.price).toLocaleString()}`
+      : `${pkg.hours} hours — $${Number(pkg.price).toLocaleString()}`;
 
     const html = `
       <!DOCTYPE html>
@@ -63,10 +87,11 @@ export async function POST(request: Request) {
         <div style="padding: 30px;">
           <h1 style="color: #000; font-size: 24px; font-weight: 300; margin-top: 0;">The Photobooth Guy — Your Quote</h1>
           <p style="color: #666;">Hi ${(contactInfo.name || '').trim() || 'there'},</p>
-          <p style="color: #333;">Here’s your photo booth quote.</p>
+          <p style="color: #333;">Here's your ${serviceName.toLowerCase()} quote.</p>
           <div style="background-color: #f9f9f9; border-left: 3px solid #000; padding: 20px; margin: 20px 0;">
+            <p style="margin: 0 0 8px 0;"><strong>Service:</strong> ${serviceName}</p>
             <p style="margin: 0 0 8px 0;"><strong>Event date:</strong> ${contactInfo.eventDate || '—'}</p>
-            <p style="margin: 0 0 8px 0;"><strong>Package:</strong> ${pkg.hours} hours — $${Number(pkg.price).toLocaleString()}</p>
+            <p style="margin: 0 0 8px 0;"><strong>Package:</strong> ${packageDisplay}</p>
             ${addonsList.length ? `<p style="margin: 0 0 8px 0;"><strong>Add-ons:</strong> ${addonsList.join(' · ')}</p>` : ''}
             <p style="margin: 12px 0 0 0; font-size: 18px;"><strong>Total: $${total.toLocaleString()}</strong></p>
           </div>
@@ -82,7 +107,7 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: 'The Photobooth Guy <contact@thephotoboothguy.ca>',
       to: [contactInfo.email],
-      subject: 'Your Photo Booth Quote — The Photobooth Guy',
+      subject: `Your ${serviceName} Quote — The Photobooth Guy`,
       html,
     });
 

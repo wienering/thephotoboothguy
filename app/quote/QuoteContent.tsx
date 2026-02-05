@@ -1,18 +1,29 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Image from 'next/image';
 import { encodeQuote } from '@/lib/quote-utils';
 import { getImagesForPage } from '@/lib/content-images';
 import type { QuoteContactInfo, QuotePackage, QuoteAddons } from '@/lib/quote-utils';
 import {
   PACKAGES,
+  PACKAGES_360,
+  AUDIO_GUEST_BOOK_PACKAGE,
+  SERVICE_TYPES,
   UNLIMITED_PRINTS_SHORT,
   UNLIMITED_PRINTS_LONG,
   GLAM_BOOTH,
   WAITING_TIME_PER_HOUR,
   calculateTotal,
+  type ServiceType,
 } from '@/lib/pricing';
+
+const defaultAddons: QuoteAddons = {
+  unlimitedPrints: false,
+  glamBooth: false,
+  waitingTime: false,
+  waitingHours: 0,
+};
 
 function formatEventDate(dateStr: string): string {
   if (!dateStr) return '';
@@ -28,20 +39,51 @@ export default function QuoteContent() {
     phone: '',
     eventDate: '',
   });
+  const [serviceType, setServiceType] = useState<ServiceType>('photo-booth');
   const [selectedPackage, setSelectedPackage] = useState<QuotePackage | null>(null);
-  const [addons, setAddons] = useState<QuoteAddons>({
-    unlimitedPrints: false,
-    glamBooth: false,
-    waitingTime: false,
-    waitingHours: 0,
-  });
+  const [addons, setAddons] = useState<QuoteAddons>(defaultAddons);
   const [sendingEmail, setSendingEmail] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
   const [emailError, setEmailError] = useState('');
 
   const total = selectedPackage
-    ? calculateTotal(selectedPackage.hours, selectedPackage.price, addons)
+    ? calculateTotal(selectedPackage.hours, selectedPackage.price, addons, serviceType)
     : 0;
+
+  // Get packages for current service type
+  const getPackagesForService = () => {
+    switch (serviceType) {
+      case '360-booth':
+        return PACKAGES_360;
+      case 'audio-guest-book':
+        return null; // Single package, handled separately
+      default:
+        return PACKAGES;
+    }
+  };
+
+  // Auto-select audio guest book package when that service is chosen
+  useEffect(() => {
+    if (serviceType === 'audio-guest-book') {
+      setSelectedPackage({
+        hours: AUDIO_GUEST_BOOK_PACKAGE.hours,
+        price: AUDIO_GUEST_BOOK_PACKAGE.price,
+      });
+      // Reset add-ons since they don't apply
+      setAddons(defaultAddons);
+    } else {
+      // Reset package when switching services
+      setSelectedPackage(null);
+    }
+  }, [serviceType]);
+
+  const packages = getPackagesForService();
+  const showAddons = serviceType === 'photo-booth';
+
+  // Get service display name
+  const getServiceName = (type: ServiceType) => {
+    return SERVICE_TYPES.find(s => s.id === type)?.name || 'Photo Booth';
+  };
 
   const { heroImage } = useMemo(() => getImagesForPage('quote'), []);
 
@@ -67,8 +109,9 @@ export default function QuoteContent() {
         ...contactInfo,
         eventDate: contactInfo.eventDate,
       },
+      serviceType,
       package: selectedPackage!,
-      addons,
+      addons: serviceType === 'photo-booth' ? addons : defaultAddons,
       total,
     };
     const encoded = encodeQuote(payload);
@@ -89,8 +132,9 @@ export default function QuoteContent() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           contactInfo,
+          serviceType,
           package: selectedPackage,
-          addons,
+          addons: serviceType === 'photo-booth' ? addons : defaultAddons,
           total,
           bookUrl: getBookUrl(),
         }),
@@ -123,10 +167,10 @@ export default function QuoteContent() {
             <h1 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
               Get Your
               <br />
-              Photo Booth Quote
+              Instant Quote
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed font-light">
-              Instant pricing for Toronto and the GTA. Packages from $550.
+              Instant pricing for Toronto and the GTA. Photo booth packages from $550.
             </p>
           </div>
         </div>
@@ -177,77 +221,122 @@ export default function QuoteContent() {
             {step === 2 && (
               <>
                 <h2 className="text-3xl font-light text-black mb-4">Choose your package</h2>
-                <p className="text-gray-600 mb-8 font-light">Select hours and any add-ons.</p>
+                <p className="text-gray-600 mb-8 font-light">Select your service, duration, and any add-ons.</p>
 
+                {/* Service Type Selection */}
                 <div className="mb-8">
-                  <p className="text-sm uppercase tracking-wider text-gray-600 mb-3">Base packages</p>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                    {PACKAGES.map((p) => (
+                  <p className="text-sm uppercase tracking-wider text-gray-600 mb-3">Service</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    {SERVICE_TYPES.map((service) => (
                       <button
-                        key={p.hours}
+                        key={service.id}
                         type="button"
-                        onClick={() => setSelectedPackage(p)}
-                        className={`border p-4 text-left transition-colors ${selectedPackage?.hours === p.hours ? 'border-black bg-gray-50' : 'border-gray-200 hover:border-gray-400'}`}
+                        onClick={() => setServiceType(service.id)}
+                        className={`border p-4 text-center transition-colors ${
+                          serviceType === service.id
+                            ? 'border-black bg-gray-50 font-medium'
+                            : 'border-gray-200 hover:border-gray-400'
+                        }`}
                       >
-                        <span className="font-medium">{p.hours} hours</span>
-                        <span className="block text-lg font-light">${p.price.toLocaleString()}</span>
+                        {service.name}
                       </button>
                     ))}
                   </div>
                 </div>
 
+                {/* Package Selection - varies by service */}
                 <div className="mb-8">
-                  <p className="text-sm uppercase tracking-wider text-gray-600 mb-3">Add-ons</p>
-                  <div className="space-y-4">
-                    <label className="flex items-center gap-3 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={addons.unlimitedPrints}
-                        onChange={(e) => setAddons((a) => ({ ...a, unlimitedPrints: e.target.checked }))}
-                        className="w-4 h-4"
-                      />
-                      <span>Unlimited Prints</span>
-                      {selectedPackage && (
-                        <span className="text-gray-600">
-                          ${(selectedPackage.hours <= 3 ? UNLIMITED_PRINTS_SHORT : UNLIMITED_PRINTS_LONG) * selectedPackage.hours}
-                        </span>
-                      )}
-                    </label>
-                    <label className="flex items-center gap-3 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={addons.glamBooth}
-                        onChange={(e) => setAddons((a) => ({ ...a, glamBooth: e.target.checked }))}
-                        className="w-4 h-4"
-                      />
-                      <span>Glam Booth — ${GLAM_BOOTH}</span>
-                    </label>
-                    <label className="flex items-start gap-3 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={addons.waitingTime}
-                        onChange={(e) =>
-                          setAddons((a) => ({ ...a, waitingTime: e.target.checked, waitingHours: e.target.checked ? 1 : 0 }))
-                        }
-                        className="w-4 h-4 mt-1"
-                      />
-                      <div>
-                        <span>Waiting Time — $50/hr</span>
-                        {addons.waitingTime && (
-                          <select
-                            value={addons.waitingHours}
-                            onChange={(e) => setAddons((a) => ({ ...a, waitingHours: Number(e.target.value) }))}
-                            className="ml-3 px-2 py-1 border border-gray-300"
-                          >
-                            {[1, 2, 3, 4].map((h) => (
-                              <option key={h} value={h}>{h} hour{h > 1 ? 's' : ''}</option>
-                            ))}
-                          </select>
-                        )}
+                  <p className="text-sm uppercase tracking-wider text-gray-600 mb-3">
+                    {serviceType === 'audio-guest-book' ? 'Package' : 'Duration'}
+                  </p>
+
+                  {serviceType === 'audio-guest-book' ? (
+                    <div className="border border-black bg-gray-50 p-4">
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <span className="font-medium">Full Event</span>
+                          <span className="block text-lg font-light">${AUDIO_GUEST_BOOK_PACKAGE.price}</span>
+                        </div>
+                        <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
                       </div>
-                    </label>
-                  </div>
+                      <p className="text-sm text-gray-600 mt-2">
+                        Audio Guest Book will be available until midnight.
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                      {packages?.map((p) => (
+                        <button
+                          key={p.hours}
+                          type="button"
+                          onClick={() => setSelectedPackage(p)}
+                          className={`border p-4 text-left transition-colors ${selectedPackage?.hours === p.hours ? 'border-black bg-gray-50' : 'border-gray-200 hover:border-gray-400'}`}
+                        >
+                          <span className="font-medium">{p.hours} hours</span>
+                          <span className="block text-lg font-light">${p.price.toLocaleString()}</span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
+
+                {/* Add-ons - only for Photo Booth */}
+                {showAddons && (
+                  <div className="mb-8">
+                    <p className="text-sm uppercase tracking-wider text-gray-600 mb-3">Add-ons</p>
+                    <div className="space-y-4">
+                      <label className="flex items-center gap-3 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={addons.unlimitedPrints}
+                          onChange={(e) => setAddons((a) => ({ ...a, unlimitedPrints: e.target.checked }))}
+                          className="w-4 h-4"
+                        />
+                        <span>Unlimited Prints</span>
+                        {selectedPackage && (
+                          <span className="text-gray-600">
+                            ${(selectedPackage.hours <= 3 ? UNLIMITED_PRINTS_SHORT : UNLIMITED_PRINTS_LONG) * selectedPackage.hours}
+                          </span>
+                        )}
+                      </label>
+                      <label className="flex items-center gap-3 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={addons.glamBooth}
+                          onChange={(e) => setAddons((a) => ({ ...a, glamBooth: e.target.checked }))}
+                          className="w-4 h-4"
+                        />
+                        <span>Glam Booth — ${GLAM_BOOTH}</span>
+                      </label>
+                      <label className="flex items-start gap-3 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={addons.waitingTime}
+                          onChange={(e) =>
+                            setAddons((a) => ({ ...a, waitingTime: e.target.checked, waitingHours: e.target.checked ? 1 : 0 }))
+                          }
+                          className="w-4 h-4 mt-1"
+                        />
+                        <div>
+                          <span>Waiting Time — $50/hr</span>
+                          {addons.waitingTime && (
+                            <select
+                              value={addons.waitingHours}
+                              onChange={(e) => setAddons((a) => ({ ...a, waitingHours: Number(e.target.value) }))}
+                              className="ml-3 px-2 py-1 border border-gray-300"
+                            >
+                              {[1, 2, 3, 4].map((h) => (
+                                <option key={h} value={h}>{h} hour{h > 1 ? 's' : ''}</option>
+                              ))}
+                            </select>
+                          )}
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                )}
 
                 <div className="bg-gray-50 border border-gray-200 p-4 mb-8">
                   <p className="text-sm uppercase tracking-wider text-gray-600 mb-1">Quote total</p>
@@ -287,13 +376,21 @@ export default function QuoteContent() {
                     <p className="font-light">Event date: {formatEventDate(contactInfo.eventDate)}</p>
                   </div>
                   <div>
+                    <p className="text-sm uppercase tracking-wider text-gray-600">Service</p>
+                    <p className="font-light">{getServiceName(serviceType)}</p>
+                  </div>
+                  <div>
                     <p className="text-sm uppercase tracking-wider text-gray-600">Package</p>
-                    <p className="font-light">{selectedPackage.hours} hours — ${selectedPackage.price.toLocaleString()}</p>
-                    {addons.unlimitedPrints && (
+                    {serviceType === 'audio-guest-book' ? (
+                      <p className="font-light">Full Event — ${selectedPackage.price.toLocaleString()}</p>
+                    ) : (
+                      <p className="font-light">{selectedPackage.hours} hours — ${selectedPackage.price.toLocaleString()}</p>
+                    )}
+                    {serviceType === 'photo-booth' && addons.unlimitedPrints && (
                       <p className="font-light">Unlimited Prints — ${(selectedPackage.hours <= 3 ? UNLIMITED_PRINTS_SHORT : UNLIMITED_PRINTS_LONG) * selectedPackage.hours}</p>
                     )}
-                    {addons.glamBooth && <p className="font-light">Glam Booth — $75</p>}
-                    {addons.waitingTime && addons.waitingHours > 0 && (
+                    {serviceType === 'photo-booth' && addons.glamBooth && <p className="font-light">Glam Booth — $75</p>}
+                    {serviceType === 'photo-booth' && addons.waitingTime && addons.waitingHours > 0 && (
                       <p className="font-light">Waiting Time ({addons.waitingHours}h) — ${WAITING_TIME_PER_HOUR * addons.waitingHours}</p>
                     )}
                     <p className="font-medium mt-2">Total: ${total.toLocaleString()}</p>
