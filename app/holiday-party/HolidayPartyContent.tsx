@@ -6,9 +6,45 @@ import Image from 'next/image';
 import { revealOnScroll } from '@/lib/gsap';
 import { getHeroForHolidayPartyPage } from '@/lib/content-images';
 
+const holidayFaqs = [
+  {
+    question: 'What comes with a holiday photo booth package?',
+    answer: 'Every rental includes professional setup and breakdown, an on-site attendant, festive props, custom holiday print templates, a digital gallery after your event, and unlimited prints (for our Classic or AI Booth) or videos (for our 360 Booth).',
+  },
+  {
+    question: 'Which photo booth style works best for seasonal celebrations?',
+    answer: 'Our Classic Print Booth paired with festive backdrops and unlimited prints is the go-to choice for holiday events. It offers a timeless experience that guests of all ages enjoy.',
+  },
+  {
+    question: 'Do you handle corporate events as well as private parties?',
+    answer: 'Yes, we do both! From office holiday parties and corporate galas to intimate family Christmas gatherings, our photo booths are designed to impress guests and create lasting keepsakes.',
+  },
+  {
+    question: 'Can you provide seasonal decorations and props?',
+    answer: 'Absolutely! We come prepared with a selection of festive props, holiday-inspired print layouts, and themed backdrops to match your celebration. For an elevated look, consider adding one of our luxury flower walls.',
+  },
+  {
+    question: 'How do guests receive their photos?',
+    answer: 'Every guest gets an instant physical print to take home. They can also share their photos digitally via text or AirDrop right from the booth—perfect for posting holiday memories on social media.',
+  },
+  {
+    question: 'When should I book for the holiday season?',
+    answer: 'December is our busiest month, and weekends tend to fill up well in advance. We recommend reaching out as early as possible to secure your preferred date.',
+  },
+  {
+    question: 'What areas do you serve?',
+    answer: 'We're based in the Greater Toronto Area and service Toronto, York Region (including Vaughan, Richmond Hill, Markham, Newmarket, and Stouffville), Halton Region (Oakville, Burlington, Milton), Peel Region (Mississauga, Brampton, Caledon), and Durham Region (Pickering, Ajax, Whitby, Oshawa). For events outside these areas, reach out with your details and we'll see what we can do.',
+  },
+  {
+    question: 'What if I need a photo booth at the last minute?',
+    answer: 'We've got you covered—as long as the date is still available! Send us an email at contact@thephotoboothguy.ca with "URGENT" in the subject line and our team will prioritize your request.',
+  },
+];
+
 export default function HolidayPartyContent() {
   const heroRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
+  const faqRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
   const heroImage = useMemo(() => getHeroForHolidayPartyPage(), []);
@@ -16,6 +52,7 @@ export default function HolidayPartyContent() {
   useEffect(() => {
     if (heroRef.current) revealOnScroll(heroRef.current);
     if (aboutRef.current) revealOnScroll(aboutRef.current);
+    if (faqRef.current) revealOnScroll(faqRef.current);
     if (ctaRef.current) revealOnScroll(ctaRef.current);
   }, []);
 
@@ -73,6 +110,25 @@ export default function HolidayPartyContent() {
             <p className="text-lg text-gray-600 leading-relaxed font-light max-w-3xl">
               Our holiday photo booth packages include a professional attendant, high-quality prints, digital delivery to guests, and a full gallery after your event. Perfect for corporate holiday parties, team celebrations, and private holiday gatherings.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section ref={faqRef} className="w-full py-20 bg-white">
+        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="max-w-4xl">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-12 leading-tight">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-8">
+              {holidayFaqs.map((faq, index) => (
+                <div key={index} className="border-b border-gray-200 pb-8 last:border-0">
+                  <h3 className="text-2xl font-light text-black mb-4">{faq.question}</h3>
+                  <p className="text-gray-700 leading-relaxed font-light">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
