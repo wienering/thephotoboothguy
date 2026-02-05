@@ -44,7 +44,9 @@ export default function QuoteContent() {
   const [addons, setAddons] = useState<QuoteAddons>(defaultAddons);
   const [sendingEmail, setSendingEmail] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
+  const [emailResent, setEmailResent] = useState(false);
   const [emailError, setEmailError] = useState('');
+  const [sendingQuote, setSendingQuote] = useState(false);
 
   const total = selectedPackage
     ? calculateTotal(selectedPackage.hours, selectedPackage.price, addons, serviceType)
@@ -87,7 +89,7 @@ export default function QuoteContent() {
 
   const { heroImage } = useMemo(() => getImagesForPage('quote'), []);
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const name = (form.elements.namedItem('name') as HTMLInputElement).value.trim();
@@ -95,12 +97,49 @@ export default function QuoteContent() {
     const phone = (form.elements.namedItem('phone') as HTMLInputElement).value.trim();
     const eventDate = (form.elements.namedItem('eventDate') as HTMLInputElement).value;
     if (!name || !email || !phone || !eventDate) return;
-    setContactInfo({ name, email, phone, eventDate });
+    
+    const newContactInfo = { name, email, phone, eventDate };
+    setContactInfo(newContactInfo);
+    
+    // Send lead notification to business (fire and forget - don't block the user)
+    fetch('/api/quote-lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ contactInfo: newContactInfo }),
+    }).catch(() => {
+      // Silently fail - don't block user experience
+    });
+    
     setStep(2);
   };
 
-  const handleReviewQuote = () => {
-    setStep(3);
+  const handleSendAndReviewQuote = async () => {
+    if (!selectedPackage) return;
+    setSendingQuote(true);
+    setEmailError('');
+    
+    try {
+      const res = await fetch('/api/send-quote-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contactInfo,
+          serviceType,
+          package: selectedPackage,
+          addons: serviceType === 'photo-booth' ? addons : defaultAddons,
+          total,
+          notifyBusiness: true, // Send to both client and business
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Failed to send');
+      setEmailSent(true);
+      setStep(3);
+    } catch (err) {
+      setEmailError(err instanceof Error ? err.message : 'Failed to send quote');
+    } finally {
+      setSendingQuote(false);
+    }
   };
 
   const getBookUrl = () => {
@@ -123,9 +162,10 @@ export default function QuoteContent() {
     window.location.href = getBookUrl();
   };
 
-  const handleEmailQuote = async () => {
+  const handleResendQuote = async () => {
     setEmailError('');
     setSendingEmail(true);
+    setEmailResent(false);
     try {
       const res = await fetch('/api/send-quote-email', {
         method: 'POST',
@@ -136,12 +176,12 @@ export default function QuoteContent() {
           package: selectedPackage,
           addons: serviceType === 'photo-booth' ? addons : defaultAddons,
           total,
-          bookUrl: getBookUrl(),
+          notifyBusiness: false, // Only send to client on resend
         }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to send');
-      setEmailSent(true);
+      setEmailResent(true);
     } catch (err) {
       setEmailError(err instanceof Error ? err.message : 'Failed to send email');
     } finally {
@@ -213,6 +253,9 @@ export default function QuoteContent() {
                   <button type="submit" className="w-full bg-black text-white py-4 px-6 font-medium text-sm uppercase tracking-wider hover:bg-gray-900 transition-colors">
                     Continue to Package Selection
                   </button>
+                  <p className="text-xs text-gray-500 mt-4 leading-relaxed">
+                    By continuing, you agree to provide your contact details to The Photobooth Guy for the purpose of communication regarding potential services. This may include contact via email and SMS text message. Message and data rates may apply. You may opt out of communications at any time.
+                  </p>
                 </form>
               </>
             )}
@@ -343,6 +386,12 @@ export default function QuoteContent() {
                   <p className="text-2xl font-light">${total.toLocaleString()}</p>
                 </div>
 
+                {emailError && (
+                  <div className="bg-red-50 border border-red-200 p-4 mb-4">
+                    <p className="text-red-700 font-light text-sm">{emailError}</p>
+                  </div>
+                )}
+
                 <div className="flex gap-4">
                   <button
                     type="button"
@@ -353,11 +402,11 @@ export default function QuoteContent() {
                   </button>
                   <button
                     type="button"
-                    onClick={handleReviewQuote}
-                    disabled={!selectedPackage}
+                    onClick={handleSendAndReviewQuote}
+                    disabled={!selectedPackage || sendingQuote}
                     className="flex-1 bg-black text-white py-3 px-6 font-medium text-sm uppercase tracking-wider hover:bg-gray-900 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Review Quote
+                    {sendingQuote ? 'Sending...' : 'Send and Review Quote'}
                   </button>
                 </div>
               </>
@@ -366,8 +415,8 @@ export default function QuoteContent() {
             {/* Step 3 */}
             {step === 3 && selectedPackage && (
               <>
-                <h2 className="text-3xl font-light text-black mb-4">Review your quote</h2>
-                <p className="text-gray-600 mb-6 font-light">Confirm details before booking or emailing.</p>
+                <h2 className="text-3xl font-light text-black mb-4">Your quote has been sent!</h2>
+                <p className="text-gray-600 mb-6 font-light">We&apos;ve emailed your quote to {contactInfo.email}. Review the details below.</p>
 
                 <div className="bg-gray-50 border border-gray-200 p-6 mb-6 space-y-4">
                   <div>
@@ -401,9 +450,9 @@ export default function QuoteContent() {
                   All quotes are valid for 30 days. Quotes are based on the package and options you selected. If your event details or requirements change, or if the information provided was inaccurate, the quote may not apply and we may need to requote.
                 </p>
 
-                {emailSent && (
+                {emailResent && (
                   <div className="bg-gray-50 border border-gray-200 p-4 mb-6">
-                    <p className="text-gray-700 font-light">Quote sent to your email. Use the link in the email to book when you&apos;re ready.</p>
+                    <p className="text-gray-700 font-light">Quote resent to your email.</p>
                   </div>
                 )}
                 {emailError && (
@@ -415,18 +464,22 @@ export default function QuoteContent() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button
                     type="button"
-                    onClick={() => setStep(2)}
+                    onClick={() => {
+                      setStep(2);
+                      setEmailResent(false);
+                      setEmailError('');
+                    }}
                     className="px-6 py-3 border border-gray-300 font-medium text-sm uppercase tracking-wider hover:bg-gray-50"
                   >
                     Back to Packages
                   </button>
                   <button
                     type="button"
-                    onClick={handleEmailQuote}
+                    onClick={handleResendQuote}
                     disabled={sendingEmail}
                     className="px-6 py-3 border border-black font-medium text-sm uppercase tracking-wider hover:bg-black hover:text-white transition-colors disabled:opacity-50"
                   >
-                    {sendingEmail ? 'Sending...' : 'Email quote to me'}
+                    {sendingEmail ? 'Sending...' : 'Resend Quote by Email'}
                   </button>
                   <button
                     type="button"
