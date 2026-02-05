@@ -75,6 +75,26 @@ const eventGalleryImages = [
     alt: 'Photo booth experience at a Greater Toronto Area event with prints and props',
     title: 'Photo booth experience – GTA events and weddings',
   },
+  {
+    src: '/photos/72243.jpg',
+    alt: 'Guests enjoying a 360 video booth experience at a Toronto event',
+    title: '360 video booth – immersive experience for your guests',
+  },
+  {
+    src: '/photos/99232.jpg',
+    alt: '360 photo booth platform with guests at a GTA wedding or party',
+    title: '360 booth rental – stunning slow-motion videos',
+  },
+  {
+    src: '/photos/IMG_7399.jpeg',
+    alt: '360 spin booth capturing video at a Greater Toronto Area event',
+    title: '360 spin booth – capture every angle',
+  },
+  {
+    src: '/photos/IMG_8375.jpeg',
+    alt: 'Fun 360 video booth moment at a Toronto area celebration',
+    title: '360 video booth – unforgettable event moments',
+  },
 ];
 
 export default function HomeContent() {
