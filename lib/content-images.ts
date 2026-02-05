@@ -70,6 +70,11 @@ const HOLIDAY_PHOTOS: ContentImage[] = [
 /** Holiday party video. */
 export const HOLIDAY_VIDEO = '/photos/holiday/20251219_210938437webm.webm';
 
+/** Glam booth photos for glam booth pages. */
+const GLAM_BOOTH_PHOTOS: ContentImage[] = [
+  { src: '/photos/IMG_2792.jpeg', alt: 'Glam booth photo booth experience with professional lighting' },
+];
+
 /** Audio guest book photos for audio guest book pages. */
 const AUDIO_GB_PHOTOS: ContentImage[] = [
   { src: '/photos/audio gb/69367.jpg', alt: 'Audio guest book vintage telephone at a Toronto wedding' },
@@ -123,6 +128,13 @@ export function getImagesForServicePage(serviceSlug: string, city: string): {
     for (let i = 0; i < 6; i++) {
       contentImages.push(AUDIO_GB_PHOTOS[(startIndex + i) % AUDIO_GB_PHOTOS.length]);
     }
+  } else if (serviceSlug === 'glam-booth') {
+    // Glam booth pages use glam booth specific images plus general photos
+    const glamImages = [...GLAM_BOOTH_PHOTOS];
+    // Fill remaining slots with general photos if needed
+    const i1 = (h + 2) % ALL_PHOTOS.length;
+    const i2 = (h + 7) % ALL_PHOTOS.length;
+    contentImages = [...glamImages, ALL_PHOTOS[i1], ALL_PHOTOS[i2]].filter(Boolean);
   } else if (serviceSlug === '360-booth') {
     const i1 = h % PHOTOS_360.length;
     const i2 = (h + 2) % PHOTOS_360.length;
