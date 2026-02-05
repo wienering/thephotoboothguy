@@ -153,11 +153,11 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
         </div>
       </section>
 
-      {/* About Section - image beside text on md and up */}
+      {/* About Section - image beside text on sm and up */}
       <section ref={aboutRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className={`grid gap-8 md:gap-12 ${contentImages[0] ? 'grid-cols-1 md:grid-cols-[1fr,minmax(220px,280px)]' : ''} items-start`}>
-            <div className="min-w-0">
+          <div className={`flex flex-col sm:flex-row gap-8 lg:gap-12 ${contentImages[0] ? '' : ''} items-start`}>
+            <div className="flex-1 min-w-0">
               <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
                 {data.serviceName} in {data.city}
               </h2>
@@ -166,13 +166,13 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
               </p>
             </div>
             {contentImages[0] && (
-              <div className="relative aspect-[4/3] w-full max-w-[280px] mx-auto md:mx-0 rounded-xl overflow-hidden shadow-lg">
+              <div className="relative aspect-[4/3] w-full sm:w-64 lg:w-80 flex-shrink-0 rounded-xl overflow-hidden shadow-lg">
                 <Image
                   src={contentImages[0].src}
                   alt={contentImages[0].alt}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 280px"
+                  sizes="(max-width: 640px) 100vw, 320px"
                 />
               </div>
             )}
@@ -180,22 +180,22 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
         </div>
       </section>
 
-      {/* Popular Venues Section - image beside text on md and up */}
+      {/* Popular Venues Section - image beside text on sm and up */}
       <section ref={venuesRef} className="w-full py-20 bg-gray-50">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className={`grid gap-8 md:gap-12 ${contentImages[1] ? 'grid-cols-1 md:grid-cols-[minmax(200px,260px),1fr]' : ''} items-center`}>
+          <div className={`flex flex-col sm:flex-row gap-8 lg:gap-12 items-start`}>
             {contentImages[1] && (
-              <div className="relative aspect-[3/4] w-full max-w-[260px] mx-auto md:mx-0 rounded-xl overflow-hidden shadow-lg order-2 md:order-1">
+              <div className="relative aspect-[3/4] w-full sm:w-56 lg:w-72 flex-shrink-0 rounded-xl overflow-hidden shadow-lg order-2 sm:order-1">
                 <Image
                   src={contentImages[1].src}
                   alt={contentImages[1].alt}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 260px"
+                  sizes="(max-width: 640px) 100vw, 288px"
                 />
               </div>
             )}
-            <div className="min-w-0 order-1 md:order-2">
+            <div className="flex-1 min-w-0 order-1 sm:order-2">
               <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
                 Serving {data.city} Venues
               </h2>

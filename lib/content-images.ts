@@ -43,6 +43,14 @@ const PRINT_SAMPLES: ContentImage[] = [
   { src: '/photos/Sample 5.jpeg', alt: 'Photo booth print sample on custom template for Toronto photo booth rental' },
 ];
 
+/** 360 booth photos for 360-booth service pages. */
+const PHOTOS_360: ContentImage[] = [
+  { src: '/photos/72243.jpg', alt: 'Guests enjoying a 360 video booth experience at a Toronto event' },
+  { src: '/photos/99232.jpg', alt: '360 photo booth platform with guests at a GTA wedding or party' },
+  { src: '/photos/IMG_7399.jpeg', alt: '360 spin booth capturing video at a Greater Toronto Area event' },
+  { src: '/photos/IMG_8375.jpeg', alt: 'Fun 360 video booth moment at a Toronto area celebration' },
+];
+
 const ALL_PHOTOS = [...EVENT_PHOTOS, ...PRINT_SAMPLES];
 
 /** Simple numeric hash from a string for deterministic but varied picks. */
@@ -75,12 +83,18 @@ export function getImagesForServicePage(serviceSlug: string, city: string): {
     heroImage = NEW_HERO_IMAGES[heroIndices[h % heroIndices.length]] ?? null;
   }
 
-  const i1 = (h + 2) % ALL_PHOTOS.length;
-  const i2 = (h + 7) % ALL_PHOTOS.length;
-  const contentImages = [
-    ALL_PHOTOS[i1],
-    ALL_PHOTOS[i2],
-  ].filter(Boolean);
+  // 360 booth pages use 360-specific content images
+  let contentImages: ContentImage[];
+  if (serviceSlug === '360-booth') {
+    const i1 = h % PHOTOS_360.length;
+    const i2 = (h + 2) % PHOTOS_360.length;
+    contentImages = [PHOTOS_360[i1], PHOTOS_360[i2]].filter(Boolean);
+  } else {
+    const i1 = (h + 2) % ALL_PHOTOS.length;
+    const i2 = (h + 7) % ALL_PHOTOS.length;
+    contentImages = [ALL_PHOTOS[i1], ALL_PHOTOS[i2]].filter(Boolean);
+  }
+
   return { heroImage, contentImages };
 }
 
