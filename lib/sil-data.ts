@@ -181,7 +181,7 @@ export const standardPackages = [
 export const glamBoothPackages = [
   {
     name: 'Essential',
-    price: '$650',
+    price: '$625',
     duration: '2 hours',
     features: [
       'Professional attendant on site',
@@ -195,7 +195,7 @@ export const glamBoothPackages = [
   },
   {
     name: 'Signature',
-    price: '$850',
+    price: '$825',
     duration: '3 hours',
     features: [
       'Professional attendant on site',
@@ -210,7 +210,7 @@ export const glamBoothPackages = [
   },
   {
     name: 'Premium',
-    price: '$1,050',
+    price: '$1,025',
     duration: '4 hours',
     features: [
       'Professional attendant on site',

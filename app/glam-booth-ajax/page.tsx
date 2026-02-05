@@ -57,7 +57,7 @@ const pageData: ServiceLocationData = {
   faqs: [
     {
       question: 'How much does a glam booth cost in Ajax?',
-      answer: 'Glam booth rental in Ajax starts at $650 for our Essential package (2 hours), $850 for Signature (3 hours), and $1,050 for Premium (4 hours). All packages include the black and white glam booth setup with professional lighting, premium backdrop, high-quality instant prints, props, and digital delivery. The glam booth creates that Kardashian-style aesthetic that\'s perfect for upscale Ajax events.',
+      answer: 'Glam booth rental in Ajax starts at $625 for our Essential package (2 hours), $825 for Signature (3 hours), and $1,025 for Premium (4 hours). All packages include the black and white glam booth setup with professional lighting, premium backdrop, high-quality instant prints, props, and digital delivery. The glam booth creates that Kardashian-style aesthetic that\'s perfect for upscale Ajax events.',
     },
     {
       question: 'What makes a glam booth different from a regular photo booth in Ajax?',
