@@ -22,6 +22,8 @@ interface SlotState {
 export default function RotatingGallery({ images }: RotatingGalleryProps) {
   const [slots, setSlots] = useState<SlotState[]>([]);
   const timersRef = useRef<NodeJS.Timeout[]>([]);
+  // Track currently visible image srcs synchronously to avoid race conditions
+  const visibleImagesRef = useRef<Set<string>>(new Set());
 
   // Initialize slots with unique images
   useEffect(() => {
@@ -31,17 +33,42 @@ export default function RotatingGallery({ images }: RotatingGalleryProps) {
     const shuffled = [...images].sort(() => Math.random() - 0.5);
     
     const initialSlots: SlotState[] = [];
+    const initialVisible = new Set<string>();
+    const usedForHidden = new Set<string>();
+    
+    // First pass: assign unique visible images (A layer, showing)
     for (let i = 0; i < 9; i++) {
-      // Use unique images for initial display (first 9)
       const imgA = shuffled[i % shuffled.length];
-      // Use different unique images for the hidden layer (next 9, or wrap)
-      const imgB = shuffled[(i + 9) % shuffled.length];
+      initialVisible.add(imgA.src);
       initialSlots.push({
         imageA: imgA,
-        imageB: imgB,
+        imageB: imgA, // temporary, will be replaced
         showingA: true,
       });
     }
+    
+    // Second pass: assign unique hidden images (B layer) avoiding visible ones
+    for (let i = 0; i < 9; i++) {
+      // Find an image not in visible set and not already used for hidden
+      let imgB = shuffled.find(img => 
+        !initialVisible.has(img.src) && !usedForHidden.has(img.src)
+      );
+      
+      // If not enough unique images, just use any non-visible one
+      if (!imgB) {
+        imgB = shuffled.find(img => !initialVisible.has(img.src));
+      }
+      
+      // Last resort: use any image different from this slot's A
+      if (!imgB) {
+        imgB = shuffled.find(img => img.src !== initialSlots[i].imageA.src) || shuffled[0];
+      }
+      
+      usedForHidden.add(imgB.src);
+      initialSlots[i].imageB = imgB;
+    }
+    
+    visibleImagesRef.current = initialVisible;
     setSlots(initialSlots);
   }, [images]);
 
@@ -66,30 +93,27 @@ export default function RotatingGallery({ images }: RotatingGalleryProps) {
           // Toggle which image is showing
           const newShowingA = !slot.showingA;
           
-          // Collect ALL currently visible images across all slots (after this swap)
-          const visibleSrcs = new Set<string>();
-          newSlots.forEach((s, idx) => {
-            if (idx === slotIndex) {
-              // For the slot being swapped, the NEW visible image
-              visibleSrcs.add(newShowingA ? slot.imageA.src : slot.imageB.src);
-            } else {
-              // For other slots, their current visible image
-              visibleSrcs.add(s.showingA ? s.imageA.src : s.imageB.src);
-            }
-          });
+          // The image that's about to become visible
+          const newVisibleSrc = newShowingA ? slot.imageA.src : slot.imageB.src;
+          // The image that's about to be hidden
+          const oldVisibleSrc = slot.showingA ? slot.imageA.src : slot.imageB.src;
           
-          // Also exclude the image that will be hidden (it's still in this slot)
-          const hiddenInThisSlot = newShowingA ? slot.imageB.src : slot.imageA.src;
-          visibleSrcs.add(hiddenInThisSlot);
+          // Update visible tracking synchronously
+          visibleImagesRef.current.delete(oldVisibleSrc);
+          visibleImagesRef.current.add(newVisibleSrc);
           
-          // Find an image that's not currently visible anywhere
-          const available = images.filter(img => !visibleSrcs.has(img.src));
+          // Find a new image for the layer that's becoming hidden
+          // It must not be currently visible anywhere
+          const available = images.filter(img => 
+            !visibleImagesRef.current.has(img.src) && 
+            img.src !== newVisibleSrc // also exclude the one we just made visible
+          );
           
           let nextImage: ImageData;
           if (available.length > 0) {
             nextImage = available[Math.floor(Math.random() * available.length)];
           } else {
-            // Fallback: just pick something different from this slot's images
+            // Fallback: pick any image different from current slot's images
             const fallback = images.filter(
               img => img.src !== slot.imageA.src && img.src !== slot.imageB.src
             );
