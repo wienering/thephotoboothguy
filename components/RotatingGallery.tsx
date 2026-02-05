@@ -14,47 +14,39 @@ interface RotatingGalleryProps {
 }
 
 interface SlotState {
-  currentImage: ImageData;
-  nextImage: ImageData | null;
-  isTransitioning: boolean;
+  imageA: ImageData;
+  imageB: ImageData;
+  showingA: boolean; // true = A is visible, false = B is visible
 }
 
 export default function RotatingGallery({ images }: RotatingGalleryProps) {
   const [slots, setSlots] = useState<SlotState[]>([]);
   const timersRef = useRef<NodeJS.Timeout[]>([]);
-  const usedImagesRef = useRef<Set<string>>(new Set());
 
-  // Get a random image that's not currently in use
-  const getRandomNewImage = useCallback((excludeSrc?: string): ImageData => {
-    const available = images.filter(img => 
-      img.src !== excludeSrc && !usedImagesRef.current.has(img.src)
-    );
-    
+  // Get a random image different from the given ones
+  const getRandomNewImage = useCallback((exclude1: string, exclude2: string): ImageData => {
+    const available = images.filter(img => img.src !== exclude1 && img.src !== exclude2);
     if (available.length === 0) {
-      // Reset used images if we've cycled through all
-      usedImagesRef.current.clear();
-      const fallback = images.filter(img => img.src !== excludeSrc);
-      return fallback[Math.floor(Math.random() * fallback.length)] || images[0];
+      return images[Math.floor(Math.random() * images.length)];
     }
-    
-    const selected = available[Math.floor(Math.random() * available.length)];
-    usedImagesRef.current.add(selected.src);
-    return selected;
+    return available[Math.floor(Math.random() * available.length)];
   }, [images]);
 
-  // Initialize slots with first 9 images
+  // Initialize slots
   useEffect(() => {
     if (images.length === 0) return;
     
-    usedImagesRef.current.clear();
-    const initialSlots: SlotState[] = images.slice(0, 9).map(img => {
-      usedImagesRef.current.add(img.src);
-      return {
-        currentImage: img,
-        nextImage: null,
-        isTransitioning: false,
-      };
-    });
+    const initialSlots: SlotState[] = [];
+    for (let i = 0; i < 9; i++) {
+      const imgA = images[i % images.length];
+      // Pick a different image for B so it's ready for first transition
+      const imgB = images[(i + 9) % images.length] || imgA;
+      initialSlots.push({
+        imageA: imgA,
+        imageB: imgB,
+        showingA: true,
+      });
+    }
     setSlots(initialSlots);
   }, [images]);
 
@@ -68,44 +60,34 @@ export default function RotatingGallery({ images }: RotatingGalleryProps) {
 
     const scheduleSwap = (slotIndex: number, isInitial: boolean = false) => {
       // Random delay between 4-8 seconds, with initial stagger
-      const baseDelay = isInitial ? 3000 + (slotIndex * 800) : 4000;
+      const baseDelay = isInitial ? 4000 + (slotIndex * 700) : 5000;
       const randomDelay = baseDelay + Math.random() * 4000;
       
       const timer = setTimeout(() => {
-        // Prepare the next image and start transition
         setSlots(prev => {
           const newSlots = [...prev];
-          const currentSlot = newSlots[slotIndex];
-          const nextImage = getRandomNewImage(currentSlot.currentImage.src);
+          const slot = newSlots[slotIndex];
+          
+          // Toggle which image is showing
+          const newShowingA = !slot.showingA;
+          
+          // Prepare the next image in the layer that's about to be hidden
+          // (so it's ready for the next transition)
+          const hiddenImage = newShowingA ? slot.imageB : slot.imageA;
+          const visibleImage = newShowingA ? slot.imageA : slot.imageB;
+          const nextImage = getRandomNewImage(hiddenImage.src, visibleImage.src);
           
           newSlots[slotIndex] = {
-            ...currentSlot,
-            nextImage,
-            isTransitioning: true,
+            imageA: newShowingA ? slot.imageA : nextImage,
+            imageB: newShowingA ? nextImage : slot.imageB,
+            showingA: newShowingA,
           };
+          
           return newSlots;
         });
         
-        // After transition completes, swap images
-        setTimeout(() => {
-          setSlots(prev => {
-            const newSlots = [...prev];
-            const currentSlot = newSlots[slotIndex];
-            
-            if (currentSlot.nextImage) {
-              newSlots[slotIndex] = {
-                currentImage: currentSlot.nextImage,
-                nextImage: null,
-                isTransitioning: false,
-              };
-            }
-            return newSlots;
-          });
-          
-          // Schedule next swap
-          scheduleSwap(slotIndex, false);
-        }, 1000); // Transition duration (matches CSS)
-        
+        // Schedule next swap
+        scheduleSwap(slotIndex, false);
       }, randomDelay);
       
       timersRef.current.push(timer);
@@ -128,41 +110,48 @@ export default function RotatingGallery({ images }: RotatingGalleryProps) {
       {slots.map((slot, index) => (
         <div
           key={index}
-          className="group relative overflow-hidden rounded-xl shadow-lg aspect-square bg-gray-100"
+          className="group relative overflow-hidden rounded-xl shadow-lg aspect-square bg-gray-900"
         >
-          {/* Next image (underneath, fades in) */}
-          {slot.nextImage && (
-            <div className="absolute inset-0">
-              <Image
-                src={slot.nextImage.src}
-                alt={slot.nextImage.alt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 33vw, 300px"
-              />
-            </div>
-          )}
-          
-          {/* Current image (on top, fades out during transition) */}
+          {/* Layer A */}
           <div 
-            className={`absolute inset-0 transition-opacity ease-in-out ${
-              slot.isTransitioning ? 'opacity-0 duration-1000' : 'opacity-100 duration-500'
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              slot.showingA ? 'opacity-100 z-10' : 'opacity-0 z-0'
             }`}
           >
             <Image
-              src={slot.currentImage.src}
-              alt={slot.currentImage.alt}
+              src={slot.imageA.src}
+              alt={slot.imageA.alt}
               fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              className="object-cover"
               sizes="(max-width: 768px) 33vw, 300px"
             />
           </div>
           
+          {/* Layer B */}
+          <div 
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              slot.showingA ? 'opacity-0 z-0' : 'opacity-100 z-10'
+            }`}
+          >
+            <Image
+              src={slot.imageB.src}
+              alt={slot.imageB.alt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 33vw, 300px"
+            />
+          </div>
+          
+          {/* Hover effect */}
+          <div className="absolute inset-0 z-20 transition-transform duration-300 group-hover:scale-105 pointer-events-none" />
+          
           {/* Hover overlay with title */}
-          {slot.currentImage.title && (
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          {(slot.showingA ? slot.imageA : slot.imageB).title && (
+            <div className="absolute inset-0 z-30 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
               <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-white">
-                <p className="font-medium text-sm md:text-base">{slot.currentImage.title}</p>
+                <p className="font-medium text-sm md:text-base">
+                  {(slot.showingA ? slot.imageA : slot.imageB).title}
+                </p>
               </div>
             </div>
           )}
