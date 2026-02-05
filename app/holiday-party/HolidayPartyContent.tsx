@@ -89,9 +89,10 @@ export default function HolidayPartyContent() {
           <h2 className="text-4xl md:text-5xl font-light text-black mb-12 leading-tight">
             Holiday Party Moments
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 auto-rows-auto">
-            {/* Video */}
-            <div className="col-span-2 row-span-2 bg-black rounded-sm overflow-hidden">
+          {/* Top section: Video + 2 columns of photos */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            {/* Column 1: Video */}
+            <div className="bg-black rounded-sm overflow-hidden">
               <video
                 src={HOLIDAY_VIDEO}
                 className="w-full h-full object-contain"
@@ -101,8 +102,40 @@ export default function HolidayPartyContent() {
                 playsInline
               />
             </div>
-            {/* Photos */}
-            {holidayPhotos.map((photo, index) => (
+            {/* Column 2: Event photos (beige group - indices 0, 1, 2) */}
+            <div className="flex flex-col gap-4">
+              {holidayPhotos.slice(0, 3).map((photo, index) => (
+                <div key={index} className="bg-gray-100 rounded-sm overflow-hidden">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    width={400}
+                    height={600}
+                    className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+              ))}
+            </div>
+            {/* Column 3: Print templates group 1 (orange group - indices 3, 4, 5) */}
+            <div className="flex flex-col gap-4">
+              {holidayPhotos.slice(3, 6).map((photo, index) => (
+                <div key={index} className="bg-gray-100 rounded-sm overflow-hidden">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    width={400}
+                    height={600}
+                    className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Bottom row: Print templates group 2 (yellow group - indices 6, 7, 8) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {holidayPhotos.slice(6, 9).map((photo, index) => (
               <div key={index} className="bg-gray-100 rounded-sm overflow-hidden">
                 <Image
                   src={photo.src}
@@ -110,7 +143,7 @@ export default function HolidayPartyContent() {
                   width={400}
                   height={600}
                   className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
             ))}
