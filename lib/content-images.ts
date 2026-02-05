@@ -72,6 +72,7 @@ export const HOLIDAY_VIDEO = '/photos/holiday/20251219_210938437webm.webm';
 
 /** Glam booth photos for glam booth pages. */
 const GLAM_BOOTH_PHOTOS: ContentImage[] = [
+  { src: '/photos/glam booth toronto.webp', alt: 'Glam booth photo booth rental in Toronto with professional lighting' },
   { src: '/photos/IMG_2792.jpeg', alt: 'Glam booth photo booth experience with professional lighting' },
 ];
 
