@@ -33,11 +33,11 @@ const holidayFaqs = [
   },
   {
     question: 'What areas do you serve?',
-    answer: 'We're based in the Greater Toronto Area and service Toronto, York Region (including Vaughan, Richmond Hill, Markham, Newmarket, and Stouffville), Halton Region (Oakville, Burlington, Milton), Peel Region (Mississauga, Brampton, Caledon), and Durham Region (Pickering, Ajax, Whitby, Oshawa). For events outside these areas, reach out with your details and we'll see what we can do.',
+    answer: 'We\'re based in the Greater Toronto Area and service Toronto, York Region (including Vaughan, Richmond Hill, Markham, Newmarket, and Stouffville), Halton Region (Oakville, Burlington, Milton), Peel Region (Mississauga, Brampton, Caledon), and Durham Region (Pickering, Ajax, Whitby, Oshawa). For events outside these areas, reach out with your details and we\'ll see what we can do.',
   },
   {
     question: 'What if I need a photo booth at the last minute?',
-    answer: 'We've got you covered—as long as the date is still available! Send us an email at contact@thephotoboothguy.ca with "URGENT" in the subject line and our team will prioritize your request.',
+    answer: 'We\'ve got you covered—as long as the date is still available! Send us an email at contact@thephotoboothguy.ca with "URGENT" in the subject line and our team will prioritize your request.',
   },
 ];
 
