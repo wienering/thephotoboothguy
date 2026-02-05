@@ -89,13 +89,13 @@ export default function HolidayPartyContent() {
           <h2 className="text-4xl md:text-5xl font-light text-black mb-12 leading-tight">
             Holiday Party Moments
           </h2>
-          {/* Top section: Video + 2 columns of photos */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-            {/* Column 1: Video */}
-            <div className="bg-black rounded-sm overflow-hidden">
+          {/* Top section: Video (wider) + 2 columns of photos */}
+          <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-4 mb-4">
+            {/* Column 1: Video (wider) */}
+            <div className="bg-black rounded-sm overflow-hidden flex items-center">
               <video
                 src={HOLIDAY_VIDEO}
-                className="w-full h-full object-contain"
+                className="w-full h-auto object-contain"
                 autoPlay
                 loop
                 muted
@@ -112,7 +112,7 @@ export default function HolidayPartyContent() {
                     width={400}
                     height={600}
                     className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, 25vw"
                   />
                 </div>
               ))}
@@ -127,26 +127,28 @@ export default function HolidayPartyContent() {
                     width={400}
                     height={600}
                     className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, 25vw"
                   />
                 </div>
               ))}
             </div>
           </div>
           {/* Bottom row: Print templates group 2 (yellow group - indices 6, 7, 8) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {holidayPhotos.slice(6, 9).map((photo, index) => (
-              <div key={index} className="bg-gray-100 rounded-sm overflow-hidden">
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  width={400}
-                  height={600}
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-            ))}
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full md:w-1/2">
+              {holidayPhotos.slice(6, 9).map((photo, index) => (
+                <div key={index} className="bg-gray-100 rounded-sm overflow-hidden">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    width={400}
+                    height={600}
+                    className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 17vw"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
