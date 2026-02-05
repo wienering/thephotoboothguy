@@ -355,7 +355,7 @@ export default function BookingForm({ initialData }: BookingFormProps) {
                   </svg>
                 </div>
                 <p className="text-sm text-gray-600 mt-2">
-                  * Full Event means the audio guest book will be available until midnight.
+                  Audio Guest Book will be available until midnight.
                 </p>
               </div>
             ) : (

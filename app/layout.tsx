@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import ClarityProvider from "@/components/ClarityProvider";
 import { organizationSchema } from "@/lib/schema";
 
 const inter = Inter({
@@ -28,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`}>
+        <ClarityProvider />
         <SchemaMarkup schema={organizationSchema} />
         <Navigation />
         <main>{children}</main>
