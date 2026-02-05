@@ -253,7 +253,7 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
       {/* Packages Section */}
       <section id="pricing" className="w-full py-20 bg-gray-50">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="mb-12">
+          <div className="mb-12 text-center">
             <h2 className="text-4xl md:text-5xl font-light text-black mb-4 leading-tight">
               Packages & Pricing
             </h2>
@@ -261,11 +261,55 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
               Professional {data.serviceName.toLowerCase()} services for your {data.city} event
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {data.packages.map((pkg, index) => (
-              <PackageCard key={index} {...pkg} />
-            ))}
-          </div>
+          
+          {data.packages.length === 1 ? (
+            // Single package - centered prominent layout
+            <div className="max-w-2xl mx-auto">
+              <div className="bg-white border-2 border-black shadow-xl">
+                <div className="bg-black text-white py-4 px-8 text-center">
+                  <span className="text-sm uppercase tracking-wider font-medium">All-Inclusive Package</span>
+                </div>
+                <div className="p-10 text-center">
+                  <h3 className="text-3xl font-light text-black mb-2">{data.packages[0].name}</h3>
+                  <div className="mb-8">
+                    <span className="text-6xl font-light text-black">{data.packages[0].price}</span>
+                    <span className="text-xl text-gray-600 ml-2">/ {data.packages[0].duration}</span>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 text-left">
+                    {data.packages[0].features.map((feature, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-black flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-gray-700 leading-relaxed">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link
+                      href="/book"
+                      className="inline-flex items-center justify-center bg-black text-white px-10 py-4 text-base font-medium hover:bg-gray-900 transition-all duration-300 uppercase tracking-wider"
+                    >
+                      Book Now
+                    </Link>
+                    <Link
+                      href="/quote"
+                      className="inline-flex items-center justify-center border-2 border-black text-black px-10 py-4 text-base font-medium hover:bg-black hover:text-white transition-all duration-300 uppercase tracking-wider"
+                    >
+                      Get a Quote
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            // Multiple packages - grid layout
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {data.packages.map((pkg, index) => (
+                <PackageCard key={index} {...pkg} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
