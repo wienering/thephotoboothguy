@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Hero from '@/components/Hero';
 import PackageCard from '@/components/PackageCard';
 import Testimonial from '@/components/Testimonial';
-import Gallery from '@/components/Gallery';
+import RotatingGallery from '@/components/RotatingGallery';
 import { revealOnScroll } from '@/lib/gsap';
 import { getHeroForHome } from '@/lib/content-images';
 
@@ -187,21 +187,6 @@ export default function HomeContent() {
     <div className="min-h-screen pt-20">
       <Hero backgroundImage={getHeroForHome()?.src} />
 
-      {/* Gallery Section - Our Work */}
-      <section className="w-full py-20 bg-gray-50">
-        <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="mb-12">
-            <h2 className="text-4xl md:text-5xl font-light text-black mb-4 leading-tight">
-              Our Work
-            </h2>
-            <p className="text-lg text-gray-600 font-light">
-              Real moments from events we&apos;ve had the pleasure of serving across the GTA
-            </p>
-          </div>
-          <Gallery images={eventGalleryImages} columns={4} />
-        </div>
-      </section>
-
       {/* About Section */}
       <section ref={aboutRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
@@ -216,6 +201,21 @@ export default function HomeContent() {
               Whether you&apos;re planning a wedding, corporate gala, birthday party, anniversary celebration, or any special event across the Greater Toronto Area, we deliver exceptional photo booth experiences with professional lighting, high-quality prints, and outstanding service.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Gallery Section - Our Work (3x3 rotating grid) */}
+      <section className="w-full py-20 bg-gray-50">
+        <div className="w-full max-w-[1000px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-4 leading-tight">
+              Our Work
+            </h2>
+            <p className="text-lg text-gray-600 font-light">
+              Real moments from events across the GTA
+            </p>
+          </div>
+          <RotatingGallery images={eventGalleryImages} />
         </div>
       </section>
 
