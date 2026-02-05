@@ -227,35 +227,8 @@ export const glamBoothPackages = [
 
 export const audioGuestBookPackages = [
   {
-    name: 'Standard',
+    name: 'Audio Guest Book',
     price: '$450',
-    duration: '3 hours',
-    features: [
-      'Vintage-style telephone handset',
-      'Custom recorded greeting',
-      'Unlimited voice messages',
-      'Easy setup and operation',
-      'Digital audio files delivered after event',
-      'High-quality audio recording',
-    ],
-    highlight: true,
-  },
-  {
-    name: 'Extended',
-    price: '$550',
-    duration: '5 hours',
-    features: [
-      'Vintage-style telephone handset',
-      'Custom recorded greeting',
-      'Unlimited voice messages',
-      'Easy setup and operation',
-      'Digital audio files delivered after event',
-      'High-quality audio recording',
-    ],
-  },
-  {
-    name: 'Full Event',
-    price: '$650',
     duration: 'Full event',
     features: [
       'Vintage-style telephone handset',
@@ -265,6 +238,7 @@ export const audioGuestBookPackages = [
       'Digital audio files delivered after event',
       'High-quality audio recording',
     ],
+    highlight: true,
   },
 ];
 

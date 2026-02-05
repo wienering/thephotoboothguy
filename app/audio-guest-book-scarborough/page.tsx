@@ -57,7 +57,7 @@ const pageData: ServiceLocationData = {
   faqs: [
     {
       question: 'How much does an audio guest book cost in Scarborough?',
-      answer: 'Audio guest book rental in Scarborough starts at $450 for our Standard package (3 hours), $550 for Extended (5 hours), and $650 for Full Event coverage. All packages include the vintage telephone handset, custom recorded greeting, unlimited voice messages, easy setup, and digital audio files delivered after your Scarborough event. It\'s a unique alternative to traditional guest books that captures the actual voices of your loved ones.',
+      answer: 'Audio guest book rental in Scarborough is $450 for full event coverage. The package includes the vintage telephone handset, custom recorded greeting, unlimited voice messages, easy setup, and digital audio files delivered after your Scarborough event. It\'s a unique alternative to traditional guest books that captures the actual voices of your loved ones.',
     },
     {
       question: 'How does the audio guest book work at a Scarborough wedding?',

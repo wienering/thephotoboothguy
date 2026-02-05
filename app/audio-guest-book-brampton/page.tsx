@@ -57,7 +57,7 @@ const pageData: ServiceLocationData = {
   faqs: [
     {
       question: 'How much does an audio guest book cost in Brampton?',
-      answer: 'Audio guest book rental in Brampton starts at $450 for our Standard package (3 hours), $550 for Extended (5 hours), and $650 for Full Event coverage. All packages include the vintage telephone handset, custom recorded greeting, unlimited voice messages, easy setup, and digital audio files delivered after your Brampton event. It\'s a unique alternative to traditional guest books that captures the actual voices of your loved ones.',
+      answer: 'Audio guest book rental in Brampton is $450 for full event coverage. The package includes the vintage telephone handset, custom recorded greeting, unlimited voice messages, easy setup, and digital audio files delivered after your Brampton event. It\'s a unique alternative to traditional guest books that captures the actual voices of your loved ones.',
     },
     {
       question: 'How does the audio guest book work at a Brampton wedding?',
