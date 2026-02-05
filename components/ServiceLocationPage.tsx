@@ -53,6 +53,8 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
     [data.serviceSlug, data.city]
   );
 
+  const isAudioGuestBook = data.serviceSlug === 'audio-guest-book';
+
   useEffect(() => {
     if (titleRef.current) heroTextReveal(titleRef.current);
     if (subtitleRef.current) fadeIn(subtitleRef.current, 0.3);
@@ -236,16 +238,29 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
               What&apos;s Included
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {data.features.map((feature, index) => (
-              <div key={index} className="group">
-                <div className="text-4xl mb-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                  {feature.icon}
+          <div className={`flex flex-col ${isAudioGuestBook ? 'lg:flex-row' : ''} gap-12`}>
+            <div className={`grid grid-cols-1 md:grid-cols-2 ${isAudioGuestBook ? 'lg:grid-cols-2 flex-1' : 'lg:grid-cols-3'} gap-12`}>
+              {data.features.map((feature, index) => (
+                <div key={index} className="group">
+                  <div className="text-4xl mb-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-2xl font-light text-black mb-3">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed font-light">{feature.description}</p>
                 </div>
-                <h3 className="text-2xl font-light text-black mb-3">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed font-light">{feature.description}</p>
+              ))}
+            </div>
+            {isAudioGuestBook && contentImages[2] && (
+              <div className="relative aspect-[3/4] w-full lg:w-72 flex-shrink-0 rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src={contentImages[2].src}
+                  alt={contentImages[2].alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 288px"
+                />
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -316,18 +331,31 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
       {/* FAQ Section */}
       <section ref={faqRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="max-w-4xl">
-            <h2 className="text-4xl md:text-5xl font-light text-black mb-12 leading-tight">
-              Frequently Asked Questions
-            </h2>
-            <div className="space-y-8">
-              {data.faqs.map((faq, index) => (
-                <div key={index} className="border-b border-gray-200 pb-8 last:border-0">
-                  <h3 className="text-2xl font-light text-black mb-4">{faq.question}</h3>
-                  <p className="text-gray-700 leading-relaxed font-light">{faq.answer}</p>
-                </div>
-              ))}
+          <div className={`flex flex-col ${isAudioGuestBook ? 'lg:flex-row' : ''} gap-12`}>
+            <div className={isAudioGuestBook ? 'flex-1' : 'max-w-4xl'}>
+              <h2 className="text-4xl md:text-5xl font-light text-black mb-12 leading-tight">
+                Frequently Asked Questions
+              </h2>
+              <div className="space-y-8">
+                {data.faqs.map((faq, index) => (
+                  <div key={index} className="border-b border-gray-200 pb-8 last:border-0">
+                    <h3 className="text-2xl font-light text-black mb-4">{faq.question}</h3>
+                    <p className="text-gray-700 leading-relaxed font-light">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
             </div>
+            {isAudioGuestBook && contentImages[3] && (
+              <div className="relative aspect-[3/4] w-full lg:w-80 flex-shrink-0 rounded-xl overflow-hidden shadow-lg self-start sticky top-24">
+                <Image
+                  src={contentImages[3].src}
+                  alt={contentImages[3].alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 320px"
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -360,10 +388,23 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Testimonial key={index} {...testimonial} />
-            ))}
+          <div className={`flex flex-col ${isAudioGuestBook ? 'lg:flex-row' : ''} gap-8`}>
+            <div className={`grid grid-cols-1 ${isAudioGuestBook ? 'lg:grid-cols-2 flex-1' : 'lg:grid-cols-3'} gap-8`}>
+              {testimonials.map((testimonial, index) => (
+                <Testimonial key={index} {...testimonial} />
+              ))}
+            </div>
+            {isAudioGuestBook && contentImages[4] && (
+              <div className="relative aspect-[3/4] w-full lg:w-64 flex-shrink-0 rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src={contentImages[4].src}
+                  alt={contentImages[4].alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 256px"
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -372,21 +413,34 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
       {data.relatedServices && data.relatedServices.length > 0 && (
         <section className="w-full py-20 bg-gray-50">
           <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-            <div className="max-w-4xl">
-              <h2 className="text-4xl md:text-5xl font-light text-black mb-8 leading-tight">
-                Other Services in {data.city}
-              </h2>
-              <div className="flex flex-wrap gap-4">
-                {data.relatedServices.map((service, index) => (
-                  <Link
-                    key={index}
-                    href={service.href}
-                    className="inline-flex items-center justify-center border border-black text-black px-8 py-4 text-sm font-medium hover:bg-black hover:text-white transition-all duration-300 uppercase tracking-wider"
-                  >
-                    {service.name}
-                  </Link>
-                ))}
+            <div className={`flex flex-col ${isAudioGuestBook ? 'sm:flex-row' : ''} gap-8 lg:gap-12`}>
+              <div className={isAudioGuestBook ? 'flex-1' : 'max-w-4xl'}>
+                <h2 className="text-4xl md:text-5xl font-light text-black mb-8 leading-tight">
+                  Other Services in {data.city}
+                </h2>
+                <div className="flex flex-wrap gap-4">
+                  {data.relatedServices.map((service, index) => (
+                    <Link
+                      key={index}
+                      href={service.href}
+                      className="inline-flex items-center justify-center border border-black text-black px-8 py-4 text-sm font-medium hover:bg-black hover:text-white transition-all duration-300 uppercase tracking-wider"
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
+              {isAudioGuestBook && contentImages[5] && (
+                <div className="relative aspect-[4/3] w-full sm:w-64 lg:w-80 flex-shrink-0 rounded-xl overflow-hidden shadow-lg">
+                  <Image
+                    src={contentImages[5].src}
+                    alt={contentImages[5].alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, 320px"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </section>

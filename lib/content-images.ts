@@ -70,6 +70,18 @@ const HOLIDAY_PHOTOS: ContentImage[] = [
 /** Holiday party video. */
 export const HOLIDAY_VIDEO = '/photos/holiday/20251219_210938437webm.webm';
 
+/** Audio guest book photos for audio guest book pages. */
+const AUDIO_GB_PHOTOS: ContentImage[] = [
+  { src: '/photos/audio gb/69367.jpg', alt: 'Audio guest book vintage telephone at a Toronto wedding' },
+  { src: '/photos/audio gb/88072.jpg', alt: 'Guests leaving voice messages at audio guest book station' },
+  { src: '/photos/audio gb/95782.jpg', alt: 'Vintage telephone audio guest book setup at GTA event' },
+  { src: '/photos/audio gb/IMG_0132.jpeg', alt: 'Audio guest book rental at a wedding venue in Toronto' },
+  { src: '/photos/audio gb/IMG_2585.jpeg', alt: 'Wedding guest using audio guest book telephone' },
+  { src: '/photos/audio gb/IMG_2765.jpeg', alt: 'Audio guest book display at Greater Toronto Area celebration' },
+  { src: '/photos/audio gb/IMG_2800.jpeg', alt: 'Elegant audio guest book setup for wedding reception' },
+  { src: '/photos/audio gb/IMG_2881.jpeg', alt: 'Vintage phone audio guest book at Ontario wedding' },
+];
+
 const ALL_PHOTOS = [...EVENT_PHOTOS, ...PRINT_SAMPLES];
 
 /** Simple numeric hash from a string for deterministic but varied picks. */
@@ -102,9 +114,16 @@ export function getImagesForServicePage(serviceSlug: string, city: string): {
     heroImage = NEW_HERO_IMAGES[heroIndices[h % heroIndices.length]] ?? null;
   }
 
-  // 360 booth pages use 360-specific content images
+  // Service-specific content images
   let contentImages: ContentImage[];
-  if (serviceSlug === '360-booth') {
+  if (serviceSlug === 'audio-guest-book') {
+    // Audio guest book pages use audio GB-specific images (up to 6, varied by city)
+    const startIndex = h % AUDIO_GB_PHOTOS.length;
+    contentImages = [];
+    for (let i = 0; i < 6; i++) {
+      contentImages.push(AUDIO_GB_PHOTOS[(startIndex + i) % AUDIO_GB_PHOTOS.length]);
+    }
+  } else if (serviceSlug === '360-booth') {
     const i1 = h % PHOTOS_360.length;
     const i2 = (h + 2) % PHOTOS_360.length;
     contentImages = [PHOTOS_360[i1], PHOTOS_360[i2]].filter(Boolean);
