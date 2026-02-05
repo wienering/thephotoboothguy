@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 
 interface ImageData {
@@ -16,31 +16,26 @@ interface RotatingGalleryProps {
 interface SlotState {
   imageA: ImageData;
   imageB: ImageData;
-  showingA: boolean; // true = A is visible, false = B is visible
+  showingA: boolean;
 }
 
 export default function RotatingGallery({ images }: RotatingGalleryProps) {
   const [slots, setSlots] = useState<SlotState[]>([]);
   const timersRef = useRef<NodeJS.Timeout[]>([]);
 
-  // Get a random image different from the given ones
-  const getRandomNewImage = useCallback((exclude1: string, exclude2: string): ImageData => {
-    const available = images.filter(img => img.src !== exclude1 && img.src !== exclude2);
-    if (available.length === 0) {
-      return images[Math.floor(Math.random() * images.length)];
-    }
-    return available[Math.floor(Math.random() * available.length)];
-  }, [images]);
-
-  // Initialize slots
+  // Initialize slots with unique images
   useEffect(() => {
     if (images.length === 0) return;
     
+    // Shuffle images to get random initial selection
+    const shuffled = [...images].sort(() => Math.random() - 0.5);
+    
     const initialSlots: SlotState[] = [];
     for (let i = 0; i < 9; i++) {
-      const imgA = images[i % images.length];
-      // Pick a different image for B so it's ready for first transition
-      const imgB = images[(i + 9) % images.length] || imgA;
+      // Use unique images for initial display (first 9)
+      const imgA = shuffled[i % shuffled.length];
+      // Use different unique images for the hidden layer (next 9, or wrap)
+      const imgB = shuffled[(i + 9) % shuffled.length];
       initialSlots.push({
         imageA: imgA,
         imageB: imgB,
@@ -71,12 +66,39 @@ export default function RotatingGallery({ images }: RotatingGalleryProps) {
           // Toggle which image is showing
           const newShowingA = !slot.showingA;
           
-          // Prepare the next image in the layer that's about to be hidden
-          // (so it's ready for the next transition)
-          const hiddenImage = newShowingA ? slot.imageB : slot.imageA;
-          const visibleImage = newShowingA ? slot.imageA : slot.imageB;
-          const nextImage = getRandomNewImage(hiddenImage.src, visibleImage.src);
+          // Collect ALL currently visible images across all slots (after this swap)
+          const visibleSrcs = new Set<string>();
+          newSlots.forEach((s, idx) => {
+            if (idx === slotIndex) {
+              // For the slot being swapped, the NEW visible image
+              visibleSrcs.add(newShowingA ? slot.imageA.src : slot.imageB.src);
+            } else {
+              // For other slots, their current visible image
+              visibleSrcs.add(s.showingA ? s.imageA.src : s.imageB.src);
+            }
+          });
           
+          // Also exclude the image that will be hidden (it's still in this slot)
+          const hiddenInThisSlot = newShowingA ? slot.imageB.src : slot.imageA.src;
+          visibleSrcs.add(hiddenInThisSlot);
+          
+          // Find an image that's not currently visible anywhere
+          const available = images.filter(img => !visibleSrcs.has(img.src));
+          
+          let nextImage: ImageData;
+          if (available.length > 0) {
+            nextImage = available[Math.floor(Math.random() * available.length)];
+          } else {
+            // Fallback: just pick something different from this slot's images
+            const fallback = images.filter(
+              img => img.src !== slot.imageA.src && img.src !== slot.imageB.src
+            );
+            nextImage = fallback.length > 0 
+              ? fallback[Math.floor(Math.random() * fallback.length)]
+              : images[Math.floor(Math.random() * images.length)];
+          }
+          
+          // Update the slot: swap visibility and prepare next image in hidden layer
           newSlots[slotIndex] = {
             imageA: newShowingA ? slot.imageA : nextImage,
             imageB: newShowingA ? nextImage : slot.imageB,
@@ -101,7 +123,7 @@ export default function RotatingGallery({ images }: RotatingGalleryProps) {
     return () => {
       timersRef.current.forEach(timer => clearTimeout(timer));
     };
-  }, [slots.length, images.length, getRandomNewImage]);
+  }, [slots.length, images.length, images]);
 
   if (slots.length === 0) return null;
 
@@ -141,9 +163,6 @@ export default function RotatingGallery({ images }: RotatingGalleryProps) {
               sizes="(max-width: 768px) 33vw, 300px"
             />
           </div>
-          
-          {/* Hover effect */}
-          <div className="absolute inset-0 z-20 transition-transform duration-300 group-hover:scale-105 pointer-events-none" />
           
           {/* Hover overlay with title */}
           {(slot.showingA ? slot.imageA : slot.imageB).title && (
