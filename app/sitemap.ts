@@ -4,7 +4,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.thephotoboothguy.ca';
   
   // Define cities and services for dynamic SIL pages
-  const cities = ['toronto', 'mississauga', 'brampton', 'vaughan', 'markham'];
+  const cities = [
+    'toronto',
+    'mississauga',
+    'brampton',
+    'vaughan',
+    'markham',
+    'ajax',
+    'pickering',
+    'oshawa',
+    'whitby',
+    'burlington',
+    'oakville',
+    'north-york',
+    'scarborough',
+    'etobicoke',
+    'richmond-hill',
+  ];
   const services = [
     'photo-booth-rental',
     'glam-booth',
