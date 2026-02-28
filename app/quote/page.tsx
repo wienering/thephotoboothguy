@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/quote',
   },
+  openGraph: { url: 'https://www.thephotoboothguy.ca/quote' },
 };
 
 export default function QuotePage() {

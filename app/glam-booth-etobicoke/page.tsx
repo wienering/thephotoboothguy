@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/glam-booth-etobicoke',
   },
+  openGraph: { url: 'https://www.thephotoboothguy.ca/glam-booth-etobicoke' },
 };
 
 const pageData: ServiceLocationData = {

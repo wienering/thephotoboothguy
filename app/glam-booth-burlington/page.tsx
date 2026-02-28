@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/glam-booth-burlington',
   },
+  openGraph: { url: 'https://www.thephotoboothguy.ca/glam-booth-burlington' },
 };
 
 const pageData: ServiceLocationData = {

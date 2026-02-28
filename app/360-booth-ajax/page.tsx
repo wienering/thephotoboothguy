@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/360-booth-ajax',
   },
+  openGraph: { url: 'https://www.thephotoboothguy.ca/360-booth-ajax' },
 };
 
 const pageData: ServiceLocationData = {

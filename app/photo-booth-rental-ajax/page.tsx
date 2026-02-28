@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-ajax',
   },
+  openGraph: { url: 'https://www.thephotoboothguy.ca/photo-booth-rental-ajax' },
 };
 
 const pageData: ServiceLocationData = {

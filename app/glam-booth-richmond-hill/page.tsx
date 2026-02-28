@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/glam-booth-richmond-hill',
   },
+  openGraph: { url: 'https://www.thephotoboothguy.ca/glam-booth-richmond-hill' },
 };
 
 const pageData: ServiceLocationData = {

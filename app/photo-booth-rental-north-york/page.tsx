@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-north-york',
   },
+  openGraph: { url: 'https://www.thephotoboothguy.ca/photo-booth-rental-north-york' },
 };
 
 const pageData: ServiceLocationData = {

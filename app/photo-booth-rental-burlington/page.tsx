@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-burlington',
   },
+  openGraph: { url: 'https://www.thephotoboothguy.ca/photo-booth-rental-burlington' },
 };
 
 const pageData: ServiceLocationData = {

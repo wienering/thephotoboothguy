@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-pickering',
   },
+  openGraph: { url: 'https://www.thephotoboothguy.ca/photo-booth-rental-pickering' },
 };
 
 const pageData: ServiceLocationData = {

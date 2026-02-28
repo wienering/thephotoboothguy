@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-vaughan',
   },
+  openGraph: { url: 'https://www.thephotoboothguy.ca/audio-guest-book-vaughan' },
 };
 
 const pageData: ServiceLocationData = {

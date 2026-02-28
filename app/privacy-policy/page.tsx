@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/privacy-policy',
   },
+  openGraph: { url: 'https://www.thephotoboothguy.ca/privacy-policy' },
 };
 
 export default function PrivacyPolicy() {

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/terms-of-service',
   },
+  openGraph: { url: 'https://www.thephotoboothguy.ca/terms-of-service' },
 };
 
 export default function TermsOfService() {

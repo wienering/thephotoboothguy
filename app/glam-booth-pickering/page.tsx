@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/glam-booth-pickering',
   },
+  openGraph: { url: 'https://www.thephotoboothguy.ca/glam-booth-pickering' },
 };
 
 const pageData: ServiceLocationData = {

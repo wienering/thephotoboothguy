@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/360-booth-brampton',
   },
+  openGraph: { url: 'https://www.thephotoboothguy.ca/360-booth-brampton' },
 };
 
 const pageData: ServiceLocationData = {

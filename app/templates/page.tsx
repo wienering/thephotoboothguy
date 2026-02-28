@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/templates',
   },
+  openGraph: { url: 'https://www.thephotoboothguy.ca/templates' },
 };
 
 export default function Templates() {

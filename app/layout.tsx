@@ -12,7 +12,10 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const SITE_URL = "https://www.thephotoboothguy.ca";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Photo Booth Rental Toronto & GTA | The Photobooth Guy",
   description: "Photo booth rental in Toronto & GTA. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Packages from $550.",
   keywords: "photo booth rental, Toronto, GTA, Mississauga, Brampton, Vaughan, Markham, wedding photo booth, corporate photo booth, event photography, instant prints, DSLR camera, professional attendant",
@@ -22,7 +25,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Photo Booth Rental Toronto & GTA | The Photobooth Guy",
     description: "Photo booth rental in Toronto & GTA. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Packages from $550.",
-    url: "https://www.thephotoboothguy.ca",
     siteName: "The Photobooth Guy",
     type: "website",
   },
