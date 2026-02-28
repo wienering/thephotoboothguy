@@ -6,7 +6,7 @@ import { venues, standardPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
   title: 'Photo Booth Rental Toronto | The Photobooth Guy',
-  description: 'Photo booth rental in Toronto. DSLR, instant prints, custom templates. Weddings, corporate, parties.',
+  description: 'Photo booth rental in Toronto. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
   keywords: 'photo booth rental Toronto, Toronto photo booth, photo booth hire Toronto, wedding photo booth Toronto, corporate photo booth Toronto, instant prints, DSLR camera, professional attendant',
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-toronto',
@@ -25,32 +25,32 @@ const pageData: ServiceLocationData = {
     {
       icon: '📸',
       title: 'Professional DSLR Camera',
-      description: 'High-resolution images captured with professional camera equipment and optimal lighting for stunning photo quality.',
+      description: 'Photo booth rental in Toronto. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
     },
     {
       icon: '🖨️',
       title: 'Instant Prints',
-      description: 'Dye-sublimation printer delivers vibrant 4x6 or 2x6 prints instantly on custom templates featuring your event details.',
+      description: 'Photo booth rental in Toronto. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
     },
     {
       icon: '🎨',
       title: 'Custom Templates',
-      description: 'Personalized print templates designed to match your event theme, colors, and style at no extra charge.',
+      description: 'Photo booth rental in Toronto. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
     },
     {
       icon: '🎭',
       title: 'Backdrop & Props',
-      description: 'Choose from our collection of elegant backdrops and fun props to create memorable photos for your guests.',
+      description: 'Photo booth rental in Toronto. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
     },
     {
       icon: '👤',
       title: 'Professional Attendant',
-      description: 'Trained on-site attendant ensures smooth operation, assists guests, and maintains the photo booth throughout your event.',
+      description: 'Photo booth rental in Toronto. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
     },
     {
       icon: '📱',
       title: 'Digital Copies',
-      description: 'All photos sent instantly to guests via SMS or email, plus complete digital gallery delivered after your event.',
+      description: 'Photo booth rental in Toronto. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
     },
   ],
   packages: standardPackages,

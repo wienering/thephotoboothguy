@@ -34,7 +34,7 @@ export default function HolidayPartyContent() {
       >
         {heroImage && (
           <>
-            <Image src={heroImage.src} alt="" fill className="object-cover object-center" sizes="100vw" priority />
+            <Image src={heroImage.src} alt={heroImage.alt ?? 'Holiday party photo booth'} fill className="object-cover object-center" sizes="100vw" priority />
             <div className="absolute inset-0 bg-black/55" aria-hidden />
           </>
         )}

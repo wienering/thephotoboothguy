@@ -6,7 +6,7 @@ import { venues, glamBoothPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
   title: 'Glam Booth Toronto | The Photobooth Guy',
-  description: 'Glam booth rental in Toronto. Black and white, professional lighting. Weddings and events.',
+  description: 'Glam booth rental in Toronto. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.',
   keywords: 'glam booth Toronto, black and white photo booth Toronto, Kardashian style photo booth, glamour booth Toronto, wedding glam booth, upscale photo booth Toronto',
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/glam-booth-toronto',
@@ -25,32 +25,32 @@ const pageData: ServiceLocationData = {
     {
       icon: '✨',
       title: 'Kardashian Aesthetic',
-      description: 'Black and white photography with professional lighting that creates the glamorous, high-fashion look popularized by celebrity events.',
+      description: 'Glam booth rental in Toronto. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.',
     },
     {
       icon: '💡',
       title: 'Professional Lighting',
-      description: 'Studio-grade lighting setup designed to flatter every guest and create stunning, magazine-quality photos with perfect contrast.',
+      description: 'Glam booth rental in Toronto. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.',
     },
     {
       icon: '🖼️',
       title: 'Premium Backdrop',
-      description: 'Elegant backdrop options specifically chosen to complement the black and white aesthetic and enhance the glamorous feel.',
+      description: 'Glam booth rental in Toronto. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.',
     },
     {
       icon: '🖨️',
       title: 'High-Quality Prints',
-      description: 'Instant black and white prints on premium photo paper with custom templates that match your event sophistication.',
+      description: 'Glam booth rental in Toronto. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.',
     },
     {
       icon: '👤',
       title: 'Professional Attendant',
-      description: 'Experienced attendant on site to ensure optimal lighting, assist guests, and maintain the glam booth experience.',
+      description: 'Glam booth rental in Toronto. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.',
     },
     {
       icon: '📱',
       title: 'Digital Copies',
-      description: 'All glamour photos sent instantly to guests digitally, plus a complete gallery delivered after your Toronto event.',
+      description: 'Glam booth rental in Toronto. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.',
     },
   ],
   packages: glamBoothPackages,

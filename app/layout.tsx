@@ -19,6 +19,18 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  openGraph: {
+    title: "Photo Booth Rental Toronto & GTA | The Photobooth Guy",
+    description: "Photo booth rental in Toronto & GTA. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Packages from $550.",
+    url: "https://www.thephotoboothguy.ca",
+    siteName: "The Photobooth Guy",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Photo Booth Rental Toronto & GTA | The Photobooth Guy",
+    description: "Photo booth rental in Toronto & GTA. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Packages from $550.",
+  },
 };
 
 export default function RootLayout({

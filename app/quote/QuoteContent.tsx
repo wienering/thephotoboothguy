@@ -198,7 +198,7 @@ export default function QuoteContent() {
       <section className="relative min-h-[60vh] flex items-center justify-center bg-black text-white overflow-hidden">
         {heroImage && (
           <>
-            <Image src={heroImage.src} alt="" fill className="object-cover object-center" sizes="100vw" priority />
+            <Image src={heroImage.src} alt={heroImage.alt ?? 'Instant quote'} fill className="object-cover object-center" sizes="100vw" priority />
             <div className="absolute inset-0 bg-black/55" aria-hidden />
           </>
         )}

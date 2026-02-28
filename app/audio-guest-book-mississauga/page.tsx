@@ -6,7 +6,7 @@ import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
   title: 'Audio Guest Book Mississauga | The Photobooth Guy',
-  description: 'Audio guest book rental in Mississauga. Vintage telephone for wedding voice messages. Professional service.',
+  description: 'Audio guest book rental in Mississauga. Vintage telephone captures voice messages at weddings. Professional service across the GTA.',
   keywords: 'audio guest book Mississauga, wedding voicemail guest book, audio guestbook rental Mississauga, voice message guest book, telephone guest book Mississauga',
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-mississauga',
@@ -25,32 +25,32 @@ const pageData: ServiceLocationData = {
     {
       icon: '☎️',
       title: 'Vintage Telephone',
-      description: 'Elegant vintage-style telephone handset that adds a nostalgic, decorative element to your event while capturing audio messages.',
+      description: 'Audio guest book rental in Mississauga. Vintage telephone captures voice messages at weddings. Professional service across the GTA.',
     },
     {
       icon: '🎙️',
       title: 'Custom Greeting',
-      description: 'Personalized recorded greeting in your voice or ours, providing instructions and prompting guests to leave their messages.',
+      description: 'Audio guest book rental in Mississauga. Vintage telephone captures voice messages at weddings. Professional service across the GTA.',
     },
     {
       icon: '♾️',
       title: 'Unlimited Messages',
-      description: 'No limit on the number or length of voice messages. Every guest can share their thoughts, wishes, and memories.',
+      description: 'Audio guest book rental in Mississauga. Vintage telephone captures voice messages at weddings. Professional service across the GTA.',
     },
     {
       icon: '🎯',
       title: 'Easy Self-Service',
-      description: 'Simple, intuitive operation that requires no monitoring. Guests of all ages can easily leave their messages throughout your event.',
+      description: 'Audio guest book rental in Mississauga. Vintage telephone captures voice messages at weddings. Professional service across the GTA.',
     },
     {
       icon: '🎵',
       title: 'High-Quality Audio',
-      description: 'Professional recording equipment captures crystal-clear audio with excellent clarity, preserving every word and emotion.',
+      description: 'Audio guest book rental in Mississauga. Vintage telephone captures voice messages at weddings. Professional service across the GTA.',
     },
     {
       icon: '📱',
       title: 'Digital Delivery',
-      description: 'Receive all audio files as high-quality digital downloads within 48 hours, easy to share with family or store in the cloud.',
+      description: 'Audio guest book rental in Mississauga. Vintage telephone captures voice messages at weddings. Professional service across the GTA.',
     },
   ],
   packages: audioGuestBookPackages,

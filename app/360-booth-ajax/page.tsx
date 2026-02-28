@@ -6,7 +6,7 @@ import { venues, booth360Packages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
   title: '360 Video Booth Ajax | The Photobooth Guy',
-  description: '360 video booth rental in Ajax. Professional camera, instant video. Weddings, corporate, parties.',
+  description: '360 video booth rental in Ajax. Professional camera arm, instant video delivery. Weddings, corporate events, parties. Book your GTA event.',
   keywords: '360 booth Ajax, 360 video booth Ajax, 360 photo booth rental Ajax, spinning photo booth, 360 camera booth, corporate 360 booth Ajax',
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/360-booth-ajax',
@@ -25,32 +25,32 @@ const pageData: ServiceLocationData = {
     {
       icon: '🎥',
       title: 'Professional Camera Arm',
-      description: 'High-speed rotating camera arm captures smooth 360-degree slow-motion video, creating cinematic content your guests will love.',
+      description: '360 video booth rental in Ajax. Professional camera arm, instant video delivery. Weddings, corporate events, parties. Book your GTA event.',
     },
     {
       icon: '⭕',
       title: 'Premium Platform',
-      description: 'Sturdy, safe platform designed for 1-4 people with professional finish. Safety features ensure guests feel secure during their 360 video.',
+      description: '360 video booth rental in Ajax. Professional camera arm, instant video delivery. Weddings, corporate events, parties. Book your GTA event.',
     },
     {
       icon: '💡',
       title: 'Professional Lighting',
-      description: 'Strategic lighting setup enhances video quality and creates dramatic effects that make every 360 video look incredible.',
+      description: '360 video booth rental in Ajax. Professional camera arm, instant video delivery. Weddings, corporate events, parties. Book your GTA event.',
     },
     {
       icon: '📱',
       title: 'Instant Video Delivery',
-      description: 'Videos are processed immediately and sent to guests via text message or email - they can share on social media right away.',
+      description: '360 video booth rental in Ajax. Professional camera arm, instant video delivery. Weddings, corporate events, parties. Book your GTA event.',
     },
     {
       icon: '👤',
       title: 'Professional Attendant',
-      description: 'Experienced attendant operates the 360 booth, guides guests, ensures safety, and maintains smooth operation throughout your event.',
+      description: '360 video booth rental in Ajax. Professional camera arm, instant video delivery. Weddings, corporate events, parties. Book your GTA event.',
     },
     {
       icon: '🎭',
       title: 'Props & Accessories',
-      description: 'Fun props and accessories provided to help guests create entertaining, creative 360 videos at your Ajax event.',
+      description: '360 video booth rental in Ajax. Professional camera arm, instant video delivery. Weddings, corporate events, parties. Book your GTA event.',
     },
   ],
   packages: booth360Packages,

@@ -6,7 +6,7 @@ import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
   title: 'Audio Guest Book Whitby | The Photobooth Guy',
-  description: 'Audio guest book rental in Whitby. Vintage telephone for wedding voice messages. Professional service.',
+  description: 'Audio guest book rental in Whitby. Vintage telephone captures voice messages at weddings. Professional service across the GTA.',
   keywords: 'audio guest book Whitby, wedding voicemail guest book, audio guestbook rental Whitby, voice message guest book, telephone guest book Whitby',
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-whitby',
@@ -25,7 +25,7 @@ const pageData: ServiceLocationData = {
     {
       icon: '📞',
       title: 'Vintage Telephone Design',
-      description: 'Beautiful vintage-style telephone handset creates an eye-catching display and makes recording messages feel special and memorable.',
+      description: 'Audio guest book rental in Whitby. Vintage telephone captures voice messages at weddings. Professional service across the GTA.',
     },
     {
       icon: '🎙️',
@@ -35,12 +35,12 @@ const pageData: ServiceLocationData = {
     {
       icon: '💬',
       title: 'Custom Greeting',
-      description: 'We record a personalized greeting message that welcomes your guests and explains how to leave their voice message.',
+      description: 'Audio guest book rental in Whitby. Vintage telephone captures voice messages at weddings. Professional service across the GTA.',
     },
     {
       icon: '💾',
       title: 'Digital Delivery',
-      description: 'All voice messages are delivered as high-quality digital audio files on a USB drive and via secure download within 48 hours.',
+      description: 'Audio guest book rental in Whitby. Vintage telephone captures voice messages at weddings. Professional service across the GTA.',
     },
     {
       icon: '👤',
@@ -50,7 +50,7 @@ const pageData: ServiceLocationData = {
     {
       icon: '♾️',
       title: 'Unlimited Messages',
-      description: 'Guests can leave messages of any length - no limits on recording time or number of messages.',
+      description: 'Audio guest book rental in Whitby. Vintage telephone captures voice messages at weddings. Professional service across the GTA.',
     },
   ],
   packages: audioGuestBookPackages,
