@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, standardPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Photo Booth Rental Pickering | Professional Photo Booth Services | The Photobooth Guy',
-  description: 'Professional photo booth rental in Pickering with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant. Serving Pickering Recreation Complex, Pickering Convention Centre, and venues across Pickering.',
+  title: 'Photo Booth Rental Pickering | The Photobooth Guy',
+  description: 'Photo booth rental in Pickering. DSLR, instant prints, custom templates. Weddings, corporate, parties.',
   keywords: 'photo booth rental Pickering, Pickering photo booth, photo booth hire Pickering, wedding photo booth Pickering, corporate photo booth Pickering, instant prints, DSLR camera, professional attendant',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/photo-booth-rental-pickering',
+    canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-pickering',
   },
 };
 

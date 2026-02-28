@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Book Your Photo Booth | The Photobooth Guy',
   description: 'Book your photo booth rental for Toronto and the GTA. Submit your booking request and we\'ll confirm pricing and availability.',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/book',
+    canonical: 'https://www.thephotoboothguy.ca/book',
   },
 };
 

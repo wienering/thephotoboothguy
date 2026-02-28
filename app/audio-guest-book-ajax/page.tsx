@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Audio Guest Book Ajax | Wedding Voicemail Guest Book Rental | The Photobooth Guy',
-  description: 'Audio guest book rental in Ajax with vintage telephone handset. Capture heartfelt voice messages at your wedding or event. Professional service for Ajax weddings at Ajax Community Centre and venues across Ajax.',
+  title: 'Audio Guest Book Ajax | The Photobooth Guy',
+  description: 'Audio guest book rental in Ajax. Vintage telephone for wedding voice messages. Professional service.',
   keywords: 'audio guest book Ajax, wedding voicemail guest book, audio guestbook rental Ajax, voice message guest book, telephone guest book Ajax',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/audio-guest-book-ajax',
+    canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-ajax',
   },
 };
 

@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Audio Guest Book Pickering | Wedding Voicemail Guest Book Rental | The Photobooth Guy',
-  description: 'Audio guest book rental in Pickering with vintage telephone handset. Capture heartfelt voice messages at your wedding or event. Professional service for Pickering weddings at Pickering Recreation Complex and venues across Pickering.',
+  title: 'Audio Guest Book Pickering | The Photobooth Guy',
+  description: 'Audio guest book rental in Pickering. Vintage telephone for wedding voice messages. Professional service.',
   keywords: 'audio guest book Pickering, wedding voicemail guest book, audio guestbook rental Pickering, voice message guest book, telephone guest book Pickering',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/audio-guest-book-pickering',
+    canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-pickering',
   },
 };
 

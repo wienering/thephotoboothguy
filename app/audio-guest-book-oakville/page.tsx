@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Audio Guest Book Oakville | Wedding Voicemail Guest Book Rental | The Photobooth Guy',
-  description: 'Audio guest book rental in Oakville with vintage telephone handset. Capture heartfelt voice messages at your wedding or event. Professional service for Oakville weddings at Oakville Conference Centre and venues across the city.',
+  title: 'Audio Guest Book Oakville | The Photobooth Guy',
+  description: 'Audio guest book rental in Oakville. Vintage telephone for wedding voice messages. Professional service.',
   keywords: 'audio guest book Oakville, wedding voicemail guest book, audio guestbook rental Oakville, voice message guest book, telephone guest book Oakville',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/audio-guest-book-oakville',
+    canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-oakville',
   },
 };
 

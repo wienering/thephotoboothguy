@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, glamBoothPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Glam Booth Whitby | Black and White Kardashian Style Photo Booth | The Photobooth Guy',
-  description: 'Kardashian-style black and white glam booth rental in Whitby. Professional lighting, high-quality prints, and stunning aesthetic for weddings and upscale events. Available at Whitby Convention Centre and premium Whitby venues.',
+  title: 'Glam Booth Whitby | The Photobooth Guy',
+  description: 'Glam booth rental in Whitby. Black and white, professional lighting. Weddings and events.',
   keywords: 'glam booth Whitby, black and white photo booth Whitby, Kardashian style photo booth, glamour booth Whitby, wedding glam booth, upscale photo booth Whitby',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/glam-booth-whitby',
+    canonical: 'https://www.thephotoboothguy.ca/glam-booth-whitby',
   },
 };
 

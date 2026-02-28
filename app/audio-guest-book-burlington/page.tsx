@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Audio Guest Book Burlington | Wedding Voicemail Guest Book Rental | The Photobooth Guy',
-  description: 'Audio guest book rental in Burlington with vintage telephone handset. Capture heartfelt voice messages at your wedding or event. Professional service for Burlington weddings at Burlington Convention Centre and venues across the city.',
+  title: 'Audio Guest Book Burlington | The Photobooth Guy',
+  description: 'Audio guest book rental in Burlington. Vintage telephone for wedding voice messages. Professional service.',
   keywords: 'audio guest book Burlington, wedding voicemail guest book, audio guestbook rental Burlington, voice message guest book, telephone guest book Burlington',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/audio-guest-book-burlington',
+    canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-burlington',
   },
 };
 

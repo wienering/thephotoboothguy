@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, booth360Packages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: '360 Video Booth North York | 360 Photo Booth Rental | The Photobooth Guy',
-  description: '360 video booth rental in North York with professional camera arm, instant video delivery, and premium platform. Perfect for weddings, corporate events, and parties at North York venues including Toronto Congress Centre and The International Centre.',
+  title: '360 Video Booth North York | The Photobooth Guy',
+  description: '360 video booth rental in North York. Professional camera, instant video. Weddings, corporate, parties.',
   keywords: '360 booth North York, 360 video booth North York, 360 photo booth rental North York, spinning photo booth, 360 camera booth, corporate 360 booth North York',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/360-booth-north-york',
+    canonical: 'https://www.thephotoboothguy.ca/360-booth-north-york',
   },
 };
 

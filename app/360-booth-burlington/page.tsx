@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, booth360Packages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: '360 Video Booth Burlington | 360 Photo Booth Rental | The Photobooth Guy',
-  description: '360 video booth rental in Burlington with professional camera arm, instant video delivery, and premium platform. Perfect for weddings, corporate events, and parties at Burlington venues including Burlington Convention Centre and Royal Botanical Gardens.',
+  title: '360 Video Booth Burlington | The Photobooth Guy',
+  description: '360 video booth rental in Burlington. Professional camera, instant video. Weddings, corporate, parties.',
   keywords: '360 booth Burlington, 360 video booth Burlington, 360 photo booth rental Burlington, spinning photo booth, 360 camera booth, corporate 360 booth Burlington',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/360-booth-burlington',
+    canonical: 'https://www.thephotoboothguy.ca/360-booth-burlington',
   },
 };
 

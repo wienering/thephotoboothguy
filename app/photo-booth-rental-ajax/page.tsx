@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, standardPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Photo Booth Rental Ajax | Professional Photo Booth Services | The Photobooth Guy',
-  description: 'Professional photo booth rental in Ajax with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant. Serving Ajax Community Centre, Ajax Convention Centre, and venues across Ajax.',
+  title: 'Photo Booth Rental Ajax | The Photobooth Guy',
+  description: 'Photo booth rental in Ajax. DSLR, instant prints, custom templates. Weddings, corporate, parties.',
   keywords: 'photo booth rental Ajax, Ajax photo booth, photo booth hire Ajax, wedding photo booth Ajax, corporate photo booth Ajax, instant prints, DSLR camera, professional attendant',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/photo-booth-rental-ajax',
+    canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-ajax',
   },
 };
 

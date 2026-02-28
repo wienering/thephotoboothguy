@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, booth360Packages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: '360 Video Booth Mississauga | 360 Photo Booth Rental | The Photobooth Guy',
-  description: '360 video booth rental in Mississauga with professional camera arm, instant video delivery, and premium platform. Perfect for weddings, corporate events, and parties at Mississauga venues including The Grand Luxe and Pearson Convention Centre.',
+  title: '360 Video Booth Mississauga | The Photobooth Guy',
+  description: '360 video booth rental in Mississauga. Professional camera, instant video. Weddings, corporate, parties.',
   keywords: '360 booth Mississauga, 360 video booth Mississauga, 360 photo booth rental Mississauga, spinning photo booth, 360 camera booth, corporate 360 booth Mississauga',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/360-booth-mississauga',
+    canonical: 'https://www.thephotoboothguy.ca/360-booth-mississauga',
   },
 };
 

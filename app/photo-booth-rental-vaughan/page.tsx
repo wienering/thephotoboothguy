@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, standardPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Photo Booth Rental Vaughan | Professional Photo Booth Services | The Photobooth Guy',
-  description: 'Professional photo booth rental in Vaughan with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant. Serving Paradise Banquet & Convention Centre, The Manor, and venues across Vaughan.',
+  title: 'Photo Booth Rental Vaughan | The Photobooth Guy',
+  description: 'Photo booth rental in Vaughan. DSLR, instant prints, custom templates. Weddings, corporate, parties.',
   keywords: 'photo booth rental Vaughan, Vaughan photo booth, photo booth hire Vaughan, wedding photo booth Vaughan, corporate photo booth Vaughan, instant prints, professional attendant',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/photo-booth-rental-vaughan',
+    canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-vaughan',
   },
 };
 

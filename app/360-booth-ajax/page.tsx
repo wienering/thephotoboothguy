@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, booth360Packages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: '360 Video Booth Ajax | 360 Photo Booth Rental | The Photobooth Guy',
-  description: '360 video booth rental in Ajax with professional camera arm, instant video delivery, and premium platform. Perfect for weddings, corporate events, and parties at Ajax venues including Ajax Community Centre and Ajax Convention Centre.',
+  title: '360 Video Booth Ajax | The Photobooth Guy',
+  description: '360 video booth rental in Ajax. Professional camera, instant video. Weddings, corporate, parties.',
   keywords: '360 booth Ajax, 360 video booth Ajax, 360 photo booth rental Ajax, spinning photo booth, 360 camera booth, corporate 360 booth Ajax',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/360-booth-ajax',
+    canonical: 'https://www.thephotoboothguy.ca/360-booth-ajax',
   },
 };
 

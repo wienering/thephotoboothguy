@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, standardPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Photo Booth Rental Oshawa | Professional Photo Booth Services | The Photobooth Guy',
-  description: 'Professional photo booth rental in Oshawa with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant. Serving Oshawa Convention Centre, Regent Theatre, and venues across Oshawa.',
+  title: 'Photo Booth Rental Oshawa | The Photobooth Guy',
+  description: 'Photo booth rental in Oshawa. DSLR, instant prints, custom templates. Weddings, corporate, parties.',
   keywords: 'photo booth rental Oshawa, Oshawa photo booth, photo booth hire Oshawa, wedding photo booth Oshawa, corporate photo booth Oshawa, instant prints, DSLR camera, professional attendant',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/photo-booth-rental-oshawa',
+    canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-oshawa',
   },
 };
 

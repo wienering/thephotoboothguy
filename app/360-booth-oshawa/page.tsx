@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, booth360Packages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: '360 Video Booth Oshawa | 360 Photo Booth Rental | The Photobooth Guy',
-  description: '360 video booth rental in Oshawa with professional camera arm, instant video delivery, and premium platform. Perfect for weddings, corporate events, and parties at Oshawa venues including Oshawa Convention Centre and Regent Theatre.',
+  title: '360 Video Booth Oshawa | The Photobooth Guy',
+  description: '360 video booth rental in Oshawa. Professional camera, instant video. Weddings, corporate, parties.',
   keywords: '360 booth Oshawa, 360 video booth Oshawa, 360 photo booth rental Oshawa, spinning photo booth, 360 camera booth, corporate 360 booth Oshawa',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/360-booth-oshawa',
+    canonical: 'https://www.thephotoboothguy.ca/360-booth-oshawa',
   },
 };
 

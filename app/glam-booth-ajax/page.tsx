@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, glamBoothPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Glam Booth Ajax | Black and White Kardashian Style Photo Booth | The Photobooth Guy',
-  description: 'Kardashian-style black and white glam booth rental in Ajax. Professional lighting, high-quality prints, and stunning aesthetic for weddings and upscale events. Available at Ajax Community Centre and premium Ajax venues.',
+  title: 'Glam Booth Ajax | The Photobooth Guy',
+  description: 'Glam booth rental in Ajax. Black and white, professional lighting. Weddings and events.',
   keywords: 'glam booth Ajax, black and white photo booth Ajax, Kardashian style photo booth, glamour booth Ajax, wedding glam booth, upscale photo booth Ajax',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/glam-booth-ajax',
+    canonical: 'https://www.thephotoboothguy.ca/glam-booth-ajax',
   },
 };
 

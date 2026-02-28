@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, glamBoothPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Glam Booth Oakville | Black and White Kardashian Style Photo Booth | The Photobooth Guy',
-  description: 'Kardashian-style black and white glam booth rental in Oakville. Professional lighting, high-quality prints, and stunning aesthetic for weddings and upscale events. Available at Oakville Conference Centre and premium Oakville venues.',
+  title: 'Glam Booth Oakville | The Photobooth Guy',
+  description: 'Glam booth rental in Oakville. Black and white, professional lighting. Weddings and events.',
   keywords: 'glam booth Oakville, black and white photo booth Oakville, Kardashian style photo booth, glamour booth Oakville, wedding glam booth, upscale photo booth Oakville',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/glam-booth-oakville',
+    canonical: 'https://www.thephotoboothguy.ca/glam-booth-oakville',
   },
 };
 

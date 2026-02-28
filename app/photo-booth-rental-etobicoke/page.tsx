@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, standardPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Photo Booth Rental Etobicoke | Professional Photo Booth Services | The Photobooth Guy',
-  description: 'Professional photo booth rental in Etobicoke with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant. Serving The Old Mill, Humber Valley Golf Club, and venues across Etobicoke.',
+  title: 'Photo Booth Rental Etobicoke | The Photobooth Guy',
+  description: 'Photo booth rental in Etobicoke. DSLR, instant prints, custom templates. Weddings, corporate, parties.',
   keywords: 'photo booth rental Etobicoke, Etobicoke photo booth, photo booth hire Etobicoke, wedding photo booth Etobicoke, corporate photo booth Etobicoke, instant prints, DSLR camera, professional attendant',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/photo-booth-rental-etobicoke',
+    canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-etobicoke',
   },
 };
 

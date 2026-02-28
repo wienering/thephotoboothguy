@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, booth360Packages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: '360 Video Booth Pickering | 360 Photo Booth Rental | The Photobooth Guy',
-  description: '360 video booth rental in Pickering with professional camera arm, instant video delivery, and premium platform. Perfect for weddings, corporate events, and parties at Pickering venues including Pickering Recreation Complex and Pickering Convention Centre.',
+  title: '360 Video Booth Pickering | The Photobooth Guy',
+  description: '360 video booth rental in Pickering. Professional camera, instant video. Weddings, corporate, parties.',
   keywords: '360 booth Pickering, 360 video booth Pickering, 360 photo booth rental Pickering, spinning photo booth, 360 camera booth, corporate 360 booth Pickering',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/360-booth-pickering',
+    canonical: 'https://www.thephotoboothguy.ca/360-booth-pickering',
   },
 };
 

@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, standardPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Photo Booth Rental Oakville | Professional Photo Booth Services | The Photobooth Guy',
-  description: 'Professional photo booth rental in Oakville with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant. Serving Oakville Conference Centre, Oakville Centre, and venues across the city.',
+  title: 'Photo Booth Rental Oakville | The Photobooth Guy',
+  description: 'Photo booth rental in Oakville. DSLR, instant prints, custom templates. Weddings, corporate, parties.',
   keywords: 'photo booth rental Oakville, Oakville photo booth, photo booth hire Oakville, wedding photo booth Oakville, corporate photo booth Oakville, instant prints, DSLR camera, professional attendant',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/photo-booth-rental-oakville',
+    canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-oakville',
   },
 };
 

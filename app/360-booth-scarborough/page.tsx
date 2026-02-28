@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, booth360Packages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: '360 Video Booth Scarborough | 360 Photo Booth Rental | The Photobooth Guy',
-  description: '360 video booth rental in Scarborough with professional camera arm, instant video delivery, and premium platform. Perfect for weddings, corporate events, and parties at Scarborough venues including Scarborough Convention Centre and Toronto Congress Centre.',
+  title: '360 Video Booth Scarborough | The Photobooth Guy',
+  description: '360 video booth rental in Scarborough. Professional camera, instant video. Weddings, corporate, parties.',
   keywords: '360 booth Scarborough, 360 video booth Scarborough, 360 photo booth rental Scarborough, spinning photo booth, 360 camera booth, corporate 360 booth Scarborough',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/360-booth-scarborough',
+    canonical: 'https://www.thephotoboothguy.ca/360-booth-scarborough',
   },
 };
 

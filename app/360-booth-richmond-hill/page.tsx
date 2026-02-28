@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, booth360Packages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: '360 Video Booth Richmond Hill | 360 Photo Booth Rental | The Photobooth Guy',
-  description: '360 video booth rental in Richmond Hill with professional camera arm, instant video delivery, and premium platform. Perfect for weddings, corporate events, and parties at Richmond Hill venues including Richmond Hill Centre and Richmond Green.',
+  title: '360 Video Booth Richmond Hill | The Photobooth Guy',
+  description: '360 video booth rental in Richmond Hill. Professional camera, instant video. Weddings, corporate, parties.',
   keywords: '360 booth Richmond Hill, 360 video booth Richmond Hill, 360 photo booth rental Richmond Hill, spinning photo booth, 360 camera booth, corporate 360 booth Richmond Hill',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/360-booth-richmond-hill',
+    canonical: 'https://www.thephotoboothguy.ca/360-booth-richmond-hill',
   },
 };
 

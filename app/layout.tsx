@@ -14,7 +14,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Photo Booth Rental Toronto & GTA | The Photobooth Guy",
-  description: "Professional photo booth rental services in Toronto, Mississauga, Brampton, Vaughan, and Markham. Premium DSLR cameras, instant prints, custom templates, stunning backdrops, and exceptional service for weddings, corporate events, and parties.",
+  description: "Photo booth rental in Toronto & GTA. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Packages from $550.",
   keywords: "photo booth rental, Toronto, GTA, Mississauga, Brampton, Vaughan, Markham, wedding photo booth, corporate photo booth, event photography, instant prints, DSLR camera, professional attendant",
   icons: {
     icon: "/favicon.ico",

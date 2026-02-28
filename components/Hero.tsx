@@ -8,9 +8,11 @@ import { heroTextReveal, fadeIn } from '@/lib/gsap';
 interface HeroProps {
   /** Optional background image path (e.g. from /photos/). Shown with dark overlay for readability. */
   backgroundImage?: string;
+  /** Alt text for the hero image. */
+  alt?: string;
 }
 
-export default function Hero({ backgroundImage }: HeroProps = {}) {
+export default function Hero({ backgroundImage, alt }: HeroProps = {}) {
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -33,7 +35,7 @@ export default function Hero({ backgroundImage }: HeroProps = {}) {
         <>
           <Image
             src={backgroundImage}
-            alt=""
+            alt={alt ?? 'Photo booth hero'}
             fill
             className="object-cover object-center"
             sizes="100vw"

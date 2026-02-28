@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, standardPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Photo Booth Rental North York | Professional Photo Booth Services | The Photobooth Guy',
-  description: 'Professional photo booth rental in North York with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant. Serving Toronto Congress Centre, The International Centre, and venues across North York.',
+  title: 'Photo Booth Rental North York | The Photobooth Guy',
+  description: 'Photo booth rental in North York. DSLR, instant prints, custom templates. Weddings, corporate, parties.',
   keywords: 'photo booth rental North York, North York photo booth, photo booth hire North York, wedding photo booth North York, corporate photo booth North York, instant prints, DSLR camera, professional attendant',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/photo-booth-rental-north-york',
+    canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-north-york',
   },
 };
 

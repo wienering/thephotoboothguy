@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Audio Guest Book Oshawa | Wedding Voicemail Guest Book Rental | The Photobooth Guy',
-  description: 'Audio guest book rental in Oshawa with vintage telephone handset. Capture heartfelt voice messages at your wedding or event. Professional service for Oshawa weddings at Oshawa Convention Centre and venues across Oshawa.',
+  title: 'Audio Guest Book Oshawa | The Photobooth Guy',
+  description: 'Audio guest book rental in Oshawa. Vintage telephone for wedding voice messages. Professional service.',
   keywords: 'audio guest book Oshawa, wedding voicemail guest book, audio guestbook rental Oshawa, voice message guest book, telephone guest book Oshawa',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/audio-guest-book-oshawa',
+    canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-oshawa',
   },
 };
 

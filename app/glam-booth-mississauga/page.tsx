@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, glamBoothPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Glam Booth Mississauga | Black and White Kardashian Style Photo Booth | The Photobooth Guy',
-  description: 'Kardashian-style black and white glam booth rental in Mississauga. Professional lighting, high-quality prints, and stunning aesthetic for weddings and upscale events. Available at The Grand Luxe and premium Mississauga venues.',
+  title: 'Glam Booth Mississauga | The Photobooth Guy',
+  description: 'Glam booth rental in Mississauga. Black and white, professional lighting. Weddings and events.',
   keywords: 'glam booth Mississauga, black and white photo booth Mississauga, Kardashian style photo booth, glamour booth Mississauga, wedding glam booth',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/glam-booth-mississauga',
+    canonical: 'https://www.thephotoboothguy.ca/glam-booth-mississauga',
   },
 };
 

@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, booth360Packages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: '360 Video Booth Vaughan | 360 Photo Booth Rental | The Photobooth Guy',
-  description: '360 video booth rental in Vaughan with professional camera arm, instant video delivery, and premium platform. Perfect for weddings, corporate events, and parties at Vaughan venues including Paradise Convention Centre and The Manor.',
+  title: '360 Video Booth Vaughan | The Photobooth Guy',
+  description: '360 video booth rental in Vaughan. Professional camera, instant video. Weddings, corporate, parties.',
   keywords: '360 booth Vaughan, 360 video booth Vaughan, 360 photo booth rental Vaughan, spinning photo booth, 360 camera booth, corporate 360 booth Vaughan',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/360-booth-vaughan',
+    canonical: 'https://www.thephotoboothguy.ca/360-booth-vaughan',
   },
 };
 

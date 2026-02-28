@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, glamBoothPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Glam Booth Pickering | Black and White Kardashian Style Photo Booth | The Photobooth Guy',
-  description: 'Kardashian-style black and white glam booth rental in Pickering. Professional lighting, high-quality prints, and stunning aesthetic for weddings and upscale events. Available at Pickering Recreation Complex and premium Pickering venues.',
+  title: 'Glam Booth Pickering | The Photobooth Guy',
+  description: 'Glam booth rental in Pickering. Black and white, professional lighting. Weddings and events.',
   keywords: 'glam booth Pickering, black and white photo booth Pickering, Kardashian style photo booth, glamour booth Pickering, wedding glam booth, upscale photo booth Pickering',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/glam-booth-pickering',
+    canonical: 'https://www.thephotoboothguy.ca/glam-booth-pickering',
   },
 };
 

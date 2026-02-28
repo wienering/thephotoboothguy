@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, glamBoothPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Glam Booth Toronto | Black and White Kardashian Style Photo Booth | The Photobooth Guy',
-  description: 'Kardashian-style black and white glam booth rental in Toronto. Professional lighting, high-quality prints, and stunning aesthetic for weddings and upscale events. Available at Liberty Grand, Arcadian Court, and premium Toronto venues.',
+  title: 'Glam Booth Toronto | The Photobooth Guy',
+  description: 'Glam booth rental in Toronto. Black and white, professional lighting. Weddings and events.',
   keywords: 'glam booth Toronto, black and white photo booth Toronto, Kardashian style photo booth, glamour booth Toronto, wedding glam booth, upscale photo booth Toronto',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/glam-booth-toronto',
+    canonical: 'https://www.thephotoboothguy.ca/glam-booth-toronto',
   },
 };
 

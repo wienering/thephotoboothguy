@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, booth360Packages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: '360 Video Booth Whitby | 360 Photo Booth Rental | The Photobooth Guy',
-  description: '360 video booth rental in Whitby with professional camera arm, instant video delivery, and premium platform. Perfect for weddings, corporate events, and parties at Whitby venues including Whitby Convention Centre and Iroquois Park Sports Centre.',
+  title: '360 Video Booth Whitby | The Photobooth Guy',
+  description: '360 video booth rental in Whitby. Professional camera, instant video. Weddings, corporate, parties.',
   keywords: '360 booth Whitby, 360 video booth Whitby, 360 photo booth rental Whitby, spinning photo booth, 360 camera booth, corporate 360 booth Whitby',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/360-booth-whitby',
+    canonical: 'https://www.thephotoboothguy.ca/360-booth-whitby',
   },
 };
 

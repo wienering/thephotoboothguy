@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, standardPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Photo Booth Rental Scarborough | Professional Photo Booth Services | The Photobooth Guy',
-  description: 'Professional photo booth rental in Scarborough with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant. Serving Scarborough Convention Centre, Toronto Congress Centre, and venues across Scarborough.',
+  title: 'Photo Booth Rental Scarborough | The Photobooth Guy',
+  description: 'Photo booth rental in Scarborough. DSLR, instant prints, custom templates. Weddings, corporate, parties.',
   keywords: 'photo booth rental Scarborough, Scarborough photo booth, photo booth hire Scarborough, wedding photo booth Scarborough, corporate photo booth Scarborough, instant prints, DSLR camera, professional attendant',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/photo-booth-rental-scarborough',
+    canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-scarborough',
   },
 };
 

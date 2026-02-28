@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, booth360Packages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: '360 Video Booth Oakville | 360 Photo Booth Rental | The Photobooth Guy',
-  description: '360 video booth rental in Oakville with professional camera arm, instant video delivery, and premium platform. Perfect for weddings, corporate events, and parties at Oakville venues including Oakville Conference Centre and Glen Abbey.',
+  title: '360 Video Booth Oakville | The Photobooth Guy',
+  description: '360 video booth rental in Oakville. Professional camera, instant video. Weddings, corporate, parties.',
   keywords: '360 booth Oakville, 360 video booth Oakville, 360 photo booth rental Oakville, spinning photo booth, 360 camera booth, corporate 360 booth Oakville',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/360-booth-oakville',
+    canonical: 'https://www.thephotoboothguy.ca/360-booth-oakville',
   },
 };
 

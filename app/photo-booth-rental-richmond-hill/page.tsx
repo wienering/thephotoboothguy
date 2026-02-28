@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, standardPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Photo Booth Rental Richmond Hill | Professional Photo Booth Services | The Photobooth Guy',
-  description: 'Professional photo booth rental in Richmond Hill with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant. Serving Richmond Hill Centre, Richmond Green, and venues across the city.',
+  title: 'Photo Booth Rental Richmond Hill | The Photobooth Guy',
+  description: 'Photo booth rental in Richmond Hill. DSLR, instant prints, custom templates. Weddings, corporate, parties.',
   keywords: 'photo booth rental Richmond Hill, Richmond Hill photo booth, photo booth hire Richmond Hill, wedding photo booth Richmond Hill, corporate photo booth Richmond Hill, instant prints, DSLR camera, professional attendant',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/photo-booth-rental-richmond-hill',
+    canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-richmond-hill',
   },
 };
 

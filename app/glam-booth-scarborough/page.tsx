@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, glamBoothPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Glam Booth Scarborough | Black and White Kardashian Style Photo Booth | The Photobooth Guy',
-  description: 'Kardashian-style black and white glam booth rental in Scarborough. Professional lighting, high-quality prints, and stunning aesthetic for weddings and upscale events. Available at Scarborough Convention Centre and premium Scarborough venues.',
+  title: 'Glam Booth Scarborough | The Photobooth Guy',
+  description: 'Glam booth rental in Scarborough. Black and white, professional lighting. Weddings and events.',
   keywords: 'glam booth Scarborough, black and white photo booth Scarborough, Kardashian style photo booth, glamour booth Scarborough, wedding glam booth, upscale photo booth Scarborough',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/glam-booth-scarborough',
+    canonical: 'https://www.thephotoboothguy.ca/glam-booth-scarborough',
   },
 };
 

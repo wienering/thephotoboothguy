@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, glamBoothPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Glam Booth Vaughan | Black and White Kardashian Style Photo Booth | The Photobooth Guy',
-  description: 'Kardashian-style black and white glam booth rental in Vaughan. Professional lighting, high-quality prints, and stunning aesthetic for weddings and upscale events. Available at Paradise Convention Centre and premium Vaughan venues.',
+  title: 'Glam Booth Vaughan | The Photobooth Guy',
+  description: 'Glam booth rental in Vaughan. Black and white, professional lighting. Weddings and events.',
   keywords: 'glam booth Vaughan, black and white photo booth Vaughan, Kardashian style photo booth, glamour booth Vaughan, wedding glam booth',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/glam-booth-vaughan',
+    canonical: 'https://www.thephotoboothguy.ca/glam-booth-vaughan',
   },
 };
 

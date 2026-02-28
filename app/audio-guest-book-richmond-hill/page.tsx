@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Audio Guest Book Richmond Hill | Wedding Voicemail Guest Book Rental | The Photobooth Guy',
-  description: 'Audio guest book rental in Richmond Hill with vintage telephone handset. Capture heartfelt voice messages at your wedding or event. Professional service for Richmond Hill weddings at Richmond Hill Centre and venues across the city.',
+  title: 'Audio Guest Book Richmond Hill | The Photobooth Guy',
+  description: 'Audio guest book rental in Richmond Hill. Vintage telephone for wedding voice messages. Professional service.',
   keywords: 'audio guest book Richmond Hill, wedding voicemail guest book, audio guestbook rental Richmond Hill, voice message guest book, telephone guest book Richmond Hill',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/audio-guest-book-richmond-hill',
+    canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-richmond-hill',
   },
 };
 

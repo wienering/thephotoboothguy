@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, glamBoothPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Glam Booth Etobicoke | Black and White Kardashian Style Photo Booth | The Photobooth Guy',
-  description: 'Kardashian-style black and white glam booth rental in Etobicoke. Professional lighting, high-quality prints, and stunning aesthetic for weddings and upscale events. Available at The Old Mill and premium Etobicoke venues.',
+  title: 'Glam Booth Etobicoke | The Photobooth Guy',
+  description: 'Glam booth rental in Etobicoke. Black and white, professional lighting. Weddings and events.',
   keywords: 'glam booth Etobicoke, black and white photo booth Etobicoke, Kardashian style photo booth, glamour booth Etobicoke, wedding glam booth, upscale photo booth Etobicoke',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/glam-booth-etobicoke',
+    canonical: 'https://www.thephotoboothguy.ca/glam-booth-etobicoke',
   },
 };
 

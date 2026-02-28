@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, standardPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Photo Booth Rental Burlington | Professional Photo Booth Services | The Photobooth Guy',
-  description: 'Professional photo booth rental in Burlington with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant. Serving Burlington Convention Centre, Royal Botanical Gardens, and venues across the city.',
+  title: 'Photo Booth Rental Burlington | The Photobooth Guy',
+  description: 'Photo booth rental in Burlington. DSLR, instant prints, custom templates. Weddings, corporate, parties.',
   keywords: 'photo booth rental Burlington, Burlington photo booth, photo booth hire Burlington, wedding photo booth Burlington, corporate photo booth Burlington, instant prints, DSLR camera, professional attendant',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/photo-booth-rental-burlington',
+    canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-burlington',
   },
 };
 

@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Audio Guest Book Whitby | Wedding Voicemail Guest Book Rental | The Photobooth Guy',
-  description: 'Audio guest book rental in Whitby with vintage telephone handset. Capture heartfelt voice messages at your wedding or event. Professional service for Whitby weddings at Whitby Convention Centre and venues across Whitby.',
+  title: 'Audio Guest Book Whitby | The Photobooth Guy',
+  description: 'Audio guest book rental in Whitby. Vintage telephone for wedding voice messages. Professional service.',
   keywords: 'audio guest book Whitby, wedding voicemail guest book, audio guestbook rental Whitby, voice message guest book, telephone guest book Whitby',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/audio-guest-book-whitby',
+    canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-whitby',
   },
 };
 

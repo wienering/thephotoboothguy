@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, glamBoothPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Glam Booth Oshawa | Black and White Kardashian Style Photo Booth | The Photobooth Guy',
-  description: 'Kardashian-style black and white glam booth rental in Oshawa. Professional lighting, high-quality prints, and stunning aesthetic for weddings and upscale events. Available at Oshawa Convention Centre and premium Oshawa venues.',
+  title: 'Glam Booth Oshawa | The Photobooth Guy',
+  description: 'Glam booth rental in Oshawa. Black and white, professional lighting. Weddings and events.',
   keywords: 'glam booth Oshawa, black and white photo booth Oshawa, Kardashian style photo booth, glamour booth Oshawa, wedding glam booth, upscale photo booth Oshawa',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/glam-booth-oshawa',
+    canonical: 'https://www.thephotoboothguy.ca/glam-booth-oshawa',
   },
 };
 

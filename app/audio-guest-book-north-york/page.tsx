@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Audio Guest Book North York | Wedding Voicemail Guest Book Rental | The Photobooth Guy',
-  description: 'Audio guest book rental in North York with vintage telephone handset. Capture heartfelt voice messages at your wedding or event. Professional service for North York weddings at Toronto Congress Centre and venues across North York.',
+  title: 'Audio Guest Book North York | The Photobooth Guy',
+  description: 'Audio guest book rental in North York. Vintage telephone for wedding voice messages. Professional service.',
   keywords: 'audio guest book North York, wedding voicemail guest book, audio guestbook rental North York, voice message guest book, telephone guest book North York',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/audio-guest-book-north-york',
+    canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-north-york',
   },
 };
 

@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, standardPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Photo Booth Rental Whitby | Professional Photo Booth Services | The Photobooth Guy',
-  description: 'Professional photo booth rental in Whitby with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant. Serving Whitby Convention Centre, Iroquois Park Sports Centre, and venues across Whitby.',
+  title: 'Photo Booth Rental Whitby | The Photobooth Guy',
+  description: 'Photo booth rental in Whitby. DSLR, instant prints, custom templates. Weddings, corporate, parties.',
   keywords: 'photo booth rental Whitby, Whitby photo booth, photo booth hire Whitby, wedding photo booth Whitby, corporate photo booth Whitby, instant prints, DSLR camera, professional attendant',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/photo-booth-rental-whitby',
+    canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-whitby',
   },
 };
 

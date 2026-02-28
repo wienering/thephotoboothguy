@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Audio Guest Book Scarborough | Wedding Voicemail Guest Book Rental | The Photobooth Guy',
-  description: 'Audio guest book rental in Scarborough with vintage telephone handset. Capture heartfelt voice messages at your wedding or event. Professional service for Scarborough weddings at Scarborough Convention Centre and venues across Scarborough.',
+  title: 'Audio Guest Book Scarborough | The Photobooth Guy',
+  description: 'Audio guest book rental in Scarborough. Vintage telephone for wedding voice messages. Professional service.',
   keywords: 'audio guest book Scarborough, wedding voicemail guest book, audio guestbook rental Scarborough, voice message guest book, telephone guest book Scarborough',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/audio-guest-book-scarborough',
+    canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-scarborough',
   },
 };
 

@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Audio Guest Book Etobicoke | Wedding Voicemail Guest Book Rental | The Photobooth Guy',
-  description: 'Audio guest book rental in Etobicoke with vintage telephone handset. Capture heartfelt voice messages at your wedding or event. Professional service for Etobicoke weddings at The Old Mill and venues across Etobicoke.',
+  title: 'Audio Guest Book Etobicoke | The Photobooth Guy',
+  description: 'Audio guest book rental in Etobicoke. Vintage telephone for wedding voice messages. Professional service.',
   keywords: 'audio guest book Etobicoke, wedding voicemail guest book, audio guestbook rental Etobicoke, voice message guest book, telephone guest book Etobicoke',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/audio-guest-book-etobicoke',
+    canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-etobicoke',
   },
 };
 

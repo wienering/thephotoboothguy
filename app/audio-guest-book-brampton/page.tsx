@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Audio Guest Book Brampton | Wedding Voicemail Guest Book Rental | The Photobooth Guy',
-  description: 'Audio guest book rental in Brampton with vintage telephone handset. Capture heartfelt voice messages at your wedding or event. Professional service for Brampton weddings at Great Hall and venues across the city.',
+  title: 'Audio Guest Book Brampton | The Photobooth Guy',
+  description: 'Audio guest book rental in Brampton. Vintage telephone for wedding voice messages. Professional service.',
   keywords: 'audio guest book Brampton, wedding voicemail guest book, audio guestbook rental Brampton, voice message guest book, telephone guest book Brampton',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/audio-guest-book-brampton',
+    canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-brampton',
   },
 };
 

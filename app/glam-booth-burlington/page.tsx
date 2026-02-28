@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, glamBoothPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Glam Booth Burlington | Black and White Kardashian Style Photo Booth | The Photobooth Guy',
-  description: 'Kardashian-style black and white glam booth rental in Burlington. Professional lighting, high-quality prints, and stunning aesthetic for weddings and upscale events. Available at Burlington Convention Centre and premium Burlington venues.',
+  title: 'Glam Booth Burlington | The Photobooth Guy',
+  description: 'Glam booth rental in Burlington. Black and white, professional lighting. Weddings and events.',
   keywords: 'glam booth Burlington, black and white photo booth Burlington, Kardashian style photo booth, glamour booth Burlington, wedding glam booth, upscale photo booth Burlington',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/glam-booth-burlington',
+    canonical: 'https://www.thephotoboothguy.ca/glam-booth-burlington',
   },
 };
 

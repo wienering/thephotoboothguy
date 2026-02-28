@@ -94,7 +94,7 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
           <>
             <Image
               src={heroImage.src}
-              alt=""
+              alt={heroImage.alt ?? 'Photo booth hero'}
               fill
               className="object-cover object-center"
               sizes="100vw"

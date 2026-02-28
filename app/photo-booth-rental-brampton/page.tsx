@@ -5,11 +5,11 @@ import { serviceSchema } from '@/lib/schema';
 import { venues, standardPackages } from '@/lib/sil-data';
 
 export const metadata: Metadata = {
-  title: 'Photo Booth Rental Brampton | Professional Photo Booth Services | The Photobooth Guy',
-  description: 'Professional photo booth rental in Brampton with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant. Serving Great Hall, Terrace Banquet Hall, and venues across Brampton.',
+  title: 'Photo Booth Rental Brampton | The Photobooth Guy',
+  description: 'Photo booth rental in Brampton. DSLR, instant prints, custom templates. Weddings, corporate, parties.',
   keywords: 'photo booth rental Brampton, Brampton photo booth, photo booth hire Brampton, wedding photo booth Brampton, corporate photo booth Brampton, instant prints, professional attendant',
   alternates: {
-    canonical: 'https://thephotoboothguy.ca/photo-booth-rental-brampton',
+    canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-brampton',
   },
 };
 
