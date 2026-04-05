@@ -1,102 +1,129 @@
-import type { Metadata } from 'next';
-import ServiceLocationPage, { ServiceLocationData } from '@/components/ServiceLocationPage';
-import SchemaMarkup from '@/components/SchemaMarkup';
-import { serviceSchema } from '@/lib/schema';
-import { venues, standardPackages } from '@/lib/sil-data';
+import type { Metadata } from "next";
+import ServiceLocationPage, {
+  ServiceLocationData,
+} from "@/components/ServiceLocationPage";
+import SchemaMarkup from "@/components/SchemaMarkup";
+import { faqSchema, serviceSchema } from "@/lib/schema";
+import { venues, standardPackages } from "@/lib/sil-data";
 
 export const metadata: Metadata = {
-  title: 'Photo Booth Rental Burlington | The Photobooth Guy',
-  description: 'Photo booth rental in Burlington. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
-  keywords: 'photo booth rental Burlington, Burlington photo booth, photo booth hire Burlington, wedding photo booth Burlington, corporate photo booth Burlington, instant prints, DSLR camera, professional attendant',
+  title: "Photo Booth Rental Burlington | The Photobooth Guy",
+  description:
+    "Photo booth rental in Burlington. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
+  keywords:
+    "photo booth rental Burlington, Burlington photo booth, photo booth hire Burlington, wedding photo booth Burlington, corporate photo booth Burlington, instant prints, DSLR camera, professional attendant",
   alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-burlington',
+    canonical: "https://www.thephotoboothguy.ca/photo-booth-rental-burlington",
   },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/photo-booth-rental-burlington' },
+  openGraph: {
+    url: "https://www.thephotoboothguy.ca/photo-booth-rental-burlington",
+  },
 };
 
 const pageData: ServiceLocationData = {
-  serviceName: 'Photo Booth Rental',
-  serviceSlug: 'photo-booth-rental',
-  city: 'Burlington',
-  heroTitle: 'Photo Booth Rental in Burlington',
-  heroSubtitle: 'Professional photo booth services with instant prints, custom templates, stunning backdrops, and props for weddings, corporate events, and parties across Burlington.',
-  description: 'Burlington\'s beautiful lakeside setting and vibrant community make it an ideal location for memorable celebrations. Our photo booth service brings professional entertainment to venues like Burlington Convention Centre and Royal Botanical Gardens, where natural beauty meets elegant event spaces. Burlington events often feature families and friends who want to capture genuine moments together, and our professional DSLR cameras do exactly that - capturing every smile, laugh, and special interaction with stunning clarity. The dye-sublimation printer delivers vibrant prints that become instant keepsakes, while digital copies are sent to phones immediately so guests can share their photos right away. Our trained attendant ensures everything runs smoothly throughout your Burlington event, so you can focus on enjoying the celebration with your guests.',
+  serviceName: "Photo Booth Rental",
+  serviceSlug: "photo-booth-rental",
+  city: "Burlington",
+  heroTitle: "Photo Booth Rental in Burlington",
+  heroSubtitle:
+    "Professional photo booth services with instant prints, custom templates, stunning backdrops, and props for weddings, corporate events, and parties across Burlington.",
+  description:
+    "Burlington's beautiful lakeside setting and vibrant community make it an ideal location for memorable celebrations. Our photo booth service brings professional entertainment to venues like Burlington Convention Centre and Royal Botanical Gardens, where natural beauty meets elegant event spaces. Burlington events often feature families and friends who want to capture genuine moments together, and our professional DSLR cameras do exactly that - capturing every smile, laugh, and special interaction with stunning clarity. The dye-sublimation printer delivers vibrant prints that become instant keepsakes, while digital copies are sent to phones immediately so guests can share their photos right away. Our trained attendant ensures everything runs smoothly throughout your Burlington event, so you can focus on enjoying the celebration with your guests.",
   venues: venues.burlington,
   features: [
     {
-      icon: '📸',
-      title: 'Professional DSLR Camera',
-      description: 'Photo booth rental in Burlington. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
+      icon: "📸",
+      title: "Professional DSLR Camera",
+      description:
+        "Photo booth rental in Burlington. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
     },
     {
-      icon: '🖨️',
-      title: 'Instant Prints',
-      description: 'Photo booth rental in Burlington. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
+      icon: "🖨️",
+      title: "Instant Prints",
+      description:
+        "Photo booth rental in Burlington. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
     },
     {
-      icon: '🎨',
-      title: 'Custom Templates',
-      description: 'Photo booth rental in Burlington. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
+      icon: "🎨",
+      title: "Custom Templates",
+      description:
+        "Photo booth rental in Burlington. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
     },
     {
-      icon: '🎭',
-      title: 'Backdrop & Props',
-      description: 'Photo booth rental in Burlington. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
+      icon: "🎭",
+      title: "Backdrop & Props",
+      description:
+        "Photo booth rental in Burlington. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
     },
     {
-      icon: '👤',
-      title: 'Professional Attendant',
-      description: 'Photo booth rental in Burlington. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
+      icon: "👤",
+      title: "Professional Attendant",
+      description:
+        "Photo booth rental in Burlington. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
     },
     {
-      icon: '📱',
-      title: 'Digital Copies',
-      description: 'Photo booth rental in Burlington. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
+      icon: "📱",
+      title: "Digital Copies",
+      description:
+        "Photo booth rental in Burlington. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
     },
   ],
   packages: standardPackages,
   faqs: [
     {
-      question: 'How much does it cost to rent a photo booth in Burlington?',
-      answer: 'Photo booth rental in Burlington starts at $550 for our Essential package, which includes 2 hours of service with a professional attendant, instant prints, custom templates, backdrop selection, props, and digital delivery. Our Signature package is $750 for 3 hours, and our Premium package is $950 for 4 hours. All packages include the same high-quality equipment and service - you\'re just choosing how long you need the photo booth at your Burlington event.',
+      question: "How much does it cost to rent a photo booth in Burlington?",
+      answer:
+        "Photo booth rental in Burlington starts at $550 for our Essential package, which includes 2 hours of service with a professional attendant, instant prints, custom templates, backdrop selection, props, and digital delivery. Our Signature package is $750 for 3 hours, and our Premium package is $950 for 4 hours. All packages include the same high-quality equipment and service - you're just choosing how long you need the photo booth at your Burlington event.",
     },
     {
-      question: 'What areas of Burlington do you serve for photo booth rentals?',
-      answer: 'We provide photo booth rental services throughout all areas of Burlington including the downtown core, Aldershot, Alton Village, and surrounding neighborhoods. We regularly serve venues like Burlington Convention Centre, Royal Botanical Gardens, Burlington Performing Arts Centre, and many others across the city. If you\'re planning an event anywhere in Burlington, we can help.',
+      question:
+        "What areas of Burlington do you serve for photo booth rentals?",
+      answer:
+        "We provide photo booth rental services throughout all areas of Burlington including the downtown core, Aldershot, Alton Village, and surrounding neighborhoods. We regularly serve venues like Burlington Convention Centre, Royal Botanical Gardens, Burlington Performing Arts Centre, and many others across the city. If you're planning an event anywhere in Burlington, we can help.",
     },
     {
-      question: 'How long does it take to get photo booth prints in Burlington?',
-      answer: 'Our dye-sublimation printer produces high-quality prints in approximately 10-15 seconds. Guests receive their custom printed photos almost immediately after taking their picture, and digital copies are sent to their phones or email instantly. There\'s no waiting around - your Burlington event guests get their photos right away.',
+      question:
+        "How long does it take to get photo booth prints in Burlington?",
+      answer:
+        "Our dye-sublimation printer produces high-quality prints in approximately 10-15 seconds. Guests receive their custom printed photos almost immediately after taking their picture, and digital copies are sent to their phones or email instantly. There's no waiting around - your Burlington event guests get their photos right away.",
     },
     {
-      question: 'Can I customize the photo booth print template for my Burlington wedding?',
-      answer: 'Absolutely! We design custom print templates at no additional charge for all Burlington events. Just share your wedding colors, theme, logos, or any design elements you want, and we\'ll create templates that perfectly match your Burlington wedding. Many couples include their names, wedding date, or a special message on the templates.',
+      question:
+        "Can I customize the photo booth print template for my Burlington wedding?",
+      answer:
+        "Absolutely! We design custom print templates at no additional charge for all Burlington events. Just share your wedding colors, theme, logos, or any design elements you want, and we'll create templates that perfectly match your Burlington wedding. Many couples include their names, wedding date, or a special message on the templates.",
     },
     {
-      question: 'What type of camera do you use for photo booth rentals in Burlington?',
-      answer: 'We use professional DSLR cameras with high-quality lenses and professional lighting to ensure every photo looks amazing. The equipment is maintained to the highest standards and tested before every Burlington event. You get the same quality you\'d expect from a professional photographer, but in a fun, interactive photo booth format.',
+      question:
+        "What type of camera do you use for photo booth rentals in Burlington?",
+      answer:
+        "We use professional DSLR cameras with high-quality lenses and professional lighting to ensure every photo looks amazing. The equipment is maintained to the highest standards and tested before every Burlington event. You get the same quality you'd expect from a professional photographer, but in a fun, interactive photo booth format.",
     },
     {
-      question: 'Do you provide a photo booth attendant for events in Burlington?',
-      answer: 'Yes! Every photo booth rental in Burlington includes a professional attendant who stays on site for the entire duration of your event. They handle setup, assist guests, troubleshoot any issues, and make sure everything runs smoothly so you can enjoy your celebration without worrying about the photo booth.',
+      question:
+        "Do you provide a photo booth attendant for events in Burlington?",
+      answer:
+        "Yes! Every photo booth rental in Burlington includes a professional attendant who stays on site for the entire duration of your event. They handle setup, assist guests, troubleshoot any issues, and make sure everything runs smoothly so you can enjoy your celebration without worrying about the photo booth.",
     },
     {
-      question: 'What backdrop options are available for photo booth rentals in Burlington?',
-      answer: 'We offer a wide variety of backdrop options for Burlington photo booth rentals, from elegant solid colors to sequined backdrops, florals, and custom designs. You can view our backdrops page to see options, or contact us to discuss what would work best for your Burlington event. We can also create custom backdrops if you have something specific in mind.',
+      question:
+        "What backdrop options are available for photo booth rentals in Burlington?",
+      answer:
+        "We offer a wide variety of backdrop options for Burlington photo booth rentals, from elegant solid colors to sequined backdrops, florals, and custom designs. You can view our backdrops page to see options, or contact us to discuss what would work best for your Burlington event. We can also create custom backdrops if you have something specific in mind.",
     },
   ],
   relatedServices: [
     {
-      name: 'Glam Booth Burlington',
-      href: '/glam-booth-burlington',
+      name: "Glam Booth Burlington",
+      href: "/glam-booth-burlington",
     },
     {
-      name: 'Audio Guest Book Burlington',
-      href: '/audio-guest-book-burlington',
+      name: "Audio Guest Book Burlington",
+      href: "/audio-guest-book-burlington",
     },
     {
-      name: '360 Booth Burlington',
-      href: '/360-booth-burlington',
+      name: "360 Booth Burlington",
+      href: "/360-booth-burlington",
     },
   ],
 };
@@ -105,14 +132,16 @@ export default function PhotoBoothRentalBurlington() {
   return (
     <>
       <SchemaMarkup
-        schema={serviceSchema(
-          'Photo Booth Rental Burlington',
-          'Professional photo booth rental in Burlington with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant for weddings, corporate events, and parties.',
-          '$550'
-        )}
+        schema={[
+          serviceSchema(
+            "Photo Booth Rental Burlington",
+            "Professional photo booth rental in Burlington with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant for weddings, corporate events, and parties.",
+            "$550",
+          ),
+          faqSchema(pageData.faqs),
+        ]}
       />
       <ServiceLocationPage data={pageData} />
     </>
   );
 }
-

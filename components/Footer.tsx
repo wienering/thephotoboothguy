@@ -34,6 +34,17 @@ export default function Footer() {
                 </svg>
               </a>
               <a
+                href="https://www.google.com/maps/search/?api=1&query=The+Photobooth+Guy%2C+340+Mill+Rd%2C+Etobicoke%2C+ON+M9C+1Y8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Google Maps — The Photobooth Guy"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                </svg>
+              </a>
+              <a
                 href="https://www.instagram.com/photoboothguys.ca/"
                 target="_blank"
                 rel="noopener noreferrer"

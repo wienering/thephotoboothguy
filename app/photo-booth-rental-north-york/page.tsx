@@ -1,102 +1,129 @@
-import type { Metadata } from 'next';
-import ServiceLocationPage, { ServiceLocationData } from '@/components/ServiceLocationPage';
-import SchemaMarkup from '@/components/SchemaMarkup';
-import { serviceSchema } from '@/lib/schema';
-import { venues, standardPackages } from '@/lib/sil-data';
+import type { Metadata } from "next";
+import ServiceLocationPage, {
+  ServiceLocationData,
+} from "@/components/ServiceLocationPage";
+import SchemaMarkup from "@/components/SchemaMarkup";
+import { faqSchema, serviceSchema } from "@/lib/schema";
+import { venues, standardPackages } from "@/lib/sil-data";
 
 export const metadata: Metadata = {
-  title: 'Photo Booth Rental North York | The Photobooth Guy',
-  description: 'Photo booth rental in North York. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
-  keywords: 'photo booth rental North York, North York photo booth, photo booth hire North York, wedding photo booth North York, corporate photo booth North York, instant prints, DSLR camera, professional attendant',
+  title: "Photo Booth Rental North York | The Photobooth Guy",
+  description:
+    "Photo booth rental in North York. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
+  keywords:
+    "photo booth rental North York, North York photo booth, photo booth hire North York, wedding photo booth North York, corporate photo booth North York, instant prints, DSLR camera, professional attendant",
   alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/photo-booth-rental-north-york',
+    canonical: "https://www.thephotoboothguy.ca/photo-booth-rental-north-york",
   },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/photo-booth-rental-north-york' },
+  openGraph: {
+    url: "https://www.thephotoboothguy.ca/photo-booth-rental-north-york",
+  },
 };
 
 const pageData: ServiceLocationData = {
-  serviceName: 'Photo Booth Rental',
-  serviceSlug: 'photo-booth-rental',
-  city: 'North York',
-  heroTitle: 'Photo Booth Rental in North York',
-  heroSubtitle: 'Professional photo booth services with instant prints, custom templates, stunning backdrops, and props for weddings, corporate events, and parties across North York.',
-  description: 'North York\'s bustling business district and diverse residential neighborhoods create the perfect setting for memorable events. Our photo booth service brings professional entertainment to venues like Toronto Congress Centre and The International Centre, where corporate events and family celebrations come together. North York events often feature large gatherings with guests from across the GTA, and our professional DSLR cameras capture every moment with stunning clarity. The dye-sublimation printer delivers vibrant prints that become instant keepsakes, while digital copies are sent to phones immediately so guests can share their photos right away. Our trained attendant ensures everything runs smoothly throughout your North York event, handling setup, operation, and any questions from guests so you can focus on enjoying the celebration.',
+  serviceName: "Photo Booth Rental",
+  serviceSlug: "photo-booth-rental",
+  city: "North York",
+  heroTitle: "Photo Booth Rental in North York",
+  heroSubtitle:
+    "Professional photo booth services with instant prints, custom templates, stunning backdrops, and props for weddings, corporate events, and parties across North York.",
+  description:
+    "North York's bustling business district and diverse residential neighborhoods create the perfect setting for memorable events. Our photo booth service brings professional entertainment to venues like Toronto Congress Centre and The International Centre, where corporate events and family celebrations come together. North York events often feature large gatherings with guests from across the GTA, and our professional DSLR cameras capture every moment with stunning clarity. The dye-sublimation printer delivers vibrant prints that become instant keepsakes, while digital copies are sent to phones immediately so guests can share their photos right away. Our trained attendant ensures everything runs smoothly throughout your North York event, handling setup, operation, and any questions from guests so you can focus on enjoying the celebration.",
   venues: venues.northYork,
   features: [
     {
-      icon: '📸',
-      title: 'Professional DSLR Camera',
-      description: 'Photo booth rental in North York. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
+      icon: "📸",
+      title: "Professional DSLR Camera",
+      description:
+        "Photo booth rental in North York. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
     },
     {
-      icon: '🖨️',
-      title: 'Instant Prints',
-      description: 'Photo booth rental in North York. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
+      icon: "🖨️",
+      title: "Instant Prints",
+      description:
+        "Photo booth rental in North York. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
     },
     {
-      icon: '🎨',
-      title: 'Custom Templates',
-      description: 'Photo booth rental in North York. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
+      icon: "🎨",
+      title: "Custom Templates",
+      description:
+        "Photo booth rental in North York. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
     },
     {
-      icon: '🎭',
-      title: 'Backdrop & Props',
-      description: 'Photo booth rental in North York. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
+      icon: "🎭",
+      title: "Backdrop & Props",
+      description:
+        "Photo booth rental in North York. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
     },
     {
-      icon: '👤',
-      title: 'Professional Attendant',
-      description: 'Photo booth rental in North York. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
+      icon: "👤",
+      title: "Professional Attendant",
+      description:
+        "Photo booth rental in North York. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
     },
     {
-      icon: '📱',
-      title: 'Digital Copies',
-      description: 'Photo booth rental in North York. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.',
+      icon: "📱",
+      title: "Digital Copies",
+      description:
+        "Photo booth rental in North York. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
     },
   ],
   packages: standardPackages,
   faqs: [
     {
-      question: 'How much does it cost to rent a photo booth in North York?',
-      answer: 'Photo booth rental in North York starts at $550 for our Essential package, which includes 2 hours of service with a professional attendant, instant prints, custom templates, backdrop selection, props, and digital delivery. Our Signature package is $750 for 3 hours, and our Premium package is $950 for 4 hours. All packages include the same high-quality equipment and service - you\'re just choosing how long you need the photo booth at your North York event.',
+      question: "How much does it cost to rent a photo booth in North York?",
+      answer:
+        "Photo booth rental in North York starts at $550 for our Essential package, which includes 2 hours of service with a professional attendant, instant prints, custom templates, backdrop selection, props, and digital delivery. Our Signature package is $750 for 3 hours, and our Premium package is $950 for 4 hours. All packages include the same high-quality equipment and service - you're just choosing how long you need the photo booth at your North York event.",
     },
     {
-      question: 'What areas of North York do you serve for photo booth rentals?',
-      answer: 'We provide photo booth rental services throughout all areas of North York including Yonge and Finch, Sheppard, Downsview, and surrounding neighborhoods. We regularly serve venues like Toronto Congress Centre, The International Centre, York Mills Gallery, and many others across the area. If you\'re planning an event anywhere in North York, we can help.',
+      question:
+        "What areas of North York do you serve for photo booth rentals?",
+      answer:
+        "We provide photo booth rental services throughout all areas of North York including Yonge and Finch, Sheppard, Downsview, and surrounding neighborhoods. We regularly serve venues like Toronto Congress Centre, The International Centre, York Mills Gallery, and many others across the area. If you're planning an event anywhere in North York, we can help.",
     },
     {
-      question: 'How long does it take to get photo booth prints in North York?',
-      answer: 'Our dye-sublimation printer produces high-quality prints in approximately 10-15 seconds. Guests receive their custom printed photos almost immediately after taking their picture, and digital copies are sent to their phones or email instantly. There\'s no waiting around - your North York event guests get their photos right away.',
+      question:
+        "How long does it take to get photo booth prints in North York?",
+      answer:
+        "Our dye-sublimation printer produces high-quality prints in approximately 10-15 seconds. Guests receive their custom printed photos almost immediately after taking their picture, and digital copies are sent to their phones or email instantly. There's no waiting around - your North York event guests get their photos right away.",
     },
     {
-      question: 'Can I customize the photo booth print template for my North York wedding?',
-      answer: 'Absolutely! We design custom print templates at no additional charge for all North York events. Just share your wedding colors, theme, logos, or any design elements you want, and we\'ll create templates that perfectly match your North York wedding. Many couples include their names, wedding date, or a special message on the templates.',
+      question:
+        "Can I customize the photo booth print template for my North York wedding?",
+      answer:
+        "Absolutely! We design custom print templates at no additional charge for all North York events. Just share your wedding colors, theme, logos, or any design elements you want, and we'll create templates that perfectly match your North York wedding. Many couples include their names, wedding date, or a special message on the templates.",
     },
     {
-      question: 'What type of camera do you use for photo booth rentals in North York?',
-      answer: 'We use professional DSLR cameras with high-quality lenses and professional lighting to ensure every photo looks amazing. The equipment is maintained to the highest standards and tested before every North York event. You get the same quality you\'d expect from a professional photographer, but in a fun, interactive photo booth format.',
+      question:
+        "What type of camera do you use for photo booth rentals in North York?",
+      answer:
+        "We use professional DSLR cameras with high-quality lenses and professional lighting to ensure every photo looks amazing. The equipment is maintained to the highest standards and tested before every North York event. You get the same quality you'd expect from a professional photographer, but in a fun, interactive photo booth format.",
     },
     {
-      question: 'Do you provide a photo booth attendant for events in North York?',
-      answer: 'Yes! Every photo booth rental in North York includes a professional attendant who stays on site for the entire duration of your event. They handle setup, assist guests, troubleshoot any issues, and make sure everything runs smoothly so you can enjoy your celebration without worrying about the photo booth.',
+      question:
+        "Do you provide a photo booth attendant for events in North York?",
+      answer:
+        "Yes! Every photo booth rental in North York includes a professional attendant who stays on site for the entire duration of your event. They handle setup, assist guests, troubleshoot any issues, and make sure everything runs smoothly so you can enjoy your celebration without worrying about the photo booth.",
     },
     {
-      question: 'What backdrop options are available for photo booth rentals in North York?',
-      answer: 'We offer a wide variety of backdrop options for North York photo booth rentals, from elegant solid colors to sequined backdrops, florals, and custom designs. You can view our backdrops page to see options, or contact us to discuss what would work best for your North York event. We can also create custom backdrops if you have something specific in mind.',
+      question:
+        "What backdrop options are available for photo booth rentals in North York?",
+      answer:
+        "We offer a wide variety of backdrop options for North York photo booth rentals, from elegant solid colors to sequined backdrops, florals, and custom designs. You can view our backdrops page to see options, or contact us to discuss what would work best for your North York event. We can also create custom backdrops if you have something specific in mind.",
     },
   ],
   relatedServices: [
     {
-      name: 'Glam Booth North York',
-      href: '/glam-booth-north-york',
+      name: "Glam Booth North York",
+      href: "/glam-booth-north-york",
     },
     {
-      name: 'Audio Guest Book North York',
-      href: '/audio-guest-book-north-york',
+      name: "Audio Guest Book North York",
+      href: "/audio-guest-book-north-york",
     },
     {
-      name: '360 Booth North York',
-      href: '/360-booth-north-york',
+      name: "360 Booth North York",
+      href: "/360-booth-north-york",
     },
   ],
 };
@@ -105,14 +132,16 @@ export default function PhotoBoothRentalNorthYork() {
   return (
     <>
       <SchemaMarkup
-        schema={serviceSchema(
-          'Photo Booth Rental North York',
-          'Professional photo booth rental in North York with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant for weddings, corporate events, and parties.',
-          '$550'
-        )}
+        schema={[
+          serviceSchema(
+            "Photo Booth Rental North York",
+            "Professional photo booth rental in North York with DSLR cameras, instant prints, custom templates, backdrop, props, and professional attendant for weddings, corporate events, and parties.",
+            "$550",
+          ),
+          faqSchema(pageData.faqs),
+        ]}
       />
       <ServiceLocationPage data={pageData} />
     </>
   );
 }
-

@@ -20,12 +20,23 @@ const localBusinessData = {
     "latitude": 43.655,
     "longitude": -79.577
   },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=The+Photobooth+Guy%2C+340+Mill+Rd%2C+Etobicoke%2C+ON+M9C+1Y8",
   "areaServed": [
     { "@type": "City", "name": "Toronto" },
     { "@type": "City", "name": "Mississauga" },
     { "@type": "City", "name": "Brampton" },
     { "@type": "City", "name": "Vaughan" },
-    { "@type": "City", "name": "Markham" }
+    { "@type": "City", "name": "Markham" },
+    { "@type": "City", "name": "Richmond Hill" },
+    { "@type": "City", "name": "Oakville" },
+    { "@type": "City", "name": "Burlington" },
+    { "@type": "City", "name": "Etobicoke" },
+    { "@type": "City", "name": "Scarborough" },
+    { "@type": "City", "name": "North York" },
+    { "@type": "City", "name": "Ajax" },
+    { "@type": "City", "name": "Pickering" },
+    { "@type": "City", "name": "Whitby" },
+    { "@type": "City", "name": "Oshawa" }
   ],
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
@@ -110,7 +121,18 @@ export const serviceSchema = (serviceName: string, description: string, price?: 
     { "@type": "City", "name": "Toronto" },
     { "@type": "City", "name": "Mississauga" },
     { "@type": "City", "name": "Brampton" },
-    { "@type": "City", "name": "Vaughan" }
+    { "@type": "City", "name": "Vaughan" },
+    { "@type": "City", "name": "Markham" },
+    { "@type": "City", "name": "Richmond Hill" },
+    { "@type": "City", "name": "Oakville" },
+    { "@type": "City", "name": "Burlington" },
+    { "@type": "City", "name": "Etobicoke" },
+    { "@type": "City", "name": "Scarborough" },
+    { "@type": "City", "name": "North York" },
+    { "@type": "City", "name": "Ajax" },
+    { "@type": "City", "name": "Pickering" },
+    { "@type": "City", "name": "Whitby" },
+    { "@type": "City", "name": "Oshawa" }
   ],
   "serviceType": "Photo Booth Rental",
   ...(price && {
@@ -148,7 +170,8 @@ export const organizationSchema = {
   },
   "sameAs": [
     "https://www.facebook.com/photoboothguys.toronto",
-    "https://www.instagram.com/photoboothguys.ca/"
+    "https://www.instagram.com/photoboothguys.ca/",
+    "https://www.google.com/maps/search/?api=1&query=The+Photobooth+Guy%2C+340+Mill+Rd%2C+Etobicoke%2C+ON+M9C+1Y8"
   ]
 };
 

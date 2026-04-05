@@ -7,6 +7,8 @@ import PackageCard from '@/components/PackageCard';
 import Testimonial from '@/components/Testimonial';
 import { revealOnScroll, heroTextReveal, fadeIn } from '@/lib/gsap';
 import { getImagesForServicePage } from '@/lib/content-images';
+import { resolveServiceFeatures } from '@/lib/service-feature-copy';
+import { getSilLocalBlock } from '@/lib/sil-local-blocks';
 
 export interface ServiceLocationData {
   serviceName: string;
@@ -51,6 +53,16 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
   const { heroImage, contentImages } = useMemo(
     () => getImagesForServicePage(data.serviceSlug, data.city),
     [data.serviceSlug, data.city]
+  );
+
+  const displayFeatures = useMemo(
+    () => resolveServiceFeatures(data.features, data.serviceSlug),
+    [data.features, data.serviceSlug]
+  );
+
+  const localBlock = useMemo(
+    () => getSilLocalBlock(data.city, data.serviceSlug),
+    [data.city, data.serviceSlug]
   );
 
   const isAudioGuestBook = data.serviceSlug === 'audio-guest-book';
@@ -230,6 +242,32 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
         </div>
       </section>
 
+      {localBlock && (
+        <section className="w-full py-20 bg-white border-t border-gray-100">
+          <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight max-w-3xl">
+              {localBlock.heading}
+            </h2>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-light max-w-3xl mb-8">
+              {localBlock.body}
+            </p>
+            {localBlock.links && localBlock.links.length > 0 && (
+              <div className="flex flex-wrap gap-3">
+                {localBlock.links.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="inline-flex items-center border border-black text-black px-6 py-3 text-sm font-medium hover:bg-black hover:text-white transition-colors uppercase tracking-wider"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
       {/* Features Section */}
       <section ref={featuresRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
@@ -240,7 +278,7 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
           </div>
           <div className={`flex flex-col ${isAudioGuestBook ? 'lg:flex-row' : ''} gap-12`}>
             <div className={`grid grid-cols-1 md:grid-cols-2 ${isAudioGuestBook ? 'lg:grid-cols-2 flex-1' : 'lg:grid-cols-3'} gap-12`}>
-              {data.features.map((feature, index) => (
+              {displayFeatures.map((feature, index) => (
                 <div key={index} className="group">
                   <div className="text-4xl mb-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
                     {feature.icon}

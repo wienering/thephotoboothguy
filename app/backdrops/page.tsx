@@ -4,8 +4,9 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 import { serviceSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Photo Booth Backdrops - The Photobooth Guy | Toronto',
-  description: 'Photo booth backdrop collection for Toronto & GTA. Elegant, themed, modern options. Custom designs for weddings, parties, and corporate events.',
+  title: 'Photo Booth Backdrops Toronto & GTA | Sequin, Floral, Custom',
+  description:
+    'Browse photo booth backdrops for Toronto & GTA events: sequin, floral, modern, and custom-print options for weddings, parties, and corporate. See what pairs with our booth rental.',
   keywords: 'photo booth backdrops, event backdrops, custom backdrops, Toronto photo booth, backdrop rental',
   alternates: {
     canonical: 'https://www.thephotoboothguy.ca/backdrops',

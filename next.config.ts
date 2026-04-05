@@ -17,6 +17,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'thephotoboothguy.ca' }],
+        destination: 'https://www.thephotoboothguy.ca/:path*',
+        permanent: true,
+      },
+      {
         source: '/contact-us',
         destination: '/contact',
         permanent: true, // 301 redirect
