@@ -29,7 +29,7 @@ export default function Hero({ backgroundImage, alt }: HeroProps = {}) {
   return (
     <section
       ref={heroRef}
-      className="relative -mt-20 pt-20 min-h-screen flex items-center justify-center bg-black text-white overflow-hidden"
+      className="relative -mt-20 pt-20 min-h-[100vh] flex items-center justify-center bg-black text-white overflow-hidden"
     >
       {backgroundImage && (
         <>
