@@ -108,7 +108,11 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
               src={heroImage.src}
               alt={heroImage.alt ?? 'Photo booth hero'}
               fill
-              className="object-cover object-top"
+              className={
+                isAudioGuestBook
+                  ? 'object-cover max-md:object-right-top md:object-top'
+                  : 'object-cover object-top'
+              }
               sizes="100vw"
               priority
             />
