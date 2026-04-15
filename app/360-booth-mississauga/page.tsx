@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
+import { definePageMetadata } from '@/lib/page-metadata';
 import ServiceLocationPage, { ServiceLocationData } from '@/components/ServiceLocationPage';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { serviceSchema } from '@/lib/schema';
 import { venues, booth360Packages } from '@/lib/sil-data';
 
-export const metadata: Metadata = {
-  title: '360 Video Booth Mississauga | The Photobooth Guy',
-  description: '360 video booth rental in Mississauga. Professional camera arm, instant video delivery. Weddings, corporate events, parties. Book your GTA event.',
-  keywords: '360 booth Mississauga, 360 video booth Mississauga, 360 photo booth rental Mississauga, spinning photo booth, 360 camera booth, corporate 360 booth Mississauga',
-  alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/360-booth-mississauga',
-  },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/360-booth-mississauga' },
-};
+export const metadata: Metadata = definePageMetadata({
+  title: "360 Video Booth Mississauga | The Photobooth Guy",
+  description: "360 video booth rental in Mississauga. Professional camera arm, instant video delivery. Weddings, corporate events, parties. Book your GTA event.",
+  keywords: "360 booth Mississauga, 360 video booth Mississauga, 360 photo booth rental Mississauga, spinning photo booth, 360 camera booth, corporate 360 booth Mississauga",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/360-booth-mississauga',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: '360 Video Booth',

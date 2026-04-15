@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { definePageMetadata } from "@/lib/page-metadata";
 import ServiceLocationPage, {
   ServiceLocationData,
 } from "@/components/ServiceLocationPage";
@@ -6,19 +7,12 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 import { faqSchema, serviceSchema } from "@/lib/schema";
 import { venues, standardPackages } from "@/lib/sil-data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = definePageMetadata({
   title: "Photo Booth Rental Vaughan | The Photobooth Guy",
-  description:
-    "Photo booth rental in Vaughan. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
-  keywords:
-    "photo booth rental Vaughan, Vaughan photo booth, photo booth hire Vaughan, wedding photo booth Vaughan, corporate photo booth Vaughan, instant prints, professional attendant",
-  alternates: {
-    canonical: "https://www.thephotoboothguy.ca/photo-booth-rental-vaughan",
-  },
-  openGraph: {
-    url: "https://www.thephotoboothguy.ca/photo-booth-rental-vaughan",
-  },
-};
+  description: "Photo booth rental in Vaughan. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
+  keywords: "photo booth rental Vaughan, Vaughan photo booth, photo booth hire Vaughan, wedding photo booth Vaughan, corporate photo booth Vaughan, instant prints, professional attendant",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/photo-booth-rental-vaughan',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: "Photo Booth Rental",

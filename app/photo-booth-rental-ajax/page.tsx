@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { definePageMetadata } from "@/lib/page-metadata";
 import ServiceLocationPage, {
   ServiceLocationData,
 } from "@/components/ServiceLocationPage";
@@ -6,17 +7,12 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 import { faqSchema, serviceSchema } from "@/lib/schema";
 import { venues, standardPackages } from "@/lib/sil-data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = definePageMetadata({
   title: "Photo Booth Rental Ajax | The Photobooth Guy",
-  description:
-    "Photo booth rental in Ajax. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
-  keywords:
-    "photo booth rental Ajax, Ajax photo booth, photo booth hire Ajax, wedding photo booth Ajax, corporate photo booth Ajax, instant prints, DSLR camera, professional attendant",
-  alternates: {
-    canonical: "https://www.thephotoboothguy.ca/photo-booth-rental-ajax",
-  },
-  openGraph: { url: "https://www.thephotoboothguy.ca/photo-booth-rental-ajax" },
-};
+  description: "Photo booth rental in Ajax. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
+  keywords: "photo booth rental Ajax, Ajax photo booth, photo booth hire Ajax, wedding photo booth Ajax, corporate photo booth Ajax, instant prints, DSLR camera, professional attendant",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/photo-booth-rental-ajax',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: "Photo Booth Rental",

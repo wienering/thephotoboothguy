@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
+import { definePageMetadata } from '@/lib/page-metadata';
 import Image from 'next/image';
 import { decodeQuote, isQuoteExpired } from '@/lib/quote-utils';
 import { getImagesForBookPage } from '@/lib/content-images';
 import BookingForm from '@/components/BookingForm';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'Book Your Photo Booth | The Photobooth Guy',
-  description: 'Book your photo booth rental for Toronto and the GTA. Submit your booking request and we\'ll confirm pricing and availability.',
-  alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/book',
-  },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/book' },
-};
+export const metadata: Metadata = definePageMetadata({
+  title: "Book Your Photo Booth | The Photobooth Guy",
+  description: "Book your photo booth rental for Toronto and the GTA. Submit your booking request and we'll confirm pricing and availability.",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/book',
+});
 
 interface PageProps {
   searchParams: Promise<{ quote?: string }>;

@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
+import { definePageMetadata } from '@/lib/page-metadata';
 import ServiceLocationPage, { ServiceLocationData } from '@/components/ServiceLocationPage';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { serviceSchema } from '@/lib/schema';
 import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
-export const metadata: Metadata = {
-  title: 'Audio Guest Book Burlington | The Photobooth Guy',
-  description: 'Audio guest book rental in Burlington. Vintage telephone captures voice messages at weddings. Professional service across the GTA.',
-  keywords: 'audio guest book Burlington, wedding voicemail guest book, audio guestbook rental Burlington, voice message guest book, telephone guest book Burlington',
-  alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-burlington',
-  },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/audio-guest-book-burlington' },
-};
+export const metadata: Metadata = definePageMetadata({
+  title: "Audio Guest Book Burlington | The Photobooth Guy",
+  description: "Audio guest book rental in Burlington. Vintage telephone captures voice messages at weddings. Professional service across the GTA.",
+  keywords: "audio guest book Burlington, wedding voicemail guest book, audio guestbook rental Burlington, voice message guest book, telephone guest book Burlington",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/audio-guest-book-burlington',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: 'Audio Guest Book',

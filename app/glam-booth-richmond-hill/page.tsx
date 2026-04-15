@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
+import { definePageMetadata } from '@/lib/page-metadata';
 import ServiceLocationPage, { ServiceLocationData } from '@/components/ServiceLocationPage';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { serviceSchema } from '@/lib/schema';
 import { venues, glamBoothPackages } from '@/lib/sil-data';
 
-export const metadata: Metadata = {
-  title: 'Glam Booth Richmond Hill | The Photobooth Guy',
-  description: 'Glam booth rental in Richmond Hill. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.',
-  keywords: 'glam booth Richmond Hill, black and white photo booth Richmond Hill, Kardashian style photo booth, glamour booth Richmond Hill, wedding glam booth, upscale photo booth Richmond Hill',
-  alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/glam-booth-richmond-hill',
-  },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/glam-booth-richmond-hill' },
-};
+export const metadata: Metadata = definePageMetadata({
+  title: "Glam Booth Richmond Hill | The Photobooth Guy",
+  description: "Glam booth rental in Richmond Hill. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.",
+  keywords: "glam booth Richmond Hill, black and white photo booth Richmond Hill, Kardashian style photo booth, glamour booth Richmond Hill, wedding glam booth, upscale photo booth Richmond Hill",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/glam-booth-richmond-hill',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: 'Black and White Glam Booth',

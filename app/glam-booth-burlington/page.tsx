@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
+import { definePageMetadata } from '@/lib/page-metadata';
 import ServiceLocationPage, { ServiceLocationData } from '@/components/ServiceLocationPage';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { serviceSchema } from '@/lib/schema';
 import { venues, glamBoothPackages } from '@/lib/sil-data';
 
-export const metadata: Metadata = {
-  title: 'Glam Booth Burlington | The Photobooth Guy',
-  description: 'Glam booth rental in Burlington. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.',
-  keywords: 'glam booth Burlington, black and white photo booth Burlington, Kardashian style photo booth, glamour booth Burlington, wedding glam booth, upscale photo booth Burlington',
-  alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/glam-booth-burlington',
-  },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/glam-booth-burlington' },
-};
+export const metadata: Metadata = definePageMetadata({
+  title: "Glam Booth Burlington | The Photobooth Guy",
+  description: "Glam booth rental in Burlington. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.",
+  keywords: "glam booth Burlington, black and white photo booth Burlington, Kardashian style photo booth, glamour booth Burlington, wedding glam booth, upscale photo booth Burlington",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/glam-booth-burlington',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: 'Black and White Glam Booth',

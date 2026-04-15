@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
+import { definePageMetadata } from '@/lib/page-metadata';
 import ServiceLocationPage, { ServiceLocationData } from '@/components/ServiceLocationPage';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { serviceSchema } from '@/lib/schema';
 import { venues, glamBoothPackages } from '@/lib/sil-data';
 
-export const metadata: Metadata = {
-  title: 'Glam Booth Brampton | The Photobooth Guy',
-  description: 'Glam booth rental in Brampton. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.',
-  keywords: 'glam booth Brampton, black and white photo booth Brampton, Kardashian style photo booth, glamour booth Brampton, wedding glam booth',
-  alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/glam-booth-brampton',
-  },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/glam-booth-brampton' },
-};
+export const metadata: Metadata = definePageMetadata({
+  title: "Glam Booth Brampton | The Photobooth Guy",
+  description: "Glam booth rental in Brampton. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.",
+  keywords: "glam booth Brampton, black and white photo booth Brampton, Kardashian style photo booth, glamour booth Brampton, wedding glam booth",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/glam-booth-brampton',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: 'Black and White Glam Booth',

@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
+import { definePageMetadata } from '@/lib/page-metadata';
 import ServiceLocationPage, { ServiceLocationData } from '@/components/ServiceLocationPage';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { serviceSchema } from '@/lib/schema';
 import { venues, glamBoothPackages } from '@/lib/sil-data';
 
-export const metadata: Metadata = {
-  title: 'Glam Booth Scarborough | The Photobooth Guy',
-  description: 'Glam booth rental in Scarborough. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.',
-  keywords: 'glam booth Scarborough, black and white photo booth Scarborough, Kardashian style photo booth, glamour booth Scarborough, wedding glam booth, upscale photo booth Scarborough',
-  alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/glam-booth-scarborough',
-  },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/glam-booth-scarborough' },
-};
+export const metadata: Metadata = definePageMetadata({
+  title: "Glam Booth Scarborough | The Photobooth Guy",
+  description: "Glam booth rental in Scarborough. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.",
+  keywords: "glam booth Scarborough, black and white photo booth Scarborough, Kardashian style photo booth, glamour booth Scarborough, wedding glam booth, upscale photo booth Scarborough",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/glam-booth-scarborough',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: 'Black and White Glam Booth',

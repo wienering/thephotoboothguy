@@ -1,17 +1,15 @@
 import type { Metadata } from 'next';
+import { definePageMetadata } from '@/lib/page-metadata';
 import TemplatesContent from './TemplatesContent';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { serviceSchema } from '@/lib/schema';
 
-export const metadata: Metadata = {
-  title: 'Custom Photo Templates - The Photobooth Guy',
-  description: 'Custom photo booth templates for your event. Personalized designs, logo integration, theme matching. Weddings, corporate events, and celebrations across the GTA.',
-  keywords: 'photo booth templates, custom photo templates, event templates, photo booth design, Toronto',
-  alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/templates',
-  },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/templates' },
-};
+export const metadata: Metadata = definePageMetadata({
+  title: "Custom Photo Templates - The Photobooth Guy",
+  description: "Custom photo booth templates for your event. Personalized designs, logo integration, theme matching. Weddings, corporate events, and celebrations across the GTA.",
+  keywords: "photo booth templates, custom photo templates, event templates, photo booth design, Toronto",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/templates',
+});
 
 export default function Templates() {
   const templatesServiceSchema = serviceSchema(

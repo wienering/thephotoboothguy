@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
+import { definePageMetadata } from '@/lib/page-metadata';
 import ServiceLocationPage, { ServiceLocationData } from '@/components/ServiceLocationPage';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { serviceSchema } from '@/lib/schema';
 import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
-export const metadata: Metadata = {
-  title: 'Audio Guest Book Vaughan | The Photobooth Guy',
-  description: 'Audio guest book rental in Vaughan. Vintage telephone captures voice messages at weddings. Professional service across the GTA.',
-  keywords: 'audio guest book Vaughan, wedding voicemail guest book, audio guestbook rental Vaughan, voice message guest book, telephone guest book Vaughan',
-  alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-vaughan',
-  },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/audio-guest-book-vaughan' },
-};
+export const metadata: Metadata = definePageMetadata({
+  title: "Audio Guest Book Vaughan | The Photobooth Guy",
+  description: "Audio guest book rental in Vaughan. Vintage telephone captures voice messages at weddings. Professional service across the GTA.",
+  keywords: "audio guest book Vaughan, wedding voicemail guest book, audio guestbook rental Vaughan, voice message guest book, telephone guest book Vaughan",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/audio-guest-book-vaughan',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: 'Audio Guest Book',

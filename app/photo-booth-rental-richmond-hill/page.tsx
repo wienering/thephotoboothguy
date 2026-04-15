@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { definePageMetadata } from "@/lib/page-metadata";
 import ServiceLocationPage, {
   ServiceLocationData,
 } from "@/components/ServiceLocationPage";
@@ -6,20 +7,12 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 import { faqSchema, serviceSchema } from "@/lib/schema";
 import { venues, standardPackages } from "@/lib/sil-data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = definePageMetadata({
   title: "Photo Booth Rental Richmond Hill | The Photobooth Guy",
-  description:
-    "Photo booth rental in Richmond Hill. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
-  keywords:
-    "photo booth rental Richmond Hill, Richmond Hill photo booth, photo booth hire Richmond Hill, wedding photo booth Richmond Hill, corporate photo booth Richmond Hill, instant prints, DSLR camera, professional attendant",
-  alternates: {
-    canonical:
-      "https://www.thephotoboothguy.ca/photo-booth-rental-richmond-hill",
-  },
-  openGraph: {
-    url: "https://www.thephotoboothguy.ca/photo-booth-rental-richmond-hill",
-  },
-};
+  description: "Photo booth rental in Richmond Hill. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
+  keywords: "photo booth rental Richmond Hill, Richmond Hill photo booth, photo booth hire Richmond Hill, wedding photo booth Richmond Hill, corporate photo booth Richmond Hill, instant prints, DSLR camera, professional attendant",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/photo-booth-rental-richmond-hill',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: "Photo Booth Rental",

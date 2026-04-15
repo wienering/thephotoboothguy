@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { definePageMetadata } from "@/lib/page-metadata";
 import ServiceLocationPage, {
   ServiceLocationData,
 } from "@/components/ServiceLocationPage";
@@ -6,19 +7,12 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 import { faqSchema, serviceSchema } from "@/lib/schema";
 import { venues, standardPackages } from "@/lib/sil-data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = definePageMetadata({
   title: "Photo Booth Rental Pickering | The Photobooth Guy",
-  description:
-    "Photo booth rental in Pickering. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
-  keywords:
-    "photo booth rental Pickering, Pickering photo booth, photo booth hire Pickering, wedding photo booth Pickering, corporate photo booth Pickering, instant prints, DSLR camera, professional attendant",
-  alternates: {
-    canonical: "https://www.thephotoboothguy.ca/photo-booth-rental-pickering",
-  },
-  openGraph: {
-    url: "https://www.thephotoboothguy.ca/photo-booth-rental-pickering",
-  },
-};
+  description: "Photo booth rental in Pickering. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Serving the GTA.",
+  keywords: "photo booth rental Pickering, Pickering photo booth, photo booth hire Pickering, wedding photo booth Pickering, corporate photo booth Pickering, instant prints, DSLR camera, professional attendant",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/photo-booth-rental-pickering',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: "Photo Booth Rental",

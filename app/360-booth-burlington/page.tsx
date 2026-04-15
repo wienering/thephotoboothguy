@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
+import { definePageMetadata } from '@/lib/page-metadata';
 import ServiceLocationPage, { ServiceLocationData } from '@/components/ServiceLocationPage';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { serviceSchema } from '@/lib/schema';
 import { venues, booth360Packages } from '@/lib/sil-data';
 
-export const metadata: Metadata = {
-  title: '360 Video Booth Burlington | The Photobooth Guy',
-  description: '360 video booth rental in Burlington. Professional camera arm, instant video delivery. Weddings, corporate events, parties. Book your GTA event.',
-  keywords: '360 booth Burlington, 360 video booth Burlington, 360 photo booth rental Burlington, spinning photo booth, 360 camera booth, corporate 360 booth Burlington',
-  alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/360-booth-burlington',
-  },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/360-booth-burlington' },
-};
+export const metadata: Metadata = definePageMetadata({
+  title: "360 Video Booth Burlington | The Photobooth Guy",
+  description: "360 video booth rental in Burlington. Professional camera arm, instant video delivery. Weddings, corporate events, parties. Book your GTA event.",
+  keywords: "360 booth Burlington, 360 video booth Burlington, 360 photo booth rental Burlington, spinning photo booth, 360 camera booth, corporate 360 booth Burlington",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/360-booth-burlington',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: '360 Video Booth',

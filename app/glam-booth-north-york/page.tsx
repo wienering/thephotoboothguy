@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
+import { definePageMetadata } from '@/lib/page-metadata';
 import ServiceLocationPage, { ServiceLocationData } from '@/components/ServiceLocationPage';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { serviceSchema } from '@/lib/schema';
 import { venues, glamBoothPackages } from '@/lib/sil-data';
 
-export const metadata: Metadata = {
-  title: 'Glam Booth North York | The Photobooth Guy',
-  description: 'Glam booth rental in North York. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.',
-  keywords: 'glam booth North York, black and white photo booth North York, Kardashian style photo booth, glamour booth North York, wedding glam booth, upscale photo booth North York',
-  alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/glam-booth-north-york',
-  },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/glam-booth-north-york' },
-};
+export const metadata: Metadata = definePageMetadata({
+  title: "Glam Booth North York | The Photobooth Guy",
+  description: "Glam booth rental in North York. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.",
+  keywords: "glam booth North York, black and white photo booth North York, Kardashian style photo booth, glamour booth North York, wedding glam booth, upscale photo booth North York",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/glam-booth-north-york',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: 'Black and White Glam Booth',

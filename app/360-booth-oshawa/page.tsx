@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
+import { definePageMetadata } from '@/lib/page-metadata';
 import ServiceLocationPage, { ServiceLocationData } from '@/components/ServiceLocationPage';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { serviceSchema } from '@/lib/schema';
 import { venues, booth360Packages } from '@/lib/sil-data';
 
-export const metadata: Metadata = {
-  title: '360 Video Booth Oshawa | The Photobooth Guy',
-  description: '360 video booth rental in Oshawa. Professional camera arm, instant video delivery. Weddings, corporate events, parties. Book your GTA event.',
-  keywords: '360 booth Oshawa, 360 video booth Oshawa, 360 photo booth rental Oshawa, spinning photo booth, 360 camera booth, corporate 360 booth Oshawa',
-  alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/360-booth-oshawa',
-  },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/360-booth-oshawa' },
-};
+export const metadata: Metadata = definePageMetadata({
+  title: "360 Video Booth Oshawa | The Photobooth Guy",
+  description: "360 video booth rental in Oshawa. Professional camera arm, instant video delivery. Weddings, corporate events, parties. Book your GTA event.",
+  keywords: "360 booth Oshawa, 360 video booth Oshawa, 360 photo booth rental Oshawa, spinning photo booth, 360 camera booth, corporate 360 booth Oshawa",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/360-booth-oshawa',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: '360 Video Booth',

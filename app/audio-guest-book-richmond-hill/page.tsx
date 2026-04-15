@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
+import { definePageMetadata } from '@/lib/page-metadata';
 import ServiceLocationPage, { ServiceLocationData } from '@/components/ServiceLocationPage';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { serviceSchema } from '@/lib/schema';
 import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
-export const metadata: Metadata = {
-  title: 'Audio Guest Book Richmond Hill | The Photobooth Guy',
-  description: 'Audio guest book rental in Richmond Hill. Vintage telephone captures voice messages at weddings. Professional service across the GTA.',
-  keywords: 'audio guest book Richmond Hill, wedding voicemail guest book, audio guestbook rental Richmond Hill, voice message guest book, telephone guest book Richmond Hill',
-  alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-richmond-hill',
-  },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/audio-guest-book-richmond-hill' },
-};
+export const metadata: Metadata = definePageMetadata({
+  title: "Audio Guest Book Richmond Hill | The Photobooth Guy",
+  description: "Audio guest book rental in Richmond Hill. Vintage telephone captures voice messages at weddings. Professional service across the GTA.",
+  keywords: "audio guest book Richmond Hill, wedding voicemail guest book, audio guestbook rental Richmond Hill, voice message guest book, telephone guest book Richmond Hill",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/audio-guest-book-richmond-hill',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: 'Audio Guest Book',

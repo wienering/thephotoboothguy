@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import ClarityProvider from "@/components/ClarityProvider";
 import { organizationSchema } from "@/lib/schema";
+import { DEFAULT_OG_IMAGE } from "@/lib/page-metadata";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
     description: "Photo booth rental in Toronto & GTA. DSLR cameras, instant prints, custom templates. Weddings, corporate events, parties. Packages from $550.",
     siteName: "The Photobooth Guy",
     type: "website",
+    images: [{ ...DEFAULT_OG_IMAGE }],
   },
   twitter: {
     card: "summary_large_image",

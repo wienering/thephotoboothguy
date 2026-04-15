@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
+import { definePageMetadata } from '@/lib/page-metadata';
 import ServiceLocationPage, { ServiceLocationData } from '@/components/ServiceLocationPage';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { serviceSchema } from '@/lib/schema';
 import { venues, booth360Packages } from '@/lib/sil-data';
 
-export const metadata: Metadata = {
-  title: '360 Video Booth Pickering | The Photobooth Guy',
-  description: '360 video booth rental in Pickering. Professional camera arm, instant video delivery. Weddings, corporate events, parties. Book your GTA event.',
-  keywords: '360 booth Pickering, 360 video booth Pickering, 360 photo booth rental Pickering, spinning photo booth, 360 camera booth, corporate 360 booth Pickering',
-  alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/360-booth-pickering',
-  },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/360-booth-pickering' },
-};
+export const metadata: Metadata = definePageMetadata({
+  title: "360 Video Booth Pickering | The Photobooth Guy",
+  description: "360 video booth rental in Pickering. Professional camera arm, instant video delivery. Weddings, corporate events, parties. Book your GTA event.",
+  keywords: "360 booth Pickering, 360 video booth Pickering, 360 photo booth rental Pickering, spinning photo booth, 360 camera booth, corporate 360 booth Pickering",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/360-booth-pickering',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: '360 Video Booth',

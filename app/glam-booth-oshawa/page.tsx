@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
+import { definePageMetadata } from '@/lib/page-metadata';
 import ServiceLocationPage, { ServiceLocationData } from '@/components/ServiceLocationPage';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { serviceSchema } from '@/lib/schema';
 import { venues, glamBoothPackages } from '@/lib/sil-data';
 
-export const metadata: Metadata = {
-  title: 'Glam Booth Oshawa | The Photobooth Guy',
-  description: 'Glam booth rental in Oshawa. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.',
-  keywords: 'glam booth Oshawa, black and white photo booth Oshawa, Kardashian style photo booth, glamour booth Oshawa, wedding glam booth, upscale photo booth Oshawa',
-  alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/glam-booth-oshawa',
-  },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/glam-booth-oshawa' },
-};
+export const metadata: Metadata = definePageMetadata({
+  title: "Glam Booth Oshawa | The Photobooth Guy",
+  description: "Glam booth rental in Oshawa. Black and white, Kardashian-style. Professional lighting for weddings and events. Serving the GTA.",
+  keywords: "glam booth Oshawa, black and white photo booth Oshawa, Kardashian style photo booth, glamour booth Oshawa, wedding glam booth, upscale photo booth Oshawa",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/glam-booth-oshawa',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: 'Black and White Glam Booth',

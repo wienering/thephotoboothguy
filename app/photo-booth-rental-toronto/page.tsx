@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { definePageMetadata } from "@/lib/page-metadata";
 import ServiceLocationPage, {
   ServiceLocationData,
 } from "@/components/ServiceLocationPage";
@@ -6,19 +7,12 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 import { faqSchema, serviceSchema } from "@/lib/schema";
 import { venues, standardPackages } from "@/lib/sil-data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = definePageMetadata({
   title: "Toronto Photo Booth Rental from $550 | Weddings & Corporate",
-  description:
-    "Toronto photo booth rental: DSLR quality, instant prints, custom templates, pro attendant. Weddings, corporate & parties. GTA-wide. Book or call 647-378-5332.",
-  keywords:
-    "photo booth rental Toronto, Toronto photo booth, photo booth hire Toronto, wedding photo booth Toronto, corporate photo booth Toronto, instant prints, DSLR camera, professional attendant",
-  alternates: {
-    canonical: "https://www.thephotoboothguy.ca/photo-booth-rental-toronto",
-  },
-  openGraph: {
-    url: "https://www.thephotoboothguy.ca/photo-booth-rental-toronto",
-  },
-};
+  description: "Toronto photo booth rental: DSLR quality, instant prints, custom templates, pro attendant. Weddings, corporate & parties. GTA-wide. Book or call 647-378-5332.",
+  keywords: "photo booth rental Toronto, Toronto photo booth, photo booth hire Toronto, wedding photo booth Toronto, corporate photo booth Toronto, instant prints, DSLR camera, professional attendant",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/photo-booth-rental-toronto',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: "Photo Booth Rental",

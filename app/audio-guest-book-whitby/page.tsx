@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
+import { definePageMetadata } from '@/lib/page-metadata';
 import ServiceLocationPage, { ServiceLocationData } from '@/components/ServiceLocationPage';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { serviceSchema } from '@/lib/schema';
 import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
-export const metadata: Metadata = {
-  title: 'Audio Guest Book Whitby | The Photobooth Guy',
-  description: 'Audio guest book rental in Whitby. Vintage telephone captures voice messages at weddings. Professional service across the GTA.',
-  keywords: 'audio guest book Whitby, wedding voicemail guest book, audio guestbook rental Whitby, voice message guest book, telephone guest book Whitby',
-  alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-whitby',
-  },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/audio-guest-book-whitby' },
-};
+export const metadata: Metadata = definePageMetadata({
+  title: "Audio Guest Book Whitby | The Photobooth Guy",
+  description: "Audio guest book rental in Whitby. Vintage telephone captures voice messages at weddings. Professional service across the GTA.",
+  keywords: "audio guest book Whitby, wedding voicemail guest book, audio guestbook rental Whitby, voice message guest book, telephone guest book Whitby",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/audio-guest-book-whitby',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: 'Audio Guest Book',

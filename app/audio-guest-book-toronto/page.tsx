@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
+import { definePageMetadata } from '@/lib/page-metadata';
 import ServiceLocationPage, { ServiceLocationData } from '@/components/ServiceLocationPage';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { serviceSchema } from '@/lib/schema';
 import { venues, audioGuestBookPackages } from '@/lib/sil-data';
 
-export const metadata: Metadata = {
-  title: 'Audio Guest Book Toronto | The Photobooth Guy',
-  description: 'Audio guest book rental in Toronto. Vintage telephone captures voice messages at weddings. Professional service across the GTA.',
-  keywords: 'audio guest book Toronto, wedding voicemail guest book, audio guestbook rental Toronto, voice message guest book, telephone guest book Toronto, wedding guest book alternative',
-  alternates: {
-    canonical: 'https://www.thephotoboothguy.ca/audio-guest-book-toronto',
-  },
-  openGraph: { url: 'https://www.thephotoboothguy.ca/audio-guest-book-toronto' },
-};
+export const metadata: Metadata = definePageMetadata({
+  title: "Audio Guest Book Toronto | The Photobooth Guy",
+  description: "Audio guest book rental in Toronto. Vintage telephone captures voice messages at weddings. Professional service across the GTA.",
+  keywords: "audio guest book Toronto, wedding voicemail guest book, audio guestbook rental Toronto, voice message guest book, telephone guest book Toronto, wedding guest book alternative",
+  canonicalUrl: 'https://www.thephotoboothguy.ca/audio-guest-book-toronto',
+});
 
 const pageData: ServiceLocationData = {
   serviceName: 'Audio Guest Book',
