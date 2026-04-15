@@ -15,11 +15,11 @@ export default function PrivacyPolicyContent() {
   const lastUpdated = 'January 2025';
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="w-full pt-32 pb-20 bg-black text-white"
+        className="w-full -mt-20 pt-52 pb-20 bg-black text-white"
       >
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl pt-16">

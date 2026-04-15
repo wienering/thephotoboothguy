@@ -26,11 +26,11 @@ export default function HolidayPartyContent() {
   }, []);
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="relative min-h-[60vh] flex items-center justify-center bg-black text-white overflow-hidden"
+        className="relative -mt-20 pt-20 min-h-[60vh] flex items-center justify-center bg-black text-white overflow-hidden"
       >
         {heroImage && (
           <>

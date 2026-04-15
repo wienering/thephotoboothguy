@@ -204,7 +204,7 @@ export default function HomeContent() {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       <Hero backgroundImage={getHeroForHome()?.src} />
 
       {/* About Section */}
