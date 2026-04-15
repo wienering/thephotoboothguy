@@ -30,11 +30,11 @@ export default function HolidayPartyContent() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="relative -mt-20 pt-20 min-h-[60vh] flex items-center justify-center bg-black text-white overflow-hidden"
+        className="relative -mt-20 pt-20 min-h-[70vh] flex items-center justify-center bg-black text-white overflow-hidden"
       >
         {heroImage && (
           <>
-            <Image src={heroImage.src} alt={heroImage.alt ?? 'Holiday party photo booth'} fill className="object-cover object-center" sizes="100vw" priority />
+            <Image src={heroImage.src} alt={heroImage.alt ?? 'Holiday party photo booth'} fill className="object-cover object-top" sizes="100vw" priority />
             <div className="absolute inset-0 bg-black/55" aria-hidden />
           </>
         )}

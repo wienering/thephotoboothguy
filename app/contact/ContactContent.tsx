@@ -50,7 +50,7 @@ export default function ContactContent() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="relative -mt-20 pt-20 min-h-[60vh] flex items-center justify-center bg-black text-white overflow-hidden"
+        className="relative -mt-20 pt-20 min-h-[70vh] flex items-center justify-center bg-black text-white overflow-hidden"
       >
         {heroImage && (
           <>

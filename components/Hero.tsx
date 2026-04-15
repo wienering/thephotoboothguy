@@ -37,7 +37,7 @@ export default function Hero({ backgroundImage, alt }: HeroProps = {}) {
             src={backgroundImage}
             alt={alt ?? 'Photo booth hero'}
             fill
-            className="object-cover object-center"
+            className="object-cover object-top"
             sizes="100vw"
             priority
           />

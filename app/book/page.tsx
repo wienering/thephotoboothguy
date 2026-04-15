@@ -31,10 +31,10 @@ export default async function BookPage({ searchParams }: PageProps) {
 
   return (
     <div className="min-h-screen">
-      <section className="relative -mt-20 pt-20 min-h-[60vh] flex items-center justify-center bg-black text-white overflow-hidden">
+      <section className="relative -mt-20 pt-20 min-h-[70vh] flex items-center justify-center bg-black text-white overflow-hidden">
         {heroImage && (
           <>
-            <Image src={heroImage.src} alt={heroImage.alt ?? 'Book your event'} fill className="object-cover object-center" sizes="100vw" priority />
+            <Image src={heroImage.src} alt={heroImage.alt ?? 'Book your event'} fill className="object-cover object-top" sizes="100vw" priority />
             <div className="absolute inset-0 bg-black/55" aria-hidden />
           </>
         )}
