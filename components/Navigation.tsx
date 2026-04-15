@@ -28,14 +28,24 @@ export default function Navigation() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  /** Solid bar when scrolled, or when mobile menu is open (readable links over any page). */
+  const solidNav = scrolled || isOpen;
+
+  const linkDesktop = solidNav
+    ? 'text-gray-700 hover:text-black'
+    : 'text-white/90 hover:text-white';
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white border-b border-gray-200' : 'bg-white'
+        solidNav
+          ? 'bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm'
+          : 'bg-transparent border-b border-transparent'
       }`}
     >
       <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
@@ -46,7 +56,9 @@ export default function Navigation() {
               alt="The Photobooth Guy"
               width={300}
               height={90}
-              className="h-16 md:h-20 w-auto object-contain"
+              className={`h-16 md:h-20 w-auto object-contain transition-[filter] duration-300 ${
+                solidNav ? '' : 'brightness-0 invert'
+              }`}
               priority
             />
           </Link>
@@ -54,9 +66,7 @@ export default function Navigation() {
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="/"
-              className={`px-3 py-2 text-xs uppercase tracking-wider font-medium transition-colors ${
-                scrolled ? 'text-gray-700 hover:text-black' : 'text-gray-700 hover:text-black'
-              }`}
+              className={`px-3 py-2 text-xs uppercase tracking-wider font-medium transition-colors ${linkDesktop}`}
             >
               Home
             </Link>
@@ -68,9 +78,8 @@ export default function Navigation() {
               onMouseLeave={() => setServicesOpen(false)}
             >
               <button
-                className={`px-3 py-2 text-xs uppercase tracking-wider font-medium transition-colors ${
-                  scrolled ? 'text-gray-700 hover:text-black' : 'text-gray-700 hover:text-black'
-                }`}
+                type="button"
+                className={`px-3 py-2 text-xs uppercase tracking-wider font-medium transition-colors ${linkDesktop}`}
               >
                 Services ▾
               </button>
@@ -99,9 +108,8 @@ export default function Navigation() {
               onMouseLeave={() => setGalleryOpen(false)}
             >
               <button
-                className={`px-3 py-2 text-xs uppercase tracking-wider font-medium transition-colors ${
-                  scrolled ? 'text-gray-700 hover:text-black' : 'text-gray-700 hover:text-black'
-                }`}
+                type="button"
+                className={`px-3 py-2 text-xs uppercase tracking-wider font-medium transition-colors ${linkDesktop}`}
               >
                 Browse ▾
               </button>
@@ -125,9 +133,7 @@ export default function Navigation() {
 
             <Link
               href="/contact"
-              className={`px-3 py-2 text-xs uppercase tracking-wider font-medium transition-colors ${
-                scrolled ? 'text-gray-700 hover:text-black' : 'text-gray-700 hover:text-black'
-              }`}
+              className={`px-3 py-2 text-xs uppercase tracking-wider font-medium transition-colors ${linkDesktop}`}
             >
               Contact
             </Link>
@@ -136,9 +142,9 @@ export default function Navigation() {
               <Link
                 href="/quote"
                 className={`border px-4 py-2 text-xs uppercase tracking-wider font-medium transition-all ${
-                  scrolled 
-                    ? 'border-gray-300 text-gray-700 hover:border-black hover:text-black' 
-                    : 'border-gray-300 text-gray-700 hover:border-black hover:text-black'
+                  solidNav
+                    ? 'border-gray-300 text-gray-700 hover:border-black hover:text-black'
+                    : 'border-white/50 text-white hover:border-white hover:bg-white/10'
                 }`}
               >
                 Get Quote
@@ -146,9 +152,9 @@ export default function Navigation() {
               <Link
                 href="/book"
                 className={`border px-5 py-2 text-xs uppercase tracking-wider font-medium transition-all ${
-                  scrolled 
-                    ? 'border-black text-black hover:bg-black hover:text-white' 
-                    : 'border-black text-black hover:bg-black hover:text-white'
+                  solidNav
+                    ? 'border-black text-black hover:bg-black hover:text-white'
+                    : 'border-white text-white hover:bg-white hover:text-black'
                 }`}
               >
                 Book Now
@@ -157,8 +163,9 @@ export default function Navigation() {
           </div>
 
           <button
+            type="button"
             className={`md:hidden focus:outline-none transition-colors ${
-              scrolled ? 'text-black' : 'text-black'
+              solidNav ? 'text-black' : 'text-white'
             }`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
