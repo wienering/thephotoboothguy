@@ -37,32 +37,32 @@ const pageData: ServiceLocationData = {
   packages: standardPackages,
   faqs: [
     {
-      question: "What is on the wedding print template?",
+      question: "What Is on the Wedding Print Template?",
       answer:
         "We work with you on a layout for 2x6 or 4x6 prints. Most couples add first names, wedding date, a monogram, or a simple graphic that matches the stationery. We send a proof before the day so you can request tweaks.",
     },
     {
-      question: "When should we run the booth during the wedding?",
+      question: "When Should We Run the Booth During the Wedding?",
       answer:
         "Many receptions use the booth from cocktail or early reception through the busy dance block. We stay for the hours you book and keep the line moving. Tell us your rough timeline and we suggest placement in the room relative to the bar, dance floor, and exits.",
     },
     {
-      question: "How many hours do we need?",
+      question: "How Many Hours Do We Need?",
       answer:
         "Essential is 2 hours, Signature 3, Premium 4. Bigger guest lists and long receptions usually lean toward 3 or 4 hours. If you are unsure, describe your headcount and we help you size it, without selling you hours you will not use.",
     },
     {
-      question: "Is the attendant included for the whole time?",
+      question: "Is the Attendant Included for the Whole Time?",
       answer:
         "Yes. The attendant sets up, runs the booth, helps guests, and repacks at the end. You are not asking a friend to troubleshoot the printer in a suit.",
     },
     {
-      question: "What does a wedding package cost?",
+      question: "What Does a Wedding Package Cost?",
       answer:
         "As with all our Toronto clients, rates start at $550 for 2 hours (Essential), $750 for 3 (Signature), and $950 for 4 (Premium), with the same inclusions in each. Only the time changes, not the features.",
     },
     {
-      question: "How do we book or get a custom quote?",
+      question: "How Do We Book or Get a Custom Quote?",
       answer:
         "Use the Get a Quote or Book links on this site with your date and venue, or call 647-378-5332. We confirm availability, package length, and print details through our normal booking process.",
     },

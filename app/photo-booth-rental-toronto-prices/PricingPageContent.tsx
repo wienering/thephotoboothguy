@@ -9,17 +9,17 @@ import { revealOnScroll, heroTextReveal, fadeIn } from '@/lib/gsap';
 
 const pricingFaqs = [
   {
-    question: 'Are there hidden fees on top of the package price?',
+    question: 'Are There Hidden Fees on Top of the Package Price?',
     answer:
       'Our listed packages are for the booth service as described, including the attendant, prints on your template, backdrops, props, and digital guest delivery. If your venue is outside our normal service area, travel may apply: ask at booking so we can quote it. We do not add a surprise "setup fee" on top of a confirmed package for standard Toronto and GTA work.',
   },
   {
-    question: 'Why is one company cheaper than your rates online?',
+    question: 'Why Is One Company Cheaper Than Your Rates Online?',
     answer:
       'Some options use tablet-only photos, or drop the attendant, or only cover a short part of the night. We price for a full staffed booth, pro capture, and instant prints for the full hours you book. If your priority is a different format, you can still compare, but the service is not always the same thing under a similar headline.',
   },
   {
-    question: 'What if I need more or less time?',
+    question: 'What If I Need More or Less Time?',
     answer:
       'Packages are 2, 3, or 4 hours. If you are between lengths, the middle tier is usually the best value. If you are not sure, tell us your guest count and schedule and we can suggest a fit.',
   },
@@ -121,7 +121,7 @@ export default function PricingPageContent() {
 
           <div className="overflow-x-auto -mx-6 px-6 sm:mx-0 sm:px-0">
             <table className="w-full min-w-[640px] border border-gray-200 text-left">
-              <caption className="sr-only">Photo booth package pricing for Toronto and GTA</caption>
+              <caption className="sr-only">Photo Booth Package Pricing for Toronto and GTA</caption>
               <thead>
                 <tr className="bg-gray-50 border-b border-gray-200">
                   <th className="p-4 font-light text-black">Package</th>
@@ -142,7 +142,7 @@ export default function PricingPageContent() {
           </div>
 
           <div className="mt-12 max-w-3xl">
-            <h3 className="text-2xl font-light text-black mb-4">What is included in every row</h3>
+            <h3 className="text-2xl font-light text-black mb-4">What Is Included in Every Row</h3>
             <ul className="space-y-2 text-gray-700 font-light list-disc pl-5">
               {standardPackages[0].features.map((f) => (
                 <li key={f}>{f}</li>
@@ -151,7 +151,7 @@ export default function PricingPageContent() {
           </div>
 
           <div className="mt-16 max-w-3xl">
-            <h3 className="text-2xl font-light text-black mb-4">Why quotes online vary so much</h3>
+            <h3 className="text-2xl font-light text-black mb-4">Why Quotes Online Vary So Much</h3>
             <p className="text-gray-700 leading-relaxed font-light text-lg">
               A lower price often reflects shorter active time, a different type of equipment, or no
               full-time staff on site. We publish clear tiers so you can compare a staffed booth
@@ -181,7 +181,7 @@ export default function PricingPageContent() {
 
       <section ref={faqRef} className="w-full py-20 bg-gray-50">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
-          <h2 className="text-3xl md:text-4xl font-light text-black mb-10">Pricing questions</h2>
+          <h2 className="text-3xl md:text-4xl font-light text-black mb-10">Pricing Questions</h2>
           <div className="max-w-3xl space-y-10">
             {pricingFaqs.map((f) => (
               <div key={f.question} className="border-b border-gray-200 pb-8 last:border-0 last:pb-0">

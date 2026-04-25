@@ -45,7 +45,7 @@ export default function BlogWeddingBoothCostToronto() {
             matches our Essential, Signature, and Premium packages, not a separate wedding rate.
           </p>
 
-          <h2 className="text-2xl font-light text-black mt-12 mb-4">What moves the number</h2>
+          <h2 className="text-2xl font-light text-black mt-12 mb-4">What Moves the Number</h2>
           <p className="text-gray-700 font-light leading-relaxed mb-4">
             The main lever is the length of the booking. All three tiers on our site use the same
             equipment and the same inclusions, you are not paying extra to unlock prints or a
@@ -58,7 +58,7 @@ export default function BlogWeddingBoothCostToronto() {
             location is a special case, we tell you that when you get a quote.
           </p>
 
-          <h2 className="text-2xl font-light text-black mt-12 mb-4">How the market is usually split</h2>
+          <h2 className="text-2xl font-light text-black mt-12 mb-4">How the Market Is Usually Split</h2>
           <p className="text-gray-700 font-light leading-relaxed mb-4">
             You will see a wide range online. Shorter or unattended options can sit at the low end. A
             full service booth with a host and instant strips for a full block of the night is more
@@ -66,7 +66,7 @@ export default function BlogWeddingBoothCostToronto() {
             up front, not a long list of add-ons for core items.
           </p>
 
-          <h2 className="text-2xl font-light text-black mt-12 mb-4">What is included in our packages</h2>
+          <h2 className="text-2xl font-light text-black mt-12 mb-4">What Is Included in Our Packages</h2>
           <p className="text-gray-700 font-light leading-relaxed mb-4">
             On every published tier you get: professional attendant on site, physical prints on a
             custom 2x6 or 4x6 template, backdrop selection, props, digital image delivery to guests
@@ -81,7 +81,7 @@ export default function BlogWeddingBoothCostToronto() {
             page.
           </p>
 
-          <h2 className="text-2xl font-light text-black mt-12 mb-4">How to line it up in a wedding budget</h2>
+          <h2 className="text-2xl font-light text-black mt-12 mb-4">How to Line It Up in a Wedding Budget</h2>
           <p className="text-gray-700 font-light leading-relaxed mb-4">
             Treat the booth like any other time-based vendor: you are buying coverage for the hours
             when guests are most likely to use it, usually from part of the reception through the

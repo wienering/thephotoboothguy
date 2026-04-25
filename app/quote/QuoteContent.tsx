@@ -231,7 +231,7 @@ export default function QuoteContent() {
             {/* Step 1 */}
             {step === 1 && (
               <>
-                <h2 className="text-3xl font-light text-black mb-4">Let&apos;s get started</h2>
+                <h2 className="text-3xl font-light text-black mb-4">Let&apos;s Get Started</h2>
                 <p className="text-gray-600 mb-8 font-light">Provide your contact and event details.</p>
                 <form onSubmit={handleContactSubmit} className="space-y-6">
                   <div>
@@ -263,7 +263,7 @@ export default function QuoteContent() {
             {/* Step 2 */}
             {step === 2 && (
               <>
-                <h2 className="text-3xl font-light text-black mb-4">Choose your package</h2>
+                <h2 className="text-3xl font-light text-black mb-4">Choose Your Package</h2>
                 <p className="text-gray-600 mb-8 font-light">Select your service, duration, and any add-ons.</p>
 
                 {/* Service Type Selection */}
@@ -442,7 +442,7 @@ export default function QuoteContent() {
             {/* Step 3 */}
             {step === 3 && selectedPackage && (
               <>
-                <h2 className="text-3xl font-light text-black mb-4">Your quote has been sent!</h2>
+                <h2 className="text-3xl font-light text-black mb-4">Your Quote Has Been Sent!</h2>
                 <p className="text-gray-600 mb-6 font-light">We&apos;ve emailed your quote to {contactInfo.email}. Review the details below.</p>
 
                 <div className="bg-gray-50 border border-gray-200 p-6 mb-6 space-y-4">

@@ -6,17 +6,17 @@ import PricingPageContent from "./PricingPageContent";
 
 const pricingFaq = [
   {
-    question: "Are there hidden fees on top of the package price?",
+    question: "Are There Hidden Fees on Top of the Package Price?",
     answer:
       "Our listed packages are for the booth service as described, including the attendant, prints on your template, backdrops, props, and digital guest delivery. If your venue is outside our normal service area, travel may apply: ask at booking so we can quote it. We do not add a surprise setup fee on top of a confirmed package for standard Toronto and GTA work.",
   },
   {
-    question: "Why is one company cheaper than your rates online?",
+    question: "Why Is One Company Cheaper Than Your Rates Online?",
     answer:
       "Some options use tablet-only photos, or drop the attendant, or only cover a short part of the night. We price for a full staffed booth, pro capture, and instant prints for the full hours you book. If your priority is a different format, you can still compare, but the service is not always the same thing under a similar headline.",
   },
   {
-    question: "What if I need more or less time?",
+    question: "What If I Need More or Less Time?",
     answer:
       "Packages are 2, 3, or 4 hours. If you are between lengths, the middle tier is usually the best value. If you are not sure, tell us your guest count and schedule and we can suggest a fit.",
   },

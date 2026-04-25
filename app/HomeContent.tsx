@@ -100,7 +100,7 @@ const eventGalleryImages = [
 
 const homeFaq = [
   {
-    question: 'How much is photo booth rental in Toronto and the GTA?',
+    question: 'How Much Is Photo Booth Rental in Toronto and the GTA?',
     answer: (
       <>
         Our packages start at $550 (Essential) for 2 hours, $750 (Signature) for 3 hours, and $950
@@ -119,7 +119,7 @@ const homeFaq = [
     ),
   },
   {
-    question: 'Do you do weddings?',
+    question: 'Do You Do Weddings?',
     answer: (
       <>
         Yes. We set up for weddings, corporate events, and private parties across Toronto and the
@@ -135,7 +135,7 @@ const homeFaq = [
     ),
   },
   {
-    question: 'Are custom print templates really included?',
+    question: 'Are Custom Print Templates Really Included?',
     answer:
       'Yes. We design a print template for your event at no extra charge. Share your colours, monogram, logo, or theme, and we work with you on the layout before the day. Prints are 2x6 or 4x6 dye-sublimation on that template, with a trained attendant on site to help guests.',
   },
@@ -229,7 +229,7 @@ export default function HomeContent() {
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
             <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
-              Professional photo booth rental in Toronto and the GTA
+              Professional Photo Booth Rental in Toronto and the GTA
             </h2>
             <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light max-w-3xl mb-6">
               A staffed photo booth rental in Toronto and the surrounding GTA: we bring a DSLR, a
@@ -501,7 +501,7 @@ export default function HomeContent() {
       <section ref={ctaRef} className="w-full py-20 bg-white">
         <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
-            <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">Ready to book your booth?</h2>
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">Ready to Book Your Booth?</h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed font-light max-w-2xl">
               Tell us your date and venue, and we will confirm what you need: guest flow, template,
               and setup timing.
