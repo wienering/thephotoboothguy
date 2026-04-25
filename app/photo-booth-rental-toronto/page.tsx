@@ -20,9 +20,9 @@ const pageData: ServiceLocationData = {
   city: "Toronto",
   heroTitle: "Photo Booth Rental in Toronto",
   heroSubtitle:
-    "Weddings, corporate galas, and private parties: instant prints, custom templates, pro lighting, and an on-site attendant—packages from $550.",
+    "Weddings, corporate galas, and private parties: instant prints, custom templates, pro lighting, and an on-site attendant. Packages from $550.",
   description:
-    "Planning an event in Canada's largest city? Our Toronto photo booth rental service delivers premium entertainment that matches the sophistication of your downtown wedding, North York corporate gala, or Scarborough celebration. We bring professional DSLR cameras, instant dye-sublimation printing, and custom-designed templates that reflect Toronto's vibrant energy. Our trained attendants ensure seamless operation whether you're hosting 50 or 500 guests at iconic venues like The Liberty Grand or intimate spaces across the GTA. Every photo is instantly shared via SMS or email, with a complete digital gallery delivered within 48 hours.",
+    "Planning a Toronto wedding, corporate event, or private party? We provide photo booth rental in Toronto and across the GTA: a staffed booth with a DSLR, dye-sublimation instant prints, custom print templates, backdrops, props, and digital delivery to your guests, plus a full gallery after the event. The same inclusions are on every package tier. You choose the hours (Essential 2 hours from $550, Signature 3 hours at $750, Premium 4 hours at $950).\n\nWe work in Toronto and the region often, including at hotels, banquet halls, and private event spaces. We are used to downtown load-ins, coordinating with venue staff, and running a line from cocktail hour through the reception. Our attendants set up, run, and take down the booth on schedule, and the equipment is tested before the doors open.",
   venues: venues.toronto,
   features: [
     {
@@ -75,6 +75,11 @@ const pageData: ServiceLocationData = {
         "We provide photo booth rental services throughout all areas of Toronto including downtown Toronto, North York, Scarborough, Etobicoke, and surrounding neighborhoods. We regularly serve venues like The Liberty Grand, Arcadian Court, Harbour Castle, and many others across the city. If you're planning an event anywhere in the GTA, we can help.",
     },
     {
+      question: "Where in Toronto do you set up the photo booth?",
+      answer:
+        "We set up in the area your venue and planner clear for the booth, often a ballroom edge, a pre-reception area, or another spot that does not block emergency exits. You need a level floor for the backdrop and the booth, enough room in front of the camera for small groups, and a short queue space at busy times. We also need a standard 120V outlet within a reasonable distance. At booking we can go over a typical floor plan to share with the venue, but final placement follows their rules and your timeline.",
+    },
+    {
       question: "How long does it take to get photo booth prints in Toronto?",
       answer:
         "Our dye-sublimation printer produces high-quality prints in approximately 10-15 seconds. Guests receive their custom printed photos almost immediately after taking their picture, and digital copies are sent to their phones or email instantly. There's no waiting around - your Toronto event guests get their photos right away.",
@@ -104,6 +109,14 @@ const pageData: ServiceLocationData = {
     },
   ],
   relatedServices: [
+    {
+      name: "Wedding Photo Booth Toronto",
+      href: "/wedding-photo-booth-toronto",
+    },
+    {
+      name: "Photo Booth Pricing (Toronto)",
+      href: "/photo-booth-rental-toronto-prices",
+    },
     {
       name: "Glam Booth Toronto",
       href: "/glam-booth-toronto",

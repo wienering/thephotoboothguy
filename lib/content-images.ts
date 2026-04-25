@@ -10,16 +10,16 @@ export interface ContentImage {
 
 /** New hero images (landscape) – each page uses a different one. Home = hero1, Holiday Party = hero4, Audio Guestbook = hero3, Glam Booth = hero10. */
 const NEW_HERO_IMAGES: ContentImage[] = [
-  { src: '/photos/hero1webp.webp', alt: 'Photo booth hero' },
-  { src: '/photos/hero2webp.webp', alt: 'Photo booth hero' },
-  { src: '/photos/hero3webp.webp', alt: 'Audio guestbook hero' },
-  { src: '/photos/hero4webp.webp', alt: 'Holiday party photo booth hero' },
-  { src: '/photos/hero5webp.webp', alt: 'Photo booth hero' },
-  { src: '/photos/hero6webp.webp', alt: 'Photo booth hero' },
-  { src: '/photos/hero7webp.webp', alt: 'Photo booth hero' },
-  { src: '/photos/hero8webp.webp', alt: 'Photo booth hero' },
-  { src: '/photos/hero9webp.webp', alt: 'Photo booth hero' },
-  { src: '/photos/hero10webp.webp', alt: 'Glam booth hero' },
+  { src: '/photos/hero1webp.webp', alt: 'Open style photo booth with guests at a Toronto area reception' },
+  { src: '/photos/hero2webp.webp', alt: 'GTA wedding or event photo booth setup with professional lighting' },
+  { src: '/photos/hero3webp.webp', alt: 'Vintage style audio guest book phone on display at a Toronto event' },
+  { src: '/photos/hero4webp.webp', alt: 'Seasonal holiday party photo booth backdrop with string lights' },
+  { src: '/photos/hero5webp.webp', alt: 'Corporate gala photo booth station in the Toronto region' },
+  { src: '/photos/hero6webp.webp', alt: 'Wedding photo booth with backdrop and line of guests in the GTA' },
+  { src: '/photos/hero7webp.webp', alt: 'Private celebration photo booth rental in Ontario' },
+  { src: '/photos/hero8webp.webp', alt: 'Guests with instant photo strips from a downtown Toronto function' },
+  { src: '/photos/hero9webp.webp', alt: 'Evening event photo booth with print station and prints in hand' },
+  { src: '/photos/hero10webp.webp', alt: 'Glam style black and white photo booth portrait setup in Toronto' },
 ];
 
 /** Event/booth photos (used for in-content images only, not heroes). */
@@ -27,7 +27,7 @@ const EVENT_PHOTOS: ContentImage[] = [
   { src: '/photos/20251209_125620936.jpg', alt: 'Professional photo booth rental at a Toronto area event with guests and custom backdrop' },
   { src: '/photos/20251209_125627091.jpg', alt: 'Guests enjoying instant prints and props at a GTA photo booth rental' },
   { src: '/photos/20251211_191242154.jpg', alt: 'Photo booth setup and equipment at a Greater Toronto Area wedding or event' },
-  { src: '/photos/20251218_200721527.jpg', alt: 'Wedding photo booth moment – couple and guests at a Toronto area wedding' },
+  { src: '/photos/20251218_200721527.jpg', alt: 'Wedding photo booth moment with couple and guests at a Toronto area wedding' },
   { src: '/photos/20260123_203236491.jpg', alt: 'Photo booth in action at a corporate or private event in the GTA' },
   { src: '/photos/20241210_171353533.jpg', alt: 'Event photo booth rental with prints and backdrop in the Greater Toronto Area' },
   { src: '/photos/220233130.jpg', alt: 'Photo booth rental at a Toronto or GTA venue with guests and backdrop' },
@@ -79,7 +79,7 @@ const GLAM_BOOTH_PHOTOS: ContentImage[] = [
 /** Audio guest book photos for audio guest book pages. */
 const AUDIO_GB_PHOTOS: ContentImage[] = [
   { src: '/photos/audio gb/69367.jpg', alt: 'Audio guest book vintage telephone at a Toronto wedding' },
-  { src: '/photos/audio gb/88072.jpg', alt: 'Guests leaving voice messages at audio guest book station' },
+  { src: '/photos/audio gb/88072.jpg', alt: 'Guests leaving voice messages at a Toronto area audio guest book station' },
   { src: '/photos/audio gb/95782.jpg', alt: 'Vintage telephone audio guest book setup at GTA event' },
   { src: '/photos/audio gb/IMG_0132.jpeg', alt: 'Audio guest book rental at a wedding venue in Toronto' },
   { src: '/photos/audio gb/IMG_2585.jpeg', alt: 'Wedding guest using audio guest book telephone' },

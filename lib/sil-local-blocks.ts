@@ -8,7 +8,7 @@ export type SilLocalBlock = {
 
 const blocks: Record<string, SilLocalBlock> = {
   Toronto: {
-    heading: 'Planning a Toronto event',
+    heading: 'Toronto events and your timeline',
     body:
       'Toronto bookings often mean tight load-ins at downtown venues, diverse guest lists, and timelines that do not leave room for tech surprises. We arrive early, coordinate with your planner or venue, and keep the booth line moving so your night stays on schedule.',
     links: [

@@ -188,6 +188,34 @@ export const faqSchema = (faqs: Array<{ question: string; answer: string }>) => 
   }))
 });
 
+export const blogPostingSchema = (input: {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified?: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": input.headline,
+  "description": input.description,
+  "url": input.url,
+  "datePublished": input.datePublished,
+  ...(input.dateModified && { "dateModified": input.dateModified }),
+  "author": {
+    "@type": "Organization",
+    "name": "The Photobooth Guy"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Photobooth Guy",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.thephotoboothguy.ca/logo.webp"
+    }
+  }
+});
+
 export const breadcrumbSchema = (items: Array<{ name: string; url: string }>) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",

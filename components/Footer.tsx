@@ -166,6 +166,30 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/wedding-photo-booth-toronto"
+                  className="text-gray-400 hover:text-white transition-colors font-light"
+                >
+                  Wedding photo booth
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/photo-booth-rental-toronto-prices"
+                  className="text-gray-400 hover:text-white transition-colors font-light"
+                >
+                  Toronto pricing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="text-gray-400 hover:text-white transition-colors font-light"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className="text-gray-400 hover:text-white transition-colors font-light"
                 >

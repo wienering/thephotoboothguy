@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 
 const serviceLinks = [
   { name: 'Photo Booth Rental', href: '/photo-booth-rental-toronto' },
+  { name: 'Wedding Photo Booth', href: '/wedding-photo-booth-toronto' },
+  { name: 'Photo Booth Prices (Toronto)', href: '/photo-booth-rental-toronto-prices' },
   { name: 'Glam Booth', href: '/glam-booth-toronto' },
   { name: 'Audio Guest Book', href: '/audio-guest-book-toronto' },
   { name: '360 Video Booth', href: '/360-booth-toronto' },
@@ -137,7 +139,12 @@ export default function Navigation() {
             >
               Contact
             </Link>
-            
+            <Link
+              href="/blog"
+              className={`px-3 py-2 text-xs uppercase tracking-wider font-medium transition-colors ${linkDesktop}`}
+            >
+              Blog
+            </Link>
             <div className="flex items-center gap-2 ml-2">
               <Link
                 href="/quote"
@@ -235,7 +242,13 @@ export default function Navigation() {
             >
               Contact
             </Link>
-            
+            <Link
+              href="/blog"
+              className="block text-sm uppercase tracking-wider font-medium py-2 transition-colors text-gray-700 hover:text-black"
+              onClick={() => setIsOpen(false)}
+            >
+              Blog
+            </Link>
             <div className="flex flex-col gap-3 mt-4">
               <Link
                 href="/quote"

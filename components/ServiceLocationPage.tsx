@@ -106,7 +106,7 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
           <>
             <Image
               src={heroImage.src}
-              alt={heroImage.alt ?? 'Photo booth hero'}
+              alt={heroImage.alt ?? 'Staged photo booth with backdrop for a Toronto and GTA event'}
               fill
               className={
                 isAudioGuestBook
@@ -179,9 +179,16 @@ export default function ServiceLocationPage({ data }: { data: ServiceLocationDat
               <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
                 {data.serviceName} in {data.city}
               </h2>
-              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-light max-w-3xl">
-                {data.description}
-              </p>
+              {data.description.split(/\n\n+/).map((para, i) => (
+                <p
+                  key={i}
+                  className={`text-xl md:text-2xl text-gray-700 leading-relaxed font-light max-w-3xl ${
+                    i > 0 ? 'mt-6' : ''
+                  }`}
+                >
+                  {para}
+                </p>
+              ))}
             </div>
             {contentImages[0] && (
               <div className="relative aspect-[4/3] w-full sm:w-64 lg:w-80 flex-shrink-0 rounded-xl overflow-hidden shadow-lg">

@@ -10,9 +10,21 @@ interface HeroProps {
   backgroundImage?: string;
   /** Alt text for the hero image. */
   alt?: string;
+  /** Main H1 (single focus line for key landing pages). */
+  headline?: string;
+  /** Supporting line under the H1. */
+  subhead?: string;
+  /** Optional line above the H1. Omit or pass null to hide. */
+  eyebrow?: string | null;
 }
 
-export default function Hero({ backgroundImage, alt }: HeroProps = {}) {
+export default function Hero({
+  backgroundImage,
+  alt,
+  headline = 'Toronto Photo Booth Rental',
+  subhead = 'Weddings, corporate events, and private parties across Toronto and the GTA. Packages from $550.',
+  eyebrow = null,
+}: HeroProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -35,7 +47,7 @@ export default function Hero({ backgroundImage, alt }: HeroProps = {}) {
         <>
           <Image
             src={backgroundImage}
-            alt={alt ?? 'Photo booth hero'}
+            alt={alt ?? 'Photo booth setup for a Toronto and GTA event'}
             fill
             className="object-cover object-top"
             sizes="100vw"
@@ -46,10 +58,13 @@ export default function Hero({ backgroundImage, alt }: HeroProps = {}) {
       )}
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-          backgroundSize: '40px 40px'
-        }}></div>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px',
+          }}
+        />
       </div>
 
       {/* Large text background element */}
@@ -59,29 +74,24 @@ export default function Hero({ backgroundImage, alt }: HeroProps = {}) {
 
       <div className="w-full max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="max-w-5xl">
-          <div className="mb-6">
-            <span className="text-sm uppercase tracking-[0.2em] text-gray-400 font-medium">
-              Toronto&apos;s Best Photo Booth Experience
-            </span>
-          </div>
+          {eyebrow && (
+            <div className="mb-6">
+              <span className="text-sm uppercase tracking-[0.2em] text-gray-400 font-medium">
+                {eyebrow}
+              </span>
+            </div>
+          )}
           <h1
             ref={titleRef}
-            className="text-6xl md:text-8xl lg:text-9xl font-light mb-8 leading-[0.95] tracking-tight"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light mb-8 leading-[1.05] tracking-tight max-w-4xl"
           >
-            Create 
-            <span className="block font-normal mt-2">
-              Unforgettable 
-            </span>
-            <span className="block font-light">
-              Memories
-            </span>
+            {headline}
           </h1>
           <p
             ref={subtitleRef}
             className="text-lg md:text-xl mb-12 text-gray-300 max-w-2xl leading-relaxed font-light"
           >
-            We bring professional equipment, beautiful backdrops, and custom designs 
-            to make your event something people will talk about.
+            {subhead}
           </p>
           <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4">
             <Link
